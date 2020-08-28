@@ -5,11 +5,19 @@ using System.Runtime.InteropServices;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
+<<<<<<< HEAD
 [assembly: AssemblyTitle("TPI NewWare")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("TPI NewWare")]
+=======
+[assembly: AssemblyTitle("TPI_NewWare")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("TPI_NewWare")]
+>>>>>>> ebert
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +28,11 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // El siguiente GUID sirve como id. de typelib si este proyecto se expone a COM.
+<<<<<<< HEAD
 [assembly: Guid("19629ca3-5723-4b75-b5c6-d63c5623001e")]
+=======
+[assembly: Guid("146582b9-5e02-4ed2-b6f0-458c5d0fa205")]
+>>>>>>> ebert
 
 // La información de versión de un ensamblado consta de los cuatro valores siguientes:
 //
