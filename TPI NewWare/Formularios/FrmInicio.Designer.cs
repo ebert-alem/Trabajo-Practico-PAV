@@ -773,7 +773,7 @@
             this.btnAdministrar.Rotation = 0D;
             this.btnAdministrar.Size = new System.Drawing.Size(208, 40);
             this.btnAdministrar.TabIndex = 4;
-            this.btnAdministrar.Text = "Adminitrar";
+            this.btnAdministrar.Text = "Administrar";
             this.btnAdministrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdministrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdministrar.UseVisualStyleBackColor = false;
