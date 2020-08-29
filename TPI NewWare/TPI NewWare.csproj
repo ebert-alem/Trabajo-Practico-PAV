@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Be_BaseDatos.cs" />
+    <Compile Include="Entidades\ClaseBase.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Formularios\FrmTareas.cs">
       <SubType>Form</SubType>
@@ -79,6 +80,7 @@
     <Compile Include="Formularios\FrmPromedios.Designer.cs">
       <DependentUpon>FrmPromedios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Negocio\Ng_Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\FrmPromedios.resx">
