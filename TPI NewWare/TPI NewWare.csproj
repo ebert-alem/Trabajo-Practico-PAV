@@ -56,6 +56,12 @@
     <Compile Include="Clases\Be_BaseDatos.cs" />
     <Compile Include="Entidades\ClaseBase.cs" />
     <Compile Include="Entidades\Usuario.cs" />
+    <Compile Include="Formularios\FrmABMHerramientas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmABMHerramientas.Designer.cs">
+      <DependentUpon>FrmABMHerramientas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmTareas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     <Compile Include="Negocio\Ng_Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\FrmABMHerramientas.resx">
+      <DependentUpon>FrmABMHerramientas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmPromedios.resx">
       <DependentUpon>FrmPromedios.cs</DependentUpon>
     </EmbeddedResource>

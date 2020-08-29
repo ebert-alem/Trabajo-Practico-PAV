@@ -193,7 +193,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(225, 607);
+            this.panelMenu.Size = new System.Drawing.Size(225, 611);
             this.panelMenu.TabIndex = 0;
             // 
             // panelSubEstadisticas
@@ -635,6 +635,7 @@
             this.btnSubHerramientas.Text = "Herramientas";
             this.btnSubHerramientas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSubHerramientas.UseVisualStyleBackColor = true;
+            this.btnSubHerramientas.Click += new System.EventHandler(this.btnSubHerramientas_Click);
             // 
             // btnSubRoles
             // 
@@ -803,7 +804,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1031, 607);
+            this.ClientSize = new System.Drawing.Size(1031, 611);
             this.Controls.Add(this.panelBarrraSup);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelPrincipal);

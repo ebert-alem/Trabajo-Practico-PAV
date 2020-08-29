@@ -72,7 +72,7 @@
             this.listTareas.Size = new System.Drawing.Size(388, 277);
             this.listTareas.TabIndex = 6;
             // 
-            // formTareas
+            // FrmTareas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -82,8 +82,9 @@
             this.Controls.Add(this.textAgregarTarea);
             this.Controls.Add(this.listTareas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "formTareas";
+            this.Name = "FrmTareas";
             this.Text = "formTareas";
+            this.Load += new System.EventHandler(this.FrmTareas_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

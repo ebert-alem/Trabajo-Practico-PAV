@@ -21,5 +21,10 @@ namespace TPI_NewWare.Formularios
         {
             listTareas.Items.Add(textAgregarTarea.Text);
         }
+
+        private void FrmTareas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
