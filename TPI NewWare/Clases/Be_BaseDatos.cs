@@ -41,5 +41,25 @@ namespace TPI_NewWare.Clases
             Desconectar();
             return tabla;
         }
+
+        //Inserta un nuevo elemento en la tabla 
+        public void Insertar(string sql) 
+        {
+            Conectar();
+            Cmd.CommandText = sql;
+            Cmd.ExecuteNonQuery();
+        }
+
+        public String SentenciaInsertar(string Atributos)
+        {
+            //Devuelve una cadena con la sentencia para insertar
+            return "";
+        }
+        public String SentenciaConsultar(string Atributos)
+        {
+            //Devuelve una cadena con la sentencia realizar una consulta
+            return "";
+        }
+
     }
 }
