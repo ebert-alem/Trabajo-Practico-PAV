@@ -228,7 +228,7 @@
             this.btnSubEstTiemProy.Rotation = 0D;
             this.btnSubEstTiemProy.Size = new System.Drawing.Size(208, 40);
             this.btnSubEstTiemProy.TabIndex = 4;
-            this.btnSubEstTiemProy.Text = "Tiempo proyecto";
+            this.btnSubEstTiemProy.Text = "Tiempo de proyecto";
             this.btnSubEstTiemProy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSubEstTiemProy.UseVisualStyleBackColor = true;
             // 
