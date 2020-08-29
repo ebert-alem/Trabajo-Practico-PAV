@@ -27,7 +27,7 @@ namespace TPI_NewWare
 
         private void Form_login_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnAcceder_Click(object sender, EventArgs e)
@@ -133,15 +133,6 @@ namespace TPI_NewWare
 
                 }
 
-
-
-
-
-
-
-
-
-
             }
             catch (Exception)
             {
@@ -149,6 +140,11 @@ namespace TPI_NewWare
                 MessageBox.Show("El usuario ya existe");
                 conexion.Close();
             }
+        }
+
+        private void FrmLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
