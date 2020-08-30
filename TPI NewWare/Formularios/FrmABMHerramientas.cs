@@ -15,6 +15,7 @@ namespace TPI_NewWare.Formularios
     public partial class FrmABMHerramientas : Form
     {
         Ng_Herramienta Ng_Herramienta = new Ng_Herramienta();
+        DataTable dataTable = new DataTable();
 
         public FrmABMHerramientas()
         {
@@ -44,7 +45,8 @@ namespace TPI_NewWare.Formularios
         private void FrmABMHerramientas_Load(object sender, EventArgs e)
         {
             //Carga la grilla con los valores elegidos
-            CargarGrilla(Ng_Herramienta.Lista());
+            dataTable = Ng_Herramienta.Lista();
+            CargarGrilla(dataTable);
             ActualizarVisualizacion();
         }
 
@@ -88,7 +90,8 @@ namespace TPI_NewWare.Formularios
         {
             //Busca la herramienta seleccionada en la bd por id
             Herramienta herramienta = new Herramienta();
-            herramienta.Buscar(int.Parse(this.grid.CurrentRow.Cells[0].Value.ToString()));
+            //Carga un objeto con los datos de la tabal seleccionada 
+            herramienta.Cargar_datos(dataTable.Rows[this.grid.CurrentRow.Index]);
             //Rellena los campos con los datos
             lbl_id.Text = "Id: " + herramienta.Id;
             lbl_nombre.Text = "Nombre: " + herramienta.Nombre;

@@ -56,14 +56,23 @@ namespace TPI_NewWare.Entidades
             }
             Condiciones += " ) ";
             return _BD.Consulta("SELECT * FROM " + NombreTabla + Condiciones);
-
         }
 
-        //La funcion listar con otros parametros puede representar los filtros
+        //Genera una lista que filtra los parametros de una columna que coincidan con el texto
+        public DataTable Listar(string Columna, string Valor)
+        {
+            //Condicion por la que se filtra la busqueda
+            string Condiciones = "WHERE ";
+            Condiciones += Columna+ " LIKE % " + Valor + "%";
+
+            return _BD.Consulta("SELECT * FROM " + NombreTabla + Condiciones);
+        }
+
+
 
 
         //Carga los datos desde la fila al objeto
-        protected abstract void Cargar_datos(DataRow fila);
+        public abstract void Cargar_datos(DataRow fila);
 
     }
 }

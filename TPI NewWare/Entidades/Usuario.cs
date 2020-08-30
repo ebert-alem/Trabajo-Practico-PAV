@@ -65,7 +65,7 @@ namespace TPI_NewWare.Entidades
             _BD.Insertar(sql);
         }
 
-        protected override void Cargar_datos(DataRow fila)
+        public override void Cargar_datos(DataRow fila)
         {
             this.Nombre = fila["nombreUsuario"].ToString();
             this.Pass = fila["contraseña"].ToString();

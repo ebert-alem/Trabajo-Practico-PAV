@@ -17,7 +17,7 @@ namespace TPI_NewWare.Entidades
         public string Descripcion { get; set; }
 
 
-        protected override void Cargar_datos(DataRow fila)
+        public override void Cargar_datos(DataRow fila)
         {
             Id = fila["id"].ToString();
             Nombre = fila["nombre"].ToString();
