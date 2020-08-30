@@ -57,11 +57,6 @@ namespace TPI_NewWare.Entidades
         }
 
         //Carga los datos desde la fila al objeto
-        public new void Cargar_datos(DataRow fila)
-        {
-            this.Nombre = fila["nombreUsuario"].ToString();
-            this.Pass = fila["contraseña"].ToString();
-        }
 
         public void Insertar()
         {
@@ -69,6 +64,11 @@ namespace TPI_NewWare.Entidades
             string sql = "INSERT INTO USUARIOS (nombreUsuario,contraseña) VALUES ('" + this.Nombre + "',HASHBYTES('SHA1','" + this.Pass + "'))";
             _BD.Insertar(sql);
         }
-                
+
+        protected override void Cargar_datos(DataRow fila)
+        {
+            this.Nombre = fila["nombreUsuario"].ToString();
+            this.Pass = fila["contraseña"].ToString();
+        }
     }
 }

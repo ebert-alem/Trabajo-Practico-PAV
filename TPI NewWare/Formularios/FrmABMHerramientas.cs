@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TPI_NewWare.Negocio;
+using TPI_NewWare.Entidades;
 
 namespace TPI_NewWare.Formularios
 {
@@ -85,9 +86,13 @@ namespace TPI_NewWare.Formularios
 
         private void ActualizarVisualizacion()
         {
-            lbl_id.Text = "Id: " + this.grid.CurrentRow.Cells[0].Value.ToString();
-            lbl_nombre.Text = "Nombre: " + this.grid.CurrentRow.Cells[1].Value.ToString();
-            lbl_descripcion.Text = "Descripción: " + this.grid.CurrentRow.Cells[2].Value.ToString();
+            //Busca la herramienta seleccionada en la bd por id
+            Herramienta herramienta = new Herramienta();
+            herramienta.Buscar(int.Parse(this.grid.CurrentRow.Cells[0].Value.ToString()));
+            //Rellena los campos con los datos
+            lbl_id.Text = "Id: " + herramienta.Id;
+            lbl_nombre.Text = "Nombre: " + herramienta.Nombre;
+            lbl_descripcion.Text = "Descripción: " + herramienta.Descripcion;
         }
 
         private void lbl_id_txt_Click(object sender, EventArgs e)

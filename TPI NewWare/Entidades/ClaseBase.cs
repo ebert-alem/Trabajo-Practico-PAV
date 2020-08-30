@@ -41,6 +41,21 @@ namespace TPI_NewWare.Entidades
         {
             //Obtiene todos las filas de la BD
             return _BD.Consulta("SELECT * FROM " + NombreTabla);
+        }
+
+        //Genera una lista que cumpla las condiciones de las columnas ingresadas
+        public DataTable Listar(string[] Columnas, string[] Valores)
+        {
+            //Condicion por la que se filtra la busqueda
+            string Condiciones = "WHERE ( ";
+            for (int i = 0; i < Columnas.Length; i++)
+            {   
+                Condiciones += Columnas[i] + " = " + Valores[i];
+                //Agrega una coma salvo en el ultimo caso
+                if (i < Columnas.Length - 1) Condiciones +=  " , ";
+            }
+            Condiciones += " ) ";
+            return _BD.Consulta("SELECT * FROM " + NombreTabla + Condiciones);
 
         }
 
@@ -48,9 +63,7 @@ namespace TPI_NewWare.Entidades
 
 
         //Carga los datos desde la fila al objeto
-        public void Cargar_datos(DataRow fila)
-        {
-        }
+        protected abstract void Cargar_datos(DataRow fila);
 
     }
 }
