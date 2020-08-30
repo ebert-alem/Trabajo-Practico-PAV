@@ -8,7 +8,7 @@ using System.Data;
 
 namespace TPI_NewWare.Clases
 {
-    class Be_BaseDatos
+    public class Be_BaseDatos
     {
         SqlConnection Conexion = new SqlConnection();
         SqlCommand Cmd = new SqlCommand();

@@ -15,7 +15,7 @@ namespace TPI_NewWare.Entidades
         private string Nombre;
         private string Pass;
 
-        Be_BaseDatos _BD = new Be_BaseDatos();
+        protected override string NombreTabla => "USUARIOS";
 
         public Usuario(string Nombre, string Pass)
         {

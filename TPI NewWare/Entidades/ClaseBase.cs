@@ -8,12 +8,13 @@ using TPI_NewWare.Clases;
 
 
 namespace TPI_NewWare.Entidades
-{
+{   
     // Clase base para todas las clases del proyecto
-    public class ClaseBase
+    public abstract class ClaseBase
     {
-        Be_BaseDatos _BD = new Be_BaseDatos();
+        protected Be_BaseDatos _BD = new Be_BaseDatos();
 
+        protected abstract string NombreTabla { get; }
         //Para hacer
         //Funcion que permita hacer una consulta con filtros
         //Funcion que permita buscar un objeto por otros parametros
@@ -23,7 +24,7 @@ namespace TPI_NewWare.Entidades
         {
             //Obtiene el nombre de la clase
             string clase = this.GetType().ToString().ToUpper();
-            string consulta = "SELECT * FROM" + clase + "WHERE id = '" + id + "'";
+            string consulta = "SELECT * FROM " + NombreTabla + " WHERE id = '" + id + "'";
             DataTable tabla = _BD.Consulta(consulta);
 
             //Verifica si se encontro la fila
@@ -38,10 +39,9 @@ namespace TPI_NewWare.Entidades
 
         public DataTable Listar()
         {
-            //Obtiene el nombre de la clase
-            string clase = this.GetType().ToString().ToUpper();
             //Obtiene todos las filas de la BD
-            return _BD.Consulta("SELECT * FROM" + clase);
+            return _BD.Consulta("SELECT * FROM " + NombreTabla);
+
         }
 
         //La funcion listar con otros parametros puede representar los filtros

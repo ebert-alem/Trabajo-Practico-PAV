@@ -54,7 +54,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Be_BaseDatos.cs" />
+    <Compile Include="Clases\ComboBox01.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Clases\EstructuraComboBox.cs" />
+    <Compile Include="Clases\TextBox01.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Clases\TratamientosEspeciales.cs" />
     <Compile Include="Entidades\ClaseBase.cs" />
+    <Compile Include="Entidades\Herramienta.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Formularios\FrmABMHerramientas.cs">
       <SubType>Form</SubType>
@@ -86,6 +95,7 @@
     <Compile Include="Formularios\FrmPromedios.Designer.cs">
       <DependentUpon>FrmPromedios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Negocio\Ng_Herramienta.cs" />
     <Compile Include="Negocio\Ng_Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
