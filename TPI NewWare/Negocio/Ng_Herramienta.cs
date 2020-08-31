@@ -21,5 +21,10 @@ namespace TPI_NewWare.Negocio
             return herramienta.Listar();
         }
 
+        public DataTable Lista_nombre(string Nombre)
+        {
+            Herramienta herramienta = new Herramienta();
+            return herramienta.ListarLike("nombre", Nombre);
+        }
     }
 }

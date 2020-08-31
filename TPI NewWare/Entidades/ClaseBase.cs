@@ -47,10 +47,10 @@ namespace TPI_NewWare.Entidades
         public DataTable Listar(string[] Columnas, string[] Valores)
         {
             //Condicion por la que se filtra la busqueda
-            string Condiciones = "WHERE ( ";
+            string Condiciones = " WHERE ( ";
             for (int i = 0; i < Columnas.Length; i++)
             {   
-                Condiciones += Columnas[i] + " = " + Valores[i];
+                Condiciones += Columnas[i] + " = '" + Valores[i] + "'";
                 //Agrega una coma salvo en el ultimo caso
                 if (i < Columnas.Length - 1) Condiciones +=  " , ";
             }
@@ -58,14 +58,34 @@ namespace TPI_NewWare.Entidades
             return _BD.Consulta("SELECT * FROM " + NombreTabla + Condiciones);
         }
 
-        //Genera una lista que filtra los parametros de una columna que coincidan con el texto
+        //Caso simplificado cuando se tiene una sola cadena a verificar
         public DataTable Listar(string Columna, string Valor)
         {
-            //Condicion por la que se filtra la busqueda
-            string Condiciones = "WHERE ";
-            Condiciones += Columna+ " LIKE % " + Valor + "%";
+            return Listar(new string[1] { Columna }, new string[1] { Valor });
+        }
+
+        //Genera una lista que filtra los parametros de una columna que coincidan con el texto
+
+
+        public DataTable ListarLike(string[] Columnas, string[] Valores)
+        {
+            string Condiciones = " WHERE ( ";
+            for (int i = 0; i < Columnas.Length; i++)
+            {
+                Condiciones += Columnas[i] + " LIKE '%" + Valores[i] + "%'";
+                
+                if (i < Columnas.Length - 1) Condiciones += " , ";
+            }
+            Condiciones += " ) ";
 
             return _BD.Consulta("SELECT * FROM " + NombreTabla + Condiciones);
+        }
+
+        //Caso simplificado cuando se tiene una sola cadena a verificar
+        public DataTable ListarLike(string Columna, string Valor)
+        {
+            //Ingresa los valores en el formato de la funcion anterior
+            return ListarLike(new string[1] { Columna }, new string[1] { Valor });
         }
 
 
