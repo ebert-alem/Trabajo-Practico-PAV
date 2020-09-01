@@ -15,6 +15,7 @@ namespace TPI_NewWare.Entidades
         protected Be_BaseDatos _BD = new Be_BaseDatos();
 
         protected abstract string NombreTabla { get; }
+
         //Para hacer
         //Funcion que permita hacer una consulta con filtros
         //Funcion que permita buscar un objeto por otros parametros
@@ -88,11 +89,37 @@ namespace TPI_NewWare.Entidades
             return ListarLike(new string[1] { Columna }, new string[1] { Valor });
         }
 
-
-
-
         //Carga los datos desde la fila al objeto
         public abstract void Cargar_datos(DataRow fila);
+
+        public void Guardar() 
+        {
+            _BD.Insertar(GuardarDatos());
+        }
+
+        //Esta funcion provee a la funcion sqlInsert de los parametros propios del objeto en el que se implementa
+        public abstract string GuardarDatos();
+
+
+        public string SqlInsert(string[] Columnas, string[] Valores)
+        {
+            return "INSERT INTO " + NombreTabla + "(" + string.Join(", ", Columnas) + ") Values (" + string.Join(", ", Envolver("'", "'", Valores)) + ")";
+        }
+
+        private string Envolver(string EnvoltorioInicio, string EnvoltorioFin, string Cadena)
+        {
+            return EnvoltorioInicio + Cadena + EnvoltorioFin;
+        }
+
+        private string[] Envolver(string EnvoltorioInicio, string EnvoltorioFin, string[] Cadenas)
+        {
+            for (int i = 0; i < Cadenas.Length ; i++)
+            {
+                Cadenas[i] = Envolver(EnvoltorioInicio, EnvoltorioFin, Cadenas[i]);
+            }
+            return Cadenas;
+        }
+
 
     }
 }

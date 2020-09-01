@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using TPI_NewWare.Entidades;
@@ -16,12 +17,26 @@ namespace TPI_NewWare.Entidades
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
 
+        public Herramienta()
+        {
+        }
+
+        public Herramienta(string nombre, string descripcion)
+        {
+            Nombre = nombre;
+            Descripcion = descripcion;
+        }
 
         public override void Cargar_datos(DataRow fila)
         {
             Id = fila["id"].ToString();
             Nombre = fila["nombre"].ToString();
             Descripcion = fila["descripcion"].ToString();
+        }
+
+        public override string GuardarDatos()
+        {
+            return SqlInsert(new string[2] {"nombre", "descripcion"}, new string[2] { Nombre, Descripcion});
         }
     }
 }

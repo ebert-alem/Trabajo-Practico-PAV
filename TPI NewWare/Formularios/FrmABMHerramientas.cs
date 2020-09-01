@@ -128,9 +128,27 @@ namespace TPI_NewWare.Formularios
         {
             //Cancela otros formularios existentes
             CancelarFormularios();
-            frmAltaHerramientas = new FrmAltaHerramientas(panel_visualizacion);
+            frmAltaHerramientas = new FrmAltaHerramientas(this);
             //Asigna el form a la ventana
             AbrirFormEnPanel(frmAltaHerramientas);
+        }
+
+        //Actualiza cuando un formulario se cierra habiendo realizado el cambio
+        public void ActualizarAlta()
+        {
+            //Actualiza la grilla
+            this.CargarGrilla(Ng_Herramienta.Lista());
+            //Habilita la visualizacion
+            panel_visualizacion.Visible = true;
+            //Muestra la nueva grilla creada como seleccionada
+            grid.ClearSelection();
+            grid.CurrentCell = grid.Rows[grid.Rows.Count - 1].Cells["Column1"];
+            ActualizarVisualizacion();
+        }
+
+        public void ActualizarCancelacion() 
+        {
+            panel_visualizacion.Visible = true;
         }
     }
 }

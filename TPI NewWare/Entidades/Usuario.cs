@@ -70,5 +70,10 @@ namespace TPI_NewWare.Entidades
             this.Nombre = fila["nombreUsuario"].ToString();
             this.Pass = fila["contraseña"].ToString();
         }
+
+        public override string GuardarDatos()
+        {
+            return "(nombreUsuario, contraseña) VALUES('" + this.Nombre + "',HASHBYTES('SHA1', '" + this.Pass + "'))";
+        }
     }
 }

@@ -11,8 +11,10 @@ namespace TPI_NewWare.Negocio
 {
     class Ng_Herramienta
     {
-        public void Alta()
+        public void Alta(string nombre, string descripcion)
         {
+            Herramienta herramienta = new Herramienta(nombre, descripcion);
+            herramienta.Guardar();
         }
 
         public DataTable Lista()
