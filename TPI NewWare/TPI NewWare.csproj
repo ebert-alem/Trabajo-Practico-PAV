@@ -71,6 +71,12 @@
     <Compile Include="Formularios\FrmABMHerramientas.Designer.cs">
       <DependentUpon>FrmABMHerramientas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmAltaHerramientas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmAltaHerramientas.Designer.cs">
+      <DependentUpon>FrmAltaHerramientas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmTareas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\FrmABMHerramientas.resx">
       <DependentUpon>FrmABMHerramientas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmAltaHerramientas.resx">
+      <DependentUpon>FrmAltaHerramientas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmPromedios.resx">
       <DependentUpon>FrmPromedios.cs</DependentUpon>

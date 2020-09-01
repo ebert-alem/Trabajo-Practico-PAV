@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using TPI_NewWare.Negocio;
 using TPI_NewWare.Entidades;
+using TPI_NewWare.Negocio;
 
 namespace TPI_NewWare.Formularios
 {
@@ -16,6 +10,9 @@ namespace TPI_NewWare.Formularios
     {
         Ng_Herramienta Ng_Herramienta = new Ng_Herramienta();
         DataTable Tabla_Completa = new DataTable();
+
+        //Formularios internos
+        private FrmAltaHerramientas frmAltaHerramientas;
 
         public FrmABMHerramientas()
         {
@@ -52,16 +49,6 @@ namespace TPI_NewWare.Formularios
             //lbl_id.Text = this.grid.CurrentRow.Cells[0].Value.ToString();
         }
 
-        private void iconButton1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             ActualizarVisualizacion();
@@ -89,16 +76,6 @@ namespace TPI_NewWare.Formularios
             }
         }
 
-        private void lbl_id_txt_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_nombre_Click(object sender, EventArgs e)
-        {
-
-        }
-
         //Actualiza la tabla segun el nombre ingresado al presionar enter
         private void txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -117,9 +94,43 @@ namespace TPI_NewWare.Formularios
             }
         }
 
-        private void iconButton4_Click(object sender, EventArgs e)
+        private void AbrirFormEnPanel(object Subform)
         {
+            if (this.panel_work_space.Controls.Count > 0)
+            {   
+                //Oculta el panel de previsualizacion
+                panel_visualizacion.Visible = false;
+            }
 
+            //Crea el nuevo form y lo inserta en el panel
+            Form fh = Subform as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            //Agrrega el panel contenedor como dato
+            this.panel_work_space.Controls.Add(fh);
+            this.panel_work_space.Tag = fh;
+            fh.Show();
+
+        }
+        //Cancela todos los subformularios abiertos
+        private void CancelarFormularios()
+        {
+            //Vuelve visible el panel de visualizacion
+            panel_visualizacion.Visible = true;
+            //Si existe algun formulario abierto lo cancela
+            if (frmAltaHerramientas != null)
+            {
+                frmAltaHerramientas.Close();
+            }
+        }
+
+        private void btn_nuevo_Click(object sender, EventArgs e)
+        {
+            //Cancela otros formularios existentes
+            CancelarFormularios();
+            frmAltaHerramientas = new FrmAltaHerramientas(panel_visualizacion);
+            //Asigna el form a la ventana
+            AbrirFormEnPanel(frmAltaHerramientas);
         }
     }
 }

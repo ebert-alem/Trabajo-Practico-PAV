@@ -159,6 +159,10 @@ namespace TPI_NewWare
             AbrirFormEnPanel(new FrmABMHerramientas());
         }
 
+        private void panelPrincipal_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
 }
