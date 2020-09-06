@@ -71,9 +71,15 @@ namespace TPI_NewWare.Entidades
             this.Pass = fila["contraseña"].ToString();
         }
 
-        public override string GuardarDatos()
+        public override string SentciaSqlCrear()
         {
             return "(nombreUsuario, contraseña) VALUES('" + this.Nombre + "',HASHBYTES('SHA1', '" + this.Pass + "'))";
+        }
+
+        public override string SentciaSqlActualizar()
+        {
+            //Completar
+            throw new NotImplementedException();
         }
     }
 }

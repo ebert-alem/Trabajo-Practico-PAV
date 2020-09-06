@@ -18,6 +18,7 @@ namespace TPI_NewWare.Formularios
         FrmABMHerramientas form_contenedor;
 
         Ng_Herramienta ng_Herramienta = new Ng_Herramienta();
+        Herramienta herramienta;
 
         public FrmAltaHerramientas(FrmABMHerramientas form)
         {
@@ -31,7 +32,10 @@ namespace TPI_NewWare.Formularios
             //Seteo el panel contenedor como atributo
             form_contenedor = form;
             btn_crear.Text = "Modificar";
-            Herramienta herramienta = ng_Herramienta.Buscar(id);
+            
+            //Se obtiene el objeto a modificar
+            herramienta = ng_Herramienta.Buscar(id);
+            //Se actualizan los campos del formulario con los atributos
             txt_nombre.Text = herramienta.Nombre;
             txt_descripcion.Text = herramienta.Descripcion;
         }
@@ -53,14 +57,16 @@ namespace TPI_NewWare.Formularios
                 {
                     //Da el alta de la herramienta
                     ng_Herramienta.Alta(txt_nombre.Text, txt_descripcion.Text);
-                    form_contenedor.ActualizarAlta();
-                    this.Close();
                 }
                 else 
                 {
                     //Modfica la herramienta
-
+                    herramienta.Nombre = txt_nombre.Text;
+                    herramienta.Descripcion = txt_descripcion.Text;
+                    herramienta.Guardar();
                 }
+                form_contenedor.ActualizarAlta();
+                this.Close();
             }
         }
 

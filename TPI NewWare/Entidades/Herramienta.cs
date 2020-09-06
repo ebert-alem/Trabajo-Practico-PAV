@@ -34,9 +34,14 @@ namespace TPI_NewWare.Entidades
             Descripcion = fila["descripcion"].ToString();
         }
 
-        public override string GuardarDatos()
+        public override string SentciaSqlCrear()
         {
             return SqlInsert(new string[2] {"nombre", "descripcion"}, new string[2] { Nombre, Descripcion});
+        }
+
+        public override string SentciaSqlActualizar()
+        {
+            return SqlUpdate(new string[2] { "nombre", "descripcion" }, new string[2] { Nombre, Descripcion }, int.Parse(Id));
         }
     }
 }

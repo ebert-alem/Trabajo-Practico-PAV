@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using TPI_NewWare.Clases;
-
+using System.Reflection;
 
 namespace TPI_NewWare.Entidades
 {   
@@ -92,20 +92,46 @@ namespace TPI_NewWare.Entidades
         //Carga los datos desde la fila al objeto
         public abstract void Cargar_datos(DataRow fila);
 
-        public void Guardar() 
+        //Crea una nueva fila en la bd
+        public void Crear() 
         {
-            _BD.Comando(GuardarDatos());
+            _BD.Comando(SentciaSqlCrear());
         }
 
         //Esta funcion provee a la funcion sqlInsert de los parametros propios del objeto en el que se implementa
-        public abstract string GuardarDatos();
-
+        public abstract string SentciaSqlCrear();
+        
+        public void Guardar()
+        {
+            _BD.Comando(SentciaSqlActualizar());
+        }
+        public abstract string SentciaSqlActualizar();
 
         public string SqlInsert(string[] Columnas, string[] Valores)
         {
             return "INSERT INTO " + NombreTabla + "(" + string.Join(", ", Columnas) + ") Values (" + string.Join(", ", Envolver("'", "'", Valores)) + ")";
         }
 
+        public string SqlUpdate(string[] Columnas, string[] Valores, int Id)
+        {
+            return "UPDATE " + NombreTabla + " SET " + SqlEquals(Columnas, Valores) + "WHERE ID=" + Id;
+        }
+
+        public string SqlEquals(string[] Columnas, string[] Valores)
+        {
+            string Condiciones = "";
+            for (int i = 0; i < Columnas.Length; i++)
+            {
+                //Produce la cadena "atributo = valor," para cada par de atributos y valores
+                Condiciones += Columnas[i] + " = '" + Valores[i] + "'";
+                //Agrega una coma salvo en el ultimo caso
+                if (i < Columnas.Length - 1) Condiciones += " , ";
+            }
+            return Condiciones;
+        }
+
+
+        //Funciones de modificacion de texto
         private string Envolver(string Envoltorio, string Cadena)
         {
             return Envoltorio + Cadena + Envoltorio;
@@ -131,5 +157,44 @@ namespace TPI_NewWare.Entidades
             _BD.Comando(sql);
         }
 
+        /*
+        //Devuelve el nombre de los atributos de un objeto
+        public string[] Atributos(bool Id=true)
+        {
+            //Obtengo el tipo de objeto actual
+            Type datos = this.GetType();
+            //Obtengo los campos de ese objeto
+            FieldInfo[] field = datos.GetFields(BindingFlags.Public | BindingFlags.Instance);
+            //Guardo el nombre de los campos como cadena
+            string[] atributos = new string[0];
+            string[] valores = new string[0];
+
+            for (int i = 0; i < field.Length; i++)
+            {   
+                //Si esta seleccionada la opcion del id o es un campo distino
+                if (Id || field[i].Name.ToUpper() != "ID")
+                {
+                    atributos.Append(field[i].Name);
+                }
+            }
+            return atributos;
+        }
+        
+        //Devuelve un array con los valores de los nombres de los atributos que se le pasa
+        public string[] Valores(string[] atributos)
+        {
+            //Obtengo el tipo de objeto actual
+            Type datos = this.GetType();
+            //Obtengo los campos de ese objeto
+            FieldInfo[] field = datos.GetFields(BindingFlags.Public | BindingFlags.Instance);
+
+            string[] valores = new string[atributos.Length];
+            foreach (string atributo in atributos)
+            {
+                valores.Length = 
+            }
+            return valores;
+        }
+        */
     }
 }

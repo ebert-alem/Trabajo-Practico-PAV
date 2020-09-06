@@ -15,15 +15,15 @@ namespace TPI_NewWare.Negocio
         public void Alta(string nombre, string descripcion)
         {
             Herramienta herramienta_nueva = new Herramienta(nombre, descripcion);
-            herramienta_nueva.Guardar();
+            herramienta_nueva.Crear();
         }
 
-        public DataTable Lista()
+        public DataTable Consulta()
         {
             return herramienta.Listar();
         }
 
-        public DataTable Lista_nombre(string Nombre)
+        public DataTable ConsultaNombre(string Nombre)
         {
             return herramienta.ListarLike("nombre", Nombre);
         }

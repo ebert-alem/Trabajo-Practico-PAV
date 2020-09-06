@@ -22,7 +22,7 @@ namespace TPI_NewWare.Formularios
         private void FrmABMHerramientas_Load(object sender, EventArgs e)
         {
             //Carga la grilla con los valores elegidos
-            CargarGrilla(Ng_Herramienta.Lista());
+            CargarGrilla(Ng_Herramienta.Consulta());
            
         }
 
@@ -43,10 +43,6 @@ namespace TPI_NewWare.Formularios
             //Actualiza la visualizacion del primer elemento
             ActualizarVisualizacion();
 
-        }
-        private void grid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //lbl_id.Text = this.grid.CurrentRow.Cells[0].Value.ToString();
         }
 
         private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -84,11 +80,11 @@ namespace TPI_NewWare.Formularios
                 string filtro = txt_nombre.Text;
                 if (filtro != "")
                 {
-                    CargarGrilla(Ng_Herramienta.Lista_nombre(filtro));
+                    CargarGrilla(Ng_Herramienta.ConsultaNombre(filtro));
                 }
                 else
                 {
-                    CargarGrilla(Ng_Herramienta.Lista());
+                    CargarGrilla(Ng_Herramienta.Consulta());
                 }
 
             }
@@ -124,20 +120,11 @@ namespace TPI_NewWare.Formularios
             }
         }
 
-        private void btn_nuevo_Click(object sender, EventArgs e)
-        {
-            //Cancela otros formularios existentes
-            CancelarFormularios();
-            frmAltaHerramientas = new FrmAltaHerramientas(this);
-            //Asigna el form a la ventana
-            AbrirFormEnPanel(frmAltaHerramientas);
-        }
-
         //Actualiza cuando un formulario se cierra habiendo realizado el cambio
         public void ActualizarAlta()
         {
             //Actualiza la grilla
-            this.CargarGrilla(Ng_Herramienta.Lista());
+            this.CargarGrilla(Ng_Herramienta.Consulta());
             //Habilita la visualizacion
             panel_visualizacion.Visible = true;
             //Muestra la nueva grilla creada como seleccionada
@@ -150,6 +137,14 @@ namespace TPI_NewWare.Formularios
         {
             panel_visualizacion.Visible = true;
         }
+        private void btn_nuevo_Click(object sender, EventArgs e)
+        {
+            //Cancela otros formularios existentes
+            CancelarFormularios();
+            frmAltaHerramientas = new FrmAltaHerramientas(this);
+            //Asigna el form a la ventana
+            AbrirFormEnPanel(frmAltaHerramientas);
+        }
 
         private void btn_modificar_Click(object sender, EventArgs e)
         {
@@ -158,6 +153,7 @@ namespace TPI_NewWare.Formularios
             frmAltaHerramientas = new FrmAltaHerramientas(this, IdActual());
             //Asigna el form a la ventana
             AbrirFormEnPanel(frmAltaHerramientas);
+            //Actualiza la tabla modificada
         }
 
         private void btn_eliminar_Click(object sender, EventArgs e)
@@ -165,7 +161,7 @@ namespace TPI_NewWare.Formularios
             //Elimina la herramienta seleccionada en el momento
             Ng_Herramienta.Baja(IdActual());
             //Actualiza la grilla
-            this.CargarGrilla(Ng_Herramienta.Lista());
+            this.CargarGrilla(Ng_Herramienta.Consulta());
         }
 
         //Devuelve el id de la fila actualmente seleccionada
