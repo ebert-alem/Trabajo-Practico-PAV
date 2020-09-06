@@ -94,7 +94,7 @@ namespace TPI_NewWare.Entidades
 
         public void Guardar() 
         {
-            _BD.Insertar(GuardarDatos());
+            _BD.Comando(GuardarDatos());
         }
 
         //Esta funcion provee a la funcion sqlInsert de los parametros propios del objeto en el que se implementa
@@ -104,6 +104,11 @@ namespace TPI_NewWare.Entidades
         public string SqlInsert(string[] Columnas, string[] Valores)
         {
             return "INSERT INTO " + NombreTabla + "(" + string.Join(", ", Columnas) + ") Values (" + string.Join(", ", Envolver("'", "'", Valores)) + ")";
+        }
+
+        private string Envolver(string Envoltorio, string Cadena)
+        {
+            return Envoltorio + Cadena + Envoltorio;
         }
 
         private string Envolver(string EnvoltorioInicio, string EnvoltorioFin, string Cadena)
@@ -120,6 +125,11 @@ namespace TPI_NewWare.Entidades
             return Cadenas;
         }
 
+        public void Eliminar(int Id)
+        {
+            string sql = "DELETE FROM " + NombreTabla + " WHERE ID=" + Id.ToString();
+            _BD.Comando(sql);
+        }
 
     }
 }

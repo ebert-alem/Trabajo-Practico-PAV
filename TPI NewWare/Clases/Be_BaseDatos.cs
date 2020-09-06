@@ -43,11 +43,12 @@ namespace TPI_NewWare.Clases
         }
 
         //Inserta un nuevo elemento en la tabla 
-        public void Insertar(string sql) 
+        public void Comando(string sql) 
         {
             Conectar();
             Cmd.CommandText = sql;
             Cmd.ExecuteNonQuery();
+            Desconectar();
         }
 
         public String SentenciaInsertar(string Atributos)

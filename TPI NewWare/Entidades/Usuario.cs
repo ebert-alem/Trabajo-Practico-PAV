@@ -62,7 +62,7 @@ namespace TPI_NewWare.Entidades
         {
             //Inserta una nueva fila en la tabla de usuario con los atributos del objeto
             string sql = "INSERT INTO USUARIOS (nombreUsuario,contraseña) VALUES ('" + this.Nombre + "',HASHBYTES('SHA1','" + this.Pass + "'))";
-            _BD.Insertar(sql);
+            _BD.Comando(sql);
         }
 
         public override void Cargar_datos(DataRow fila)

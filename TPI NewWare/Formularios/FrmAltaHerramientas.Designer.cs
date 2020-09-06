@@ -142,6 +142,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAltaHerramientas";
             this.Text = "FrmAltaHerramientas";
+            this.Load += new System.EventHandler(this.FrmAltaHerramientas_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

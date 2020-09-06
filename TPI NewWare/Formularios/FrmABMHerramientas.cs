@@ -150,5 +150,28 @@ namespace TPI_NewWare.Formularios
         {
             panel_visualizacion.Visible = true;
         }
+
+        private void btn_modificar_Click(object sender, EventArgs e)
+        {
+            //Cancela otros formularios existentes
+            CancelarFormularios();
+            frmAltaHerramientas = new FrmAltaHerramientas(this, IdActual());
+            //Asigna el form a la ventana
+            AbrirFormEnPanel(frmAltaHerramientas);
+        }
+
+        private void btn_eliminar_Click(object sender, EventArgs e)
+        {
+            //Elimina la herramienta seleccionada en el momento
+            Ng_Herramienta.Baja(IdActual());
+            //Actualiza la grilla
+            this.CargarGrilla(Ng_Herramienta.Lista());
+        }
+
+        //Devuelve el id de la fila actualmente seleccionada
+        private int IdActual()
+        {
+            return int.Parse(Tabla_Completa.Rows[this.grid.CurrentRow.Index]["id"].ToString());
+        }
     }
 }
