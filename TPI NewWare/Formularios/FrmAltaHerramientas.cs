@@ -42,5 +42,7 @@ namespace TPI_NewWare.Formularios
                 this.Close();
             }
         }
+
+       
     }
 }

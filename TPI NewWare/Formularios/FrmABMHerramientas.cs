@@ -126,6 +126,7 @@ namespace TPI_NewWare.Formularios
 
         private void btn_nuevo_Click(object sender, EventArgs e)
         {
+
             //Cancela otros formularios existentes
             CancelarFormularios();
             frmAltaHerramientas = new FrmAltaHerramientas(this);
@@ -150,5 +151,7 @@ namespace TPI_NewWare.Formularios
         {
             panel_visualizacion.Visible = true;
         }
+
+        
     }
 }

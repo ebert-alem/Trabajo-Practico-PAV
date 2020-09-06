@@ -39,27 +39,29 @@
             // lbl_nombre
             // 
             this.lbl_nombre.AutoSize = true;
-            this.lbl_nombre.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_nombre.Location = new System.Drawing.Point(30, 105);
+            this.lbl_nombre.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_nombre.ForeColor = System.Drawing.Color.White;
+            this.lbl_nombre.Location = new System.Drawing.Point(31, 67);
             this.lbl_nombre.Name = "lbl_nombre";
-            this.lbl_nombre.Size = new System.Drawing.Size(65, 17);
+            this.lbl_nombre.Size = new System.Drawing.Size(72, 20);
             this.lbl_nombre.TabIndex = 11;
             this.lbl_nombre.Text = "Nombre:";
             // 
             // lbl_descripcion
             // 
             this.lbl_descripcion.AutoSize = true;
-            this.lbl_descripcion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_descripcion.Location = new System.Drawing.Point(30, 138);
+            this.lbl_descripcion.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_descripcion.ForeColor = System.Drawing.Color.White;
+            this.lbl_descripcion.Location = new System.Drawing.Point(31, 124);
             this.lbl_descripcion.Name = "lbl_descripcion";
-            this.lbl_descripcion.Size = new System.Drawing.Size(84, 17);
+            this.lbl_descripcion.Size = new System.Drawing.Size(100, 20);
             this.lbl_descripcion.TabIndex = 10;
-            this.lbl_descripcion.Text = "Descrpcion:";
+            this.lbl_descripcion.Text = "Descripción:";
             // 
             // btn_crear
             // 
             this.btn_crear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_crear.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btn_crear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btn_crear.FlatAppearance.BorderSize = 0;
             this.btn_crear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_crear.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
@@ -70,7 +72,6 @@
             this.btn_crear.IconSize = 16;
             this.btn_crear.Location = new System.Drawing.Point(1, 411);
             this.btn_crear.Name = "btn_crear";
-            this.btn_crear.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btn_crear.Rotation = 0D;
             this.btn_crear.Size = new System.Drawing.Size(200, 40);
             this.btn_crear.TabIndex = 2;
@@ -82,7 +83,7 @@
             // btn_cancelar
             // 
             this.btn_cancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_cancelar.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btn_cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btn_cancelar.FlatAppearance.BorderSize = 0;
             this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cancelar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
@@ -93,7 +94,6 @@
             this.btn_cancelar.IconSize = 16;
             this.btn_cancelar.Location = new System.Drawing.Point(198, 411);
             this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btn_cancelar.Rotation = 0D;
             this.btn_cancelar.Size = new System.Drawing.Size(200, 40);
             this.btn_cancelar.TabIndex = 3;
@@ -105,20 +105,20 @@
             // txt_descripcion
             // 
             this.txt_descripcion.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_descripcion.Location = new System.Drawing.Point(33, 168);
+            this.txt_descripcion.Location = new System.Drawing.Point(35, 161);
             this.txt_descripcion.Multiline = true;
             this.txt_descripcion.Name = "txt_descripcion";
             this.txt_descripcion.Pp_mensajeError = "\"Descripción vacia\"";
             this.txt_descripcion.Pp_nombre_campo = "\"descripcion\"";
             this.txt_descripcion.Pp_nombre_tabla = "\"HERRAMIENTAS\"";
             this.txt_descripcion.Pp_validable = true;
-            this.txt_descripcion.Size = new System.Drawing.Size(335, 85);
+            this.txt_descripcion.Size = new System.Drawing.Size(333, 85);
             this.txt_descripcion.TabIndex = 1;
             // 
             // txt_nombre
             // 
             this.txt_nombre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nombre.Location = new System.Drawing.Point(112, 102);
+            this.txt_nombre.Location = new System.Drawing.Point(112, 67);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Pp_mensajeError = "\"Nombre vacio\"";
             this.txt_nombre.Pp_nombre_campo = "\"nombre\"";
@@ -131,7 +131,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(400, 450);
             this.Controls.Add(this.btn_crear);
             this.Controls.Add(this.btn_cancelar);
