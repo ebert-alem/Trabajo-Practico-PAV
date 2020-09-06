@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace TPI_NewWare.Formularios
 {
-    public partial class FrmTareas : Form
+    public partial class FrmModificacionHerramientas : Form
     {
-        public FrmTareas()
+        public FrmModificacionHerramientas()
         {
             InitializeComponent();
-        }
-
-        private void btnAgregarTarea_Click(object sender, EventArgs e)
-        {
-            listTareas.Items.Add(textAgregarTarea.Text);
-        }
-
-        private void FrmTareas_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

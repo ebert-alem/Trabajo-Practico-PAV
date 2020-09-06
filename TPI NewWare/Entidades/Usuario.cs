@@ -15,7 +15,7 @@ namespace TPI_NewWare.Entidades
         private string Nombre;
         private string Pass;
 
-        Be_BaseDatos _BD = new Be_BaseDatos();
+        protected override string NombreTabla => "USUARIOS";
 
         public Usuario(string Nombre, string Pass)
         {
@@ -57,18 +57,29 @@ namespace TPI_NewWare.Entidades
         }
 
         //Carga los datos desde la fila al objeto
-        public new void Cargar_datos(DataRow fila)
-        {
-            this.Nombre = fila["nombreUsuario"].ToString();
-            this.Pass = fila["contraseña"].ToString();
-        }
 
         public void Insertar()
         {
             //Inserta una nueva fila en la tabla de usuario con los atributos del objeto
             string sql = "INSERT INTO USUARIOS (nombreUsuario,contraseña) VALUES ('" + this.Nombre + "',HASHBYTES('SHA1','" + this.Pass + "'))";
-            _BD.Insertar(sql);
+            _BD.Comando(sql);
         }
-                
+
+        public override void Cargar_datos(DataRow fila)
+        {
+            this.Nombre = fila["nombreUsuario"].ToString();
+            this.Pass = fila["contraseña"].ToString();
+        }
+
+        public override string SentciaSqlCrear()
+        {
+            return "(nombreUsuario, contraseña) VALUES('" + this.Nombre + "',HASHBYTES('SHA1', '" + this.Pass + "'))";
+        }
+
+        public override string SentciaSqlActualizar()
+        {
+            //Completar
+            throw new NotImplementedException();
+        }
     }
 }

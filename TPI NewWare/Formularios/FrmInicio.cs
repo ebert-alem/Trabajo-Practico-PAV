@@ -154,7 +154,15 @@ namespace TPI_NewWare
             mostrarSubMenu(panelSubEstadisticas);
         }
 
-      
+        private void btnSubHerramientas_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new FrmABMHerramientas());
+        }
+
+        private void panelPrincipal_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
 }

@@ -8,7 +8,7 @@ using System.Data;
 
 namespace TPI_NewWare.Clases
 {
-    class Be_BaseDatos
+    public class Be_BaseDatos
     {
         SqlConnection Conexion = new SqlConnection();
         SqlCommand Cmd = new SqlCommand();
@@ -43,11 +43,12 @@ namespace TPI_NewWare.Clases
         }
 
         //Inserta un nuevo elemento en la tabla 
-        public void Insertar(string sql) 
+        public void Comando(string sql) 
         {
             Conectar();
             Cmd.CommandText = sql;
             Cmd.ExecuteNonQuery();
+            Desconectar();
         }
 
         public String SentenciaInsertar(string Atributos)
