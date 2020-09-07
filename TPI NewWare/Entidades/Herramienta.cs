@@ -44,9 +44,5 @@ namespace TPI_NewWare.Entidades
             return SqlUpdate(new string[2] { "nombre", "descripcion" }, new string[2] { Nombre, Descripcion }, int.Parse(Id));
         }
 
-        public override string SentciaSqlActualizar()
-        {
-            return SqlUpdate(new string[2] { "nombre", "descripcion" }, new string[2] { Nombre, Descripcion }, int.Parse(Id));
-        }
     }
 }
