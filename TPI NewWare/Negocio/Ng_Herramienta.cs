@@ -11,22 +11,34 @@ namespace TPI_NewWare.Negocio
 {
     class Ng_Herramienta
     {
+        Herramienta herramienta = new Herramienta();
         public void Alta(string nombre, string descripcion)
         {
-            Herramienta herramienta = new Herramienta(nombre, descripcion);
-            herramienta.Guardar();
+            Herramienta herramienta_nueva = new Herramienta(nombre, descripcion);
+            herramienta_nueva.Crear();
         }
 
-        public DataTable Lista()
+        public DataTable Consulta()
         {
-            Herramienta herramienta = new Herramienta();
             return herramienta.Listar();
         }
 
-        public DataTable Lista_nombre(string Nombre)
+        public DataTable ConsultaNombre(string Nombre)
         {
-            Herramienta herramienta = new Herramienta();
             return herramienta.ListarLike("nombre", Nombre);
         }
+
+        public void Baja(int Id)
+        {
+            herramienta.Eliminar(Id);
+        }
+
+        public Herramienta Buscar(int id)
+        {
+            Herramienta herramienta_nueva = new Herramienta();
+            herramienta_nueva.Buscar(id);
+            return herramienta_nueva;
+        }
+
     }
 }

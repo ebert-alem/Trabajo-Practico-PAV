@@ -27,7 +27,7 @@ namespace TPI_NewWare.Entidades
         }
 
         //Busca un usuario en BD e indica si lo encuentra
-        public bool Buscar(string nombre, string pass) 
+        public bool Buscar(string nombre, string pass)
         {
             string consulta = "SELECT * FROM USUARIOS WHERE nombreUsuario = '" + nombre + "' and contraseña = HASHBYTES('SHA1','" + pass + "')";
             DataTable tabla = _BD.Consulta(consulta);
@@ -62,7 +62,7 @@ namespace TPI_NewWare.Entidades
         {
             //Inserta una nueva fila en la tabla de usuario con los atributos del objeto
             string sql = "INSERT INTO USUARIOS (nombreUsuario,contraseña) VALUES ('" + this.Nombre + "',HASHBYTES('SHA1','" + this.Pass + "'))";
-            _BD.Insertar(sql);
+            _BD.Comando(sql);
         }
 
         public override void Cargar_datos(DataRow fila)
@@ -71,9 +71,15 @@ namespace TPI_NewWare.Entidades
             this.Pass = fila["contraseña"].ToString();
         }
 
-        public override string GuardarDatos()
+        public override string SentciaSqlCrear()
         {
             return "(nombreUsuario, contraseña) VALUES('" + this.Nombre + "',HASHBYTES('SHA1', '" + this.Pass + "'))";
+        }
+
+        public override string SentciaSqlActualizar()
+        {
+            //Completar
+            throw new NotImplementedException();
         }
     }
 }

@@ -12,10 +12,10 @@ namespace TPI_NewWare.Clases
     {
         SqlConnection Conexion = new SqlConnection();
         SqlCommand Cmd = new SqlCommand();
-        
+
         //Cadena con la informacion del servidor y bd a conectar
         string Cadena_conexion = "Data Source = pavTpGrupal.mssql.somee.com; Persist Security Info = True; User ID = ebertalem_SQLLogin_1; Password = 4m8u7yha3i";
-      
+
         //Abre la conexion con el servidor
         private void Conectar()
         {
@@ -43,11 +43,12 @@ namespace TPI_NewWare.Clases
         }
 
         //Inserta un nuevo elemento en la tabla 
-        public void Insertar(string sql) 
+        public void Comando(string sql)
         {
             Conectar();
             Cmd.CommandText = sql;
             Cmd.ExecuteNonQuery();
+            Desconectar();
         }
 
         public String SentenciaInsertar(string Atributos)
