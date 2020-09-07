@@ -8,7 +8,7 @@ using TPI_NewWare.Clases;
 using System.Reflection;
 
 namespace TPI_NewWare.Entidades
-{   
+{
     // Clase base para todas las clases del proyecto
     public abstract class ClaseBase
     {
@@ -50,10 +50,10 @@ namespace TPI_NewWare.Entidades
             //Condicion por la que se filtra la busqueda
             string Condiciones = " WHERE ( ";
             for (int i = 0; i < Columnas.Length; i++)
-            {   
+            {
                 Condiciones += Columnas[i] + " = '" + Valores[i] + "'";
                 //Agrega una coma salvo en el ultimo caso
-                if (i < Columnas.Length - 1) Condiciones +=  " , ";
+                if (i < Columnas.Length - 1) Condiciones += " , ";
             }
             Condiciones += " ) ";
             return _BD.Consulta("SELECT * FROM " + NombreTabla + Condiciones);
@@ -74,7 +74,7 @@ namespace TPI_NewWare.Entidades
             for (int i = 0; i < Columnas.Length; i++)
             {
                 Condiciones += Columnas[i] + " LIKE '%" + Valores[i] + "%'";
-                
+
                 if (i < Columnas.Length - 1) Condiciones += " , ";
             }
             Condiciones += " ) ";
@@ -93,14 +93,14 @@ namespace TPI_NewWare.Entidades
         public abstract void Cargar_datos(DataRow fila);
 
         //Crea una nueva fila en la bd
-        public void Crear() 
+        public void Crear()
         {
             _BD.Comando(SentciaSqlCrear());
         }
 
         //Esta funcion provee a la funcion sqlInsert de los parametros propios del objeto en el que se implementa
         public abstract string SentciaSqlCrear();
-        
+
         public void Guardar()
         {
             _BD.Comando(SentciaSqlActualizar());
@@ -144,7 +144,7 @@ namespace TPI_NewWare.Entidades
 
         private string[] Envolver(string EnvoltorioInicio, string EnvoltorioFin, string[] Cadenas)
         {
-            for (int i = 0; i < Cadenas.Length ; i++)
+            for (int i = 0; i < Cadenas.Length; i++)
             {
                 Cadenas[i] = Envolver(EnvoltorioInicio, EnvoltorioFin, Cadenas[i]);
             }

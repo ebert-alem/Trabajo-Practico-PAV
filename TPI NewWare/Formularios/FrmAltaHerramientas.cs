@@ -32,7 +32,7 @@ namespace TPI_NewWare.Formularios
             //Seteo el panel contenedor como atributo
             form_contenedor = form;
             btn_crear.Text = "Modificar";
-            
+
             //Se obtiene el objeto a modificar
             herramienta = ng_Herramienta.Buscar(id);
             //Se actualizan los campos del formulario con los atributos
@@ -49,16 +49,16 @@ namespace TPI_NewWare.Formularios
         private void btn_crear_Click(object sender, EventArgs e)
         {
             TratamientosEspeciales tratamiento = new TratamientosEspeciales();
-            
+
             //Valida que el formato de los datos ingresado sea correcto
-            if(tratamiento.validar(this.Controls) == TratamientosEspeciales.Validacion.correcta)
+            if (tratamiento.validar(this.Controls) == TratamientosEspeciales.Validacion.correcta)
             {
                 if (btn_crear.Text == "Crear")
                 {
                     //Da el alta de la herramienta
                     ng_Herramienta.Alta(txt_nombre.Text, txt_descripcion.Text);
                 }
-                else 
+                else
                 {
                     //Modfica la herramienta
                     herramienta.Nombre = txt_nombre.Text;

@@ -23,7 +23,7 @@ namespace TPI_NewWare.Formularios
         {
             //Carga la grilla con los valores elegidos
             CargarGrilla(Ng_Herramienta.Consulta());
-           
+
         }
 
         private void CargarGrilla(DataTable tabla)
@@ -59,8 +59,8 @@ namespace TPI_NewWare.Formularios
                 lbl_nombre.Text = "";
                 lbl_descripcion.Text = "";
             }
-            else 
-            {             
+            else
+            {
                 //Busca la herramienta seleccionada en la bd por id
                 Herramienta herramienta = new Herramienta();
                 //Carga un objeto con los datos de la tabal seleccionada 
@@ -75,7 +75,7 @@ namespace TPI_NewWare.Formularios
         //Actualiza la tabla segun el nombre ingresado al presionar enter
         private void txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar==Convert.ToChar(Keys.Enter))
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
                 string filtro = txt_nombre.Text;
                 if (filtro != "")
@@ -93,7 +93,7 @@ namespace TPI_NewWare.Formularios
         private void AbrirFormEnPanel(object Subform)
         {
             if (this.panel_work_space.Controls.Count > 0)
-            {   
+            {
                 //Oculta el panel de previsualizacion
                 panel_visualizacion.Visible = false;
             }
@@ -133,10 +133,11 @@ namespace TPI_NewWare.Formularios
             ActualizarVisualizacion();
         }
 
-        public void ActualizarCancelacion() 
+        public void ActualizarCancelacion()
         {
             panel_visualizacion.Visible = true;
         }
+
         private void btn_nuevo_Click(object sender, EventArgs e)
         {
             //Cancela otros formularios existentes
@@ -144,7 +145,7 @@ namespace TPI_NewWare.Formularios
             frmAltaHerramientas = new FrmAltaHerramientas(this);
             //Asigna el form a la ventana
             AbrirFormEnPanel(frmAltaHerramientas);
-        }
+        }                      
 
         private void btn_modificar_Click(object sender, EventArgs e)
         {

@@ -33,8 +33,8 @@ namespace TPI_NewWare.Negocio
             herramienta.Eliminar(Id);
         }
 
-        public Herramienta Buscar(int id) 
-        { 
+        public Herramienta Buscar(int id)
+        {
             Herramienta herramienta_nueva = new Herramienta();
             herramienta_nueva.Buscar(id);
             return herramienta_nueva;

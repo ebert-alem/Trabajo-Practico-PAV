@@ -156,6 +156,8 @@ namespace TPI_NewWare
 
         private void btnSubHerramientas_Click(object sender, EventArgs e)
         {
+            lbl_Titulo.Text = "Herramientas";
+            lbl_Titulo.Visible = true;
             AbrirFormEnPanel(new FrmABMHerramientas());
         }
 
@@ -163,6 +165,8 @@ namespace TPI_NewWare
         {
 
         }
+
+        
     }
 
 }

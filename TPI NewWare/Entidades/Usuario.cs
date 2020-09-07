@@ -27,7 +27,7 @@ namespace TPI_NewWare.Entidades
         }
 
         //Busca un usuario en BD e indica si lo encuentra
-        public bool Buscar(string nombre, string pass) 
+        public bool Buscar(string nombre, string pass)
         {
             string consulta = "SELECT * FROM USUARIOS WHERE nombreUsuario = '" + nombre + "' and contraseña = HASHBYTES('SHA1','" + pass + "')";
             DataTable tabla = _BD.Consulta(consulta);

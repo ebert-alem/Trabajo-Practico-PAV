@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInicio));
             this.panelBarrraSup = new System.Windows.Forms.Panel();
+            this.lbl_Titulo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.picLogin = new System.Windows.Forms.PictureBox();
             this.panelPrincipal = new System.Windows.Forms.Panel();
@@ -84,6 +85,8 @@
             // 
             // panelBarrraSup
             // 
+            this.panelBarrraSup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panelBarrraSup.Controls.Add(this.lbl_Titulo);
             this.panelBarrraSup.Controls.Add(this.panel1);
             this.panelBarrraSup.Controls.Add(this.picLogin);
             this.panelBarrraSup.Dock = System.Windows.Forms.DockStyle.Top;
@@ -91,6 +94,19 @@
             this.panelBarrraSup.Name = "panelBarrraSup";
             this.panelBarrraSup.Size = new System.Drawing.Size(806, 100);
             this.panelBarrraSup.TabIndex = 14;
+            // 
+            // lbl_Titulo
+            // 
+            this.lbl_Titulo.AutoSize = true;
+            this.lbl_Titulo.Font = new System.Drawing.Font("Century Gothic", 32.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Titulo.ForeColor = System.Drawing.Color.White;
+            this.lbl_Titulo.Location = new System.Drawing.Point(31, 27);
+            this.lbl_Titulo.Name = "lbl_Titulo";
+            this.lbl_Titulo.Size = new System.Drawing.Size(191, 52);
+            this.lbl_Titulo.TabIndex = 13;
+            this.lbl_Titulo.Text = "              ";
+            this.lbl_Titulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_Titulo.Visible = false;
             // 
             // panel1
             // 
@@ -817,6 +833,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmInicio_FormClosed);
             this.Load += new System.EventHandler(this.Form_Inicio_Load);
             this.panelBarrraSup.ResumeLayout(false);
+            this.panelBarrraSup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogin)).EndInit();
             this.panelPrincipal.ResumeLayout(false);
             this.panelUsuario.ResumeLayout(false);
@@ -872,6 +889,7 @@
         private FontAwesome.Sharp.IconButton btnSubEstProdVend;
         private FontAwesome.Sharp.IconButton btnEstadisticas;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lbl_Titulo;
     }
 }
 
