@@ -33,3 +33,7 @@ herramientas en los proyectos y los clientes de la empresa.
 - Gestión de tareas por etapas de desarrollo
 - Gestión de trabajo de empleados
 - Generación de estadísticas reportes y resúmenes
+
+<strong>Estructura de datos</strong>
+
+![Aquí la descripción de la imagen por si no carga](Esquema_Datos.png)
