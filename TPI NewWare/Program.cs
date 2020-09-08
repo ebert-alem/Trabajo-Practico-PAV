@@ -16,8 +16,8 @@ namespace TPI_NewWare
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new FrmLogin());
-            Application.Run(new FrmInicio());
+            Application.Run(new FrmLogin());
+            //Application.Run(new FrmInicio());
 
         }
     }
