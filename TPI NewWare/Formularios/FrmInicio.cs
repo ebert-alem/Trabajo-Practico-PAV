@@ -166,7 +166,12 @@ namespace TPI_NewWare
 
         }
 
-        
+        private void btnSubRoles_Click(object sender, EventArgs e)
+        {
+            lbl_Titulo.Text = "Roles";
+            lbl_Titulo.Visible = true;
+            AbrirFormEnPanel(new FrmABMRoles());
+        }
     }
 
 }
