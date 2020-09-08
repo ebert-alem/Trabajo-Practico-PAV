@@ -3,6 +3,7 @@ using System.Data;
 using System.Windows.Forms;
 using TPI_NewWare.Entidades;
 using TPI_NewWare.Negocio;
+using TPI_NewWare.Formularios.Roles;
 
 namespace TPI_NewWare.Formularios
 {
@@ -12,7 +13,7 @@ namespace TPI_NewWare.Formularios
         DataTable Tabla_Completa = new DataTable();
 
         //Formularios internos
-        private FrmAltaRoles frmAltaRoles;
+        private FrmAMBase frmAMRoles;
         private int v;
 
         public FrmABMRoles()
@@ -115,9 +116,9 @@ namespace TPI_NewWare.Formularios
             //Vuelve visible el panel de visualizacion
             panel_visualizacion.Visible = true;
             //Si existe algun formulario abierto lo cancela
-            if (frmAltaRoles != null)
+            if (frmAMRoles != null)
             {
-                frmAltaRoles.Close();
+                frmAMRoles.Close();
             }
         }
 
@@ -143,18 +144,18 @@ namespace TPI_NewWare.Formularios
         {
             //Cancela otros formularios existentes
             CancelarFormularios();
-            frmAltaRoles = new FrmAltaRoles(this);
+            frmAMRoles = new FrmAMRoles(this);
             //Asigna el form a la ventana
-            AbrirFormEnPanel(frmAltaRoles);
+            AbrirFormEnPanel(frmAMRoles);
         }                      
 
         private void btn_modificar_Click(object sender, EventArgs e)
         {
             //Cancela otros formularios existentes
             CancelarFormularios();
-            frmAltaRoles = new FrmAltaRoles(this, IdActual());
+            frmAMRoles = new FrmAMRoles(this, IdActual());
             //Asigna el form a la ventana
-            AbrirFormEnPanel(frmAltaRoles);
+            AbrirFormEnPanel(frmAMRoles);
             //Actualiza la tabla modificada
         }
 
