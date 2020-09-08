@@ -14,7 +14,6 @@ namespace TPI_NewWare.Formularios
 
         //Formularios internos
         private FrmAMBase frmAMRoles;
-        private int v;
 
         public FrmABMRoles()
         {

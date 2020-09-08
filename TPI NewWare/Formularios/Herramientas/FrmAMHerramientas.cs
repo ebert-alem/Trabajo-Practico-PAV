@@ -13,19 +13,19 @@ namespace TPI_NewWare.Formularios
 {
     public partial class FrmAMHerramientas : TPI_NewWare.Formularios.FrmAMBase
     {
-        FrmABMHerramientas form_contenedor;
+        FrmABMBase form_contenedor;
 
         Ng_Herramienta ng_Herramienta = new Ng_Herramienta();
         Herramienta herramienta;
 
-        public FrmAMHerramientas(FrmABMHerramientas form)
+        public FrmAMHerramientas(FrmABMBase form)
         {
             InitializeComponent();
             //Seteo el panel contenedor como atributo
             form_contenedor = form;
         }
 
-        public FrmAMHerramientas(FrmABMHerramientas form, int id)
+        public FrmAMHerramientas(FrmABMBase form, int id)
         {
             InitializeComponent();
             //Seteo el panel contenedor como atributo

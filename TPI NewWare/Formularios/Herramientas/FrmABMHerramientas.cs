@@ -142,18 +142,18 @@ namespace TPI_NewWare.Formularios
         {
             //Cancela otros formularios existentes
             CancelarFormularios();
-            frmAMHerramientas = new FrmAMHerramientas(this);
+            //frmAMHerramientas = new FrmAMHerramientas(this);
             //Asigna el form a la ventana
-            AbrirFormEnPanel(frmAMHerramientas);
+            //AbrirFormEnPanel(frmAMHerramientas);
         }                      
 
         private void btn_modificar_Click(object sender, EventArgs e)
         {
             //Cancela otros formularios existentes
             CancelarFormularios();
-            frmAMHerramientas = new FrmAMHerramientas(this, IdActual());
+            //frmAMHerramientas = new FrmAMHerramientas(this, IdActual());
             //Asigna el form a la ventana
-            AbrirFormEnPanel(frmAMHerramientas);
+            //AbrirFormEnPanel(frmAMHerramientas);
             //Actualiza la tabla modificada
         }
 
