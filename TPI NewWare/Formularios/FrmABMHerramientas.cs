@@ -159,10 +159,13 @@ namespace TPI_NewWare.Formularios
 
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
-            //Elimina la herramienta seleccionada en el momento
-            Ng_Herramienta.Baja(IdActual());
-            //Actualiza la grilla
-            this.CargarGrilla(Ng_Herramienta.Consulta());
+            if (MessageBox.Show("¿Desea eliminar la herramienta seleccionada?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                //Elimina la herramienta seleccionada en el momento
+                Ng_Herramienta.Baja(IdActual());
+                //Actualiza la grilla
+                this.CargarGrilla(Ng_Herramienta.Consulta());
+            }
         }
 
         //Devuelve el id de la fila actualmente seleccionada
