@@ -170,10 +170,13 @@ namespace TPI_NewWare.Formularios
 
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
-            //Elimina la herramienta seleccionada en el momento
-            Ng_Rol.Baja(IdActual());
-            //Actualiza la grilla
-            this.CargarGrilla(Ng_Rol.Consulta());
+            if (MessageBox.Show("¿Desea eliminar el rol seleccionado?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                //Elimina la herramienta seleccionada en el momento
+                Ng_Rol.Baja(IdActual());
+                //Actualiza la grilla
+                this.CargarGrilla(Ng_Rol.Consulta());
+            }
         }
 
         //Devuelve el id de la fila actualmente seleccionada
