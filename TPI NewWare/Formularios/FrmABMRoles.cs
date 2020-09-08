@@ -20,16 +20,6 @@ namespace TPI_NewWare.Formularios
             InitializeComponent();
         }
 
-        public FrmABMRoles(FrmABMRoles frmABMRoles)
-        {
-            this.frmAltaRoles = frmAltaRoles;
-        }
-
-        public FrmABMRoles(FrmABMRoles frmABMRoles, int v) : this(frmABMRoles)
-        {
-            this.v = v;
-        }
-
         private void FrmABMRoles_Load(object sender, EventArgs e)
         {
             //Carga la grilla con los valores elegidos

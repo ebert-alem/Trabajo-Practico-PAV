@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TPI_NewWare.Formularios;
 
 namespace TPI_NewWare
 {
@@ -16,8 +17,8 @@ namespace TPI_NewWare
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmLogin());
-            //Application.Run(new FrmInicio());
+            //Application.Run(new FrmLogin());
+            Application.Run(new FrmInicio());
 
         }
     }

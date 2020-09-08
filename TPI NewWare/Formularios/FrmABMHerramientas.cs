@@ -12,7 +12,7 @@ namespace TPI_NewWare.Formularios
         DataTable Tabla_Completa = new DataTable();
 
         //Formularios internos
-        private FrmAltaHerramientas frmAltaHerramientas;
+        private FrmAMBase frmAMHerramientas;
 
         public FrmABMHerramientas()
         {
@@ -114,9 +114,9 @@ namespace TPI_NewWare.Formularios
             //Vuelve visible el panel de visualizacion
             panel_visualizacion.Visible = true;
             //Si existe algun formulario abierto lo cancela
-            if (frmAltaHerramientas != null)
+            if (frmAMHerramientas != null)
             {
-                frmAltaHerramientas.Close();
+                frmAMHerramientas.Close();
             }
         }
 
@@ -142,18 +142,18 @@ namespace TPI_NewWare.Formularios
         {
             //Cancela otros formularios existentes
             CancelarFormularios();
-            frmAltaHerramientas = new FrmAltaHerramientas(this);
+            frmAMHerramientas = new FrmAMHerramientas(this);
             //Asigna el form a la ventana
-            AbrirFormEnPanel(frmAltaHerramientas);
+            AbrirFormEnPanel(frmAMHerramientas);
         }                      
 
         private void btn_modificar_Click(object sender, EventArgs e)
         {
             //Cancela otros formularios existentes
             CancelarFormularios();
-            frmAltaHerramientas = new FrmAltaHerramientas(this, IdActual());
+            frmAMHerramientas = new FrmAMHerramientas(this, IdActual());
             //Asigna el form a la ventana
-            AbrirFormEnPanel(frmAltaHerramientas);
+            AbrirFormEnPanel(frmAMHerramientas);
             //Actualiza la tabla modificada
         }
 

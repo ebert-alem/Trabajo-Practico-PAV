@@ -66,6 +66,12 @@
     <Compile Include="Entidades\Herramienta.cs" />
     <Compile Include="Entidades\Rol.cs" />
     <Compile Include="Entidades\Usuario.cs" />
+    <Compile Include="Formularios\FrmAMBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmAMBase.Designer.cs">
+      <DependentUpon>FrmAMBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmABMRoles.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,12 @@
     </Compile>
     <Compile Include="Formularios\FrmAltaHerramientas.Designer.cs">
       <DependentUpon>FrmAltaHerramientas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmAMHerramientas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmAMHerramientas.Designer.cs">
+      <DependentUpon>FrmAMHerramientas.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmTareas.cs">
       <SubType>Form</SubType>
@@ -119,6 +131,9 @@
     <Compile Include="Negocio\Ng_Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\FrmAMBase.resx">
+      <DependentUpon>FrmAMBase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmABMRoles.resx">
       <DependentUpon>FrmABMRoles.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmAltaHerramientas.resx">
       <DependentUpon>FrmAltaHerramientas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmAMHerramientas.resx">
+      <DependentUpon>FrmAMHerramientas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmPromedios.resx">
       <DependentUpon>FrmPromedios.cs</DependentUpon>
