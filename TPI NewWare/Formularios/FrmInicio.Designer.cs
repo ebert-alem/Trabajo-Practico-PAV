@@ -674,6 +674,7 @@
             this.btnSubRoles.Text = "Roles";
             this.btnSubRoles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSubRoles.UseVisualStyleBackColor = true;
+            this.btnSubRoles.Click += new System.EventHandler(this.btnSubRoles_Click);
             // 
             // btnSoporte
             // 
