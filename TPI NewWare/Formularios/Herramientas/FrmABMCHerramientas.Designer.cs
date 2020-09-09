@@ -35,20 +35,27 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txt_nombre = new TPI_NewWare.Clases.TextBox01();
+            this.lbl_filtro_nombre = new System.Windows.Forms.Label();
+            this.panel_work_space.SuspendLayout();
+            this.panel_visualizacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_eliminar
             // 
             this.btn_eliminar.FlatAppearance.BorderSize = 0;
+            this.btn_eliminar.Location = new System.Drawing.Point(266, 457);
             // 
             // btn_modificar
             // 
             this.btn_modificar.FlatAppearance.BorderSize = 0;
+            this.btn_modificar.Location = new System.Drawing.Point(136, 457);
             // 
             // btn_nuevo
             // 
             this.btn_nuevo.FlatAppearance.BorderSize = 0;
+            this.btn_nuevo.Location = new System.Drawing.Point(0, 457);
             // 
             // grid
             // 
@@ -83,7 +90,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grid.DefaultCellStyle = dataGridViewCellStyle2;
             this.grid.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.grid.Location = new System.Drawing.Point(3, 65);
+            this.grid.Location = new System.Drawing.Point(0, 55);
             this.grid.Name = "grid";
             this.grid.ReadOnly = true;
             this.grid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
@@ -97,7 +104,7 @@
             this.grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.grid.RowHeadersVisible = false;
             this.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grid.Size = new System.Drawing.Size(394, 385);
+            this.grid.Size = new System.Drawing.Size(394, 445);
             this.grid.TabIndex = 13;
             this.grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellClick);
             // 
@@ -125,15 +132,46 @@
             this.Column3.ReadOnly = true;
             this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
+            // txt_nombre
+            // 
+            this.txt_nombre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nombre.Location = new System.Drawing.Point(92, 18);
+            this.txt_nombre.Name = "txt_nombre";
+            this.txt_nombre.Pp_mensajeError = null;
+            this.txt_nombre.Pp_nombre_campo = null;
+            this.txt_nombre.Pp_nombre_tabla = null;
+            this.txt_nombre.Pp_validable = false;
+            this.txt_nombre.Size = new System.Drawing.Size(299, 22);
+            this.txt_nombre.TabIndex = 14;
+            this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_KeyPress);
+            // 
+            // lbl_filtro_nombre
+            // 
+            this.lbl_filtro_nombre.AutoSize = true;
+            this.lbl_filtro_nombre.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_filtro_nombre.ForeColor = System.Drawing.Color.White;
+            this.lbl_filtro_nombre.Location = new System.Drawing.Point(12, 20);
+            this.lbl_filtro_nombre.Name = "lbl_filtro_nombre";
+            this.lbl_filtro_nombre.Size = new System.Drawing.Size(62, 20);
+            this.lbl_filtro_nombre.TabIndex = 15;
+            this.lbl_filtro_nombre.Text = "Buscar:";
+            // 
             // FrmABMCHerramientas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 500);
+            this.Controls.Add(this.txt_nombre);
+            this.Controls.Add(this.lbl_filtro_nombre);
             this.Controls.Add(this.grid);
             this.Name = "FrmABMCHerramientas";
             this.Load += new System.EventHandler(this.FrmABMCHerramientas_Load);
-            this.Controls.SetChildIndex(this.lbl_filtro_nombre, 0);
             this.Controls.SetChildIndex(this.grid, 0);
+            this.Controls.SetChildIndex(this.panel_work_space, 0);
+            this.Controls.SetChildIndex(this.lbl_filtro_nombre, 0);
+            this.Controls.SetChildIndex(this.txt_nombre, 0);
+            this.panel_work_space.ResumeLayout(false);
+            this.panel_visualizacion.ResumeLayout(false);
+            this.panel_visualizacion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -146,5 +184,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private Clases.TextBox01 txt_nombre;
+        private System.Windows.Forms.Label lbl_filtro_nombre;
     }
 }

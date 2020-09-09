@@ -28,15 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel_work_space = new System.Windows.Forms.Panel();
             this.panel_visualizacion = new System.Windows.Forms.Panel();
             this.btn_eliminar = new FontAwesome.Sharp.IconButton();
             this.btn_modificar = new FontAwesome.Sharp.IconButton();
             this.lbl_visualizacion = new System.Windows.Forms.Label();
             this.btn_nuevo = new FontAwesome.Sharp.IconButton();
-            this.txt_nombre = new TPI_NewWare.Clases.TextBox01();
-            this.lbl_filtro_nombre = new System.Windows.Forms.Label();
+            this.panel_work_space.SuspendLayout();
             this.panel_visualizacion.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panel_work_space
+            // 
+            this.panel_work_space.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel_work_space.Controls.Add(this.panel_visualizacion);
+            this.panel_work_space.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel_work_space.Location = new System.Drawing.Point(400, 0);
+            this.panel_work_space.Name = "panel_work_space";
+            this.panel_work_space.Size = new System.Drawing.Size(400, 500);
+            this.panel_work_space.TabIndex = 13;
+            this.panel_work_space.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_work_space_Paint);
             // 
             // panel_visualizacion
             // 
@@ -45,12 +56,13 @@
             this.panel_visualizacion.Controls.Add(this.btn_modificar);
             this.panel_visualizacion.Controls.Add(this.lbl_visualizacion);
             this.panel_visualizacion.Controls.Add(this.btn_nuevo);
-            this.panel_visualizacion.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel_visualizacion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_visualizacion.ForeColor = System.Drawing.Color.White;
-            this.panel_visualizacion.Location = new System.Drawing.Point(400, 0);
+            this.panel_visualizacion.Location = new System.Drawing.Point(0, 0);
             this.panel_visualizacion.Name = "panel_visualizacion";
-            this.panel_visualizacion.Size = new System.Drawing.Size(400, 450);
-            this.panel_visualizacion.TabIndex = 12;
+            this.panel_visualizacion.Size = new System.Drawing.Size(400, 500);
+            this.panel_visualizacion.TabIndex = 11;
+            this.panel_visualizacion.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_visualizacion_Paint);
             // 
             // btn_eliminar
             // 
@@ -65,7 +77,7 @@
             this.btn_eliminar.IconColor = System.Drawing.Color.White;
             this.btn_eliminar.IconSize = 16;
             this.btn_eliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_eliminar.Location = new System.Drawing.Point(265, 410);
+            this.btn_eliminar.Location = new System.Drawing.Point(265, 460);
             this.btn_eliminar.Name = "btn_eliminar";
             this.btn_eliminar.Rotation = 0D;
             this.btn_eliminar.Size = new System.Drawing.Size(130, 40);
@@ -89,7 +101,7 @@
             this.btn_modificar.IconColor = System.Drawing.Color.White;
             this.btn_modificar.IconSize = 16;
             this.btn_modificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_modificar.Location = new System.Drawing.Point(135, 410);
+            this.btn_modificar.Location = new System.Drawing.Point(135, 460);
             this.btn_modificar.Name = "btn_modificar";
             this.btn_modificar.Rotation = 0D;
             this.btn_modificar.Size = new System.Drawing.Size(130, 40);
@@ -104,14 +116,15 @@
             // 
             this.lbl_visualizacion.AutoSize = true;
             this.lbl_visualizacion.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_visualizacion.Location = new System.Drawing.Point(53, 82);
+            this.lbl_visualizacion.Location = new System.Drawing.Point(31, 67);
             this.lbl_visualizacion.Name = "lbl_visualizacion";
-            this.lbl_visualizacion.Size = new System.Drawing.Size(291, 20);
+            this.lbl_visualizacion.Size = new System.Drawing.Size(102, 20);
             this.lbl_visualizacion.TabIndex = 5;
-            this.lbl_visualizacion.Text = "No se ha podido cargar el documento";
+            this.lbl_visualizacion.Text = "Visualizacion";
             // 
             // btn_nuevo
             // 
+            this.btn_nuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_nuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btn_nuevo.FlatAppearance.BorderSize = 0;
             this.btn_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -122,7 +135,7 @@
             this.btn_nuevo.IconColor = System.Drawing.Color.White;
             this.btn_nuevo.IconSize = 16;
             this.btn_nuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_nuevo.Location = new System.Drawing.Point(3, 410);
+            this.btn_nuevo.Location = new System.Drawing.Point(0, 460);
             this.btn_nuevo.Name = "btn_nuevo";
             this.btn_nuevo.Rotation = 0D;
             this.btn_nuevo.Size = new System.Drawing.Size(130, 40);
@@ -133,56 +146,29 @@
             this.btn_nuevo.UseVisualStyleBackColor = false;
             this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
             // 
-            // txt_nombre
-            // 
-            this.txt_nombre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nombre.Location = new System.Drawing.Point(92, 25);
-            this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Pp_mensajeError = null;
-            this.txt_nombre.Pp_nombre_campo = null;
-            this.txt_nombre.Pp_nombre_tabla = null;
-            this.txt_nombre.Pp_validable = false;
-            this.txt_nombre.Size = new System.Drawing.Size(299, 22);
-            this.txt_nombre.TabIndex = 11;
-            // 
-            // lbl_filtro_nombre
-            // 
-            this.lbl_filtro_nombre.AutoSize = true;
-            this.lbl_filtro_nombre.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_filtro_nombre.ForeColor = System.Drawing.Color.White;
-            this.lbl_filtro_nombre.Location = new System.Drawing.Point(12, 27);
-            this.lbl_filtro_nombre.Name = "lbl_filtro_nombre";
-            this.lbl_filtro_nombre.Size = new System.Drawing.Size(62, 20);
-            this.lbl_filtro_nombre.TabIndex = 12;
-            this.lbl_filtro_nombre.Text = "Buscar:";
-            // 
             // FrmABMBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.txt_nombre);
-            this.Controls.Add(this.panel_visualizacion);
-            this.Controls.Add(this.lbl_filtro_nombre);
+            this.ClientSize = new System.Drawing.Size(800, 500);
+            this.Controls.Add(this.panel_work_space);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmABMBase";
             this.Text = "FrmABMBase";
+            this.panel_work_space.ResumeLayout(false);
             this.panel_visualizacion.ResumeLayout(false);
             this.panel_visualizacion.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel_visualizacion;
+        public System.Windows.Forms.Panel panel_work_space;
+        public System.Windows.Forms.Panel panel_visualizacion;
         public FontAwesome.Sharp.IconButton btn_eliminar;
         public FontAwesome.Sharp.IconButton btn_modificar;
         public System.Windows.Forms.Label lbl_visualizacion;
         public FontAwesome.Sharp.IconButton btn_nuevo;
-        public System.Windows.Forms.Label lbl_filtro_nombre;
-        internal Clases.TextBox01 txt_nombre;
     }
 }

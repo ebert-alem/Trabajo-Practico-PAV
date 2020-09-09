@@ -11,6 +11,7 @@ namespace TPI_NewWare.Formularios
         Ng_Herramienta Ng_Herramienta = new Ng_Herramienta();
         DataTable Tabla_Completa = new DataTable();
 
+
         //Formularios internos
         private FrmAMBase frmAMHerramientas;
 

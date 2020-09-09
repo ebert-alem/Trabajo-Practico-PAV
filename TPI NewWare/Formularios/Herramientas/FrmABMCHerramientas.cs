@@ -23,6 +23,8 @@ namespace TPI_NewWare.Formularios.Herramientas
         public FrmABMCHerramientas()
         {
             InitializeComponent();
+            grilla = grid;
+            TablaCompleta = Tabla_Completa;
         }
 
         private void FrmABMCHerramientas_Load(object sender, EventArgs e)
@@ -30,11 +32,10 @@ namespace TPI_NewWare.Formularios.Herramientas
             //Carga la grilla con los valores elegidos
             CargarGrilla();
         }
-
         public override void CargarGrilla(DataTable tabla)
         {
             //Guardo la tabla completa
-            Tabla_Completa = tabla;
+            TablaCompleta = tabla;
 
             //Cargo la grilla
             grid.Rows.Clear();
@@ -59,29 +60,34 @@ namespace TPI_NewWare.Formularios.Herramientas
             ActualizarVisualizacion();
         }
 
-        private void ActualizarVisualizacion()
+        public override void MostrarSubformAlta()
         {
-            
-            if (grid.Rows.Count == 0)
-            {
-                // Si la grilla esta vacia borra el texto                
-                lbl_visualizacion.Text = "";
-            }
-            else
-            {
-                //Busca la herramienta seleccionada en la bd por id
-                Herramienta herramienta = new Herramienta();
-                //Carga un objeto con los datos de la tabal seleccionada 
-                herramienta.Cargar_datos(Tabla_Completa.Rows[this.grid.CurrentRow.Index]);
-                //Rellena los campos con los datos
-                lbl_visualizacion.Text = "Id: " + herramienta.Id;
-                lbl_visualizacion.Text += "\nNombre: " + herramienta.Nombre;
-                lbl_visualizacion.Text += "\nDescripción: " + herramienta.Descripcion;
-            }
-            
+            frmAMHerramientas = new FrmAMHerramientas(this);
+            //Asigna el form a la ventana
+            AbrirFormEnPanel(frmAMHerramientas);
         }
 
-        //Actualiza la tabla segun el nombre ingresado al presionar enter
+        public override void MostrarSubformConsulta()
+        {
+            frmAMHerramientas = new FrmAMHerramientas(this, IdActual());
+            //Asigna el form a la ventana
+            AbrirFormEnPanel(frmAMHerramientas);
+        }
+
+        //Devuelve el id de la fila actualmente seleccionada
+        protected override int IdActual()
+        {
+            return int.Parse(TablaCompleta.Rows[this.grilla.CurrentRow.Index]["id"].ToString());
+        }
+
+        //Setea la celda creada como la celda actual
+        public override void SetCeldaActual()
+        {
+            grid.ClearSelection();
+            grid.CurrentCell = grid.Rows[grid.Rows.Count - 1].Cells["Column1"];
+            ActualizarVisualizacion();
+        }
+        
         private void txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
@@ -97,36 +103,6 @@ namespace TPI_NewWare.Formularios.Herramientas
                 }
 
             }
-        }
-
-        public override void MostrarSubformAlta()
-        {
-            frmAMHerramientas = new FrmAMHerramientas(this);
-            //Asigna el form a la ventana
-            AbrirFormEnPanel(frmAMHerramientas);
-        }
-
-        public override void MostrarSubformConsulta()
-        {
-            base.MostrarSubformConsulta();
-            frmAMHerramientas = new FrmAMHerramientas(this, IdActual());
-            //Asigna el form a la ventana
-            AbrirFormEnPanel(frmAMHerramientas);
-            //Actualiza la tabla modificada
-        }
-
-        //Devuelve el id de la fila actualmente seleccionada
-        protected override int IdActual()
-        {
-            return int.Parse(Tabla_Completa.Rows[this.grid.CurrentRow.Index]["id"].ToString());
-        }
-
-        //Setea la celda creada como la celda actual
-        public override void SetCeldaActual()
-        {
-            grid.ClearSelection();
-            grid.CurrentCell = grid.Rows[grid.Rows.Count - 1].Cells["Column1"];
-            ActualizarVisualizacion();
         }
     }
 }

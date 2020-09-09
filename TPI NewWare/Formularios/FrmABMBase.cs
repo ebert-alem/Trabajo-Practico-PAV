@@ -17,6 +17,10 @@ namespace TPI_NewWare.Formularios
         protected virtual FrmAMBase FrmAM { get; set; }
         //Objeto que se quiere modificar en el CU
         protected virtual ClaseBase objeto { get; set; }
+        
+        protected virtual DataGridView grilla { get; set; }
+        protected virtual DataTable TablaCompleta { get; set; }
+
 
         //protected NgBase frm_alta_modificacion { get; }
 
@@ -32,7 +36,7 @@ namespace TPI_NewWare.Formularios
             if (this.panel_visualizacion.Controls.Count > 0)
             {
                 //Oculta el panel de previsualizacion
-                lbl_visualizacion.Visible = false;
+                panel_visualizacion.Visible = false;
             }
 
             //Crea el nuevo form y lo inserta en el panel
@@ -40,11 +44,32 @@ namespace TPI_NewWare.Formularios
             fh.TopLevel = false;
             fh.Dock = DockStyle.Fill;
             //Agrrega el panel contenedor como dato
-            this.panel_visualizacion.Controls.Add(fh);
-            this.panel_visualizacion.Tag = fh;
+            this.panel_work_space.Controls.Add(fh);
+            this.panel_work_space.Tag = fh;
             fh.Show();
         }
 
+        protected void ActualizarVisualizacion()
+        {
+
+            if (grilla.Rows.Count == 0)
+            {
+                // Si la grilla esta vacia borra el texto                
+                lbl_visualizacion.Text = "";
+            }
+            else
+            {
+                //Busca la herramienta seleccionada en la bd por id
+                Herramienta herramienta = new Herramienta();
+                //Carga un objeto con los datos de la tabal seleccionada 
+                herramienta.Cargar_datos(TablaCompleta.Rows[this.grilla.CurrentRow.Index]);
+                //Rellena los campos con los datos
+                lbl_visualizacion.Text = "Id: " + herramienta.Id;
+                lbl_visualizacion.Text += "\nNombre: " + herramienta.Nombre;
+                lbl_visualizacion.Text += "\nDescripción: " + herramienta.Descripcion;
+            }
+
+        }
 
         //Actualiza cuando un formulario se cierra habiendo realizado el cambio
         public void ActualizarAlta()
@@ -52,7 +77,7 @@ namespace TPI_NewWare.Formularios
             //Actualiza la grilla
             this.CargarGrilla();
             //Habilita la visualizacion
-            lbl_visualizacion.Visible = true;
+            panel_visualizacion.Visible = true;
             //Muestra la nueva grilla creada como seleccionada
             SetCeldaActual();
 
@@ -61,26 +86,20 @@ namespace TPI_NewWare.Formularios
         //Actualiza cuando un formulario se cierra sin realizar el cambio el cambio
         public void ActualizarCancelacion()
         {
-            lbl_visualizacion.Visible = true;
+            panel_visualizacion.Visible = true;
         }
 
-        public virtual void CargarGrilla(DataTable tabla)
-        {
-        }
+        public virtual void CargarGrilla(DataTable tabla) {}
 
-        public virtual void CargarGrilla()
-        {
-        }
+        public virtual void CargarGrilla() {}
 
-        public virtual void SetCeldaActual()
-        {
-        }
+        public virtual void SetCeldaActual() {}
 
         //Cancela todos los subformularios abiertos
         private void CancelarFormularios()
         {
             //Vuelve visible el panel de visualizacion
-            lbl_visualizacion.Visible = true;
+            panel_visualizacion.Visible = true;
             //Si existe algun formulario abierto lo cancela
             if (FrmAM != null)
             {
@@ -129,5 +148,19 @@ namespace TPI_NewWare.Formularios
             return 0;
         }
 
+        private void panel_work_space_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lbl_filtro_nombre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel_visualizacion_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
