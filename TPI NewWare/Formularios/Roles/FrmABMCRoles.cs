@@ -5,31 +5,28 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using TPI_NewWare.Entidades;
 using TPI_NewWare.Negocio;
+using TPI_NewWare.Entidades;
 
-namespace TPI_NewWare.Formularios.Herramientas
+namespace TPI_NewWare.Formularios.Roles
 {
-    public partial class FrmABMCHerramientas : TPI_NewWare.Formularios.FrmABMBase
+    public partial class FrmABMCRoles : TPI_NewWare.Formularios.FrmABMBase
     {
-        Ng_Herramienta Ng_Herramienta = new Ng_Herramienta();
-
-        //Formularios internos
-        private FrmAMBase frmAMHerramientas;
-        protected override ClaseBase Objeto => new Herramienta();
+        Ng_Rol ng_Rol = new Ng_Rol();
+        protected override ClaseBase Objeto => new Rol();
 
 
-        public FrmABMCHerramientas()
+        public FrmABMCRoles()
         {
             InitializeComponent();
             Grilla = grid;
         }
 
-        private void FrmABMCHerramientas_Load(object sender, EventArgs e)
+        private void FrmABMCRoles_Load(object sender, EventArgs e)
         {
-            //Carga la grilla con los valores elegidos
             CargarGrilla();
         }
+
         protected override void CargarGrilla(DataTable tabla)
         {
             //Guardo la tabla completa
@@ -50,7 +47,7 @@ namespace TPI_NewWare.Formularios.Herramientas
 
         protected override void CargarGrilla()
         {
-            CargarGrilla(Ng_Herramienta.Consulta());
+            CargarGrilla(ng_Rol.Consulta());
         }
 
         private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -60,16 +57,16 @@ namespace TPI_NewWare.Formularios.Herramientas
 
         public override void MostrarSubformAlta()
         {
-            frmAMHerramientas = new FrmAMHerramientas(this);
+            FrmAM = new FrmAMRoles(this);
             //Asigna el form a la ventana
-            AbrirFormEnPanel(frmAMHerramientas);
+            AbrirFormEnPanel(FrmAM);
         }
 
         public override void MostrarSubformConsulta()
         {
-            frmAMHerramientas = new FrmAMHerramientas(this, IdActual());
+            FrmAM = new FrmAMRoles(this, IdActual());
             //Asigna el form a la ventana
-            AbrirFormEnPanel(frmAMHerramientas);
+            AbrirFormEnPanel(FrmAM);
         }
 
         //Devuelve el id de la fila actualmente seleccionada
@@ -85,7 +82,7 @@ namespace TPI_NewWare.Formularios.Herramientas
             grid.CurrentCell = grid.Rows[grid.Rows.Count - 1].Cells["Column1"];
             ActualizarVisualizacion();
         }
-        
+
         private void txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
@@ -93,11 +90,11 @@ namespace TPI_NewWare.Formularios.Herramientas
                 string filtro = txt_nombre.Text;
                 if (filtro != "")
                 {
-                    CargarGrilla(Ng_Herramienta.ConsultaNombre(filtro));
+                    CargarGrilla(ng_Rol.ConsultaNombre(filtro));
                 }
                 else
                 {
-                    CargarGrilla(Ng_Herramienta.Consulta());
+                    CargarGrilla(ng_Rol.Consulta());
                 }
 
             }
@@ -113,13 +110,13 @@ namespace TPI_NewWare.Formularios.Herramientas
             else
             {
                 //Busca la herramienta seleccionada en la bd por id
-                Herramienta herramienta = new Herramienta();
+                Rol rol = new Rol();
                 //Carga un objeto con los datos de la tabal seleccionada 
-                herramienta.Cargar_datos(TablaCompleta.Rows[this.Grilla.CurrentRow.Index]);
+                rol.Cargar_datos(TablaCompleta.Rows[this.Grilla.CurrentRow.Index]);
                 //Rellena los campos con los datos
-                lbl_visualizacion.Text = "Id: " + herramienta.Id;
-                lbl_visualizacion.Text += "\nNombre: " + herramienta.Nombre;
-                lbl_visualizacion.Text += "\nDescripción: " + herramienta.Descripcion;
+                lbl_visualizacion.Text = "Id: " + rol.Id;
+                lbl_visualizacion.Text += "\nNombre: " + rol.Nombre;
+                lbl_visualizacion.Text += "\nDescripción: " + rol.Descripcion;
             }
         }
     }

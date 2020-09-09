@@ -13,17 +13,17 @@ namespace TPI_NewWare.Formularios.Roles
 {
     public partial class FrmAMRoles : TPI_NewWare.Formularios.FrmAMBase
     {
-        FrmABMRoles form_contenedor;
+        FrmABMBase form_contenedor;
         Ng_Rol ng_Rol = new Ng_Rol();
         Rol rol;
 
-        public FrmAMRoles(FrmABMRoles form)
+        public FrmAMRoles(FrmABMBase form)
         {
             InitializeComponent();
             //Seteo el panel contenedor como atributo
             form_contenedor = form;
         }
-        public FrmAMRoles(FrmABMRoles form, int id)
+        public FrmAMRoles(FrmABMBase form, int id)
         {
             InitializeComponent();
             //Seteo el panel contenedor como atributo

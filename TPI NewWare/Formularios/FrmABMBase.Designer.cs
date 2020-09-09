@@ -47,7 +47,6 @@
             this.panel_work_space.Name = "panel_work_space";
             this.panel_work_space.Size = new System.Drawing.Size(400, 500);
             this.panel_work_space.TabIndex = 13;
-            this.panel_work_space.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_work_space_Paint);
             // 
             // panel_visualizacion
             // 
@@ -62,7 +61,6 @@
             this.panel_visualizacion.Name = "panel_visualizacion";
             this.panel_visualizacion.Size = new System.Drawing.Size(400, 500);
             this.panel_visualizacion.TabIndex = 11;
-            this.panel_visualizacion.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_visualizacion_Paint);
             // 
             // btn_eliminar
             // 

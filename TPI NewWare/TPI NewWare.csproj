@@ -84,17 +84,11 @@
     <Compile Include="Formularios\Herramientas\FrmABMCHerramientas.Designer.cs">
       <DependentUpon>FrmABMCHerramientas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Roles\FrmABMRoles.cs">
+    <Compile Include="Formularios\Roles\FrmABMCRoles.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Roles\FrmABMRoles.Designer.cs">
-      <DependentUpon>FrmABMRoles.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Herramientas\FrmABMHerramientas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Herramientas\FrmABMHerramientas.Designer.cs">
-      <DependentUpon>FrmABMHerramientas.cs</DependentUpon>
+    <Compile Include="Formularios\Roles\FrmABMCRoles.Designer.cs">
+      <DependentUpon>FrmABMCRoles.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Herramientas\FrmAMHerramientas.cs">
       <SubType>Form</SubType>
@@ -146,11 +140,8 @@
     <EmbeddedResource Include="Formularios\Herramientas\FrmABMCHerramientas.resx">
       <DependentUpon>FrmABMCHerramientas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Roles\FrmABMRoles.resx">
-      <DependentUpon>FrmABMRoles.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Herramientas\FrmABMHerramientas.resx">
-      <DependentUpon>FrmABMHerramientas.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Roles\FrmABMCRoles.resx">
+      <DependentUpon>FrmABMCRoles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Herramientas\FrmAMHerramientas.resx">
       <DependentUpon>FrmAMHerramientas.cs</DependentUpon>
