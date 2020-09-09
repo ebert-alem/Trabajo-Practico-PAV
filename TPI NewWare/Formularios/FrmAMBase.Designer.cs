@@ -1,6 +1,6 @@
 ﻿namespace TPI_NewWare.Formularios
 {
-    partial class FrmAltaHerramientas
+    partial class FrmAMBase
     {
         /// <summary>
         /// Required designer variable.
@@ -28,35 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbl_nombre = new System.Windows.Forms.Label();
-            this.lbl_descripcion = new System.Windows.Forms.Label();
             this.btn_crear = new FontAwesome.Sharp.IconButton();
             this.btn_cancelar = new FontAwesome.Sharp.IconButton();
-            this.txt_descripcion = new TPI_NewWare.Clases.TextBox01();
-            this.txt_nombre = new TPI_NewWare.Clases.TextBox01();
             this.SuspendLayout();
-            // 
-            // lbl_nombre
-            // 
-            this.lbl_nombre.AutoSize = true;
-            this.lbl_nombre.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_nombre.ForeColor = System.Drawing.Color.White;
-            this.lbl_nombre.Location = new System.Drawing.Point(31, 67);
-            this.lbl_nombre.Name = "lbl_nombre";
-            this.lbl_nombre.Size = new System.Drawing.Size(72, 20);
-            this.lbl_nombre.TabIndex = 11;
-            this.lbl_nombre.Text = "Nombre:";
-            // 
-            // lbl_descripcion
-            // 
-            this.lbl_descripcion.AutoSize = true;
-            this.lbl_descripcion.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_descripcion.ForeColor = System.Drawing.Color.White;
-            this.lbl_descripcion.Location = new System.Drawing.Point(31, 124);
-            this.lbl_descripcion.Name = "lbl_descripcion";
-            this.lbl_descripcion.Size = new System.Drawing.Size(100, 20);
-            this.lbl_descripcion.TabIndex = 10;
-            this.lbl_descripcion.Text = "Descripción:";
             // 
             // btn_crear
             // 
@@ -70,11 +44,11 @@
             this.btn_crear.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btn_crear.IconColor = System.Drawing.Color.Black;
             this.btn_crear.IconSize = 16;
-            this.btn_crear.Location = new System.Drawing.Point(1, 411);
+            this.btn_crear.Location = new System.Drawing.Point(0, 410);
             this.btn_crear.Name = "btn_crear";
             this.btn_crear.Rotation = 0D;
             this.btn_crear.Size = new System.Drawing.Size(200, 40);
-            this.btn_crear.TabIndex = 2;
+            this.btn_crear.TabIndex = 4;
             this.btn_crear.Text = "Crear";
             this.btn_crear.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_crear.UseVisualStyleBackColor = false;
@@ -92,42 +66,17 @@
             this.btn_cancelar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btn_cancelar.IconColor = System.Drawing.Color.Black;
             this.btn_cancelar.IconSize = 16;
-            this.btn_cancelar.Location = new System.Drawing.Point(198, 411);
+            this.btn_cancelar.Location = new System.Drawing.Point(200, 410);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Rotation = 0D;
             this.btn_cancelar.Size = new System.Drawing.Size(200, 40);
-            this.btn_cancelar.TabIndex = 3;
+            this.btn_cancelar.TabIndex = 5;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_cancelar.UseVisualStyleBackColor = false;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
-            // txt_descripcion
-            // 
-            this.txt_descripcion.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_descripcion.Location = new System.Drawing.Point(35, 161);
-            this.txt_descripcion.Multiline = true;
-            this.txt_descripcion.Name = "txt_descripcion";
-            this.txt_descripcion.Pp_mensajeError = "\"Descripción vacia\"";
-            this.txt_descripcion.Pp_nombre_campo = "\"descripcion\"";
-            this.txt_descripcion.Pp_nombre_tabla = "\"HERRAMIENTAS\"";
-            this.txt_descripcion.Pp_validable = true;
-            this.txt_descripcion.Size = new System.Drawing.Size(333, 85);
-            this.txt_descripcion.TabIndex = 1;
-            // 
-            // txt_nombre
-            // 
-            this.txt_nombre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nombre.Location = new System.Drawing.Point(112, 67);
-            this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Pp_mensajeError = "\"Nombre vacio\"";
-            this.txt_nombre.Pp_nombre_campo = "\"nombre\"";
-            this.txt_nombre.Pp_nombre_tabla = "\"HERRAMIENTAS\"";
-            this.txt_nombre.Pp_validable = true;
-            this.txt_nombre.Size = new System.Drawing.Size(256, 22);
-            this.txt_nombre.TabIndex = 0;
-            // 
-            // FrmAltaHerramientas
+            // FrmAMBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -135,26 +84,16 @@
             this.ClientSize = new System.Drawing.Size(400, 450);
             this.Controls.Add(this.btn_crear);
             this.Controls.Add(this.btn_cancelar);
-            this.Controls.Add(this.txt_descripcion);
-            this.Controls.Add(this.txt_nombre);
-            this.Controls.Add(this.lbl_nombre);
-            this.Controls.Add(this.lbl_descripcion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmAltaHerramientas";
-            this.Text = "FrmAltaHerramientas";
-            this.Load += new System.EventHandler(this.FrmAltaHerramientas_Load);
+            this.Name = "FrmAMBase";
+            this.Text = "FrmABMBase";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lbl_nombre;
-        private System.Windows.Forms.Label lbl_descripcion;
-        private Clases.TextBox01 txt_nombre;
-        private Clases.TextBox01 txt_descripcion;
-        private FontAwesome.Sharp.IconButton btn_crear;
-        private FontAwesome.Sharp.IconButton btn_cancelar;
+        protected FontAwesome.Sharp.IconButton btn_crear;
+        protected FontAwesome.Sharp.IconButton btn_cancelar;
     }
 }

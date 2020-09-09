@@ -66,29 +66,35 @@
     <Compile Include="Entidades\Herramienta.cs" />
     <Compile Include="Entidades\Rol.cs" />
     <Compile Include="Entidades\Usuario.cs" />
-    <Compile Include="Formularios\FrmABMRoles.cs">
+    <Compile Include="Formularios\FrmABMBase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmABMRoles.Designer.cs">
-      <DependentUpon>FrmABMRoles.cs</DependentUpon>
+    <Compile Include="Formularios\FrmABMBase.Designer.cs">
+      <DependentUpon>FrmABMBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmABMHerramientas.cs">
+    <Compile Include="Formularios\FrmAMBase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmABMHerramientas.Designer.cs">
-      <DependentUpon>FrmABMHerramientas.cs</DependentUpon>
+    <Compile Include="Formularios\FrmAMBase.Designer.cs">
+      <DependentUpon>FrmAMBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmAltaRoles.cs">
+    <Compile Include="Formularios\Herramientas\FrmABMCHerramientas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmAltaRoles.Designer.cs">
-      <DependentUpon>FrmAltaRoles.cs</DependentUpon>
+    <Compile Include="Formularios\Herramientas\FrmABMCHerramientas.Designer.cs">
+      <DependentUpon>FrmABMCHerramientas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmAltaHerramientas.cs">
+    <Compile Include="Formularios\Roles\FrmABMCRoles.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmAltaHerramientas.Designer.cs">
-      <DependentUpon>FrmAltaHerramientas.cs</DependentUpon>
+    <Compile Include="Formularios\Roles\FrmABMCRoles.Designer.cs">
+      <DependentUpon>FrmABMCRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Herramientas\FrmAMHerramientas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Herramientas\FrmAMHerramientas.Designer.cs">
+      <DependentUpon>FrmAMHerramientas.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmTareas.cs">
       <SubType>Form</SubType>
@@ -114,22 +120,31 @@
     <Compile Include="Formularios\FrmPromedios.Designer.cs">
       <DependentUpon>FrmPromedios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Roles\FrmAMRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Roles\FrmAMRoles.Designer.cs">
+      <DependentUpon>FrmAMRoles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Negocio\Ng_Herramienta.cs" />
     <Compile Include="Negocio\Ng_Rol.cs" />
     <Compile Include="Negocio\Ng_Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formularios\FrmABMRoles.resx">
-      <DependentUpon>FrmABMRoles.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\FrmABMBase.resx">
+      <DependentUpon>FrmABMBase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmABMHerramientas.resx">
-      <DependentUpon>FrmABMHerramientas.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\FrmAMBase.resx">
+      <DependentUpon>FrmAMBase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmAltaRoles.resx">
-      <DependentUpon>FrmAltaRoles.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Herramientas\FrmABMCHerramientas.resx">
+      <DependentUpon>FrmABMCHerramientas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmAltaHerramientas.resx">
-      <DependentUpon>FrmAltaHerramientas.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Roles\FrmABMCRoles.resx">
+      <DependentUpon>FrmABMCRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Herramientas\FrmAMHerramientas.resx">
+      <DependentUpon>FrmAMHerramientas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmPromedios.resx">
       <DependentUpon>FrmPromedios.cs</DependentUpon>
@@ -142,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Roles\FrmAMRoles.resx">
+      <DependentUpon>FrmAMRoles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

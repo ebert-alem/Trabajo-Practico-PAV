@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TPI_NewWare.Formularios.Herramientas;
+using TPI_NewWare.Formularios.Roles;
+
 
 namespace TPI_NewWare
 {
@@ -158,7 +161,7 @@ namespace TPI_NewWare
         {
             lbl_Titulo.Text = "Herramientas";
             lbl_Titulo.Visible = true;
-            AbrirFormEnPanel(new FrmABMHerramientas());
+            AbrirFormEnPanel(new FrmABMCHerramientas());
         }
 
         private void panelPrincipal_Paint(object sender, PaintEventArgs e)
@@ -170,7 +173,7 @@ namespace TPI_NewWare
         {
             lbl_Titulo.Text = "Roles";
             lbl_Titulo.Visible = true;
-            AbrirFormEnPanel(new FrmABMRoles());
+            AbrirFormEnPanel(new FrmABMCRoles());
         }
     }
 
