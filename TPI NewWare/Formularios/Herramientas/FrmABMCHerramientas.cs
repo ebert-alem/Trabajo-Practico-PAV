@@ -14,8 +14,6 @@ namespace TPI_NewWare.Formularios.Herramientas
     {
         Ng_Herramienta Ng_Herramienta = new Ng_Herramienta();
 
-        //Formularios internos
-        private FrmAMBase frmAMHerramientas;
         protected override ClaseBase Objeto => new Herramienta();
 
 
@@ -60,16 +58,16 @@ namespace TPI_NewWare.Formularios.Herramientas
 
         public override void MostrarSubformAlta()
         {
-            frmAMHerramientas = new FrmAMHerramientas(this);
+            FrmAM = new FrmAMHerramientas(this);
             //Asigna el form a la ventana
-            AbrirFormEnPanel(frmAMHerramientas);
+            AbrirFormEnPanel(FrmAM);
         }
 
         public override void MostrarSubformConsulta()
         {
-            frmAMHerramientas = new FrmAMHerramientas(this, IdActual());
+            FrmAM = new FrmAMHerramientas(this, IdActual());
             //Asigna el form a la ventana
-            AbrirFormEnPanel(frmAMHerramientas);
+            AbrirFormEnPanel(FrmAM);
         }
 
         //Devuelve el id de la fila actualmente seleccionada

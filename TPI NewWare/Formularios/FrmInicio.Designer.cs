@@ -132,7 +132,7 @@
             this.panelPrincipal.Controls.Add(this.panelUsuario);
             this.panelPrincipal.Location = new System.Drawing.Point(225, 100);
             this.panelPrincipal.Name = "panelPrincipal";
-            this.panelPrincipal.Size = new System.Drawing.Size(806, 508);
+            this.panelPrincipal.Size = new System.Drawing.Size(806, 500);
             this.panelPrincipal.TabIndex = 15;
             this.panelPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPrincipal_Paint);
             // 
@@ -210,7 +210,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(225, 611);
+            this.panelMenu.Size = new System.Drawing.Size(225, 603);
             this.panelMenu.TabIndex = 0;
             // 
             // panelSubEstadisticas
@@ -822,7 +822,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1031, 611);
+            this.ClientSize = new System.Drawing.Size(1031, 603);
             this.Controls.Add(this.panelBarrraSup);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelPrincipal);
