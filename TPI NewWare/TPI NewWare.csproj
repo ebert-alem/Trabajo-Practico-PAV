@@ -63,9 +63,22 @@
     </Compile>
     <Compile Include="Clases\TratamientosEspeciales.cs" />
     <Compile Include="Entidades\ClaseBase.cs" />
+    <Compile Include="Entidades\Etapa.cs" />
     <Compile Include="Entidades\Herramienta.cs" />
     <Compile Include="Entidades\Rol.cs" />
     <Compile Include="Entidades\Usuario.cs" />
+    <Compile Include="Formularios\Etapas\FrmABMCEtapas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Etapas\FrmABMCEtapas.Designer.cs">
+      <DependentUpon>FrmABMCEtapas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Etapas\FrmAMEtapas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Etapas\FrmAMEtapas.Designer.cs">
+      <DependentUpon>FrmAMEtapas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmABMBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,11 +139,18 @@
     <Compile Include="Formularios\Roles\FrmAMRoles.Designer.cs">
       <DependentUpon>FrmAMRoles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Negocio\Ng_Etapa.cs" />
     <Compile Include="Negocio\Ng_Herramienta.cs" />
     <Compile Include="Negocio\Ng_Rol.cs" />
     <Compile Include="Negocio\Ng_Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\Etapas\FrmABMCEtapas.resx">
+      <DependentUpon>FrmABMCEtapas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Etapas\FrmAMEtapas.resx">
+      <DependentUpon>FrmAMEtapas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmABMBase.resx">
       <DependentUpon>FrmABMBase.cs</DependentUpon>
     </EmbeddedResource>

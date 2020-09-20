@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TPI_NewWare.Formularios.Herramientas;
 using TPI_NewWare.Formularios.Roles;
+using TPI_NewWare.Formularios.Etapas;
 
 
 namespace TPI_NewWare
@@ -174,6 +175,13 @@ namespace TPI_NewWare
             lbl_Titulo.Text = "Roles";
             lbl_Titulo.Visible = true;
             AbrirFormEnPanel(new FrmABMCRoles());
+        }
+
+        private void btnSubEtapas_Click(object sender, EventArgs e)
+        {
+            lbl_Titulo.Text = "Etapas";
+            lbl_Titulo.Visible = true;
+            AbrirFormEnPanel(new FrmABMCEtapas());
         }
     }
 

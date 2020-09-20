@@ -631,6 +631,7 @@
             this.btnSubEtapas.Text = "Etapas";
             this.btnSubEtapas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSubEtapas.UseVisualStyleBackColor = true;
+            this.btnSubEtapas.Click += new System.EventHandler(this.btnSubEtapas_Click);
             // 
             // btnSubHerramientas
             // 
