@@ -98,21 +98,27 @@ namespace TPI_NewWare.Formularios
 
         private void btn_modificar_Click(object sender, EventArgs e)
         {
-            //Cancela otros formularios existentes
-            CancelarFormularios();
-            MostrarSubformConsulta();
+            if (TablaCompleta.Rows.Count != 0)
+            {
+                //Cancela otros formularios existentes
+                CancelarFormularios();
+                MostrarSubformConsulta();
+            }
         }
 
         public virtual void MostrarSubformConsulta() {}
 
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Desea eliminar el objeto seleccionado?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (TablaCompleta.Rows.Count != 0)
             {
-                //Elimina la herramienta seleccionada en el momento
-                Objeto.Eliminar(IdActual());
-                //Actualiza la grilla
-                CargarGrilla();
+                if (MessageBox.Show("¿Desea eliminar el objeto seleccionado?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    //Elimina la herramienta seleccionada en el momento
+                    Objeto.Eliminar(IdActual());
+                    //Actualiza la grilla
+                    CargarGrilla();
+                }
             }
         }
 
