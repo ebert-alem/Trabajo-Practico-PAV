@@ -65,6 +65,7 @@
             this.txt_nombre.Pp_validable = false;
             this.txt_nombre.Size = new System.Drawing.Size(299, 22);
             this.txt_nombre.TabIndex = 18;
+            this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_KeyPress);
             // 
             // lbl_filtro_nombre
             // 
@@ -149,6 +150,7 @@
             this.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grid.Size = new System.Drawing.Size(394, 445);
             this.grid.TabIndex = 15;
+            this.grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellClick);
             // 
             // FrmABMCEmpleados
             // 
@@ -158,6 +160,7 @@
             this.Controls.Add(this.lbl_filtro_nombre);
             this.Controls.Add(this.grid);
             this.Name = "FrmABMCEmpleados";
+            this.Load += new System.EventHandler(this.FrmABMCEmpleados_Load);
             this.Controls.SetChildIndex(this.grid, 0);
             this.Controls.SetChildIndex(this.lbl_filtro_nombre, 0);
             this.Controls.SetChildIndex(this.txt_nombre, 0);

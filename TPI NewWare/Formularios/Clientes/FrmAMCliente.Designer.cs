@@ -91,6 +91,8 @@
             // cmb_tipDoc
             // 
             this.cmb_tipDoc.FormattingEnabled = true;
+            this.cmb_tipDoc.Items.AddRange(new object[] {
+            "Elija una opcion:"});
             this.cmb_tipDoc.Location = new System.Drawing.Point(182, 106);
             this.cmb_tipDoc.Name = "cmb_tipDoc";
             this.cmb_tipDoc.Pp_Display = null;

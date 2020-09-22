@@ -757,6 +757,7 @@
             this.btnSubClientes.Text = "Clientes";
             this.btnSubClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSubClientes.UseVisualStyleBackColor = true;
+            this.btnSubClientes.Click += new System.EventHandler(this.btnSubClientes_Click);
             // 
             // btnSubEmpleados
             // 

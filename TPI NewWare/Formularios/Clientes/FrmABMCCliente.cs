@@ -20,7 +20,7 @@ namespace TPI_NewWare.Formularios.Clientes
             InitializeComponent();
             Grilla = grid;
         }
-        private void FrmABMCEmpleados_Load(object sender, EventArgs e)
+        private void FrmABMCCliente_Load(object sender, EventArgs e)
         {
             //Carga la grilla con los valores elegidos
             CargarGrilla();

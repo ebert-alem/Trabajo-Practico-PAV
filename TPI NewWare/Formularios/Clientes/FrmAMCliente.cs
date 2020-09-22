@@ -69,7 +69,7 @@ namespace TPI_NewWare.Formularios.Clientes
                 {
                     //Modfica la herramienta
                     cliente.Documento = txt_NroDocumento.Text;
-                    cliente.TipoDocumento = (string)cmb_tipDoc.SelectedItem;
+                    //(string)cmb_tipDoc.SelectedItem;
                     cliente.Nombre = txt_nombre.Text;
                     cliente.Apellido = txt_apellido.Text;
                     cliente.Calle = txt_Calle.Text;
@@ -81,7 +81,7 @@ namespace TPI_NewWare.Formularios.Clientes
                 }
                 form_contenedor.ActualizarAlta();
                 this.Close();
-                //la mravilla de jesus
+                
             }
         }
 
@@ -96,7 +96,7 @@ namespace TPI_NewWare.Formularios.Clientes
             {
                 for (int i = 0; i < tabla.Rows.Count; i++)
                 {
-                    cmb_tipDoc.Items.Add(tabla.Rows[i]["id"].ToString());
+                    cmb_tipDoc.Items.Add(tabla.Rows[i]["nombreTipoDocumento"].ToString());
                 }
             }
         }

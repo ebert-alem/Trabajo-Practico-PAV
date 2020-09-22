@@ -101,6 +101,7 @@
             this.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grid.Size = new System.Drawing.Size(394, 445);
             this.grid.TabIndex = 15;
+            this.grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellClick);
             // 
             // Column1
             // 
@@ -129,6 +130,7 @@
             this.txt_nombre.Pp_validable = false;
             this.txt_nombre.Size = new System.Drawing.Size(299, 22);
             this.txt_nombre.TabIndex = 18;
+            this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_KeyPress);
             // 
             // lbl_filtro_nombre
             // 
