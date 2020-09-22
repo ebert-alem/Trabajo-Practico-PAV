@@ -63,10 +63,33 @@
     </Compile>
     <Compile Include="Clases\TratamientosEspeciales.cs" />
     <Compile Include="Entidades\ClaseBase.cs" />
+    <Compile Include="Entidades\Cliente.cs" />
+    <Compile Include="Entidades\Empleado.cs" />
     <Compile Include="Entidades\Etapa.cs" />
     <Compile Include="Entidades\Herramienta.cs" />
+    <Compile Include="Entidades\MotivoEgreso.cs" />
+    <Compile Include="Entidades\Producto.cs" />
     <Compile Include="Entidades\Rol.cs" />
+    <Compile Include="Entidades\TipDoc.cs" />
     <Compile Include="Entidades\Usuario.cs" />
+    <Compile Include="Formularios\Clientes\FrmABMCCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Clientes\FrmABMCCliente.Designer.cs">
+      <DependentUpon>FrmABMCCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Empleados\FrmABMCEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Empleados\FrmABMCEmpleados.Designer.cs">
+      <DependentUpon>FrmABMCEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Empleados\FrmAMEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Empleados\FrmAMEmpleados.Designer.cs">
+      <DependentUpon>FrmAMEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Etapas\FrmABMCEtapas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +119,18 @@
     </Compile>
     <Compile Include="Formularios\Herramientas\FrmABMCHerramientas.Designer.cs">
       <DependentUpon>FrmABMCHerramientas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\MotivosEgresos\FrmABMCEgresos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\MotivosEgresos\FrmABMCEgresos.Designer.cs">
+      <DependentUpon>FrmABMCEgresos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\MotivosEgresos\FrmAMEgreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\MotivosEgresos\FrmAMEgreso.Designer.cs">
+      <DependentUpon>FrmAMEgreso.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Roles\FrmABMCRoles.cs">
       <SubType>Form</SubType>
@@ -139,12 +174,34 @@
     <Compile Include="Formularios\Roles\FrmAMRoles.Designer.cs">
       <DependentUpon>FrmAMRoles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\TipoDocumento\FrmAMTipDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\TipoDocumento\FrmAMTipDoc.Designer.cs">
+      <DependentUpon>FrmAMTipDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\TipoDocumento\FrmTipDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\TipoDocumento\FrmTipDoc.Designer.cs">
+      <DependentUpon>FrmTipDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Negocio\Ng_Empleado.cs" />
     <Compile Include="Negocio\Ng_Etapa.cs" />
     <Compile Include="Negocio\Ng_Herramienta.cs" />
+    <Compile Include="Negocio\Ng_MotivoEgreso.cs" />
+    <Compile Include="Negocio\Ng_Producto.cs" />
     <Compile Include="Negocio\Ng_Rol.cs" />
+    <Compile Include="Negocio\Ng_TipDoc.cs" />
     <Compile Include="Negocio\Ng_Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\Empleados\FrmABMCEmpleados.resx">
+      <DependentUpon>FrmABMCEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Empleados\FrmAMEmpleados.resx">
+      <DependentUpon>FrmAMEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Etapas\FrmABMCEtapas.resx">
       <DependentUpon>FrmABMCEtapas.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +216,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Herramientas\FrmABMCHerramientas.resx">
       <DependentUpon>FrmABMCHerramientas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\MotivosEgresos\FrmABMCEgresos.resx">
+      <DependentUpon>FrmABMCEgresos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\MotivosEgresos\FrmAMEgreso.resx">
+      <DependentUpon>FrmAMEgreso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Roles\FrmABMCRoles.resx">
       <DependentUpon>FrmABMCRoles.cs</DependentUpon>
@@ -180,6 +243,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Roles\FrmAMRoles.resx">
       <DependentUpon>FrmAMRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\TipoDocumento\FrmAMTipDoc.resx">
+      <DependentUpon>FrmAMTipDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\TipoDocumento\FrmTipDoc.resx">
+      <DependentUpon>FrmTipDoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -589,6 +589,7 @@
             this.btnSubMotivoEgreso.Text = "Motivo de egreso";
             this.btnSubMotivoEgreso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSubMotivoEgreso.UseVisualStyleBackColor = true;
+            this.btnSubMotivoEgreso.Click += new System.EventHandler(this.btnSubMotivoEgreso_Click);
             // 
             // btnSubTipoDoc
             // 
@@ -610,6 +611,7 @@
             this.btnSubTipoDoc.Text = "Tipo de documento";
             this.btnSubTipoDoc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSubTipoDoc.UseVisualStyleBackColor = true;
+            this.btnSubTipoDoc.Click += new System.EventHandler(this.btnSubTipoDoc_Click);
             // 
             // btnSubEtapas
             // 
@@ -775,6 +777,7 @@
             this.btnSubEmpleados.Text = "Empleados";
             this.btnSubEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSubEmpleados.UseVisualStyleBackColor = true;
+            this.btnSubEmpleados.Click += new System.EventHandler(this.btnSubEmpleados_Click);
             // 
             // btnAdministrar
             // 
