@@ -1,6 +1,6 @@
-﻿namespace TPI_NewWare.Formularios.Clientes
+﻿namespace TPI_NewWare.Formularios.Productos
 {
-    partial class FrmABMCCliente
+    partial class FrmABMCProducto
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -34,7 +34,6 @@
             this.grid = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_nombre = new TPI_NewWare.Clases.TextBox01();
             this.lbl_filtro_nombre = new System.Windows.Forms.Label();
             this.panel_work_space.SuspendLayout();
@@ -76,8 +75,7 @@
             this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
-            this.Column3,
-            this.Apellidos});
+            this.Column3});
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -102,30 +100,23 @@
             this.grid.RowHeadersVisible = false;
             this.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grid.Size = new System.Drawing.Size(394, 445);
-            this.grid.TabIndex = 16;
+            this.grid.TabIndex = 15;
             // 
             // Column1
             // 
-            this.Column1.FillWeight = 60.2124F;
-            this.Column1.HeaderText = "Legajo";
+            this.Column1.FillWeight = 33.42287F;
+            this.Column1.HeaderText = "Id";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // Column3
             // 
-            this.Column3.FillWeight = 71.04379F;
+            this.Column3.FillWeight = 202.3884F;
             this.Column3.HeaderText = "Nombre";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Apellidos
-            // 
-            this.Apellidos.FillWeight = 204.5551F;
-            this.Apellidos.HeaderText = "Apellidos";
-            this.Apellidos.Name = "Apellidos";
-            this.Apellidos.ReadOnly = true;
             // 
             // txt_nombre
             // 
@@ -137,7 +128,7 @@
             this.txt_nombre.Pp_nombre_tabla = null;
             this.txt_nombre.Pp_validable = false;
             this.txt_nombre.Size = new System.Drawing.Size(299, 22);
-            this.txt_nombre.TabIndex = 20;
+            this.txt_nombre.TabIndex = 18;
             // 
             // lbl_filtro_nombre
             // 
@@ -147,17 +138,17 @@
             this.lbl_filtro_nombre.Location = new System.Drawing.Point(15, 14);
             this.lbl_filtro_nombre.Name = "lbl_filtro_nombre";
             this.lbl_filtro_nombre.Size = new System.Drawing.Size(62, 20);
-            this.lbl_filtro_nombre.TabIndex = 21;
+            this.lbl_filtro_nombre.TabIndex = 19;
             this.lbl_filtro_nombre.Text = "Buscar:";
             // 
-            // FrmABMCCliente
+            // FrmABMCProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(800, 500);
             this.Controls.Add(this.txt_nombre);
             this.Controls.Add(this.lbl_filtro_nombre);
             this.Controls.Add(this.grid);
-            this.Name = "FrmABMCCliente";
+            this.Name = "FrmABMCProducto";
             this.Controls.SetChildIndex(this.panel_work_space, 0);
             this.Controls.SetChildIndex(this.grid, 0);
             this.Controls.SetChildIndex(this.lbl_filtro_nombre, 0);
@@ -176,7 +167,6 @@
         private System.Windows.Forms.DataGridView grid;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
         private Clases.TextBox01 txt_nombre;
         private System.Windows.Forms.Label lbl_filtro_nombre;
     }

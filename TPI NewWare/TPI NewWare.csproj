@@ -78,6 +78,12 @@
     <Compile Include="Formularios\Clientes\FrmABMCCliente.Designer.cs">
       <DependentUpon>FrmABMCCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Clientes\FrmAMCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Clientes\FrmAMCliente.Designer.cs">
+      <DependentUpon>FrmAMCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Empleados\FrmABMCEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,18 @@
     </Compile>
     <Compile Include="Formularios\MotivosEgresos\FrmAMEgreso.Designer.cs">
       <DependentUpon>FrmAMEgreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Productos\FrmABMCProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Productos\FrmABMCProducto.Designer.cs">
+      <DependentUpon>FrmABMCProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Productos\FrmAMProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Productos\FrmAMProducto.Designer.cs">
+      <DependentUpon>FrmAMProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Roles\FrmABMCRoles.cs">
       <SubType>Form</SubType>
@@ -186,6 +204,7 @@
     <Compile Include="Formularios\TipoDocumento\FrmTipDoc.Designer.cs">
       <DependentUpon>FrmTipDoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Negocio\Ng_Cliente.cs" />
     <Compile Include="Negocio\Ng_Empleado.cs" />
     <Compile Include="Negocio\Ng_Etapa.cs" />
     <Compile Include="Negocio\Ng_Herramienta.cs" />
@@ -196,6 +215,12 @@
     <Compile Include="Negocio\Ng_Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\Clientes\FrmABMCCliente.resx">
+      <DependentUpon>FrmABMCCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Clientes\FrmAMCliente.resx">
+      <DependentUpon>FrmAMCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Empleados\FrmABMCEmpleados.resx">
       <DependentUpon>FrmABMCEmpleados.cs</DependentUpon>
     </EmbeddedResource>
@@ -222,6 +247,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\MotivosEgresos\FrmAMEgreso.resx">
       <DependentUpon>FrmAMEgreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Productos\FrmABMCProducto.resx">
+      <DependentUpon>FrmABMCProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Productos\FrmAMProducto.resx">
+      <DependentUpon>FrmAMProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Roles\FrmABMCRoles.resx">
       <DependentUpon>FrmABMCRoles.cs</DependentUpon>

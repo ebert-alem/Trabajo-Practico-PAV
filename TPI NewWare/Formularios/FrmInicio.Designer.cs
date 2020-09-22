@@ -735,6 +735,7 @@
             this.btnSubProductos.Text = "Productos";
             this.btnSubProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSubProductos.UseVisualStyleBackColor = true;
+            this.btnSubProductos.Click += new System.EventHandler(this.btnSubProductos_Click);
             // 
             // btnSubClientes
             // 

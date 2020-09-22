@@ -14,6 +14,7 @@ using TPI_NewWare.Formularios.Etapas;
 using TPI_NewWare.Formularios.TipoDocumento;
 using TPI_NewWare.Formularios.MotivosEgresos;
 using TPI_NewWare.Formularios.Empleados;
+using TPI_NewWare.Formularios.Productos;
 
 namespace TPI_NewWare
 {
@@ -205,6 +206,13 @@ namespace TPI_NewWare
             lbl_Titulo.Text = "Empleados";
             lbl_Titulo.Visible = true;
             AbrirFormEnPanel(new FrmABMCEmpleados());
+        }
+
+        private void btnSubProductos_Click(object sender, EventArgs e)
+        {
+            lbl_Titulo.Text = "Productos";
+            lbl_Titulo.Visible = true;
+            AbrirFormEnPanel(new FrmABMCProducto());
         }
     }
 
