@@ -66,7 +66,34 @@ namespace TPI_NewWare.Entidades
 
         public override string SentciaSqlActualizar()
         {
-            return SqlUpdateDocumento(new string[9] { "nroDocumento", "id_documento", "nombres", "apellido", "telefono", "calle", "numeroCalle", "email", "activos" }, new string[9] { Documento, TipoDocumento, Nombre, Apellido, Telefono, Calle, NumeroCalle, Email, Activo }, int.Parse(Documento));
+            return SqlUpdateDocumento(new string[7] {"id_documento", "nombres", "apellido", "telefono", "calle", "numeroCalle", "email"}, new string[7] {TipoDocumento, Nombre, Apellido, Telefono, Calle, NumeroCalle, Email }, int.Parse(Documento));
+        }
+
+        public override void Eliminar(int Id)
+        {
+            //string cadena = SqlUpdateDocumento(new string[1] { "activos" }, new string[1] { Activo }, int.Parse(Documento));
+            string sql = "UPDATE " + NombreTabla + " SET " + "activos=0" + "WHERE nroDocumento=" + Id;
+            _BD.Comando(sql);
+        }
+
+        public override DataTable Listar(string[] Columnas, string[] Valores)
+        {
+            //Condicion por la que se filtra la busqueda
+            string Condiciones = " WHERE ( ";
+            for (int i = 0; i < Columnas.Length; i++)
+            {
+                Condiciones += Columnas[i] + " = '" + Valores[i] + "'";
+                //Agrega una coma salvo en el ultimo caso
+                if (i < Columnas.Length - 1) Condiciones += " , ";
+            }
+            Condiciones += ", activos='1' ) ";
+            return _BD.Consulta("SELECT * FROM " + NombreTabla + Condiciones);
+        }
+
+        public override DataTable Listar()
+        {
+            //Obtiene todos las filas de la BD
+            return _BD.Consulta("SELECT * FROM " + NombreTabla + " WHERE activos='1'");
         }
     }
 }

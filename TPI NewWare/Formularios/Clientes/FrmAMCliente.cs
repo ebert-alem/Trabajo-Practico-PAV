@@ -78,6 +78,7 @@ namespace TPI_NewWare.Formularios.Clientes
                     cliente.Email = txt_email.Text;
 
                     cliente.Guardar();
+
                 }
                 form_contenedor.ActualizarAlta();
                 this.Close();

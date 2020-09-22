@@ -58,7 +58,7 @@ namespace TPI_NewWare.Entidades
         {
             //Obtiene el nombre de la clase
             string clase = this.GetType().ToString().ToUpper();
-            string consulta = "SELECT * FROM " + NombreTabla + " WHERE id_Documento = '" + id + "'";
+            string consulta = "SELECT * FROM " + NombreTabla + " WHERE nroDocumento = '" + id + "'";
             DataTable tabla = _BD.Consulta(consulta);
 
             //Verifica si se encontro la fila
@@ -71,14 +71,14 @@ namespace TPI_NewWare.Entidades
             return false;
         }
 
-        public DataTable Listar()
+        public virtual DataTable Listar()
         {
             //Obtiene todos las filas de la BD
             return _BD.Consulta("SELECT * FROM " + NombreTabla);
         }
 
         //Genera una lista que cumpla las condiciones de las columnas ingresadas
-        public DataTable Listar(string[] Columnas, string[] Valores)
+        public virtual DataTable Listar(string[] Columnas, string[] Valores)
         {
             //Condicion por la que se filtra la busqueda
             string Condiciones = " WHERE ( ";
@@ -136,7 +136,8 @@ namespace TPI_NewWare.Entidades
 
         public void Guardar()
         {
-            _BD.Comando(SentciaSqlActualizar());
+            string sentencia = SentciaSqlActualizar();
+            _BD.Comando(sentencia);
         }
 
         public abstract string SentciaSqlActualizar();
@@ -148,7 +149,7 @@ namespace TPI_NewWare.Entidades
 
         public string SqlUpdate(string[] Columnas, string[] Valores, int Id)
         {
-            return "UPDATE " + NombreTabla + " SET " + SqlEquals(Columnas, Valores) + "WHERE ID=" + Id;
+            return "UPDATE " + NombreTabla + " SET " + SqlEquals(Columnas, Valores) + " WHERE ID=" + Id;
         }
 
         public string SqlUpdateLegajo(string[] Columnas, string[] Valores, int Id)
@@ -158,7 +159,7 @@ namespace TPI_NewWare.Entidades
 
         public string SqlUpdateDocumento(string[] Columnas, string[] Valores, int Id)
         {
-            return "UPDATE " + NombreTabla + " SET " + SqlEquals(Columnas, Valores) + "WHERE id_Documento=" + Id;
+            return "UPDATE " + NombreTabla + " SET " + SqlEquals(Columnas, Valores) + "WHERE nroDocumento=" + Id;
         }
         public string SqlEquals(string[] Columnas, string[] Valores)
         {
@@ -194,7 +195,7 @@ namespace TPI_NewWare.Entidades
             return Cadenas;
         }
 
-        public void Eliminar(int Id)
+        public virtual void Eliminar(int Id)
         {
             string sql = "DELETE FROM " + NombreTabla + " WHERE ID=" + Id.ToString();
             _BD.Comando(sql);

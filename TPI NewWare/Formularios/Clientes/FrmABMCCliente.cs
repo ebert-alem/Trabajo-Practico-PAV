@@ -118,7 +118,10 @@ namespace TPI_NewWare.Formularios.Clientes
                 //Carga un objeto con los datos de la tabal seleccionada 
                 objeto.Cargar_datos(TablaCompleta.Rows[this.Grilla.CurrentRow.Index]);
                 //Rellena los campos con los datos
-                lbl_visualizacion.Text = objeto.TipoDocumento + ": " + objeto.Documento;
+                Ng_TipDoc ng_TipDoc = new Ng_TipDoc();
+                TipDoc tipDoc = ng_TipDoc.Buscar(int.Parse(objeto.TipoDocumento));
+
+                lbl_visualizacion.Text = tipDoc.NombreTipoDocumento + ": " + objeto.Documento;
                 lbl_visualizacion.Text += "\nNombre: " + objeto.Nombre;
                 lbl_visualizacion.Text += "\nApellido: " + objeto.Apellido;
                 lbl_visualizacion.Text += "\nTelefono: " + objeto.Telefono;
