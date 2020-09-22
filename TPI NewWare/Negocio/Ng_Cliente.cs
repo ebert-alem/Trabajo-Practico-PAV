@@ -24,7 +24,7 @@ namespace TPI_NewWare.Negocio
 
         public DataTable ConsultaNombre(string Nombre)
         {
-            return cliente.ListarLike("nombre", Nombre);
+            return cliente.ListarLike("nombres", Nombre);
         }
 
         public void Baja(int legajo)
@@ -38,5 +38,6 @@ namespace TPI_NewWare.Negocio
             cliente_nuevo.BuscarDocumento(id);
             return cliente_nuevo;
         }
+
     }
 }
