@@ -25,7 +25,7 @@ namespace TPI_NewWare.Negocio
 
         public DataTable ConsultaNombre(string Nombre)
         {
-            return tipDoc.ListarLike("nombre", Nombre);
+            return tipDoc.ListarLike("nombreTipoDocumento", Nombre);
         }
 
         public void Baja(int Id)
@@ -36,7 +36,7 @@ namespace TPI_NewWare.Negocio
         public TipDoc Buscar(int id)
         {
             TipDoc tipDoc_nueva = new TipDoc();
-            tipDoc.Buscar(id);
+            tipDoc_nueva.Buscar(id);
             return tipDoc_nueva;
         }
     }

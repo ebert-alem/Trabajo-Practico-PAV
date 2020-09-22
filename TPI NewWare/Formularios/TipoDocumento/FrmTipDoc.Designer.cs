@@ -35,6 +35,7 @@
             this.txt_nombre = new TPI_NewWare.Clases.TextBox01();
             this.lbl_filtro_nombre = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_work_space.SuspendLayout();
             this.panel_visualizacion.SuspendLayout();
@@ -75,6 +76,7 @@
             this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
+            this.Id,
             this.Column2});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -101,6 +103,7 @@
             this.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grid.Size = new System.Drawing.Size(394, 445);
             this.grid.TabIndex = 14;
+            this.grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellClick);
             // 
             // txt_nombre
             // 
@@ -113,6 +116,7 @@
             this.txt_nombre.Pp_validable = false;
             this.txt_nombre.Size = new System.Drawing.Size(299, 22);
             this.txt_nombre.TabIndex = 16;
+            this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_KeyPress);
             // 
             // lbl_filtro_nombre
             // 
@@ -133,6 +137,12 @@
             this.Column1.ReadOnly = true;
             this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
             // Column2
             // 
             this.Column2.FillWeight = 103.275F;
@@ -149,6 +159,7 @@
             this.Controls.Add(this.lbl_filtro_nombre);
             this.Controls.Add(this.grid);
             this.Name = "FrmTipDoc";
+            this.Load += new System.EventHandler(this.FrmABMCTipoDoc_Load);
             this.Controls.SetChildIndex(this.panel_work_space, 0);
             this.Controls.SetChildIndex(this.grid, 0);
             this.Controls.SetChildIndex(this.lbl_filtro_nombre, 0);
@@ -168,6 +179,7 @@
         private Clases.TextBox01 txt_nombre;
         private System.Windows.Forms.Label lbl_filtro_nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }
