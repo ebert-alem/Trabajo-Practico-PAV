@@ -5,28 +5,29 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using TPI_NewWare.Negocio;
 using TPI_NewWare.Entidades;
+using TPI_NewWare.Negocio;
 
-namespace TPI_NewWare.Formularios.Roles
+namespace TPI_NewWare.Formularios.TipoDocumento
 {
-    public partial class FrmABMCRoles : TPI_NewWare.Formularios.FrmABMBase
+    public partial class FrmTipDoc : TPI_NewWare.Formularios.FrmABMBase
     {
-        Ng_Producto ng_Rol = new Ng_Producto();
-        protected override ClaseBase Objeto => new Rol();
+        Ng_TipDoc negocio = new Ng_TipDoc();
+
+        protected override ClaseBase Objeto => new TipDoc();
 
 
-        public FrmABMCRoles()
+        public FrmTipDoc()
         {
             InitializeComponent();
             Grilla = grid;
         }
 
-        private void FrmABMCRoles_Load(object sender, EventArgs e)
+        private void FrmABMCTipoDoc_Load(object sender, EventArgs e)
         {
+            //Carga la grilla con los valores elegidos
             CargarGrilla();
         }
-
         protected override void CargarGrilla(DataTable tabla)
         {
             //Guardo la tabla completa
@@ -38,7 +39,7 @@ namespace TPI_NewWare.Formularios.Roles
             {
                 grid.Rows.Add();
                 grid.Rows[i].Cells[0].Value = tabla.Rows[i]["id"].ToString();
-                grid.Rows[i].Cells[1].Value = tabla.Rows[i]["nombre"].ToString();
+                grid.Rows[i].Cells[1].Value = tabla.Rows[i]["nombreTipoDocumento"].ToString();
                 grid.Rows[i].Cells[2].Value = tabla.Rows[i]["descripcion"].ToString();
             }
             //Actualiza la visualizacion del primer elemento
@@ -47,7 +48,7 @@ namespace TPI_NewWare.Formularios.Roles
 
         protected override void CargarGrilla()
         {
-            CargarGrilla(ng_Rol.Consulta());
+            CargarGrilla(negocio.Consulta());
         }
 
         private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -57,14 +58,14 @@ namespace TPI_NewWare.Formularios.Roles
 
         public override void MostrarSubformAlta()
         {
-            FrmAM = new FrmAMRoles(this);
+            FrmAM = new FrmAMTipDoc(this);
             //Asigna el form a la ventana
             AbrirFormEnPanel(FrmAM);
         }
 
         public override void MostrarSubformConsulta()
         {
-            FrmAM = new FrmAMRoles(this, IdActual());
+            FrmAM = new FrmAMTipDoc(this, IdActual());
             //Asigna el form a la ventana
             AbrirFormEnPanel(FrmAM);
         }
@@ -79,7 +80,7 @@ namespace TPI_NewWare.Formularios.Roles
         protected override void SetCeldaActual()
         {
             grid.ClearSelection();
-            grid.CurrentCell = grid.Rows[grid.Rows.Count - 1].Cells["Column1"];
+            grid.CurrentCell = grid.Rows[grid.Rows.Count - 1].Cells["id"];
             ActualizarVisualizacion();
         }
 
@@ -90,11 +91,11 @@ namespace TPI_NewWare.Formularios.Roles
                 string filtro = txt_nombre.Text;
                 if (filtro != "")
                 {
-                    CargarGrilla(ng_Rol.ConsultaNombre(filtro));
+                    CargarGrilla(negocio.ConsultaNombre(filtro));
                 }
                 else
                 {
-                    CargarGrilla(ng_Rol.Consulta());
+                    CargarGrilla(negocio.Consulta());
                 }
 
             }
@@ -110,14 +111,15 @@ namespace TPI_NewWare.Formularios.Roles
             else
             {
                 //Busca la herramienta seleccionada en la bd por id
-                Rol rol = new Rol();
+                TipDoc tipDoc = new TipDoc();
                 //Carga un objeto con los datos de la tabal seleccionada 
-                rol.Cargar_datos(TablaCompleta.Rows[this.Grilla.CurrentRow.Index]);
+                tipDoc.Cargar_datos(TablaCompleta.Rows[this.Grilla.CurrentRow.Index]);
                 //Rellena los campos con los datos
-                lbl_visualizacion.Text = "Id: " + rol.Id;
-                lbl_visualizacion.Text += "\nNombre: " + rol.Nombre;
-                lbl_visualizacion.Text += "\nDescripción: " + rol.Descripcion;
+                lbl_visualizacion.Text = "Id: " + tipDoc.Id;
+                lbl_visualizacion.Text = "\nNombre: " + tipDoc.NombreTipoDocumento;
+                lbl_visualizacion.Text += "\nDescripción: " + tipDoc.Descripcion;
             }
         }
     }
+
 }

@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TPI_NewWare.Entidades;
+using System.Data;
 
 namespace TPI_NewWare.Negocio
 {
     class Ng_Usuario
     {
+        Usuario usu = new Usuario();
         //Valida la existencia de un usuario en BD
         public bool Validar_usuario(string nombre, string pass)
         {   
@@ -31,6 +33,11 @@ namespace TPI_NewWare.Negocio
             //Guarda el objeto en bd
             usuario.Insertar();
             return true;
+        }
+
+        public DataTable Consulta()
+        {
+            return usu.Listar();
         }
 
     }

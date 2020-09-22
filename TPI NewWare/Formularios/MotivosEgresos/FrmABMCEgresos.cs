@@ -5,28 +5,29 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using TPI_NewWare.Negocio;
 using TPI_NewWare.Entidades;
+using TPI_NewWare.Negocio;
 
-namespace TPI_NewWare.Formularios.Roles
+namespace TPI_NewWare.Formularios.MotivosEgresos
 {
-    public partial class FrmABMCRoles : TPI_NewWare.Formularios.FrmABMBase
+    public partial class FrmABMCEgresos : TPI_NewWare.Formularios.FrmABMBase
     {
-        Ng_Producto ng_Rol = new Ng_Producto();
-        protected override ClaseBase Objeto => new Rol();
+        Ng_MotivoEgreso negocio = new Ng_MotivoEgreso();
+
+        protected override ClaseBase Objeto => new MotivoEgreso();
 
 
-        public FrmABMCRoles()
+        public FrmABMCEgresos()
         {
             InitializeComponent();
             Grilla = grid;
         }
 
-        private void FrmABMCRoles_Load(object sender, EventArgs e)
+        private void FrmABMCHerramientas_Load(object sender, EventArgs e)
         {
+            //Carga la grilla con los valores elegidos
             CargarGrilla();
         }
-
         protected override void CargarGrilla(DataTable tabla)
         {
             //Guardo la tabla completa
@@ -39,7 +40,6 @@ namespace TPI_NewWare.Formularios.Roles
                 grid.Rows.Add();
                 grid.Rows[i].Cells[0].Value = tabla.Rows[i]["id"].ToString();
                 grid.Rows[i].Cells[1].Value = tabla.Rows[i]["nombre"].ToString();
-                grid.Rows[i].Cells[2].Value = tabla.Rows[i]["descripcion"].ToString();
             }
             //Actualiza la visualizacion del primer elemento
             ActualizarVisualizacion();
@@ -47,7 +47,7 @@ namespace TPI_NewWare.Formularios.Roles
 
         protected override void CargarGrilla()
         {
-            CargarGrilla(ng_Rol.Consulta());
+            CargarGrilla(negocio.Consulta());
         }
 
         private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -57,14 +57,14 @@ namespace TPI_NewWare.Formularios.Roles
 
         public override void MostrarSubformAlta()
         {
-            FrmAM = new FrmAMRoles(this);
+            FrmAM = new FrmAMEgreso(this);
             //Asigna el form a la ventana
             AbrirFormEnPanel(FrmAM);
         }
 
         public override void MostrarSubformConsulta()
         {
-            FrmAM = new FrmAMRoles(this, IdActual());
+            FrmAM = new FrmAMEgreso(this, IdActual());
             //Asigna el form a la ventana
             AbrirFormEnPanel(FrmAM);
         }
@@ -85,19 +85,7 @@ namespace TPI_NewWare.Formularios.Roles
 
         private void txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
-            {
-                string filtro = txt_nombre.Text;
-                if (filtro != "")
-                {
-                    CargarGrilla(ng_Rol.ConsultaNombre(filtro));
-                }
-                else
-                {
-                    CargarGrilla(ng_Rol.Consulta());
-                }
 
-            }
         }
 
         public override void ActualizarVisualizacion()
@@ -110,13 +98,12 @@ namespace TPI_NewWare.Formularios.Roles
             else
             {
                 //Busca la herramienta seleccionada en la bd por id
-                Rol rol = new Rol();
+                MotivoEgreso motivoEgreso = new MotivoEgreso();
                 //Carga un objeto con los datos de la tabal seleccionada 
-                rol.Cargar_datos(TablaCompleta.Rows[this.Grilla.CurrentRow.Index]);
+                motivoEgreso.Cargar_datos(TablaCompleta.Rows[this.Grilla.CurrentRow.Index]);
                 //Rellena los campos con los datos
-                lbl_visualizacion.Text = "Id: " + rol.Id;
-                lbl_visualizacion.Text += "\nNombre: " + rol.Nombre;
-                lbl_visualizacion.Text += "\nDescripción: " + rol.Descripcion;
+                lbl_visualizacion.Text = "Id: " + motivoEgreso.Id;
+                lbl_visualizacion.Text += "\nNombre: " + motivoEgreso.Nombre;
             }
         }
     }

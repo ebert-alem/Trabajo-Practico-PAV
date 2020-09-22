@@ -11,7 +11,11 @@ using System.Windows.Forms;
 using TPI_NewWare.Formularios.Herramientas;
 using TPI_NewWare.Formularios.Roles;
 using TPI_NewWare.Formularios.Etapas;
-
+using TPI_NewWare.Formularios.TipoDocumento;
+using TPI_NewWare.Formularios.MotivosEgresos;
+using TPI_NewWare.Formularios.Empleados;
+using TPI_NewWare.Formularios.Productos;
+using TPI_NewWare.Formularios.Clientes;
 
 namespace TPI_NewWare
 {
@@ -182,6 +186,41 @@ namespace TPI_NewWare
             lbl_Titulo.Text = "Etapas";
             lbl_Titulo.Visible = true;
             AbrirFormEnPanel(new FrmABMCEtapas());
+        }
+
+        private void btnSubTipoDoc_Click(object sender, EventArgs e)
+        {
+            lbl_Titulo.Text = "Tipos de Documento";
+            lbl_Titulo.Visible = true;
+            AbrirFormEnPanel(new FrmTipDoc());
+        }
+
+        private void btnSubMotivoEgreso_Click(object sender, EventArgs e)
+        {
+            lbl_Titulo.Text = "Motivos de Egreso";
+            lbl_Titulo.Visible = true;
+            AbrirFormEnPanel(new FrmABMCEgresos());
+        }
+
+        private void btnSubEmpleados_Click(object sender, EventArgs e)
+        {
+            lbl_Titulo.Text = "Empleados";
+            lbl_Titulo.Visible = true;
+            AbrirFormEnPanel(new FrmABMCEmpleados());
+        }
+
+        private void btnSubProductos_Click(object sender, EventArgs e)
+        {
+            lbl_Titulo.Text = "Productos";
+            lbl_Titulo.Visible = true;
+            AbrirFormEnPanel(new FrmABMCProducto());
+        }
+
+        private void btnSubClientes_Click(object sender, EventArgs e)
+        {
+            lbl_Titulo.Text = "Clientes";
+            lbl_Titulo.Visible = true;
+            AbrirFormEnPanel(new FrmABMCCliente());
         }
     }
 

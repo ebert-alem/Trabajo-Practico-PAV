@@ -8,22 +8,21 @@ using System.Windows.Forms;
 using TPI_NewWare.Negocio;
 using TPI_NewWare.Entidades;
 
-namespace TPI_NewWare.Formularios.Roles
+namespace TPI_NewWare.Formularios.Clientes
 {
-    public partial class FrmABMCRoles : TPI_NewWare.Formularios.FrmABMBase
+    public partial class FrmABMCCliente : TPI_NewWare.Formularios.FrmABMBase
     {
-        Ng_Producto ng_Rol = new Ng_Producto();
-        protected override ClaseBase Objeto => new Rol();
+        Ng_Cliente negocio = new Ng_Cliente();
+        protected override ClaseBase Objeto => new Cliente();
 
-
-        public FrmABMCRoles()
+        public FrmABMCCliente()
         {
             InitializeComponent();
             Grilla = grid;
         }
-
-        private void FrmABMCRoles_Load(object sender, EventArgs e)
+        private void FrmABMCCliente_Load(object sender, EventArgs e)
         {
+            //Carga la grilla con los valores elegidos
             CargarGrilla();
         }
 
@@ -37,9 +36,15 @@ namespace TPI_NewWare.Formularios.Roles
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
                 grid.Rows.Add();
-                grid.Rows[i].Cells[0].Value = tabla.Rows[i]["id"].ToString();
-                grid.Rows[i].Cells[1].Value = tabla.Rows[i]["nombre"].ToString();
-                grid.Rows[i].Cells[2].Value = tabla.Rows[i]["descripcion"].ToString();
+                grid.Rows[i].Cells[0].Value = tabla.Rows[i]["id_documento"].ToString();
+                //grid.Rows[i].Cells[1].Value = tabla.Rows[i]["documento"].ToString();
+                grid.Rows[i].Cells[1].Value = tabla.Rows[i]["nombres"].ToString();
+                grid.Rows[i].Cells[2].Value = tabla.Rows[i]["apellido"].ToString();
+                //grid.Rows[i].Cells[4].Value = tabla.Rows[i]["telefono"].ToString();
+                //grid.Rows[i].Cells[5].Value = tabla.Rows[i]["calle"].ToString();
+                //grid.Rows[i].Cells[6].Value = tabla.Rows[i]["numeroCalle"].ToString();
+                //grid.Rows[i].Cells[7].Value = tabla.Rows[i]["email"].ToString();
+                //grid.Rows[i].Cells[8].Value = tabla.Rows[i]["activos"].ToString();
             }
             //Actualiza la visualizacion del primer elemento
             ActualizarVisualizacion();
@@ -47,7 +52,7 @@ namespace TPI_NewWare.Formularios.Roles
 
         protected override void CargarGrilla()
         {
-            CargarGrilla(ng_Rol.Consulta());
+            CargarGrilla(negocio.Consulta());
         }
 
         private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -57,14 +62,14 @@ namespace TPI_NewWare.Formularios.Roles
 
         public override void MostrarSubformAlta()
         {
-            FrmAM = new FrmAMRoles(this);
+            FrmAM = new FrmAMCliente(this);
             //Asigna el form a la ventana
             AbrirFormEnPanel(FrmAM);
         }
 
         public override void MostrarSubformConsulta()
         {
-            FrmAM = new FrmAMRoles(this, IdActual());
+            FrmAM = new FrmAMCliente(this, IdActual());
             //Asigna el form a la ventana
             AbrirFormEnPanel(FrmAM);
         }
@@ -72,7 +77,7 @@ namespace TPI_NewWare.Formularios.Roles
         //Devuelve el id de la fila actualmente seleccionada
         protected override int IdActual()
         {
-            return int.Parse(TablaCompleta.Rows[this.Grilla.CurrentRow.Index]["id"].ToString());
+            return int.Parse(TablaCompleta.Rows[this.Grilla.CurrentRow.Index]["nroDocumento"].ToString());
         }
 
         //Setea la celda creada como la celda actual
@@ -90,13 +95,12 @@ namespace TPI_NewWare.Formularios.Roles
                 string filtro = txt_nombre.Text;
                 if (filtro != "")
                 {
-                    CargarGrilla(ng_Rol.ConsultaNombre(filtro));
+                    CargarGrilla(negocio.ConsultaNombre(filtro));
                 }
                 else
                 {
-                    CargarGrilla(ng_Rol.Consulta());
+                    CargarGrilla(negocio.Consulta());
                 }
-
             }
         }
 
@@ -110,13 +114,17 @@ namespace TPI_NewWare.Formularios.Roles
             else
             {
                 //Busca la herramienta seleccionada en la bd por id
-                Rol rol = new Rol();
+                Cliente objeto = new Cliente();
                 //Carga un objeto con los datos de la tabal seleccionada 
-                rol.Cargar_datos(TablaCompleta.Rows[this.Grilla.CurrentRow.Index]);
+                objeto.Cargar_datos(TablaCompleta.Rows[this.Grilla.CurrentRow.Index]);
                 //Rellena los campos con los datos
-                lbl_visualizacion.Text = "Id: " + rol.Id;
-                lbl_visualizacion.Text += "\nNombre: " + rol.Nombre;
-                lbl_visualizacion.Text += "\nDescripción: " + rol.Descripcion;
+                lbl_visualizacion.Text = objeto.TipoDocumento + ": " + objeto.Documento;
+                lbl_visualizacion.Text += "\nNombre: " + objeto.Nombre;
+                lbl_visualizacion.Text += "\nApellido: " + objeto.Apellido;
+                lbl_visualizacion.Text += "\nTelefono: " + objeto.Telefono;
+                lbl_visualizacion.Text += "\nDomicilio: " + objeto.Calle + " " + objeto.NumeroCalle;
+                lbl_visualizacion.Text += "\nEmail: " + objeto.Email;
+
             }
         }
     }
