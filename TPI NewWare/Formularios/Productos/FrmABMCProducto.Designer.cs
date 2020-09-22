@@ -151,6 +151,7 @@
             this.Controls.Add(this.lbl_filtro_nombre);
             this.Controls.Add(this.grid);
             this.Name = "FrmABMCProducto";
+            this.Load += new System.EventHandler(this.FrmABMCProducto_Load);
             this.Controls.SetChildIndex(this.panel_work_space, 0);
             this.Controls.SetChildIndex(this.grid, 0);
             this.Controls.SetChildIndex(this.lbl_filtro_nombre, 0);

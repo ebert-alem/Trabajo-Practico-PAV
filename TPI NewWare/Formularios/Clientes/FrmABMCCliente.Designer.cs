@@ -31,9 +31,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.txt_nombre = new TPI_NewWare.Clases.TextBox01();
             this.lbl_filtro_nombre = new System.Windows.Forms.Label();
             this.grid = new System.Windows.Forms.DataGridView();
+            this.txt_nombre = new TPI_NewWare.Clases.TextBox01();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,19 +53,6 @@
             // btn_nuevo
             // 
             this.btn_nuevo.FlatAppearance.BorderSize = 0;
-            // 
-            // txt_nombre
-            // 
-            this.txt_nombre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nombre.Location = new System.Drawing.Point(95, 12);
-            this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Pp_mensajeError = null;
-            this.txt_nombre.Pp_nombre_campo = null;
-            this.txt_nombre.Pp_nombre_tabla = null;
-            this.txt_nombre.Pp_validable = false;
-            this.txt_nombre.Size = new System.Drawing.Size(299, 22);
-            this.txt_nombre.TabIndex = 20;
-            this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_KeyPress);
             // 
             // lbl_filtro_nombre
             // 
@@ -129,10 +116,23 @@
             this.grid.TabIndex = 23;
             this.grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellClick);
             // 
+            // txt_nombre
+            // 
+            this.txt_nombre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nombre.Location = new System.Drawing.Point(95, 12);
+            this.txt_nombre.Name = "txt_nombre";
+            this.txt_nombre.Pp_mensajeError = null;
+            this.txt_nombre.Pp_nombre_campo = null;
+            this.txt_nombre.Pp_nombre_tabla = null;
+            this.txt_nombre.Pp_validable = false;
+            this.txt_nombre.Size = new System.Drawing.Size(299, 22);
+            this.txt_nombre.TabIndex = 20;
+            this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_KeyPress);
+            // 
             // Column1
             // 
             this.Column1.FillWeight = 60.2124F;
-            this.Column1.HeaderText = "Legajo";
+            this.Column1.HeaderText = "Doc";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;

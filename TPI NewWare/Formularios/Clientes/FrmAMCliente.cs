@@ -34,7 +34,7 @@ namespace TPI_NewWare.Formularios.Clientes
             btn_crear.Text = "Modificar";
 
             //Se obtiene el objeto a modificar
-            cliente = negocio.Buscar(id);
+            cliente = negocio.BuscarDocumento(id);
 
             //Se actualizan los campos del formulario con los atributos
             txt_NroDocumento.Text = cliente.Documento;
@@ -63,7 +63,7 @@ namespace TPI_NewWare.Formularios.Clientes
                 {
 
                     //Da el alta de la herramienta
-                    negocio.Alta(txt_NroDocumento.Text, (string)cmb_tipDoc.SelectedItem, txt_nombre.Text, txt_apellido.Text, txt_Calle.Text, txt_nroCalle.Text, txt_telefono.Text, txt_email.Text, "true");
+                    negocio.Alta(txt_NroDocumento.Text, (string)cmb_tipDoc.SelectedItem, txt_nombre.Text, txt_apellido.Text, txt_telefono.Text, txt_Calle.Text, txt_nroCalle.Text, txt_email.Text, "1");
                 }
                 else
                 {
@@ -96,7 +96,7 @@ namespace TPI_NewWare.Formularios.Clientes
             {
                 for (int i = 0; i < tabla.Rows.Count; i++)
                 {
-                    cmb_tipDoc.Items.Add(tabla.Rows[i]["nombreTipoDocumento"].ToString());
+                    cmb_tipDoc.Items.Add(tabla.Rows[i]["id"].ToString());
                 }
             }
         }

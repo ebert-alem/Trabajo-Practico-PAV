@@ -40,7 +40,7 @@ namespace TPI_NewWare.Entidades
 
         public override string SentciaSqlActualizar()
         {
-            return SqlUpdate(new string[2] { "nombreTipoDocumento", "descripcion"}, new string[2] { NombreTipoDocumento, Descripcion }, int.Parse(NombreTipoDocumento));
+            return SqlUpdate(new string[2] { "nombreTipoDocumento", "descripcion"}, new string[2] { NombreTipoDocumento, Descripcion }, int.Parse(Id));
         }
 
     }

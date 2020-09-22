@@ -37,7 +37,7 @@ namespace TPI_NewWare.Formularios.TipoDocumento
             tipDoc = negocio.Buscar(id);
             //Se actualizan los campos del formulario con los atributos
             txt_nombre.Text = tipDoc.NombreTipoDocumento;
-            tipDoc.Descripcion = txt_descripcion.Text;
+            txt_descripcion.Text = tipDoc.Descripcion;
         }
 
         public override void btn_cancelar_Click(object sender, EventArgs e)

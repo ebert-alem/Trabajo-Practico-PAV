@@ -11,9 +11,9 @@ namespace TPI_NewWare.Negocio
     class Ng_Cliente
     {
         Cliente cliente = new Cliente();
-        public void Alta(string documento, string tipoDocumento, string nombre, string apellido, string telefono, string calle, string numeroCalle, string email, string activo)
+        public void Alta(string documento, string tipoDocumento, string nombre, string apellido, string telefono, string calle, string numeroCalle, string email, string activos)
         {
-            Cliente empleado_nueva = new Cliente(documento, tipoDocumento, nombre, apellido, telefono, calle, numeroCalle, email, activo);
+            Cliente empleado_nueva = new Cliente(documento, tipoDocumento, nombre, apellido, telefono, calle, numeroCalle, email, activos);
             empleado_nueva.Crear();
         }
 
@@ -32,10 +32,10 @@ namespace TPI_NewWare.Negocio
             cliente.Eliminar(legajo);
         }
 
-        public Cliente Buscar(int legajo)
+        public Cliente BuscarDocumento(int id)
         {
             Cliente cliente_nuevo = new Cliente();
-            cliente_nuevo.Buscar(legajo);
+            cliente_nuevo.BuscarDocumento(id);
             return cliente_nuevo;
         }
     }

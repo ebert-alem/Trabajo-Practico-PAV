@@ -37,6 +37,39 @@ namespace TPI_NewWare.Entidades
             }
             return false;
         }
+        public bool BuscarLegajo(int id)
+        {
+            //Obtiene el nombre de la clase
+            string clase = this.GetType().ToString().ToUpper();
+            string consulta = "SELECT * FROM " + NombreTabla + " WHERE legajo = '" + id + "'";
+            DataTable tabla = _BD.Consulta(consulta);
+
+            //Verifica si se encontro la fila
+            if (tabla.Rows.Count > 0)
+            {
+                //Carga al objeto con los datos de la fila
+                Cargar_datos(tabla.Rows[0]);
+                return true;
+            }
+            return false;
+        }
+
+        public bool BuscarDocumento(int id)
+        {
+            //Obtiene el nombre de la clase
+            string clase = this.GetType().ToString().ToUpper();
+            string consulta = "SELECT * FROM " + NombreTabla + " WHERE id_Documento = '" + id + "'";
+            DataTable tabla = _BD.Consulta(consulta);
+
+            //Verifica si se encontro la fila
+            if (tabla.Rows.Count > 0)
+            {
+                //Carga al objeto con los datos de la fila
+                Cargar_datos(tabla.Rows[0]);
+                return true;
+            }
+            return false;
+        }
 
         public DataTable Listar()
         {
@@ -105,6 +138,7 @@ namespace TPI_NewWare.Entidades
         {
             _BD.Comando(SentciaSqlActualizar());
         }
+
         public abstract string SentciaSqlActualizar();
 
         public string SqlInsert(string[] Columnas, string[] Valores)
@@ -117,6 +151,15 @@ namespace TPI_NewWare.Entidades
             return "UPDATE " + NombreTabla + " SET " + SqlEquals(Columnas, Valores) + "WHERE ID=" + Id;
         }
 
+        public string SqlUpdateLegajo(string[] Columnas, string[] Valores, int Id)
+        {
+            return "UPDATE " + NombreTabla + " SET " + SqlEquals(Columnas, Valores) + "WHERE legajo=" + Id;
+        }
+
+        public string SqlUpdateDocumento(string[] Columnas, string[] Valores, int Id)
+        {
+            return "UPDATE " + NombreTabla + " SET " + SqlEquals(Columnas, Valores) + "WHERE id_Documento=" + Id;
+        }
         public string SqlEquals(string[] Columnas, string[] Valores)
         {
             string Condiciones = "";

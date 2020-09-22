@@ -37,14 +37,14 @@ namespace TPI_NewWare.Formularios.Clientes
             {
                 grid.Rows.Add();
                 grid.Rows[i].Cells[0].Value = tabla.Rows[i]["id_documento"].ToString();
-                grid.Rows[i].Cells[1].Value = tabla.Rows[i]["documento"].ToString();
+                //grid.Rows[i].Cells[1].Value = tabla.Rows[i]["documento"].ToString();
+                grid.Rows[i].Cells[1].Value = tabla.Rows[i]["nombres"].ToString();
                 grid.Rows[i].Cells[2].Value = tabla.Rows[i]["apellido"].ToString();
-                grid.Rows[i].Cells[3].Value = tabla.Rows[i]["nombres"].ToString();
-                grid.Rows[i].Cells[4].Value = tabla.Rows[i]["telefono"].ToString();
-                grid.Rows[i].Cells[5].Value = tabla.Rows[i]["calle"].ToString();
-                grid.Rows[i].Cells[6].Value = tabla.Rows[i]["numeroCalle"].ToString();
-                grid.Rows[i].Cells[7].Value = tabla.Rows[i]["email"].ToString();
-                grid.Rows[i].Cells[8].Value = tabla.Rows[i]["activos"].ToString();
+                //grid.Rows[i].Cells[4].Value = tabla.Rows[i]["telefono"].ToString();
+                //grid.Rows[i].Cells[5].Value = tabla.Rows[i]["calle"].ToString();
+                //grid.Rows[i].Cells[6].Value = tabla.Rows[i]["numeroCalle"].ToString();
+                //grid.Rows[i].Cells[7].Value = tabla.Rows[i]["email"].ToString();
+                //grid.Rows[i].Cells[8].Value = tabla.Rows[i]["activos"].ToString();
             }
             //Actualiza la visualizacion del primer elemento
             ActualizarVisualizacion();

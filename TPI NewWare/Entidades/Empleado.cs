@@ -23,6 +23,7 @@ namespace TPI_NewWare.Entidades
         public string Id_Egreso { get; set; }
         public string Usuario { get; set; }
         public string Domicilio { get; set; }
+        public string Activo { get; set; }
 
 
 
@@ -31,7 +32,7 @@ namespace TPI_NewWare.Entidades
         {
         }
 
-        public Empleado(string legajo, string nombre, string apellido, string documento, string fecha_ingresante, string fecha_egreso, string domicilio, string fecha_nacimiento, string id_documento, string nombreUsuario, string id_egreso)
+        public Empleado(string legajo, string id_egreso, string id_documento, string nombreUsuario, string documento, string nombre, string apellido, string fecha_ingresante, string fecha_egreso, string domicilio, string fecha_nacimiento, string activo)
         {
             Legajo = legajo;
             Nombre = nombre;
@@ -44,13 +45,14 @@ namespace TPI_NewWare.Entidades
             Documento = documento;
             Usuario = nombreUsuario;
             Id_Egreso = id_egreso;
+            Activo = activo;
 
         }
 
         public override void Cargar_datos(DataRow fila)
         {
             Legajo = fila["legajo"].ToString();
-            Nombre = fila["nombre"].ToString();
+            Nombre = fila["nombres"].ToString();
             Apellido = fila["apellido"].ToString();
             FechaIngreso = fila["fecha_ingresante"].ToString();
             FechaEgreso = fila["fecha_egreso"].ToString();
@@ -60,17 +62,17 @@ namespace TPI_NewWare.Entidades
             Documento = fila["documento"].ToString();
             Usuario = fila["nombreUsuario"].ToString();
             Id_Egreso = fila["id_egreso"].ToString();
-
+            Id_Egreso = fila["activo"].ToString();
         }
 
         public override string SentciaSqlCrear()
         {
-            return SqlInsert(new string[11] { "legajo", "nombres", "apellido", "fecha_ingresante", "fecha_egreso", "fecha_nacimiento", "domicilio", "id_documento", "documento", "nombreUsuario", "id_egreso" }, new string[11] { Legajo, Nombre, Apellido, FechaIngreso, FechaEgreso, FechaNacimiento, Domicilio, TipoDocumento, Documento, Usuario, Id_Egreso });
+            return SqlInsert(new string[12] { "legajo", "id_egreso", "id_documento", "nombreUsuario", "documento", "nombres", "apellido", "fecha_ingresante", "fecha_egreso", "domicilio", "fecha_nacimiento", "activo"}, new string[12] { Legajo, Id_Egreso, TipoDocumento,  Usuario, Documento, Nombre, Apellido, FechaIngreso, FechaEgreso, (string) Domicilio, FechaNacimiento, Activo});
         }
 
         public override string SentciaSqlActualizar()
         {
-            return SqlUpdate(new string[11] { "legajo", "nombres", "apellido", "fecha_ingresante", "fecha_egreso", "fecha_nacimiento", "domicilio", "id_diocumento", "documento", "nombreUsuario", "id_egreso" }, new string[11] { Legajo, Nombre, Apellido, FechaIngreso, FechaEgreso, FechaNacimiento, Domicilio, TipoDocumento, Documento, Usuario, Id_Egreso}, int.Parse(Legajo));
+            return SqlUpdateLegajo(new string[12] { "legajo", "id_egreso", "id_documento", "nombreUsuario", "documento", "nombres", "apellido", "fecha_ingresante", "fecha_egreso", "domicilio", "fecha_nacimiento", "activo" }, new string[12] { Legajo, Id_Egreso, TipoDocumento, Usuario, Documento, Nombre, Apellido, FechaIngreso, FechaEgreso, (string) Domicilio, FechaNacimiento, Activo }, int.Parse(Legajo));
         }
     }
 }

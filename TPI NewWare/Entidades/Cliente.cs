@@ -28,7 +28,7 @@ namespace TPI_NewWare.Entidades
         {
         }
 
-        public Cliente(string documento, string id_documento, string nombre, string apellido, string telefono, string calle, string numeroCalle, string email, string activo)
+        public Cliente(string documento, string id_documento, string nombre, string apellido, string telefono, string calle, string numeroCalle, string email, string activos)
         {
             Documento = documento;
             TipoDocumento = id_documento;
@@ -38,20 +38,20 @@ namespace TPI_NewWare.Entidades
             Calle = calle;
             NumeroCalle = numeroCalle;
             Email = email;
-            Activo = activo;
+            Activo = activos;
         }
 
         public override void Cargar_datos(DataRow fila)
         {
             Documento = fila["nroDocumento"].ToString();
             TipoDocumento = fila["id_documento"].ToString();
-            Nombre = fila["nombre"].ToString();
+            Nombre = fila["nombres"].ToString();
             Apellido = fila["apellido"].ToString();
             Telefono = fila["telefono"].ToString();
             Calle = fila["calle"].ToString();
             NumeroCalle = fila["numeroCalle"].ToString();
             Email = fila["email"].ToString();
-            Activo = fila["activo"].ToString();
+            Activo = fila["activos"].ToString();
         }
 
         //public override void Eliminar(int Id)
@@ -61,12 +61,12 @@ namespace TPI_NewWare.Entidades
 
         public override string SentciaSqlCrear()
         {
-            return SqlInsert(new string[9] { "nroDocumento", "id_documento", "nombres", "apellido", "telefono", "calle", "numeroCalle", "email", "activo" }, new string[9] { Documento, TipoDocumento, Nombre, Apellido, Telefono, Calle, NumeroCalle, Email, Activo });
+            return SqlInsert(new string[9] { "nroDocumento", "id_documento", "nombres", "apellido", "telefono", "calle", "numeroCalle", "email", "activos" }, new string[9] { Documento, TipoDocumento, Nombre, Apellido, Telefono, Calle, NumeroCalle, Email, Activo });
         }
 
         public override string SentciaSqlActualizar()
         {
-            return SqlUpdate(new string[9] { "nroDocumento", "id_documento", "nombres", "apellido", "telefono", "calle", "numeroCalle", "email", "activo" }, new string[9] { Documento, TipoDocumento, Nombre, Apellido, Telefono, Calle, NumeroCalle, Email, Activo }, int.Parse(Documento));
+            return SqlUpdateDocumento(new string[9] { "nroDocumento", "id_documento", "nombres", "apellido", "telefono", "calle", "numeroCalle", "email", "activos" }, new string[9] { Documento, TipoDocumento, Nombre, Apellido, Telefono, Calle, NumeroCalle, Email, Activo }, int.Parse(Documento));
         }
     }
 }

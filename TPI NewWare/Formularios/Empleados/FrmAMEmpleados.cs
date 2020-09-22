@@ -35,7 +35,7 @@ namespace TPI_NewWare.Formularios.Empleados
             btn_crear.Text = "Modificar";
 
             //Se obtiene el objeto a modificar
-            empleado = negocio.Buscar(id);
+            empleado = negocio.BuscarLegajo(id);
 
             //Se actualizan los campos del formulario con los atributos
             txt_nombre.Text = empleado.Nombre;
@@ -63,7 +63,7 @@ namespace TPI_NewWare.Formularios.Empleados
                 {
                     
                     //Da el alta de la herramienta
-                    negocio.Alta(txt_legajo.Text, txt_nombre.Text, txt_apellido.Text, txt_NroDocumento.Text, (string)cmb_TipoDoc.SelectedItem, DateTime.Today.ToString("yyyy-MM-dd HH:mm:ss"), null, txt_domicilio.Text, txt_Nacimiento.Text, (string)cmb_TipoDoc.SelectedItem, (string)cmb_TipoDoc.SelectedItem);
+                    negocio.Alta(txt_legajo.Text, (string)cmb_Egreso.SelectedItem, (string)cmb_TipoDoc.SelectedItem, (string)cmb_usuario.SelectedItem, txt_NroDocumento.Text, txt_nombre.Text, txt_apellido.Text, DateTime.Today.ToString("yyyy-MM-dd HH:mm:ss"), "-", (string) txt_domicilio.Text, txt_Nacimiento.Text, "1");
                 }
                 else
                 {

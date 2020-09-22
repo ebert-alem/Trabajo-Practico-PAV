@@ -23,7 +23,7 @@ namespace TPI_NewWare.Formularios.TipoDocumento
             Grilla = grid;
         }
 
-        private void FrmABMCHerramientas_Load(object sender, EventArgs e)
+        private void FrmABMCTipoDoc_Load(object sender, EventArgs e)
         {
             //Carga la grilla con los valores elegidos
             CargarGrilla();
@@ -73,14 +73,14 @@ namespace TPI_NewWare.Formularios.TipoDocumento
         //Devuelve el id de la fila actualmente seleccionada
         protected override int IdActual()
         {
-            return int.Parse(TablaCompleta.Rows[this.Grilla.CurrentRow.Index]["nombreTipoDocumento"].ToString());
+            return int.Parse(TablaCompleta.Rows[this.Grilla.CurrentRow.Index]["id"].ToString());
         }
 
         //Setea la celda creada como la celda actual
         protected override void SetCeldaActual()
         {
             grid.ClearSelection();
-            grid.CurrentCell = grid.Rows[grid.Rows.Count - 1].Cells["Column1"];
+            grid.CurrentCell = grid.Rows[grid.Rows.Count - 1].Cells["id"];
             ActualizarVisualizacion();
         }
 

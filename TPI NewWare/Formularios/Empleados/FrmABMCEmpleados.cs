@@ -37,16 +37,16 @@ namespace TPI_NewWare.Formularios.Empleados
             {
                 grid.Rows.Add();
                 grid.Rows[i].Cells[0].Value = tabla.Rows[i]["legajo"].ToString();
-                grid.Rows[i].Cells[1].Value = tabla.Rows[i]["id_egreso"].ToString();
-                grid.Rows[i].Cells[2].Value = tabla.Rows[i]["id_documento"].ToString();
-                grid.Rows[i].Cells[3].Value = tabla.Rows[i]["nombreUsuario"].ToString();
-                grid.Rows[i].Cells[4].Value = tabla.Rows[i]["documento"].ToString();
-                grid.Rows[i].Cells[5].Value = tabla.Rows[i]["apellido"].ToString();
-                grid.Rows[i].Cells[6].Value = tabla.Rows[i]["nombres"].ToString();
-                grid.Rows[i].Cells[7].Value = tabla.Rows[i]["fechas_ingresante"].ToString();
-                grid.Rows[i].Cells[8].Value = tabla.Rows[i]["fechas_egreso"].ToString();
-                grid.Rows[i].Cells[9].Value = tabla.Rows[i]["domicilio"].ToString();
-                grid.Rows[i].Cells[10].Value = tabla.Rows[i]["fechas_nacimiento"].ToString();
+                //grid.Rows[i].Cells[1].Value = tabla.Rows[i]["id_egreso"].ToString();
+                //grid.Rows[i].Cells[2].Value = tabla.Rows[i]["id_documento"].ToString();
+                //grid.Rows[i].Cells[3].Value = tabla.Rows[i]["nombreUsuario"].ToString();
+                //grid.Rows[i].Cells[4].Value = tabla.Rows[i]["documento"].ToString();
+                grid.Rows[i].Cells[1].Value = tabla.Rows[i]["nombres"].ToString();
+                grid.Rows[i].Cells[2].Value = tabla.Rows[i]["apellido"].ToString();
+                //grid.Rows[i].Cells[7].Value = tabla.Rows[i]["fechas_ingresante"].ToString();
+                //grid.Rows[i].Cells[8].Value = tabla.Rows[i]["fechas_egreso"].ToString();
+                //grid.Rows[i].Cells[9].Value = tabla.Rows[i]["domicilio"].ToString();
+                //grid.Rows[i].Cells[10].Value = tabla.Rows[i]["fechas_nacimiento"].ToString();
             }
             //Actualiza la visualizacion del primer elemento
             ActualizarVisualizacion();
@@ -120,10 +120,10 @@ namespace TPI_NewWare.Formularios.Empleados
                 //Carga un objeto con los datos de la tabal seleccionada 
                 objeto.Cargar_datos(TablaCompleta.Rows[this.Grilla.CurrentRow.Index]);
                 //Rellena los campos con los datos
-                lbl_visualizacion.Text = "Id: " + objeto.Legajo;
+                lbl_visualizacion.Text = "Legano: " + objeto.Legajo;
                 lbl_visualizacion.Text += "\nNombre: " + objeto.Nombre;
                 lbl_visualizacion.Text += "\nApellido: " + objeto.Apellido;
-                lbl_visualizacion.Text += "\nFecha de Ingreso:: " + objeto.FechaIngreso;
+                lbl_visualizacion.Text += "\nFecha de Ingreso: " + objeto.FechaIngreso;
                 lbl_visualizacion.Text += "\nFecha de Egreso: " + objeto.FechaEgreso;
                 lbl_visualizacion.Text += "\nDomicilio: " + objeto.Domicilio;
                 lbl_visualizacion.Text += "\nfechaNacimiento: " + objeto.FechaNacimiento;

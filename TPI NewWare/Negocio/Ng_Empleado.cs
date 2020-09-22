@@ -11,9 +11,9 @@ namespace TPI_NewWare.Negocio
     class Ng_Empleado
     {
         Empleado empleado = new Empleado();
-        public void Alta(string legajo, string nombre, string apellido, string documento, string tipoDocumento, string fecha_ingresante, string fecha_egreso, string domicilio, string fecha_nacimiento, string id_Egreso, string usuario)
+        public void Alta(string legajo, string id_Egreso, string tipoDocumento, string usuario, string documento, string nombre, string apellido, string fecha_ingresante, string fecha_egreso, string domicilio, string fecha_nacimiento, string activo)
         {
-            Empleado empleado_nueva = new Empleado(legajo, nombre, apellido, documento, tipoDocumento, fecha_ingresante, fecha_egreso, domicilio, fecha_nacimiento, id_Egreso, usuario);
+            Empleado empleado_nueva = new Empleado(legajo, id_Egreso, tipoDocumento, usuario, documento, nombre, apellido, fecha_ingresante, fecha_egreso, domicilio, fecha_nacimiento, activo);
             empleado_nueva.Crear();
         }
 
@@ -32,10 +32,10 @@ namespace TPI_NewWare.Negocio
             empleado.Eliminar(legajo);
         }
 
-        public Empleado Buscar(int legajo)
+        public Empleado BuscarLegajo(int legajo)
         {
             Empleado empleado_nueva = new Empleado();
-            empleado_nueva.Buscar(legajo);
+            empleado_nueva.BuscarLegajo(legajo);
             return empleado_nueva;
         }
     }
