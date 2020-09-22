@@ -39,8 +39,8 @@ namespace TPI_NewWare.Formularios.TipoDocumento
             {
                 grid.Rows.Add();
                 grid.Rows[i].Cells[0].Value = tabla.Rows[i]["id"].ToString();
-                grid.Rows[i].Cells[0].Value = tabla.Rows[i]["nombreTipoDocumento"].ToString();
-                grid.Rows[i].Cells[1].Value = tabla.Rows[i]["descripcion"].ToString();
+                grid.Rows[i].Cells[1].Value = tabla.Rows[i]["nombreTipoDocumento"].ToString();
+                grid.Rows[i].Cells[2].Value = tabla.Rows[i]["descripcion"].ToString();
             }
             //Actualiza la visualizacion del primer elemento
             ActualizarVisualizacion();
@@ -86,7 +86,19 @@ namespace TPI_NewWare.Formularios.TipoDocumento
 
         private void txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                string filtro = txt_nombre.Text;
+                if (filtro != "")
+                {
+                    CargarGrilla(negocio.ConsultaNombre(filtro));
+                }
+                else
+                {
+                    CargarGrilla(negocio.Consulta());
+                }
 
+            }
         }
 
         public override void ActualizarVisualizacion()
