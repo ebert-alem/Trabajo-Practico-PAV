@@ -81,6 +81,7 @@ namespace TPI_NewWare.Formularios.Clientes
                 }
                 form_contenedor.ActualizarAlta();
                 this.Close();
+                //la mravilla de jesus
             }
         }
 
