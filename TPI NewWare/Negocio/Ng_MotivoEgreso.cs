@@ -39,5 +39,6 @@ namespace TPI_NewWare.Negocio
             motivoEgreso.Buscar(id);
             return motivoEgreso_nueva;
         }
+
     }
 }

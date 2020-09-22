@@ -38,5 +38,8 @@ namespace TPI_NewWare.Negocio
             empleado_nueva.BuscarLegajo(legajo);
             return empleado_nueva;
         }
+
+
+
     }
 }
