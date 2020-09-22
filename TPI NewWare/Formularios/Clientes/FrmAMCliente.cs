@@ -63,7 +63,7 @@ namespace TPI_NewWare.Formularios.Clientes
                 {
 
                     //Da el alta de la herramienta
-                    negocio.Alta(txt_NroDocumento.Text, (string)cmb_tipDoc.SelectedItem, txt_nombre.Text, txt_apellido.Text, txt_telefono.Text, txt_Calle.Text, txt_nroCalle.Text, txt_email.Text, "1");
+                    negocio.Alta(txt_NroDocumento.Text, cliente.TipoDocumento, txt_nombre.Text, txt_apellido.Text, txt_telefono.Text, txt_Calle.Text, txt_nroCalle.Text, txt_email.Text, "1");
                 }
                 else
                 {
@@ -96,7 +96,15 @@ namespace TPI_NewWare.Formularios.Clientes
             {
                 for (int i = 0; i < tabla.Rows.Count; i++)
                 {
-                    cmb_tipDoc.Items.Add(tabla.Rows[i]["id"].ToString());
+                    cmb_tipDoc.Items.Add(tabla.Rows[i]["nombreTipoDocumento"].ToString());
+                }
+            }
+
+            for (int i = 0; i < tabla.Rows.Count; i++)
+            {
+                if (tabla.Rows[i]["nombreTipoDocumento"].ToString() == (string)cmb_tipDoc.SelectedItem)
+                {
+                    cliente.TipoDocumento = tabla.Rows[i]["id"].ToString();
                 }
             }
         }

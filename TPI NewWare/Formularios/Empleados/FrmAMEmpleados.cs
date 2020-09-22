@@ -63,7 +63,7 @@ namespace TPI_NewWare.Formularios.Empleados
                 {
                     
                     //Da el alta de la herramienta
-                    negocio.Alta(txt_legajo.Text, (string)cmb_Egreso.SelectedItem, (string)cmb_TipoDoc.SelectedItem, (string)cmb_usuario.SelectedItem, txt_NroDocumento.Text, txt_nombre.Text, txt_apellido.Text, DateTime.Today.ToString("yyyy-MM-dd HH:mm:ss"), "-", (string) txt_domicilio.Text, txt_Nacimiento.Text, "1");
+                    negocio.Alta(txt_legajo.Text, empleado.Id_Egreso, empleado.TipoDocumento, (string)cmb_usuario.SelectedItem, txt_NroDocumento.Text, txt_nombre.Text, txt_apellido.Text, DateTime.Today.ToString("yyyy-MM-dd HH:mm:ss"), "-", (string) txt_domicilio.Text, txt_Nacimiento.Text, "1");
                 }
                 else
                 {
@@ -74,12 +74,8 @@ namespace TPI_NewWare.Formularios.Empleados
                     empleado.Domicilio = txt_domicilio.Text;
                     empleado.FechaNacimiento = txt_Nacimiento.Text;
                     empleado.Documento = txt_NroDocumento.Text;
-                    empleado.TipoDocumento = (string)cmb_TipoDoc.SelectedItem;
                     empleado.Usuario = (string)cmb_usuario.SelectedItem;
 
-
-                    //this. is a problem. but. it is. pasable. i hope. for now. just fix when you come back senpai UwU
-                    empleado.Id_Egreso = (string)cmb_Egreso.SelectedItem;
 
                     empleado.Guardar();
                 }
@@ -91,7 +87,7 @@ namespace TPI_NewWare.Formularios.Empleados
         private void cmb_TipoDoc_SelectedIndexChanged(object sender, EventArgs e)
         {
             //TipDoc TiposDoc = new TipDoc();
-            Ng_TipDoc ng_TipoDoc = new Ng_TipDoc(); 
+            Ng_TipDoc ng_TipoDoc = new Ng_TipDoc();
             tabla.Clear();
             tabla = ng_TipoDoc.Consulta();
 
@@ -99,10 +95,16 @@ namespace TPI_NewWare.Formularios.Empleados
             {
                 for (int i = 0; i < tabla.Rows.Count; i++)
                 {
-                    cmb_TipoDoc.Items.Add(tabla.Rows[i]["id"].ToString());
+                    cmb_TipoDoc.Items.Add(tabla.Rows[i]["nombreTipoDocumento"].ToString());
                 }
             }
-            
+
+            for (int i = 0; i < tabla.Rows.Count; i++)
+            {
+                if (tabla.Rows[i]["nombreTipoDocumento"].ToString() == (string)cmb_TipoDoc.SelectedItem) {
+                    empleado.TipoDocumento = tabla.Rows[i]["id"].ToString();
+                }
+            }
         }
 
         private void cmb_Egreso_SelectedIndexChanged(object sender, EventArgs e)
@@ -115,9 +117,17 @@ namespace TPI_NewWare.Formularios.Empleados
             {
                 for (int i = 0; i < tabla.Rows.Count; i++)
                 {
-                    cmb_Egreso.Items.Add(tabla.Rows[i]["id"].ToString());
+                    cmb_Egreso.Items.Add(tabla.Rows[i]["nombre"].ToString()); 
                 }
             }
+            for (int i = 0; i < tabla.Rows.Count; i++)
+            {
+                if (tabla.Rows[i]["nombre"].ToString() == (string)cmb_Egreso.SelectedItem)
+                {
+                    empleado.Id_Egreso = tabla.Rows[i]["id"].ToString();
+                }
+            }
+
         }
 
         private void cmb_usuario_SelectedIndexChanged(object sender, EventArgs e)
