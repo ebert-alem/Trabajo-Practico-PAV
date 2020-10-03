@@ -9,10 +9,11 @@
 <strong>Integrantes:</strong>
 - Alemán Fernando Ebert 80753
 - Britos Candela Milagros 75843
-- Pescetti Sabrina 55121
-- Rodriguez Milena Florencia 81313
-- Valdemarca Dante 79956
 - Wismer Axel Francis 75930
+- <s>Pescetti Sabrina 55121</s>
+- <s>Rodriguez Milena Florencia 81313</s>
+- <s>Valdemarca Dante 79956</s>
+
 
 <strong>Razón Social de la Empresa:</strong> NewWare Soft
 
