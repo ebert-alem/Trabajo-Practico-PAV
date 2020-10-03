@@ -16,7 +16,7 @@ namespace TPI_NewWare.Formularios.Clientes
         FrmABMBase form_contenedor;
 
         Ng_Cliente negocio = new Ng_Cliente();
-        Cliente cliente;
+        Cliente cliente = new Cliente();
         DataTable tabla = new DataTable();
 
         public FrmAMCliente(FrmABMBase form)
@@ -46,6 +46,12 @@ namespace TPI_NewWare.Formularios.Clientes
             txt_email.Text = cliente.Email;
         }
 
+        private void FrmAMCliente_Load(object sender, EventArgs e)
+        {
+            //Carga el combobox del tipo de documento utilizando las propiedades del combobox
+            cmb_tipDoc.Cargar();
+        }
+
         public override void btn_cancelar_Click(object sender, EventArgs e)
         {
             form_contenedor.ActualizarCancelacion();
@@ -61,53 +67,29 @@ namespace TPI_NewWare.Formularios.Clientes
             {
                 if (btn_crear.Text == "Crear")
                 {
-
                     //Da el alta de la herramienta
-                    negocio.Alta(txt_NroDocumento.Text, cliente.TipoDocumento, txt_nombre.Text, txt_apellido.Text, txt_telefono.Text, txt_Calle.Text, txt_nroCalle.Text, txt_email.Text, "1");
+                    negocio.Alta(txt_NroDocumento.Text, cmb_tipDoc.SelectedValue.ToString(), txt_nombre.Text, txt_apellido.Text, txt_telefono.Text, txt_Calle.Text, txt_nroCalle.Text, txt_email.Text, "1");
                 }
                 else
                 {
                     //Modfica la herramienta
                     cliente.Documento = txt_NroDocumento.Text;
-                    //(string)cmb_tipDoc.SelectedItem;
                     cliente.Nombre = txt_nombre.Text;
                     cliente.Apellido = txt_apellido.Text;
                     cliente.Calle = txt_Calle.Text;
                     cliente.NumeroCalle = txt_nroCalle.Text;
                     cliente.Telefono = txt_telefono.Text;
                     cliente.Email = txt_email.Text;
-
+                    //Toma la seleccion del combobox
+                    cliente.TipoDocumento = cmb_tipDoc.SelectedValue.ToString();
                     cliente.Guardar();
-
                 }
+                
                 form_contenedor.ActualizarAlta();
                 this.Close();
                 
             }
         }
 
-
-        private void cmb_tipDoc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Ng_TipDoc ng_TipoDoc = new Ng_TipDoc();
-            tabla.Clear();
-            tabla = ng_TipoDoc.Consulta();
-
-            if (tabla.Rows.Count != 0)
-            {
-                for (int i = 0; i < tabla.Rows.Count; i++)
-                {
-                    cmb_tipDoc.Items.Add(tabla.Rows[i]["nombreTipoDocumento"].ToString());
-                }
-            }
-
-            for (int i = 0; i < tabla.Rows.Count; i++)
-            {
-                if (tabla.Rows[i]["nombreTipoDocumento"].ToString() == (string)cmb_tipDoc.SelectedItem)
-                {
-                    cliente.TipoDocumento = tabla.Rows[i]["id"].ToString();
-                }
-            }
-        }
     }
 }
