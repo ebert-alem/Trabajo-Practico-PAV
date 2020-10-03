@@ -95,17 +95,16 @@
             "Elija una opcion:"});
             this.cmb_tipDoc.Location = new System.Drawing.Point(182, 106);
             this.cmb_tipDoc.Name = "cmb_tipDoc";
-            this.cmb_tipDoc.Pp_Display = null;
+            this.cmb_tipDoc.Pp_Display = "nombreTipoDocumento";
             this.cmb_tipDoc.Pp_mensajeError = null;
-            this.cmb_tipDoc.Pp_nombre_campo = null;
-            this.cmb_tipDoc.Pp_nombre_tabla = null;
+            this.cmb_tipDoc.Pp_nombre_campo = "";
+            this.cmb_tipDoc.Pp_nombre_tabla = "";
             this.cmb_tipDoc.Pp_seleccionado = false;
-            this.cmb_tipDoc.Pp_Tabla = null;
+            this.cmb_tipDoc.Pp_Tabla = "TIPDOC";
             this.cmb_tipDoc.Pp_validable = false;
-            this.cmb_tipDoc.Pp_Value = null;
+            this.cmb_tipDoc.Pp_Value = "id";
             this.cmb_tipDoc.Size = new System.Drawing.Size(189, 21);
             this.cmb_tipDoc.TabIndex = 37;
-            this.cmb_tipDoc.SelectedIndexChanged += new System.EventHandler(this.cmb_tipDoc_SelectedIndexChanged);
             // 
             // txt_apellido
             // 
@@ -266,6 +265,7 @@
             this.Controls.Add(this.txt_NroDocumento);
             this.Controls.Add(this.lbl_nroDoc);
             this.Name = "FrmAMCliente";
+            this.Load += new System.EventHandler(this.FrmAMCliente_Load);
             this.Controls.SetChildIndex(this.btn_cancelar, 0);
             this.Controls.SetChildIndex(this.btn_crear, 0);
             this.Controls.SetChildIndex(this.lbl_nroDoc, 0);
@@ -294,7 +294,6 @@
         private System.Windows.Forms.Label lbl_nroDoc;
         private Clases.TextBox01 txt_NroDocumento;
         private System.Windows.Forms.Label lbl_tipDoc;
-        private Clases.ComboBox01 cmb_tipDoc;
         private Clases.TextBox01 txt_apellido;
         private System.Windows.Forms.Label lbl_apellido;
         private Clases.TextBox01 txt_nombre;
@@ -307,5 +306,6 @@
         private Clases.TextBox01 txt_telefono;
         private Clases.TextBox01 txt_email;
         private System.Windows.Forms.Label lbl_email;
+        private Clases.ComboBox01 cmb_tipDoc;
     }
 }
