@@ -35,8 +35,8 @@ namespace TPI_NewWare.Formularios.Productos
             //Se actualizan los campos del formulario con los atributos
             txt_nombre.Text = producto.Nombre;
             txt_descripcion.Text = producto.Descripcion;
-            producto.Denominacion = txt_denominacion.Text;
-            producto.FechaFinDesarrollo = txt_fechaFin.Text;
+            txt_denominacion.Text = producto.Denominacion;
+            txt_fechaFin.Text = producto.FechaFinDesarrollo;
         }
 
         public override void btn_cancelar_Click(object sender, EventArgs e)

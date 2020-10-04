@@ -32,6 +32,8 @@ namespace TPI_NewWare.Formularios.Clientes
             //Seteo el panel contenedor como atributo
             form_contenedor = form;
             btn_crear.Text = "Modificar";
+            txt_NroDocumento.Enabled = false;
+            cmb_tipDoc.Enabled = false;
 
             //Se obtiene el objeto a modificar
             cliente = negocio.BuscarDocumento(id);
@@ -50,6 +52,7 @@ namespace TPI_NewWare.Formularios.Clientes
         {
             //Carga el combobox del tipo de documento utilizando las propiedades del combobox
             cmb_tipDoc.Cargar();
+            
         }
 
         public override void btn_cancelar_Click(object sender, EventArgs e)
@@ -72,17 +75,17 @@ namespace TPI_NewWare.Formularios.Clientes
                 }
                 else
                 {
-                    //Modfica la herramienta
-                    cliente.Documento = txt_NroDocumento.Text;
+                                        
+                    //Modfica la herramienta                   
                     cliente.Nombre = txt_nombre.Text;
                     cliente.Apellido = txt_apellido.Text;
                     cliente.Calle = txt_Calle.Text;
                     cliente.NumeroCalle = txt_nroCalle.Text;
                     cliente.Telefono = txt_telefono.Text;
                     cliente.Email = txt_email.Text;
-                    //Toma la seleccion del combobox
-                    cliente.TipoDocumento = cmb_tipDoc.SelectedValue.ToString();
+                    //Toma la seleccion del combobox                    
                     cliente.Guardar();
+
                 }
                 
                 form_contenedor.ActualizarAlta();
