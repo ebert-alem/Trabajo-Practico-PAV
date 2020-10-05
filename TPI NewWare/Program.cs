@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TPI_NewWare.Formularios;
+using TPI_NewWare.Formularios.VentaProducto;
 
 namespace TPI_NewWare
 {

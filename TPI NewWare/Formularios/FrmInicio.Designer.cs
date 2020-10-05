@@ -509,6 +509,7 @@
             this.btnSubVentasProd.Text = "Ventas producto";
             this.btnSubVentasProd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSubVentasProd.UseVisualStyleBackColor = true;
+            this.btnSubVentasProd.Click += new System.EventHandler(this.btnSubVentasProd_Click);
             // 
             // btnSubProyectos
             // 

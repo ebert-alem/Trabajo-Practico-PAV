@@ -72,6 +72,7 @@
     <Compile Include="Entidades\Rol.cs" />
     <Compile Include="Entidades\TipDoc.cs" />
     <Compile Include="Entidades\Usuario.cs" />
+    <Compile Include="Entidades\VentaProducto.cs" />
     <Compile Include="Formularios\Clientes\FrmABMCCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +205,12 @@
     <Compile Include="Formularios\TipoDocumento\FrmTipDoc.Designer.cs">
       <DependentUpon>FrmTipDoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\VentaProducto\FrmVentaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\VentaProducto\FrmVentaProducto.Designer.cs">
+      <DependentUpon>FrmVentaProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Negocio\Ng_Cliente.cs" />
     <Compile Include="Negocio\Ng_Empleado.cs" />
     <Compile Include="Negocio\Ng_Etapa.cs" />
@@ -213,6 +220,7 @@
     <Compile Include="Negocio\Ng_Rol.cs" />
     <Compile Include="Negocio\Ng_TipDoc.cs" />
     <Compile Include="Negocio\Ng_Usuario.cs" />
+    <Compile Include="Negocio\Ng_VentaProducto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\Clientes\FrmABMCCliente.resx">
@@ -280,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\TipoDocumento\FrmTipDoc.resx">
       <DependentUpon>FrmTipDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\VentaProducto\FrmVentaProducto.resx">
+      <DependentUpon>FrmVentaProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

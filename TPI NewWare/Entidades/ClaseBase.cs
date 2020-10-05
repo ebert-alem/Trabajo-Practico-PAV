@@ -161,6 +161,8 @@ namespace TPI_NewWare.Entidades
         {
             return "UPDATE " + NombreTabla + " SET " + SqlEquals(Columnas, Valores) + "WHERE nroDocumento=" + Id;
         }
+
+
         public string SqlEquals(string[] Columnas, string[] Valores)
         {
             string Condiciones = "";
