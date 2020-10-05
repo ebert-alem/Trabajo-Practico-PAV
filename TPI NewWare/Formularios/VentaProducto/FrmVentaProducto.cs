@@ -63,6 +63,8 @@ namespace TPI_NewWare.Formularios.VentaProducto
             }
         }
 
+        
+
         private void FrmVentaProducto_Load(object sender, EventArgs e)
         {
             panelOpciones.Width = 0;
@@ -126,6 +128,41 @@ namespace TPI_NewWare.Formularios.VentaProducto
             dtpDesde.Value = DateTime.Now.AddYears(-20);
             dtpHasta.Value = DateTime.Today;
             btnBuscar.Enabled = false;
+        }
+
+
+        public void ActualizarGrilla()
+        {
+            //Cargamos la grilla con el resultado de la consulta enviada por parámetro...
+            CargarGrilla(venta.Consulta());
+            panelMultiUso.Width = 0;
+        }
+
+
+        protected void AbrirFormEnPanel(object Subform)
+        {
+            if (this.panelMultiUso.Controls.Count > 0)
+            {
+                //Oculta el panel de previsualizacion
+                panelMultiUso.Visible = false;
+            }
+            //Crea el nuevo form y lo inserta en el panel
+            Form fh = Subform as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            //Agrrega el panel contenedor como dato
+            this.panelMultiUso.Controls.Add(fh);
+            this.panelMultiUso.Tag = fh;
+            fh.Show();
+        }
+
+        private void btn_nuevo_Click(object sender, EventArgs e)
+        {
+            panelMultiUso.Width = 429;
+            FrmNuevaVenta nuevaVenta = new FrmNuevaVenta (this);
+            AbrirFormEnPanel(nuevaVenta);
+
+            
         }
     }
 }

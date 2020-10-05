@@ -32,7 +32,7 @@ namespace TPI_NewWare.Formularios.Clientes
             //Seteo el panel contenedor como atributo
             form_contenedor = form;
             btn_crear.Text = "Modificar";
-            txt_NroDocumento.Enabled = false;
+            //txt_NroDocumento.Enabled = false;
             cmb_tipDoc.Enabled = false;
 
             //Se obtiene el objeto a modificar
@@ -97,5 +97,7 @@ namespace TPI_NewWare.Formularios.Clientes
                 this.Close();
             }
         }
+
+        
     }
 }
