@@ -44,5 +44,17 @@ namespace TPI_NewWare.Clases
             }
             return Validacion.correcta;
         }
+        public Validacion ValidarFecha(string fecha)
+        {
+            try
+            {
+                DateTime.Parse(fecha);
+                return Validacion.correcta;
+            }
+            catch (Exception)
+            {
+                return Validacion.incorrecta;
+            }
+        }
     }
 }
