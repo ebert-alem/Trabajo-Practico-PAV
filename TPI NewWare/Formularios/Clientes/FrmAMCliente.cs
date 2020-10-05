@@ -98,6 +98,5 @@ namespace TPI_NewWare.Formularios.Clientes
             }
         }
 
-        
     }
 }

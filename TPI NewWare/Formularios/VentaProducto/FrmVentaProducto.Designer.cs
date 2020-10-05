@@ -41,6 +41,9 @@
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
+            this.cmb_lider = new TPI_NewWare.Clases.ComboBox01();
+            this.cmb_cliente = new TPI_NewWare.Clases.ComboBox01();
+            this.cmb_producto = new TPI_NewWare.Clases.ComboBox01();
             this.panelGrilla = new System.Windows.Forms.Panel();
             this.panelMultiUso = new System.Windows.Forms.Panel();
             this.grid = new System.Windows.Forms.DataGridView();
@@ -61,9 +64,6 @@
             this.panelSup = new System.Windows.Forms.Panel();
             this.panelInf = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.cmb_lider = new TPI_NewWare.Clases.ComboBox01();
-            this.cmb_cliente = new TPI_NewWare.Clases.ComboBox01();
-            this.cmb_producto = new TPI_NewWare.Clases.ComboBox01();
             this.panelFondo.SuspendLayout();
             this.panelOpciones.SuspendLayout();
             this.panelGrilla.SuspendLayout();
@@ -207,6 +207,54 @@
             this.dtpDesde.TabIndex = 1;
             this.dtpDesde.Value = new System.DateTime(2020, 10, 4, 13, 16, 34, 0);
             // 
+            // cmb_lider
+            // 
+            this.cmb_lider.FormattingEnabled = true;
+            this.cmb_lider.Location = new System.Drawing.Point(29, 293);
+            this.cmb_lider.Name = "cmb_lider";
+            this.cmb_lider.Pp_Display = null;
+            this.cmb_lider.Pp_mensajeError = null;
+            this.cmb_lider.Pp_nombre_campo = null;
+            this.cmb_lider.Pp_nombre_tabla = null;
+            this.cmb_lider.Pp_seleccionado = false;
+            this.cmb_lider.Pp_Tabla = null;
+            this.cmb_lider.Pp_validable = false;
+            this.cmb_lider.Pp_Value = null;
+            this.cmb_lider.Size = new System.Drawing.Size(121, 21);
+            this.cmb_lider.TabIndex = 0;
+            // 
+            // cmb_cliente
+            // 
+            this.cmb_cliente.FormattingEnabled = true;
+            this.cmb_cliente.Location = new System.Drawing.Point(29, 220);
+            this.cmb_cliente.Name = "cmb_cliente";
+            this.cmb_cliente.Pp_Display = null;
+            this.cmb_cliente.Pp_mensajeError = null;
+            this.cmb_cliente.Pp_nombre_campo = null;
+            this.cmb_cliente.Pp_nombre_tabla = null;
+            this.cmb_cliente.Pp_seleccionado = false;
+            this.cmb_cliente.Pp_Tabla = "CLIENTES";
+            this.cmb_cliente.Pp_validable = false;
+            this.cmb_cliente.Pp_Value = null;
+            this.cmb_cliente.Size = new System.Drawing.Size(121, 21);
+            this.cmb_cliente.TabIndex = 0;
+            // 
+            // cmb_producto
+            // 
+            this.cmb_producto.FormattingEnabled = true;
+            this.cmb_producto.Location = new System.Drawing.Point(29, 149);
+            this.cmb_producto.Name = "cmb_producto";
+            this.cmb_producto.Pp_Display = "nombre";
+            this.cmb_producto.Pp_mensajeError = null;
+            this.cmb_producto.Pp_nombre_campo = null;
+            this.cmb_producto.Pp_nombre_tabla = null;
+            this.cmb_producto.Pp_seleccionado = false;
+            this.cmb_producto.Pp_Tabla = "PRODUCTO";
+            this.cmb_producto.Pp_validable = false;
+            this.cmb_producto.Pp_Value = "id";
+            this.cmb_producto.Size = new System.Drawing.Size(121, 21);
+            this.cmb_producto.TabIndex = 0;
+            // 
             // panelGrilla
             // 
             this.panelGrilla.Controls.Add(this.panelMultiUso);
@@ -222,9 +270,9 @@
             // 
             this.panelMultiUso.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panelMultiUso.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelMultiUso.Location = new System.Drawing.Point(257, 0);
+            this.panelMultiUso.Location = new System.Drawing.Point(418, 0);
             this.panelMultiUso.Name = "panelMultiUso";
-            this.panelMultiUso.Size = new System.Drawing.Size(441, 429);
+            this.panelMultiUso.Size = new System.Drawing.Size(280, 429);
             this.panelMultiUso.TabIndex = 18;
             // 
             // grid
@@ -257,7 +305,7 @@
             this.grid.ReadOnly = true;
             this.grid.RowHeadersVisible = false;
             this.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grid.Size = new System.Drawing.Size(699, 429);
+            this.grid.Size = new System.Drawing.Size(698, 429);
             this.grid.TabIndex = 17;
             // 
             // Column4
@@ -415,54 +463,6 @@
             // 
             this.timer1.Interval = 25;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // cmb_lider
-            // 
-            this.cmb_lider.FormattingEnabled = true;
-            this.cmb_lider.Location = new System.Drawing.Point(29, 293);
-            this.cmb_lider.Name = "cmb_lider";
-            this.cmb_lider.Pp_Display = null;
-            this.cmb_lider.Pp_mensajeError = null;
-            this.cmb_lider.Pp_nombre_campo = null;
-            this.cmb_lider.Pp_nombre_tabla = null;
-            this.cmb_lider.Pp_seleccionado = false;
-            this.cmb_lider.Pp_Tabla = null;
-            this.cmb_lider.Pp_validable = false;
-            this.cmb_lider.Pp_Value = null;
-            this.cmb_lider.Size = new System.Drawing.Size(121, 21);
-            this.cmb_lider.TabIndex = 0;
-            // 
-            // cmb_cliente
-            // 
-            this.cmb_cliente.FormattingEnabled = true;
-            this.cmb_cliente.Location = new System.Drawing.Point(29, 220);
-            this.cmb_cliente.Name = "cmb_cliente";
-            this.cmb_cliente.Pp_Display = null;
-            this.cmb_cliente.Pp_mensajeError = null;
-            this.cmb_cliente.Pp_nombre_campo = null;
-            this.cmb_cliente.Pp_nombre_tabla = null;
-            this.cmb_cliente.Pp_seleccionado = false;
-            this.cmb_cliente.Pp_Tabla = "CLIENTES";
-            this.cmb_cliente.Pp_validable = false;
-            this.cmb_cliente.Pp_Value = null;
-            this.cmb_cliente.Size = new System.Drawing.Size(121, 21);
-            this.cmb_cliente.TabIndex = 0;
-            // 
-            // cmb_producto
-            // 
-            this.cmb_producto.FormattingEnabled = true;
-            this.cmb_producto.Location = new System.Drawing.Point(29, 149);
-            this.cmb_producto.Name = "cmb_producto";
-            this.cmb_producto.Pp_Display = "nombre";
-            this.cmb_producto.Pp_mensajeError = null;
-            this.cmb_producto.Pp_nombre_campo = null;
-            this.cmb_producto.Pp_nombre_tabla = null;
-            this.cmb_producto.Pp_seleccionado = false;
-            this.cmb_producto.Pp_Tabla = "PRODUCTO";
-            this.cmb_producto.Pp_validable = false;
-            this.cmb_producto.Pp_Value = "id";
-            this.cmb_producto.Size = new System.Drawing.Size(121, 21);
-            this.cmb_producto.TabIndex = 0;
             // 
             // FrmVentaProducto
             // 

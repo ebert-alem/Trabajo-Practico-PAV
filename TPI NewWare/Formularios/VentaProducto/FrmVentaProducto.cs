@@ -158,7 +158,7 @@ namespace TPI_NewWare.Formularios.VentaProducto
 
         private void btn_nuevo_Click(object sender, EventArgs e)
         {
-            panelMultiUso.Width = 429;
+            panelMultiUso.Width = 280;
             FrmNuevaVenta nuevaVenta = new FrmNuevaVenta (this);
             AbrirFormEnPanel(nuevaVenta);
 

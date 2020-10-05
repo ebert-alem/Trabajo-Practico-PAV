@@ -22,15 +22,19 @@ namespace TPI_NewWare.Formularios.VentaProducto
         }
 
 
-
-
-
-
-
-        private void iconButton1_Click(object sender, EventArgs e)
+        public FrmNuevaVenta(FrmVentaProducto form, int id_producto, int nroDocumento, int tipoDocumento)
         {
-            Dispose();
-            FrmVentaProducto frmVentaProducto = new FrmVentaProducto();
+            InitializeComponent();
+            formPadre = form;
+
+
+        }
+
+
+
+        private void btn_crear_Click(object sender, EventArgs e)
+        {
+            Dispose();            
             formPadre.ActualizarGrilla();
         }
 
@@ -39,8 +43,16 @@ namespace TPI_NewWare.Formularios.VentaProducto
 
             //Seteamos los cmb...
             cmb_producto.Cargar();
+            cmb_cliente.CargarDobleDisplay("clientes", "nombres", "apellido", "nroDocumento");
+            cmb_lider.CargarDobleDisplay("empleados", "nombres", "apellido", "legajo");
 
-            
+
+        }
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+            formPadre.ActualizarGrilla();
         }
     }
 }
