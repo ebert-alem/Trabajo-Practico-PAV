@@ -37,13 +37,18 @@ namespace TPI_NewWare.Formularios.Clientes
             cliente = negocio.BuscarDocumento(id);
 
             //Se actualizan los campos del formulario con los atributos
-            txt_NroDocumento.Text = cliente.Documento;
-            txt_nombre.Text = cliente.Nombre;
-            txt_apellido.Text = cliente.Apellido;
-            txt_Calle.Text = cliente.Calle;
-            txt_nroCalle.Text = cliente.NumeroCalle;
-            txt_telefono.Text = cliente.Telefono;
-            txt_email.Text = cliente.Email;
+            ltxtDocumento.Pp_Text = cliente.Documento;
+            ltxtNombre.Pp_Text = cliente.Nombre;
+            ltxtApellido.Pp_Text = cliente.Apellido;
+            ltxtCalle.Pp_Text = cliente.Calle;
+            ltxtNroCalle.Pp_Text = cliente.NumeroCalle;
+            ltxtTelefono.Pp_Text = cliente.Telefono;
+            ltxtEmail.Pp_Text = cliente.Email;
+
+            //Bloquear los campos de la pk
+            ltxtDocumento.Controls["TxtDato"].Enabled = false;
+            cmb_tipDoc.Enabled = false;
+            
         }
 
         private void FrmAMCliente_Load(object sender, EventArgs e)
@@ -68,28 +73,25 @@ namespace TPI_NewWare.Formularios.Clientes
                 if (btn_crear.Text == "Crear")
                 {
                     //Da el alta de la herramienta
-                    negocio.Alta(txt_NroDocumento.Text, cmb_tipDoc.SelectedValue.ToString(), txt_nombre.Text, txt_apellido.Text, txt_telefono.Text, txt_Calle.Text, txt_nroCalle.Text, txt_email.Text, "1");
+                    negocio.Alta(ltxtDocumento.Pp_Text, cmb_tipDoc.SelectedValue.ToString(), ltxtNombre.Pp_Text, ltxtApellido.Pp_Text, ltxtTelefono.Text, ltxtCalle.Pp_Text, ltxtNroCalle.Pp_Text, ltxtEmail.Pp_Text, "1");
                 }
                 else
                 {
                     //Modfica la herramienta
-                    cliente.Documento = txt_NroDocumento.Text;
-                    cliente.Nombre = txt_nombre.Text;
-                    cliente.Apellido = txt_apellido.Text;
-                    cliente.Calle = txt_Calle.Text;
-                    cliente.NumeroCalle = txt_nroCalle.Text;
-                    cliente.Telefono = txt_telefono.Text;
-                    cliente.Email = txt_email.Text;
+                    cliente.Nombre = ltxtNombre.Pp_Text;
+                    cliente.Apellido = ltxtApellido.Pp_Text;
+                    cliente.Calle = ltxtCalle.Pp_Text;
+                    cliente.NumeroCalle = ltxtNroCalle.Pp_Text;
+                    cliente.Telefono = ltxtTelefono.Pp_Text;
+                    cliente.Email = ltxtEmail.Pp_Text;
                     //Toma la seleccion del combobox
-                    cliente.TipoDocumento = cmb_tipDoc.SelectedValue.ToString();
+                    //cliente.TipoDocumento = cmb_tipDoc.SelectedValue.ToString();
                     cliente.Guardar();
                 }
                 
                 form_contenedor.ActualizarAlta();
                 this.Close();
-                
             }
         }
-
     }
 }
