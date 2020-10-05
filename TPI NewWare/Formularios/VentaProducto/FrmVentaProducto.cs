@@ -36,6 +36,7 @@ namespace TPI_NewWare.Formularios.VentaProducto
         {
             
             timer1.Start();
+            btnBuscar.Enabled = true;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -116,6 +117,15 @@ namespace TPI_NewWare.Formularios.VentaProducto
             timer1.Start();
             dtpDesde.Value = DateTime.Now.AddYears(-20);
             dtpHasta.Value = DateTime.Today;
+
+            
+            //Setea los combos y los datetimes..
+            cmb_producto.SelectedIndex = -1;
+            cmb_cliente.SelectedIndex = -1;
+            cmb_lider.SelectedIndex = -1;
+            dtpDesde.Value = DateTime.Now.AddYears(-20);
+            dtpHasta.Value = DateTime.Today;
+            btnBuscar.Enabled = false;
         }
     }
 }
