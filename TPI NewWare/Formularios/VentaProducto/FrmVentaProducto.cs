@@ -66,6 +66,10 @@ namespace TPI_NewWare.Formularios.VentaProducto
             panelOpciones.Width = 0;
             
             CargarGrilla(venta.Consulta());
+
+            cmb_producto.Cargar();
+            cmb_cliente.CargarDobleDisplay("clientes", "nombres", "apellido", "nroDocumento");
+            cmb_lider.CargarDobleDisplay("empleados", "nombres", "apellido", "legajo");
         }
 
 

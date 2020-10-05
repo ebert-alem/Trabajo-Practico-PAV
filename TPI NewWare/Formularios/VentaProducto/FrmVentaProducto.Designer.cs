@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelFondo = new System.Windows.Forms.Panel();
             this.panelOpciones = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -213,7 +213,7 @@
             this.cmb_cliente.Pp_nombre_campo = null;
             this.cmb_cliente.Pp_nombre_tabla = null;
             this.cmb_cliente.Pp_seleccionado = false;
-            this.cmb_cliente.Pp_Tabla = null;
+            this.cmb_cliente.Pp_Tabla = "CLIENTES";
             this.cmb_cliente.Pp_validable = false;
             this.cmb_cliente.Pp_Value = null;
             this.cmb_cliente.Size = new System.Drawing.Size(121, 21);
@@ -224,14 +224,14 @@
             this.cmb_producto.FormattingEnabled = true;
             this.cmb_producto.Location = new System.Drawing.Point(29, 149);
             this.cmb_producto.Name = "cmb_producto";
-            this.cmb_producto.Pp_Display = null;
+            this.cmb_producto.Pp_Display = "nombre";
             this.cmb_producto.Pp_mensajeError = null;
             this.cmb_producto.Pp_nombre_campo = null;
             this.cmb_producto.Pp_nombre_tabla = null;
             this.cmb_producto.Pp_seleccionado = false;
-            this.cmb_producto.Pp_Tabla = null;
+            this.cmb_producto.Pp_Tabla = "PRODUCTO";
             this.cmb_producto.Pp_validable = false;
-            this.cmb_producto.Pp_Value = null;
+            this.cmb_producto.Pp_Value = "id";
             this.cmb_producto.Size = new System.Drawing.Size(121, 21);
             this.cmb_producto.TabIndex = 0;
             // 
@@ -252,14 +252,14 @@
             this.grid.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column4,
