@@ -92,10 +92,20 @@ namespace TPI_NewWare.Formularios.Empleados
 
         private void FrmAMEmpleados_Load(object sender, EventArgs e)
         {
-            cmb_TipoDoc.Cargar();
-            cmb_Egreso.Cargar();
-            cmb_usuario.Cargar("usuarios", "nombreUsuario", "nombreUsuario");
-            
+            if (btn_crear.Text == "Crear")
+            {
+                cmb_TipoDoc.Cargar();
+                cmb_Egreso.Cargar();
+                cmb_usuario.Cargar("usuarios", "nombreUsuario", "nombreUsuario");
+            }
+            else
+            {
+                //Faltaría obtener los ids de la tabla y seleccionar automáticamente el valor de cos comboboxs
+                cmb_TipoDoc.Cargar();
+                cmb_Egreso.Cargar();
+                cmb_usuario.Cargar("usuarios", "nombreUsuario", "nombreUsuario");
+                
+            }
         }
 
         //private void cmb_TipoDoc_SelectedIndexChanged(object sender, EventArgs e)

@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelFondo = new System.Windows.Forms.Panel();
             this.panelOpciones = new System.Windows.Forms.Panel();
+            this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,6 +45,7 @@
             this.cmb_cliente = new TPI_NewWare.Clases.ComboBox01();
             this.cmb_producto = new TPI_NewWare.Clases.ComboBox01();
             this.panelGrilla = new System.Windows.Forms.Panel();
+            this.panelMultiUso = new System.Windows.Forms.Panel();
             this.grid = new System.Windows.Forms.DataGridView();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +54,7 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panelBotones = new System.Windows.Forms.Panel();
             this.btn_eliminar = new FontAwesome.Sharp.IconButton();
             this.btn_editar = new FontAwesome.Sharp.IconButton();
@@ -86,6 +89,7 @@
             // 
             this.panelOpciones.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panelOpciones.CausesValidation = false;
+            this.panelOpciones.Controls.Add(this.btnBuscar);
             this.panelOpciones.Controls.Add(this.label3);
             this.panelOpciones.Controls.Add(this.label2);
             this.panelOpciones.Controls.Add(this.label1);
@@ -102,6 +106,22 @@
             this.panelOpciones.Name = "panelOpciones";
             this.panelOpciones.Size = new System.Drawing.Size(251, 429);
             this.panelOpciones.TabIndex = 21;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnBuscar.IconColor = System.Drawing.Color.DimGray;
+            this.btnBuscar.IconSize = 32;
+            this.btnBuscar.Location = new System.Drawing.Point(110, 350);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Rotation = 0D;
+            this.btnBuscar.Size = new System.Drawing.Size(40, 40);
+            this.btnBuscar.TabIndex = 15;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // label3
             // 
@@ -237,12 +257,23 @@
             // 
             // panelGrilla
             // 
+            this.panelGrilla.Controls.Add(this.panelMultiUso);
             this.panelGrilla.Controls.Add(this.grid);
+            this.panelGrilla.Controls.Add(this.panel2);
             this.panelGrilla.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGrilla.Location = new System.Drawing.Point(74, 35);
             this.panelGrilla.Name = "panelGrilla";
             this.panelGrilla.Size = new System.Drawing.Size(732, 429);
             this.panelGrilla.TabIndex = 22;
+            // 
+            // panelMultiUso
+            // 
+            this.panelMultiUso.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panelMultiUso.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelMultiUso.Location = new System.Drawing.Point(382, 0);
+            this.panelMultiUso.Name = "panelMultiUso";
+            this.panelMultiUso.Size = new System.Drawing.Size(316, 429);
+            this.panelMultiUso.TabIndex = 18;
             // 
             // grid
             // 
@@ -252,14 +283,14 @@
             this.grid.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column4,
@@ -318,6 +349,15 @@
             this.Column7.HeaderText = "Lider asociado";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(698, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(34, 429);
+            this.panel2.TabIndex = 21;
             // 
             // panelBotones
             // 
@@ -420,7 +460,7 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 30;
+            this.timer1.Interval = 25;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FrmVentaProducto
@@ -476,5 +516,8 @@
         private FontAwesome.Sharp.IconButton btn_nuevo;
         private FontAwesome.Sharp.IconButton btn_editar;
         private FontAwesome.Sharp.IconButton btn_eliminar;
+        private System.Windows.Forms.Panel panelMultiUso;
+        private System.Windows.Forms.Panel panel2;
+        private FontAwesome.Sharp.IconButton btnBuscar;
     }
 }

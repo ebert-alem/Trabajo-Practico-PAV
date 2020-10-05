@@ -58,6 +58,8 @@ namespace TPI_NewWare.Clases
             this.ValueMember = value;
             this.DataSource = _BD.Consulta(sql);
         }
+
+        
     }
    
 }

@@ -16,8 +16,9 @@ namespace TPI_NewWare.Formularios.VentaProducto
     {
         private int panelWidth;
         private bool oculto;
-        
 
+
+        DataTable tabla = new DataTable();
         Ng_VentaProducto venta = new Ng_VentaProducto();
 
 
@@ -64,19 +65,28 @@ namespace TPI_NewWare.Formularios.VentaProducto
         private void FrmVentaProducto_Load(object sender, EventArgs e)
         {
             panelOpciones.Width = 0;
+            panelMultiUso.Width = 0;
             
+            //Cargamos la grilla con el resultado de la consulta enviada por parámetro...
             CargarGrilla(venta.Consulta());
 
+            //Cargamos y seteamos los comboboxs...
             cmb_producto.Cargar();
             cmb_cliente.CargarDobleDisplay("clientes", "nombres", "apellido", "nroDocumento");
             cmb_lider.CargarDobleDisplay("empleados", "nombres", "apellido", "legajo");
+            cmb_producto.SelectedIndex = -1;
+            cmb_cliente.SelectedIndex = -1;
+            cmb_lider.SelectedIndex = -1;
+
+            dtpDesde.Value = DateTime.Now.AddYears(-20);
+            dtpHasta.Value = DateTime.Today;
+
         }
 
 
         public void CargarGrilla(DataTable tabla)
         {
-            //Guardo la tabla completa
-            DataTable TablaCompleta = tabla;
+            
 
             //Cargo la grilla
             grid.Rows.Clear();
@@ -96,6 +106,16 @@ namespace TPI_NewWare.Formularios.VentaProducto
             
         }
 
-
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            //Hacemos la consulta filtrando de acuerdo a los valores seleccionados en los comboboxs y los datetimepikers...
+            tabla = venta.ConsultaFiltrada(dtpDesde.Value.ToShortDateString(), dtpHasta.Value.ToShortDateString(), Convert.ToString(cmb_producto.SelectedValue), Convert.ToString(cmb_cliente.SelectedValue), Convert.ToString(cmb_lider.SelectedValue));
+            
+            CargarGrilla(tabla);
+            
+            timer1.Start();
+            dtpDesde.Value = DateTime.Now.AddYears(-20);
+            dtpHasta.Value = DateTime.Today;
+        }
     }
 }

@@ -51,10 +51,9 @@ namespace TPI_NewWare.Entidades
 
         public override string SentciaSqlActualizar()
         {
-            return "UPDATE ventaProducto SET id_producto = " + CodProducto + ", nroDocumento = " + Documento + ", tipoDocumento = " + TipoDocumento + 
-                   ", fecha_venta = CONVERT(date, '" + FechaVenta + "', 103), fecha_inicio_instalacion = CONVERT(date, '" + InicioInstalacion + "', 103), " +
-                   "fecha_fin_instalacion = CONVERT(date, '" + FinInstalacion + "', 103), legajo_lider = " + LegajoLider;
-            
+            return "UPDATE ventaProducto (" + CodProducto + ", " + Documento + ", " + TipoDocumento + 
+                   ", CONVERT(date, '" + FechaVenta + "', 103), CONVERT(date, '" + InicioInstalacion + "', 103), " +
+                   "CONVERT(date, '" + FinInstalacion + "', 103), " + LegajoLider + ")";
         }
 
         public override string SentciaSqlCrear()
