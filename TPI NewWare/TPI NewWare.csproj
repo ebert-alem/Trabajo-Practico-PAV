@@ -226,11 +226,23 @@
     <Compile Include="Formularios\TipoDocumento\FrmTipDoc.Designer.cs">
       <DependentUpon>FrmTipDoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Proyectos\FrmNuevoProyecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Proyectos\FrmNuevoProyecto.Designer.cs">
+      <DependentUpon>FrmNuevoProyecto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\VentaProducto\FrmNuevaVenta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\VentaProducto\FrmNuevaVenta.Designer.cs">
       <DependentUpon>FrmNuevaVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Proyectos\FrmVentaProyecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Proyectos\FrmVentaProyecto.Designer.cs">
+      <DependentUpon>FrmVentaProyecto.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\VentaProducto\FrmVentaProducto.cs">
       <SubType>Form</SubType>
@@ -325,8 +337,14 @@
     <EmbeddedResource Include="Formularios\TipoDocumento\FrmTipDoc.resx">
       <DependentUpon>FrmTipDoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Proyectos\FrmNuevoProyecto.resx">
+      <DependentUpon>FrmNuevoProyecto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\VentaProducto\FrmNuevaVenta.resx">
       <DependentUpon>FrmNuevaVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Proyectos\FrmVentaProyecto.resx">
+      <DependentUpon>FrmVentaProyecto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\VentaProducto\FrmVentaProducto.resx">
       <DependentUpon>FrmVentaProducto.cs</DependentUpon>
