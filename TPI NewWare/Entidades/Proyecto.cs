@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,14 +50,33 @@ namespace TPI_NewWare.Entidades
 
         public override string SentciaSqlActualizar()
         {
-            return "UPDATE ventaProducto (" + Descripcion + ", " + Documento + ", " + TipoDocumento +
-                   ", CONVERT(date, '" + FechaInicio + "', 103), CONVERT(date, '" + FechaFinProbable + "', 103), ";
+            return "UPDATE " + NombreTabla + " SET " + 
+                SqlEquals(new string[3] { "descripcion", "nroDoc_cliente", "tipoDoc_cliente" }, new string[3] { Descripcion, Documento, TipoDocumento }) 
+                + ", fecha_inicio=CONVERT(date,'" + FechaInicio + "',103), "
+                + " fecha_fin_probable=CONVERT(date,'" + FechaFinProbable + "',103) " 
+                + " WHERE codigo=" + Codigo;
         }
+
+        //Setea un objeto como finalizado indicando su fecha de finalizacion
+        public void Finalizar(int Codigo) {
+            string sql = "UPDATE " + NombreTabla + " SET " + "fecha_fin_real=CONVERT(date,'" + DateTime.Now + "',103)" + "WHERE codigo=" + Codigo;
+            _BD.Comando(sql);
+        }
+        
+        public override void Eliminar(int Id)
+        {
+            string sql = "UPDATE " + NombreTabla + " SET " + "activos=0" + "WHERE codigo=" + Id;
+            _BD.Comando(sql);
+        }
+
 
         public override string SentciaSqlCrear()
         {
-            return SqlInsert(new string[5] { "descripcion", "nroDoc_cliente", "tipoDoc_cliente", "fecha_inicio", "fecha_fin_probable"},
-                             new string[5] { Descripcion, Documento, TipoDocumento, FechaInicio, FechaFinProbable });
+            string[] Columnas = new string[5] { "descripcion", "nroDoc_cliente", "tipoDoc_cliente", "fecha_inicio", "fecha_fin_probable" };
+            string[] Valores = new string[3] { Descripcion, Documento, TipoDocumento };
+            return "INSERT INTO " + NombreTabla + "(" + string.Join(", ", Columnas) + ") Values ('"+ Descripcion + "', '"+ Documento + "', ' " + TipoDocumento +  "', "+ "CONVERT(date,'" + FechaInicio + "',103)" + ", CONVERT(date,'" + FechaFinProbable + "',103)" + ")";
         }
+
+
     }
 }

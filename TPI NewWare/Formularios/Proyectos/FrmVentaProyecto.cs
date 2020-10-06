@@ -88,29 +88,31 @@ namespace TPI_NewWare.Formularios.VentaProyecto
 
         public void CargarGrilla(DataTable tabla)
         {
+            this.tabla = tabla;
             //Cargo la grilla
             grid.Rows.Clear();
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
-             
-                grid.Rows.Add(tabla.Rows[i]["codigo"],
-                                tabla.Rows[i]["descripcion"],
-                                tabla.Rows[i]["nroDoc_cliente"],
-                                tabla.Rows[i]["tipoDoc_cliente"],
-                                tabla.Rows[i]["fecha_inicio"],
-                                tabla.Rows[i]["fecha_fin_probable"],
-                                tabla.Rows[i]["fecha_fin_real"]);
-            
-                }
+                //Verifica si el objeto se encuentra activo
+                //if (tabla.Rows[i]["activos"].ToString() == "1")
+                //{
+                    grid.Rows.Add(tabla.Rows[i]["codigo"],
+                                    tabla.Rows[i]["descripcion"],
+                                    tabla.Rows[i]["nroDoc_cliente"],
+                                    tabla.Rows[i]["fecha_inicio"],
+                                    tabla.Rows[i]["fecha_fin_probable"],
+                                    tabla.Rows[i]["fecha_fin_real"]);
+                //}
+            }
 
             //Actualiza la visualizacion del primer elemento
-            
+
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             //Hacemos la consulta filtrando de acuerdo a los valores seleccionados en los comboboxs y los datetimepikers...
-            tabla = venta.ConsultaFiltrada(dtpDesde.Value.ToShortDateString(), dtpHasta.Value.ToShortDateString(), Convert.ToString(cmb_producto.SelectedValue), Convert.ToString(cmb_cliente.SelectedValue), Convert.ToString(cmb_lider.SelectedValue));
+            this.tabla = venta.ConsultaFiltrada(dtpDesde.Value.ToShortDateString(), dtpHasta.Value.ToShortDateString(), Convert.ToString(cmb_producto.SelectedValue), Convert.ToString(cmb_cliente.SelectedValue), Convert.ToString(cmb_lider.SelectedValue));
             
             CargarGrilla(tabla);
             
@@ -158,7 +160,35 @@ namespace TPI_NewWare.Formularios.VentaProyecto
         {
             panelMultiUso.Width = 280;
             AbrirFormEnPanel(new FrmNuevoProyecto(this));
-                        
+            CargarGrilla(proyecto.Listar());
+
+
+        }
+
+        private void btn_finalizar_Click(object sender, EventArgs e)
+        {
+            //Marca como finalizado el proyecto con el id actual
+            proyecto.Finalizar(IdActual());
+            CargarGrilla(proyecto.Listar());
+        }
+
+        public int IdActual()
+        {
+            return int.Parse(tabla.Rows[this.grid.CurrentRow.Index]["codigo"].ToString());
+        }
+
+        private void btn_eliminar_Click(object sender, EventArgs e)
+        {
+            //Marca como finalizado el proyecto con el id actual
+            proyecto.Eliminar(IdActual());
+            CargarGrilla(proyecto.Listar());
+        }
+
+        private void btn_editar_Click(object sender, EventArgs e)
+        {
+            panelMultiUso.Width = 280;
+            AbrirFormEnPanel(new FrmNuevoProyecto(this, IdActual()));
+            CargarGrilla(proyecto.Listar());
         }
     }
 }
