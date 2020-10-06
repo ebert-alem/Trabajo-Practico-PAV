@@ -33,6 +33,8 @@ namespace TPI_NewWare.Formularios.Empleados
             //Seteo el panel contenedor como atributo
             form_contenedor = form;
             btn_crear.Text = "Modificar";
+            txt_legajo.Enabled = false;
+            
 
             //Se obtiene el objeto a modificar
             empleado = negocio.BuscarLegajo(id);
@@ -63,7 +65,7 @@ namespace TPI_NewWare.Formularios.Empleados
                 {
                     
                     //Da el alta de la herramienta
-                    negocio.Alta(txt_legajo.Text, empleado.Id_Egreso, empleado.TipoDocumento, (string)cmb_usuario.SelectedItem, txt_NroDocumento.Text, txt_nombre.Text, txt_apellido.Text, DateTime.Today.ToString("yyyy-MM-dd HH:mm:ss"), "-", (string) txt_domicilio.Text, txt_Nacimiento.Text, "1");
+                    negocio.Alta(txt_legajo.Text, Convert.ToString(cmb_Egreso.SelectedValue), Convert.ToString(cmb_TipoDoc.SelectedValue), (string)cmb_usuario.SelectedValue, txt_NroDocumento.Text, txt_nombre.Text, txt_apellido.Text, DateTime.Today.ToString("yyyy-MM-dd HH:mm:ss"), "-", (string) txt_domicilio.Text, txt_Nacimiento.Text, "1");
                 }
                 else
                 {
@@ -74,7 +76,9 @@ namespace TPI_NewWare.Formularios.Empleados
                     empleado.Domicilio = txt_domicilio.Text;
                     empleado.FechaNacimiento = txt_Nacimiento.Text;
                     empleado.Documento = txt_NroDocumento.Text;
-                    empleado.Usuario = (string)cmb_usuario.SelectedItem;
+                    empleado.TipoDocumento = Convert.ToString(cmb_TipoDoc.SelectedValue);
+                    empleado.Id_Egreso = Convert.ToString(cmb_Egreso.SelectedValue);
+                    empleado.Usuario = Convert.ToString(cmb_usuario.SelectedValue);
 
 
                     empleado.Guardar();
@@ -84,65 +88,85 @@ namespace TPI_NewWare.Formularios.Empleados
             }
         }
 
-        private void cmb_TipoDoc_SelectedIndexChanged(object sender, EventArgs e)
+        
+
+        private void FrmAMEmpleados_Load(object sender, EventArgs e)
         {
-            //TipDoc TiposDoc = new TipDoc();
-            Ng_TipDoc ng_TipoDoc = new Ng_TipDoc();
-            tabla.Clear();
-            tabla = ng_TipoDoc.Consulta();
-
-            if (tabla.Rows.Count != 0)
+            if (btn_crear.Text == "Crear")
             {
-                for (int i = 0; i < tabla.Rows.Count; i++)
-                {
-                    cmb_TipoDoc.Items.Add(tabla.Rows[i]["nombreTipoDocumento"].ToString());
-                }
+                cmb_TipoDoc.Cargar();
+                cmb_Egreso.Cargar();
+                cmb_usuario.Cargar("usuarios", "nombreUsuario", "nombreUsuario");
             }
-
-            for (int i = 0; i < tabla.Rows.Count; i++)
+            else
             {
-                if (tabla.Rows[i]["nombreTipoDocumento"].ToString() == (string)cmb_TipoDoc.SelectedItem) {
-                    empleado.TipoDocumento = tabla.Rows[i]["id"].ToString();
-                }
+                //Faltaría obtener los ids de la tabla y seleccionar automáticamente el valor de cos comboboxs
+                cmb_TipoDoc.Cargar();
+                cmb_Egreso.Cargar();
+                cmb_usuario.Cargar("usuarios", "nombreUsuario", "nombreUsuario");
+                
             }
         }
 
-        private void cmb_Egreso_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Ng_MotivoEgreso ng_Egreso = new Ng_MotivoEgreso();
-            tabla.Clear();
-            tabla = ng_Egreso.Consulta();
+        //private void cmb_TipoDoc_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    //TipDoc TiposDoc = new TipDoc();
+        //    Ng_TipDoc ng_TipoDoc = new Ng_TipDoc();
+        //    tabla.Clear();
+        //    tabla = ng_TipoDoc.Consulta();
 
-            if (tabla.Rows.Count != 0)
-            {
-                for (int i = 0; i < tabla.Rows.Count; i++)
-                {
-                    cmb_Egreso.Items.Add(tabla.Rows[i]["nombre"].ToString()); 
-                }
-            }
-            for (int i = 0; i < tabla.Rows.Count; i++)
-            {
-                if (tabla.Rows[i]["nombre"].ToString() == (string)cmb_Egreso.SelectedItem)
-                {
-                    empleado.Id_Egreso = tabla.Rows[i]["id"].ToString();
-                }
-            }
+        //    if (tabla.Rows.Count != 0)
+        //    {
+        //        for (int i = 0; i < tabla.Rows.Count; i++)
+        //        {
+        //            cmb_TipoDoc.Items.Add(tabla.Rows[i]["nombreTipoDocumento"].ToString());
+        //        }
+        //    }
 
-        }
+        //    for (int i = 0; i < tabla.Rows.Count; i++)
+        //    {
+        //        if (tabla.Rows[i]["nombreTipoDocumento"].ToString() == (string)cmb_TipoDoc.SelectedItem) {
+        //            empleado.TipoDocumento = tabla.Rows[i]["id"].ToString();
+        //        }
+        //    }
+        //}
 
-        private void cmb_usuario_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Ng_Usuario ng_usu = new Ng_Usuario();
-            tabla.Clear();
-            tabla = ng_usu.Consulta();
+        //private void cmb_Egreso_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    Ng_MotivoEgreso ng_Egreso = new Ng_MotivoEgreso();
+        //    tabla.Clear();
+        //    tabla = ng_Egreso.Consulta();
 
-            if (tabla.Rows.Count != 0) 
-            {
-                for (int i = 0; i < tabla.Rows.Count; i++)
-                {
-                    cmb_usuario.Items.Add(tabla.Rows[i]["nombreUsuario"].ToString());
-                }
-            }
-        }
+        //    if (tabla.Rows.Count != 0)
+        //    {
+        //        for (int i = 0; i < tabla.Rows.Count; i++)
+        //        {
+        //            cmb_Egreso.Items.Add(tabla.Rows[i]["nombre"].ToString()); 
+        //        }
+        //    }
+        //    for (int i = 0; i < tabla.Rows.Count; i++)
+        //    {
+        //        if (tabla.Rows[i]["nombre"].ToString() == (string)cmb_Egreso.SelectedItem)
+        //        {
+        //            empleado.Id_Egreso = tabla.Rows[i]["id"].ToString();
+        //        }
+        //    }
+
+        //}
+
+        //private void cmb_usuario_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    Ng_Usuario ng_usu = new Ng_Usuario();
+        //    tabla.Clear();
+        //    tabla = ng_usu.Consulta();
+
+        //    if (tabla.Rows.Count != 0) 
+        //    {
+        //        for (int i = 0; i < tabla.Rows.Count; i++)
+        //        {
+        //            cmb_usuario.Items.Add(tabla.Rows[i]["nombreUsuario"].ToString());
+        //        }
+        //    }
+        //}
     }
 }

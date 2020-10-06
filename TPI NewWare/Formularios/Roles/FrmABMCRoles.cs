@@ -12,7 +12,7 @@ namespace TPI_NewWare.Formularios.Roles
 {
     public partial class FrmABMCRoles : TPI_NewWare.Formularios.FrmABMBase
     {
-        Ng_Producto ng_Rol = new Ng_Producto();
+        Ng_Rol ng_Rol = new Ng_Rol();
         protected override ClaseBase Objeto => new Rol();
 
 

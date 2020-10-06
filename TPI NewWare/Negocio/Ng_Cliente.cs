@@ -35,7 +35,7 @@ namespace TPI_NewWare.Negocio
         public Cliente BuscarDocumento(int id)
         {
             Cliente cliente_nuevo = new Cliente();
-            cliente_nuevo.BuscarDocumento(id);
+            cliente_nuevo.Buscar(id, "nroDocumento");
             return cliente_nuevo;
         }
 

@@ -212,17 +212,16 @@
             "Elija una opción:"});
             this.cmb_TipoDoc.Location = new System.Drawing.Point(177, 260);
             this.cmb_TipoDoc.Name = "cmb_TipoDoc";
-            this.cmb_TipoDoc.Pp_Display = null;
+            this.cmb_TipoDoc.Pp_Display = "nombreTipoDocumento";
             this.cmb_TipoDoc.Pp_mensajeError = null;
             this.cmb_TipoDoc.Pp_nombre_campo = null;
             this.cmb_TipoDoc.Pp_nombre_tabla = null;
             this.cmb_TipoDoc.Pp_seleccionado = false;
-            this.cmb_TipoDoc.Pp_Tabla = null;
+            this.cmb_TipoDoc.Pp_Tabla = "TIPDOC";
             this.cmb_TipoDoc.Pp_validable = false;
-            this.cmb_TipoDoc.Pp_Value = null;
+            this.cmb_TipoDoc.Pp_Value = "id";
             this.cmb_TipoDoc.Size = new System.Drawing.Size(189, 21);
             this.cmb_TipoDoc.TabIndex = 38;
-            this.cmb_TipoDoc.SelectedIndexChanged += new System.EventHandler(this.cmb_TipoDoc_SelectedIndexChanged);
             // 
             // cmb_Egreso
             // 
@@ -231,17 +230,16 @@
             "Elija una opción:"});
             this.cmb_Egreso.Location = new System.Drawing.Point(177, 295);
             this.cmb_Egreso.Name = "cmb_Egreso";
-            this.cmb_Egreso.Pp_Display = null;
+            this.cmb_Egreso.Pp_Display = "nombre";
             this.cmb_Egreso.Pp_mensajeError = null;
             this.cmb_Egreso.Pp_nombre_campo = null;
             this.cmb_Egreso.Pp_nombre_tabla = null;
             this.cmb_Egreso.Pp_seleccionado = false;
-            this.cmb_Egreso.Pp_Tabla = null;
+            this.cmb_Egreso.Pp_Tabla = "MOTIVOEGRESO";
             this.cmb_Egreso.Pp_validable = false;
-            this.cmb_Egreso.Pp_Value = null;
+            this.cmb_Egreso.Pp_Value = "id";
             this.cmb_Egreso.Size = new System.Drawing.Size(189, 21);
             this.cmb_Egreso.TabIndex = 39;
-            this.cmb_Egreso.SelectedIndexChanged += new System.EventHandler(this.cmb_Egreso_SelectedIndexChanged);
             // 
             // lbl_MotivoEgreso
             // 
@@ -272,17 +270,16 @@
             "Elija una opción:"});
             this.cmb_usuario.Location = new System.Drawing.Point(177, 330);
             this.cmb_usuario.Name = "cmb_usuario";
-            this.cmb_usuario.Pp_Display = null;
+            this.cmb_usuario.Pp_Display = "nombreUsuario";
             this.cmb_usuario.Pp_mensajeError = null;
             this.cmb_usuario.Pp_nombre_campo = null;
-            this.cmb_usuario.Pp_nombre_tabla = null;
+            this.cmb_usuario.Pp_nombre_tabla = "USUARIOS";
             this.cmb_usuario.Pp_seleccionado = false;
             this.cmb_usuario.Pp_Tabla = null;
             this.cmb_usuario.Pp_validable = false;
-            this.cmb_usuario.Pp_Value = null;
+            this.cmb_usuario.Pp_Value = "nombreUsuario";
             this.cmb_usuario.Size = new System.Drawing.Size(189, 21);
             this.cmb_usuario.TabIndex = 42;
-            this.cmb_usuario.SelectedIndexChanged += new System.EventHandler(this.cmb_usuario_SelectedIndexChanged);
             // 
             // FrmAMEmpleados
             // 
@@ -307,6 +304,7 @@
             this.Controls.Add(this.txt_nombre);
             this.Controls.Add(this.lbl_nombre);
             this.Name = "FrmAMEmpleados";
+            this.Load += new System.EventHandler(this.FrmAMEmpleados_Load);
             this.Controls.SetChildIndex(this.lbl_nombre, 0);
             this.Controls.SetChildIndex(this.txt_nombre, 0);
             this.Controls.SetChildIndex(this.txt_legajo, 0);

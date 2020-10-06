@@ -20,55 +20,29 @@ namespace TPI_NewWare.Entidades
         //Funcion que permita hacer una consulta con filtros
         //Funcion que permita buscar un objeto por otros parametros
 
+
+        //Funcion que permita buscar un objeto por cualquier valor especificando su campo
+        public bool Buscar(int Valor, string Columna)
+        {
+            //Obtiene el nombre de la clase
+            string clase = this.GetType().ToString().ToUpper();
+            string consulta = "SELECT * FROM " + NombreTabla + " WHERE "+ Columna + " = '" + Valor + "'";
+            DataTable tabla = _BD.Consulta(consulta);
+
+            //Verifica si se encontro la fila
+            if (tabla.Rows.Count > 0)
+            {
+                //Carga al objeto con los datos de la fila
+                Cargar_datos(tabla.Rows[0]);
+                return true;
+            }
+            return false;
+        }
+        
         //Funcion que busca un objeto por su id
         public bool Buscar(int id)
         {
-            //Obtiene el nombre de la clase
-            string clase = this.GetType().ToString().ToUpper();
-            string consulta = "SELECT * FROM " + NombreTabla + " WHERE id = '" + id + "'";
-            DataTable tabla = _BD.Consulta(consulta);
-
-            //Verifica si se encontro la fila
-            if (tabla.Rows.Count > 0)
-            {
-                //Carga al objeto con los datos de la fila
-                Cargar_datos(tabla.Rows[0]);
-                return true;
-            }
-            return false;
-        }
-        public bool BuscarLegajo(int id)
-        {
-            //Obtiene el nombre de la clase
-            string clase = this.GetType().ToString().ToUpper();
-            string consulta = "SELECT * FROM " + NombreTabla + " WHERE legajo = '" + id + "'";
-            DataTable tabla = _BD.Consulta(consulta);
-
-            //Verifica si se encontro la fila
-            if (tabla.Rows.Count > 0)
-            {
-                //Carga al objeto con los datos de la fila
-                Cargar_datos(tabla.Rows[0]);
-                return true;
-            }
-            return false;
-        }
-
-        public bool BuscarDocumento(int id)
-        {
-            //Obtiene el nombre de la clase
-            string clase = this.GetType().ToString().ToUpper();
-            string consulta = "SELECT * FROM " + NombreTabla + " WHERE nroDocumento = '" + id + "'";
-            DataTable tabla = _BD.Consulta(consulta);
-
-            //Verifica si se encontro la fila
-            if (tabla.Rows.Count > 0)
-            {
-                //Carga al objeto con los datos de la fila
-                Cargar_datos(tabla.Rows[0]);
-                return true;
-            }
-            return false;
+            return Buscar(id, "id");
         }
 
         public virtual DataTable Listar()
@@ -161,6 +135,8 @@ namespace TPI_NewWare.Entidades
         {
             return "UPDATE " + NombreTabla + " SET " + SqlEquals(Columnas, Valores) + "WHERE nroDocumento=" + Id;
         }
+
+
         public string SqlEquals(string[] Columnas, string[] Valores)
         {
             string Condiciones = "";
