@@ -39,9 +39,13 @@ namespace TPI_NewWare.Formularios.VentaProducto
 
         private void btn_crear_Click(object sender, EventArgs e)
         {
+            //Separa el nroDocumento y el tipoDocumento del cliente...            
+            string cad = Convert.ToString(cmb_cliente.SelectedValue);
+            string[] separar = cad.Split(',');
 
 
-            nuevaVenta.Alta(Convert.ToString(cmb_producto.SelectedValue), Convert.ToString(cmb_cliente.SelectedValue), "1", DateTime.Today.ToShortDateString(), Convert.ToString(cmb_lider.SelectedValue));
+            //Creamos la venta nueva...
+            nuevaVenta.Alta(Convert.ToString(cmb_producto.SelectedValue), separar[0], separar[1],DateTime.Today.ToShortDateString(), Convert.ToString(cmb_lider.SelectedValue));
 
             Dispose();            
             formPadre.ActualizarGrilla();
@@ -53,7 +57,7 @@ namespace TPI_NewWare.Formularios.VentaProducto
 
             //Seteamos los cmb...
             cmb_producto.Cargar();
-            cmb_cliente.CargarDobleDisplay("clientes", "nombres", "apellido", "nroDocumento");
+            cmb_cliente.CargarDobleValue("clientes", "nombres", "apellido", "nroDocumento", "id_documento");
             cmb_lider.CargarDobleDisplay("empleados", "nombres", "apellido", "legajo");
 
 
