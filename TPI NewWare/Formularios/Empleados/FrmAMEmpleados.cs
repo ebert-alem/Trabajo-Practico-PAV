@@ -63,7 +63,7 @@ namespace TPI_NewWare.Formularios.Empleados
                 {
                     
                     //Da el alta de la herramienta
-                    negocio.Alta(txt_legajo.Text, (string)cmb_Egreso.SelectedItem, (string)cmb_TipoDoc.SelectedItem, (string)cmb_usuario.SelectedItem, txt_NroDocumento.Text, txt_nombre.Text, txt_apellido.Text, DateTime.Today.ToString("yyyy-MM-dd HH:mm:ss"), "-", (string) txt_domicilio.Text, txt_Nacimiento.Text, "1");
+                    negocio.Alta(txt_legajo.Text, null, (string)cmb_TipoDoc.SelectedItem, (string)cmb_usuario.SelectedItem, txt_NroDocumento.Text, txt_nombre.Text, txt_apellido.Text, DateTime.Today.ToString("yyyy-MM-dd HH:mm:ss"), "-", (string) txt_domicilio.Text, txt_Nacimiento.Text, "1");
                 }
                 else
                 {
@@ -79,7 +79,7 @@ namespace TPI_NewWare.Formularios.Empleados
 
 
                     //this. is a problem. but. it is. pasable. i hope. for now. just fix when you come back senpai UwU
-                    empleado.Id_Egreso = (string)cmb_Egreso.SelectedItem;
+                    //empleado.Id_Egreso = (string)cmb_Egreso.SelectedItem;
 
                     empleado.Guardar();
                 }
@@ -102,22 +102,15 @@ namespace TPI_NewWare.Formularios.Empleados
                     cmb_TipoDoc.Items.Add(tabla.Rows[i]["id"].ToString());
                 }
             }
-            
-        }
 
-        private void cmb_Egreso_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Ng_MotivoEgreso ng_Egreso = new Ng_MotivoEgreso();
-            tabla.Clear();
-            tabla = ng_Egreso.Consulta();
-
-            if (tabla.Rows.Count != 0)
+            for (int i = 0; i < tabla.Rows.Count; i++)
             {
-                for (int i = 0; i < tabla.Rows.Count; i++)
+                if (tabla.Rows[i]["nombreTipoDocumento"].ToString() == (string)cmb_TipoDoc.SelectedItem)
                 {
-                    cmb_Egreso.Items.Add(tabla.Rows[i]["id"].ToString());
+                    empleado.TipoDocumento = tabla.Rows[i]["id"].ToString();
                 }
             }
+
         }
 
         private void cmb_usuario_SelectedIndexChanged(object sender, EventArgs e)
@@ -133,6 +126,7 @@ namespace TPI_NewWare.Formularios.Empleados
                     cmb_usuario.Items.Add(tabla.Rows[i]["nombreUsuario"].ToString());
                 }
             }
+
         }
     }
 }

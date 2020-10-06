@@ -96,6 +96,12 @@
     <Compile Include="Formularios\Empleados\FrmAMEmpleados.Designer.cs">
       <DependentUpon>FrmAMEmpleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Empleados\FrmEgreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Empleados\FrmEgreso.Designer.cs">
+      <DependentUpon>FrmEgreso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Etapas\FrmABMCEtapas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Empleados\FrmAMEmpleados.resx">
       <DependentUpon>FrmAMEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Empleados\FrmEgreso.resx">
+      <DependentUpon>FrmEgreso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Etapas\FrmABMCEtapas.resx">
       <DependentUpon>FrmABMCEtapas.cs</DependentUpon>
