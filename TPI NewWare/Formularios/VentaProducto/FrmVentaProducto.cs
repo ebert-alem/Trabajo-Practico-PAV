@@ -161,8 +161,7 @@ namespace TPI_NewWare.Formularios.VentaProducto
             panelMultiUso.Width = 280;
             FrmNuevaVenta nuevaVenta = new FrmNuevaVenta (this);
             AbrirFormEnPanel(nuevaVenta);
-
-            
+                        
         }
     }
 }

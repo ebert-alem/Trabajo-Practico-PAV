@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TPI_NewWare.Negocio;
 
 namespace TPI_NewWare.Formularios.VentaProducto
 {
@@ -14,7 +15,11 @@ namespace TPI_NewWare.Formularios.VentaProducto
     {
         
         FrmVentaProducto formPadre;
+
+
+        Ng_VentaProducto nuevaVenta = new Ng_VentaProducto();
         
+
         public FrmNuevaVenta(FrmVentaProducto formPadre)
         {
             InitializeComponent();            
@@ -34,8 +39,13 @@ namespace TPI_NewWare.Formularios.VentaProducto
 
         private void btn_crear_Click(object sender, EventArgs e)
         {
+            
+
+            //nuevaVenta.Alta(Convert.ToInt32(cmb_producto.SelectedValue), Convert.ToInt32(cmb_cliente.SelectedValue), )
+
             Dispose();            
             formPadre.ActualizarGrilla();
+            
         }
 
         private void FrmNuevaVenta_Load(object sender, EventArgs e)
