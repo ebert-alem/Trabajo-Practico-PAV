@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TPI_NewWare.Entidades;
 using System.Data;
+using TPI_NewWare.Clases;
 
 namespace TPI_NewWare.Negocio
 {
@@ -37,6 +38,15 @@ namespace TPI_NewWare.Negocio
             Cliente cliente_nuevo = new Cliente();
             cliente_nuevo.Buscar(id, "nroDocumento");
             return cliente_nuevo;
+        }
+
+        //Retoma el nombre y apellido del cliente por documento y tipo...
+        public string BuscarNombreCompleto(string nroDocumento, string tipoDocumento)
+        {
+            string consulta = "SELECT (nombres + ' ' + apellido) AS nombreCompleto FROM clientes WHERE nroDocumento = " + nroDocumento + " AND id_documento = " + tipoDocumento;
+            Be_BaseDatos _BD = new Be_BaseDatos();
+            DataTable tab =_BD.Consulta(consulta);
+            return Convert.ToString(tab.Rows[0]["nombreCompleto"]);
         }
 
     }

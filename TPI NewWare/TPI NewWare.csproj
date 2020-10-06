@@ -226,6 +226,12 @@
     <Compile Include="Formularios\TipoDocumento\FrmTipDoc.Designer.cs">
       <DependentUpon>FrmTipDoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\VentaProducto\FrmActualizarVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\VentaProducto\FrmActualizarVenta.Designer.cs">
+      <DependentUpon>FrmActualizarVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\VentaProducto\FrmNuevaVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -324,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\TipoDocumento\FrmTipDoc.resx">
       <DependentUpon>FrmTipDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\VentaProducto\FrmActualizarVenta.resx">
+      <DependentUpon>FrmActualizarVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\VentaProducto\FrmNuevaVenta.resx">
       <DependentUpon>FrmNuevaVenta.cs</DependentUpon>

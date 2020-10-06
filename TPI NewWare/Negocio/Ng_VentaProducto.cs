@@ -19,9 +19,16 @@ namespace TPI_NewWare.Negocio
             venta_nueva.Crear();
         }
 
+        public void Alta(string id_producto, string nroDocumento, string tipoDocumento, string fecha_venta,string fecha_inicio_instalacion, string fecha_fin_instalacion, string legajolider)
+        {
+            VentaProducto venta_nueva = new VentaProducto(id_producto, nroDocumento, tipoDocumento, fecha_venta, fecha_inicio_instalacion, fecha_fin_instalacion, legajolider);
+            venta_nueva.Crear();
+        }
+
+
         public DataTable Consulta()
         {          
-            string consulta = "SELECT p.id, p.nombre AS nombreProducto, (c.nombres + ' ' + c.apellido) AS nombreCliente, v.fecha_venta, v.fecha_inicio_instalacion AS inicioInstalacion, v.fecha_fin_instalacion AS finInstalacion, (e.nombres + ' ' + e.apellido) AS nombreEmpleado " +
+            string consulta = "SELECT p.id, p.nombre AS nombreProducto, (c.nombres + ' ' + c.apellido) AS nombreCliente, v.fecha_venta, v.fecha_inicio_instalacion AS inicioInstalacion, v.fecha_fin_instalacion AS finInstalacion, (e.nombres + ' ' + e.apellido) AS nombreEmpleado, v.nroDocumento, v.tipoDocumento " +
                 "FROM ventaProducto v INNER JOIN producto p ON(v.id_producto = p.id) INNER JOIN clientes c ON(v.nroDocumento = c.nroDocumento) INNER JOIN empleados e ON(v.legajo_lider = e.legajo) ORDER BY v.fecha_venta DESC";
 
             return _BD.Consulta(consulta);
@@ -33,7 +40,7 @@ namespace TPI_NewWare.Negocio
 
         public DataTable ConsultaFiltrada(string desde, string hasta, string producto, string cliente, string lider)
         {
-            string consultaSQL = "SELECT p.id, p.nombre AS nombreProducto, (c.nombres + ' ' + c.apellido) AS nombreCliente, v.fecha_venta, v.fecha_inicio_instalacion AS inicioInstalacion, v.fecha_fin_instalacion AS finInstalacion, (e.nombres + ' ' + e.apellido) AS nombreEmpleado " +
+            string consultaSQL = "SELECT p.id, p.nombre AS nombreProducto, (c.nombres + ' ' + c.apellido) AS nombreCliente, v.fecha_venta, v.fecha_inicio_instalacion AS inicioInstalacion, v.fecha_fin_instalacion AS finInstalacion, (e.nombres + ' ' + e.apellido) AS nombreEmpleado, v.nroDocumento, v.tipoDocumento " +
                                  "FROM ventaProducto v INNER JOIN producto p ON(v.id_producto = p.id) INNER JOIN clientes c ON(v.nroDocumento = c.nroDocumento) INNER JOIN empleados e ON(v.legajo_lider = e.legajo)";
                          
 
@@ -59,9 +66,11 @@ namespace TPI_NewWare.Negocio
             return venta.ListarLike("nombre", Nombre);
         }
 
-        public void Baja(int legajo)
+        public void EliminarVenta (string idProducto, string nroDocumento, string tipoDocumento)
         {
-            venta.Eliminar(legajo);
+            string comando = "DELETE FROM ventaProducto WHERE id_Producto = " + idProducto + " AND NroDocumento = " + nroDocumento + " AND tipoDocumento = " + tipoDocumento;
+            _BD.Consulta(comando);
+                        
         }
 
 

@@ -72,8 +72,9 @@ namespace TPI_NewWare.Formularios.VentaProducto
             
             //Cargamos la grilla con el resultado de la consulta enviada por parámetro...
             CargarGrilla(venta.Consulta());
-
-            //Cargamos y seteamos los comboboxs...
+            
+            
+                //Cargamos y seteamos los comboboxs...
             cmb_producto.Cargar();
             cmb_cliente.CargarDobleDisplay("clientes", "nombres", "apellido", "nroDocumento");
             cmb_lider.CargarDobleDisplay("empleados", "nombres", "apellido", "legajo");
@@ -90,19 +91,20 @@ namespace TPI_NewWare.Formularios.VentaProducto
         public void CargarGrilla(DataTable tabla)
         {
             
-
             //Cargo la grilla
             grid.Rows.Clear();
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
-             
+
                 grid.Rows.Add(tabla.Rows[i]["id"],
-                                tabla.Rows[i]["nombreProducto"],
-                                tabla.Rows[i]["nombreCliente"],
-                                tabla.Rows[i]["fecha_venta"],
-                                tabla.Rows[i]["inicioInstalacion"],
-                                tabla.Rows[i]["finInstalacion"],
-                                tabla.Rows[i]["nombreEmpleado"]);
+                              tabla.Rows[i]["nombreProducto"],
+                              tabla.Rows[i]["nombreCliente"],
+                              tabla.Rows[i]["fecha_venta"],
+                              tabla.Rows[i]["inicioInstalacion"],
+                              tabla.Rows[i]["finInstalacion"],
+                              tabla.Rows[i]["nombreEmpleado"],
+                              tabla.Rows[i]["nroDocumento"],
+                              tabla.Rows[i]["tipoDocumento"]);
             }
 
             //Actualiza la visualizacion del primer elemento
@@ -161,7 +163,39 @@ namespace TPI_NewWare.Formularios.VentaProducto
             panelMultiUso.Width = 280;
             FrmNuevaVenta nuevaVenta = new FrmNuevaVenta (this);
             AbrirFormEnPanel(nuevaVenta);
+        }
+
+        private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Verificamos si los campos inicio_instalacion y fin_instalacion estan en blanco...
+            if ( Convert.ToString(grid.CurrentRow.Cells[4].Value) == "" | Convert.ToString(grid.CurrentRow.Cells[5].Value) == "" )
+            {
+                btn_editar.Enabled = true;
+            }
+            else
+            {
+                btn_editar.Enabled = false;
+            }
                         
+        }
+
+        private void btn_editar_Click(object sender, EventArgs e)
+        {
+            panelMultiUso.Width = 280;
+            FrmActualizarVenta actualizarVenta = new FrmActualizarVenta(this, Convert.ToString(grid.CurrentRow.Cells[0].Value), Convert.ToString(grid.CurrentRow.Cells[7].Value), Convert.ToString(grid.CurrentRow.Cells[8].Value), Convert.ToString(grid.CurrentRow.Cells[4].Value));
+            AbrirFormEnPanel(actualizarVenta);
+
+        }
+
+        private void btn_eliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea eliminar la venta de producto seleccionada?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {    
+                
+                venta.EliminarVenta(Convert.ToString(grid.CurrentRow.Cells[0].Value), Convert.ToString(grid.CurrentRow.Cells[7].Value), Convert.ToString(grid.CurrentRow.Cells[8].Value));
+                ActualizarGrilla();
+
+            }
         }
     }
 }
