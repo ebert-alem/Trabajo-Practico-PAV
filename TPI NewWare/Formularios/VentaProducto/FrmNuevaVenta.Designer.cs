@@ -37,6 +37,8 @@
             this.cmb_lider = new TPI_NewWare.Clases.ComboBox01();
             this.cmb_cliente = new TPI_NewWare.Clases.ComboBox01();
             this.cmb_producto = new TPI_NewWare.Clases.ComboBox01();
+            this.dtp_fecha_venta = new System.Windows.Forms.DateTimePicker();
+            this.lbl_fecha_venta = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_crear
@@ -115,7 +117,7 @@
             // cmb_lider
             // 
             this.cmb_lider.FormattingEnabled = true;
-            this.cmb_lider.Location = new System.Drawing.Point(120, 218);
+            this.cmb_lider.Location = new System.Drawing.Point(120, 216);
             this.cmb_lider.Name = "cmb_lider";
             this.cmb_lider.Pp_Display = "";
             this.cmb_lider.Pp_mensajeError = null;
@@ -131,7 +133,7 @@
             // cmb_cliente
             // 
             this.cmb_cliente.FormattingEnabled = true;
-            this.cmb_cliente.Location = new System.Drawing.Point(120, 164);
+            this.cmb_cliente.Location = new System.Drawing.Point(120, 163);
             this.cmb_cliente.Name = "cmb_cliente";
             this.cmb_cliente.Pp_Display = "nombre";
             this.cmb_cliente.Pp_mensajeError = null;
@@ -160,15 +162,35 @@
             this.cmb_producto.Size = new System.Drawing.Size(126, 21);
             this.cmb_producto.TabIndex = 2;
             // 
+            // dtp_fecha_venta
+            // 
+            this.dtp_fecha_venta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_fecha_venta.Location = new System.Drawing.Point(120, 269);
+            this.dtp_fecha_venta.Name = "dtp_fecha_venta";
+            this.dtp_fecha_venta.Size = new System.Drawing.Size(126, 20);
+            this.dtp_fecha_venta.TabIndex = 6;
+            // 
+            // lbl_fecha_venta
+            // 
+            this.lbl_fecha_venta.AutoSize = true;
+            this.lbl_fecha_venta.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_fecha_venta.Location = new System.Drawing.Point(46, 273);
+            this.lbl_fecha_venta.Name = "lbl_fecha_venta";
+            this.lbl_fecha_venta.Size = new System.Drawing.Size(47, 17);
+            this.lbl_fecha_venta.TabIndex = 3;
+            this.lbl_fecha_venta.Text = "Fecha";
+            // 
             // FrmNuevaVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(280, 429);
+            this.Controls.Add(this.dtp_fecha_venta);
             this.Controls.Add(this.lbl_nuevaVenta);
             this.Controls.Add(this.cmb_lider);
             this.Controls.Add(this.cmb_cliente);
+            this.Controls.Add(this.lbl_fecha_venta);
             this.Controls.Add(this.lbl_lider);
             this.Controls.Add(this.lbl_cliente);
             this.Controls.Add(this.lbl_producto);
@@ -194,5 +216,7 @@
         private System.Windows.Forms.Label lbl_lider;
         private System.Windows.Forms.Label lbl_nuevaVenta;
         private FontAwesome.Sharp.IconButton btn_cancelar;
+        private System.Windows.Forms.DateTimePicker dtp_fecha_venta;
+        private System.Windows.Forms.Label lbl_fecha_venta;
     }
 }
