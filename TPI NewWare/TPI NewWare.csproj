@@ -58,6 +58,27 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Clases\EstructuraComboBox.cs" />
+    <Compile Include="Clases\Exporador01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Clases\Exporador01.designer.cs">
+      <DependentUpon>Exporador01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\Grid01.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Clases\LabelText01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Clases\LabelText01.designer.cs">
+      <DependentUpon>LabelText01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\LabelText02.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Clases\LabelText02.designer.cs">
+      <DependentUpon>LabelText02.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clases\TextBox01.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -69,9 +90,11 @@
     <Compile Include="Entidades\Herramienta.cs" />
     <Compile Include="Entidades\MotivoEgreso.cs" />
     <Compile Include="Entidades\Producto.cs" />
+    <Compile Include="Entidades\Proyecto.cs" />
     <Compile Include="Entidades\Rol.cs" />
     <Compile Include="Entidades\TipDoc.cs" />
     <Compile Include="Entidades\Usuario.cs" />
+    <Compile Include="Entidades\VentaProducto.cs" />
     <Compile Include="Formularios\Clientes\FrmABMCCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +233,30 @@
     <Compile Include="Formularios\TipoDocumento\FrmTipDoc.Designer.cs">
       <DependentUpon>FrmTipDoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Proyectos\FrmNuevoProyecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Proyectos\FrmNuevoProyecto.Designer.cs">
+      <DependentUpon>FrmNuevoProyecto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\VentaProducto\FrmNuevaVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\VentaProducto\FrmNuevaVenta.Designer.cs">
+      <DependentUpon>FrmNuevaVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Proyectos\FrmVentaProyecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Proyectos\FrmVentaProyecto.Designer.cs">
+      <DependentUpon>FrmVentaProyecto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\VentaProducto\FrmVentaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\VentaProducto\FrmVentaProducto.Designer.cs">
+      <DependentUpon>FrmVentaProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Negocio\Ng_Cliente.cs" />
     <Compile Include="Negocio\Ng_Empleado.cs" />
     <Compile Include="Negocio\Ng_Etapa.cs" />
@@ -219,8 +266,18 @@
     <Compile Include="Negocio\Ng_Rol.cs" />
     <Compile Include="Negocio\Ng_TipDoc.cs" />
     <Compile Include="Negocio\Ng_Usuario.cs" />
+    <Compile Include="Negocio\Ng_VentaProducto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Clases\Exporador01.resx">
+      <DependentUpon>Exporador01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clases\LabelText01.resx">
+      <DependentUpon>LabelText01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clases\LabelText02.resx">
+      <DependentUpon>LabelText02.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Clientes\FrmABMCCliente.resx">
       <DependentUpon>FrmABMCCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -289,6 +346,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\TipoDocumento\FrmTipDoc.resx">
       <DependentUpon>FrmTipDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Proyectos\FrmNuevoProyecto.resx">
+      <DependentUpon>FrmNuevoProyecto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\VentaProducto\FrmNuevaVenta.resx">
+      <DependentUpon>FrmNuevaVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Proyectos\FrmVentaProyecto.resx">
+      <DependentUpon>FrmVentaProyecto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\VentaProducto\FrmVentaProducto.resx">
+      <DependentUpon>FrmVentaProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

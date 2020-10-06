@@ -16,6 +16,8 @@ using TPI_NewWare.Formularios.MotivosEgresos;
 using TPI_NewWare.Formularios.Empleados;
 using TPI_NewWare.Formularios.Productos;
 using TPI_NewWare.Formularios.Clientes;
+using TPI_NewWare.Formularios.VentaProducto;
+using TPI_NewWare.Formularios.VentaProyecto;
 
 namespace TPI_NewWare
 {
@@ -221,6 +223,20 @@ namespace TPI_NewWare
             lbl_Titulo.Text = "Clientes";
             lbl_Titulo.Visible = true;
             AbrirFormEnPanel(new FrmABMCCliente());
+        }
+
+        private void btnSubVentasProd_Click(object sender, EventArgs e)
+        {
+            lbl_Titulo.Text = "Venta Producto";
+            lbl_Titulo.Visible = true;
+            AbrirFormEnPanel(new FrmVentaProducto());
+        }
+
+        private void btnSubProyectos_Click(object sender, EventArgs e)
+        {
+            lbl_Titulo.Text = "Proyectos";
+            lbl_Titulo.Visible = true;
+            AbrirFormEnPanel(new FrmVentaProyecto());
         }
     }
 

@@ -23,7 +23,7 @@ namespace TPI_NewWare.Formularios.MotivosEgresos
             Grilla = grid;
         }
 
-        private void FrmABMCHerramientas_Load(object sender, EventArgs e)
+        private void FrmABMCEgresos_Load(object sender, EventArgs e)
         {
             //Carga la grilla con los valores elegidos
             CargarGrilla();
@@ -106,5 +106,7 @@ namespace TPI_NewWare.Formularios.MotivosEgresos
                 lbl_visualizacion.Text += "\nNombre: " + motivoEgreso.Nombre;
             }
         }
+
+        
     }
 }

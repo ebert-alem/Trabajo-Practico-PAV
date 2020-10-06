@@ -35,8 +35,11 @@ namespace TPI_NewWare.Negocio
         public Empleado BuscarLegajo(int legajo)
         {
             Empleado empleado_nueva = new Empleado();
-            empleado_nueva.BuscarLegajo(legajo);
+            empleado_nueva.Buscar(legajo, "legajo");
             return empleado_nueva;
         }
+
+
+
     }
 }

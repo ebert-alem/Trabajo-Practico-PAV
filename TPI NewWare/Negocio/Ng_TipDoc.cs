@@ -39,5 +39,6 @@ namespace TPI_NewWare.Negocio
             tipDoc_nueva.Buscar(id);
             return tipDoc_nueva;
         }
+
     }
 }
