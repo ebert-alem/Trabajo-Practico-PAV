@@ -13,9 +13,9 @@ namespace TPI_NewWare.Negocio
     {
         VentaProducto venta = new VentaProducto();
         Be_BaseDatos _BD = new Be_BaseDatos();
-        public void Alta(string id_producto, string nroDocumento, string tipoDocumento, string fecha_venta, string fecha_inicio_instalacion, string fecha_fin_instalacion, string legajolider)
+        public void Alta(string id_producto, string nroDocumento, string tipoDocumento, string fecha_venta, string legajolider)
         {
-            VentaProducto venta_nueva = new VentaProducto(id_producto, nroDocumento, tipoDocumento, fecha_venta, fecha_inicio_instalacion, fecha_fin_instalacion, legajolider);
+            VentaProducto venta_nueva = new VentaProducto(id_producto, nroDocumento, tipoDocumento, fecha_venta, legajolider);
             venta_nueva.Crear();
         }
 

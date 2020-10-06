@@ -58,8 +58,17 @@ namespace TPI_NewWare.Clases
             this.ValueMember = value;
             this.DataSource = _BD.Consulta(sql);
         }
+        //public void CargarDobleDisplay(string nombre_tabla, string display1, string display2, string value, string value2)
+        //{
+        //    string sql = "SELECT *, (" + display1 + "+ ' ' +" + display2 + ") AS concatenacion FROM " + nombre_tabla;
 
-        
+        //    this.DisplayMember = "concatenacion";
+        //    this.ValueMember = value;
+        //    this.DataSource = _BD.Consulta(sql);
+        //}
+
+
+
     }
    
 }

@@ -39,9 +39,9 @@ namespace TPI_NewWare.Formularios.VentaProducto
 
         private void btn_crear_Click(object sender, EventArgs e)
         {
-            
 
-            //nuevaVenta.Alta(Convert.ToInt32(cmb_producto.SelectedValue), Convert.ToInt32(cmb_cliente.SelectedValue), )
+
+            nuevaVenta.Alta(Convert.ToString(cmb_producto.SelectedValue), Convert.ToString(cmb_cliente.SelectedValue), "1", DateTime.Today.ToShortDateString(), Convert.ToString(cmb_lider.SelectedValue));
 
             Dispose();            
             formPadre.ActualizarGrilla();

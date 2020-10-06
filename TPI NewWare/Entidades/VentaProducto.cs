@@ -26,14 +26,14 @@ namespace TPI_NewWare.Entidades
             }
 
 
-        public VentaProducto(string CodProducto, string Documento, string TipoDocumento, string FechaVenta, string InicioInstalacion, string FinInstalacion, string LegajoLider)
+        public VentaProducto(string CodProducto, string Documento, string TipoDocumento, string FechaVenta, string LegajoLider)
         {
             this.CodProducto = CodProducto;
             this.Documento = Documento;
             this.TipoDocumento = TipoDocumento;
             this.FechaVenta = FechaVenta;
-            this.InicioInstalacion = InicioInstalacion;
-            this.FinInstalacion = FinInstalacion;
+            //this.InicioInstalacion = InicioInstalacion;
+            //this.FinInstalacion = FinInstalacion;
             this.LegajoLider = LegajoLider;
             
         }
@@ -58,8 +58,8 @@ namespace TPI_NewWare.Entidades
 
         public override string SentciaSqlCrear()
         {
-            return SqlInsert(new string[7] { "id_producto", "nroDocumento", "tipoDocumento", "fecha_venta", "fecha_inicio_instalacion", "fecha_fin_instalacion", "legajo_lider" },
-                             new string[7] { CodProducto, Documento, TipoDocumento, FechaVenta, InicioInstalacion, FinInstalacion, LegajoLider });
+            return SqlInsert(new string[5] { "id_producto", "nroDocumento", "tipoDocumento", "fecha_venta", "legajo_lider" },
+                             new string[5] { CodProducto, Documento, TipoDocumento, FechaVenta, LegajoLider });
         }
     }
 }
