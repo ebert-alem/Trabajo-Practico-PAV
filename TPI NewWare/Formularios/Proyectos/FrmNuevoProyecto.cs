@@ -8,8 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TPI_NewWare.Negocio;
+using TPI_NewWare.Entidades;
 
-namespace TPI_NewWare.Formularios.VentaProducto
+namespace TPI_NewWare.Formularios.VentaProyecto
 {
     public partial class FrmNuevoProyecto : Form
     {
@@ -31,38 +32,36 @@ namespace TPI_NewWare.Formularios.VentaProducto
         {
             InitializeComponent();
             formPadre = form;
-
-
         }
 
 
 
         private void btn_crear_Click(object sender, EventArgs e)
         {
+            //Crea un nuevo proyecto
+            Proyecto proyecto = new Proyecto(txt_descripcion.Text, Convert.ToString(cmb_cliente.SelectedValue), "1", dtpInicio.Value.ToShortDateString(), dtpFinEsperado.Value.ToShortDateString());
+            proyecto.Crear();
 
-
-            nuevaVenta.Alta(Convert.ToString(cmb_producto.SelectedValue), Convert.ToString(cmb_cliente.SelectedValue), "1", DateTime.Today.ToShortDateString(), Convert.ToString(cmb_lider.SelectedValue));
-
-            Dispose();            
             formPadre.ActualizarGrilla();
+            Dispose();            
             
         }
 
         private void FrmNuevaVenta_Load(object sender, EventArgs e)
         {
-
             //Seteamos los cmb...
-            cmb_producto.Cargar();
             cmb_cliente.CargarDobleDisplay("clientes", "nombres", "apellido", "nroDocumento");
-            cmb_lider.CargarDobleDisplay("empleados", "nombres", "apellido", "legajo");
-
-
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
             Close();
             formPadre.ActualizarGrilla();
+        }
+
+        private void lbl_lider_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

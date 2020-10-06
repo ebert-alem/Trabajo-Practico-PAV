@@ -1,4 +1,4 @@
-﻿namespace TPI_NewWare.Formularios.VentaProducto
+﻿namespace TPI_NewWare.Formularios.VentaProyecto
 {
     partial class FrmNuevoProyecto
     {
@@ -29,14 +29,16 @@
         private void InitializeComponent()
         {
             this.btn_crear = new FontAwesome.Sharp.IconButton();
-            this.lbl_producto = new System.Windows.Forms.Label();
             this.lbl_cliente = new System.Windows.Forms.Label();
-            this.lbl_lider = new System.Windows.Forms.Label();
             this.lbl_nuevaVenta = new System.Windows.Forms.Label();
             this.btn_cancelar = new FontAwesome.Sharp.IconButton();
-            this.cmb_lider = new TPI_NewWare.Clases.ComboBox01();
             this.cmb_cliente = new TPI_NewWare.Clases.ComboBox01();
-            this.cmb_producto = new TPI_NewWare.Clases.ComboBox01();
+            this.dtpInicio = new System.Windows.Forms.DateTimePicker();
+            this.dtpFinEsperado = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_descripcion = new TPI_NewWare.Clases.TextBox01();
             this.SuspendLayout();
             // 
             // btn_crear
@@ -55,46 +57,26 @@
             this.btn_crear.UseVisualStyleBackColor = true;
             this.btn_crear.Click += new System.EventHandler(this.btn_crear_Click);
             // 
-            // lbl_producto
-            // 
-            this.lbl_producto.AutoSize = true;
-            this.lbl_producto.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_producto.Location = new System.Drawing.Point(25, 111);
-            this.lbl_producto.Name = "lbl_producto";
-            this.lbl_producto.Size = new System.Drawing.Size(68, 17);
-            this.lbl_producto.TabIndex = 3;
-            this.lbl_producto.Text = "Producto";
-            // 
             // lbl_cliente
             // 
             this.lbl_cliente.AutoSize = true;
             this.lbl_cliente.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_cliente.Location = new System.Drawing.Point(39, 165);
+            this.lbl_cliente.Location = new System.Drawing.Point(77, 248);
             this.lbl_cliente.Name = "lbl_cliente";
             this.lbl_cliente.Size = new System.Drawing.Size(54, 17);
             this.lbl_cliente.TabIndex = 3;
             this.lbl_cliente.Text = "Cliente";
-            // 
-            // lbl_lider
-            // 
-            this.lbl_lider.AutoSize = true;
-            this.lbl_lider.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_lider.Location = new System.Drawing.Point(55, 219);
-            this.lbl_lider.Name = "lbl_lider";
-            this.lbl_lider.Size = new System.Drawing.Size(38, 17);
-            this.lbl_lider.TabIndex = 3;
-            this.lbl_lider.Text = "Lider";
             // 
             // lbl_nuevaVenta
             // 
             this.lbl_nuevaVenta.AutoSize = true;
             this.lbl_nuevaVenta.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_nuevaVenta.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbl_nuevaVenta.Location = new System.Drawing.Point(44, 30);
+            this.lbl_nuevaVenta.Location = new System.Drawing.Point(22, 33);
             this.lbl_nuevaVenta.Name = "lbl_nuevaVenta";
-            this.lbl_nuevaVenta.Size = new System.Drawing.Size(202, 36);
+            this.lbl_nuevaVenta.Size = new System.Drawing.Size(244, 36);
             this.lbl_nuevaVenta.TabIndex = 5;
-            this.lbl_nuevaVenta.Text = "Nueva venta";
+            this.lbl_nuevaVenta.Text = "Nuevo Proyecto";
             // 
             // btn_cancelar
             // 
@@ -112,26 +94,10 @@
             this.btn_cancelar.UseVisualStyleBackColor = true;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
-            // cmb_lider
-            // 
-            this.cmb_lider.FormattingEnabled = true;
-            this.cmb_lider.Location = new System.Drawing.Point(120, 218);
-            this.cmb_lider.Name = "cmb_lider";
-            this.cmb_lider.Pp_Display = "";
-            this.cmb_lider.Pp_mensajeError = null;
-            this.cmb_lider.Pp_nombre_campo = null;
-            this.cmb_lider.Pp_nombre_tabla = null;
-            this.cmb_lider.Pp_seleccionado = false;
-            this.cmb_lider.Pp_Tabla = "";
-            this.cmb_lider.Pp_validable = false;
-            this.cmb_lider.Pp_Value = "";
-            this.cmb_lider.Size = new System.Drawing.Size(126, 21);
-            this.cmb_lider.TabIndex = 4;
-            // 
             // cmb_cliente
             // 
             this.cmb_cliente.FormattingEnabled = true;
-            this.cmb_cliente.Location = new System.Drawing.Point(120, 164);
+            this.cmb_cliente.Location = new System.Drawing.Point(140, 247);
             this.cmb_cliente.Name = "cmb_cliente";
             this.cmb_cliente.Pp_Display = "nombre";
             this.cmb_cliente.Pp_mensajeError = null;
@@ -144,39 +110,86 @@
             this.cmb_cliente.Size = new System.Drawing.Size(126, 21);
             this.cmb_cliente.TabIndex = 4;
             // 
-            // cmb_producto
+            // dtpInicio
             // 
-            this.cmb_producto.FormattingEnabled = true;
-            this.cmb_producto.Location = new System.Drawing.Point(120, 110);
-            this.cmb_producto.Name = "cmb_producto";
-            this.cmb_producto.Pp_Display = "nombre";
-            this.cmb_producto.Pp_mensajeError = null;
-            this.cmb_producto.Pp_nombre_campo = null;
-            this.cmb_producto.Pp_nombre_tabla = null;
-            this.cmb_producto.Pp_seleccionado = false;
-            this.cmb_producto.Pp_Tabla = "PRODUCTO";
-            this.cmb_producto.Pp_validable = false;
-            this.cmb_producto.Pp_Value = "id";
-            this.cmb_producto.Size = new System.Drawing.Size(126, 21);
-            this.cmb_producto.TabIndex = 2;
+            this.dtpInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpInicio.Location = new System.Drawing.Point(140, 274);
+            this.dtpInicio.Name = "dtpInicio";
+            this.dtpInicio.Size = new System.Drawing.Size(126, 20);
+            this.dtpInicio.TabIndex = 6;
+            this.dtpInicio.Value = new System.DateTime(2020, 10, 4, 13, 16, 34, 0);
             // 
-            // FrmNuevaVenta
+            // dtpFinEsperado
+            // 
+            this.dtpFinEsperado.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFinEsperado.Location = new System.Drawing.Point(140, 300);
+            this.dtpFinEsperado.Name = "dtpFinEsperado";
+            this.dtpFinEsperado.Size = new System.Drawing.Size(128, 20);
+            this.dtpFinEsperado.TabIndex = 7;
+            this.dtpFinEsperado.Value = new System.DateTime(2020, 10, 4, 13, 16, 34, 0);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(42, 300);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 17);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Fecha de Fin";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(25, 274);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(106, 17);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Fecha de Inicio";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(12, 92);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 17);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Descripcion";
+            // 
+            // txt_descripcion
+            // 
+            this.txt_descripcion.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_descripcion.Location = new System.Drawing.Point(15, 112);
+            this.txt_descripcion.Multiline = true;
+            this.txt_descripcion.Name = "txt_descripcion";
+            this.txt_descripcion.Pp_mensajeError = "\"Descripción vacia\"";
+            this.txt_descripcion.Pp_nombre_campo = "\"descripcion\"";
+            this.txt_descripcion.Pp_nombre_tabla = "\"HERRAMIENTAS\"";
+            this.txt_descripcion.Pp_validable = true;
+            this.txt_descripcion.Size = new System.Drawing.Size(251, 129);
+            this.txt_descripcion.TabIndex = 14;
+            // 
+            // FrmNuevoProyecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(280, 429);
+            this.Controls.Add(this.txt_descripcion);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dtpFinEsperado);
+            this.Controls.Add(this.dtpInicio);
             this.Controls.Add(this.lbl_nuevaVenta);
-            this.Controls.Add(this.cmb_lider);
             this.Controls.Add(this.cmb_cliente);
-            this.Controls.Add(this.lbl_lider);
             this.Controls.Add(this.lbl_cliente);
-            this.Controls.Add(this.lbl_producto);
-            this.Controls.Add(this.cmb_producto);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_crear);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmNuevaVenta";
+            this.Name = "FrmNuevoProyecto";
             this.Text = "FrmNuevaVenta";
             this.Load += new System.EventHandler(this.FrmNuevaVenta_Load);
             this.ResumeLayout(false);
@@ -186,13 +199,15 @@
 
         #endregion
         private FontAwesome.Sharp.IconButton btn_crear;
-        private Clases.ComboBox01 cmb_producto;
-        private System.Windows.Forms.Label lbl_producto;
         private Clases.ComboBox01 cmb_cliente;
         private System.Windows.Forms.Label lbl_cliente;
-        private Clases.ComboBox01 cmb_lider;
-        private System.Windows.Forms.Label lbl_lider;
         private System.Windows.Forms.Label lbl_nuevaVenta;
         private FontAwesome.Sharp.IconButton btn_cancelar;
+        private System.Windows.Forms.DateTimePicker dtpInicio;
+        private System.Windows.Forms.DateTimePicker dtpFinEsperado;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private Clases.TextBox01 txt_descripcion;
     }
 }

@@ -10,18 +10,16 @@ using System.Windows.Forms;
 using TPI_NewWare.Negocio;
 using TPI_NewWare.Entidades;
 
-namespace TPI_NewWare.Formularios.VentaProducto
+namespace TPI_NewWare.Formularios.VentaProyecto
 {
     public partial class FrmVentaProyecto: Form
     {
         private int panelWidth;
         private bool oculto;
 
-
         DataTable tabla = new DataTable();
         Ng_VentaProducto venta = new Ng_VentaProducto();
-
-
+        Proyecto proyecto = new Proyecto();
 
         public FrmVentaProyecto()
         {
@@ -65,13 +63,14 @@ namespace TPI_NewWare.Formularios.VentaProducto
 
         
 
-        private void FrmVentaProducto_Load(object sender, EventArgs e)
+        private void FrmProyecto_Load(object sender, EventArgs e)
         {
             panelOpciones.Width = 0;
             panelMultiUso.Width = 0;
             
+
             //Cargamos la grilla con el resultado de la consulta enviada por parámetro...
-            CargarGrilla(venta.Consulta());
+            CargarGrilla(proyecto.Listar());
 
             //Cargamos y seteamos los comboboxs...
             cmb_producto.Cargar();
@@ -89,21 +88,20 @@ namespace TPI_NewWare.Formularios.VentaProducto
 
         public void CargarGrilla(DataTable tabla)
         {
-            
-
             //Cargo la grilla
             grid.Rows.Clear();
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
              
-                grid.Rows.Add(tabla.Rows[i]["id"],
-                                tabla.Rows[i]["nombreProducto"],
-                                tabla.Rows[i]["nombreCliente"],
-                                tabla.Rows[i]["fecha_venta"],
-                                tabla.Rows[i]["inicioInstalacion"],
-                                tabla.Rows[i]["finInstalacion"],
-                                tabla.Rows[i]["nombreEmpleado"]);
-            }
+                grid.Rows.Add(tabla.Rows[i]["codigo"],
+                                tabla.Rows[i]["descripcion"],
+                                tabla.Rows[i]["nroDoc_cliente"],
+                                tabla.Rows[i]["tipoDoc_cliente"],
+                                tabla.Rows[i]["fecha_inicio"],
+                                tabla.Rows[i]["fecha_fin_probable"],
+                                tabla.Rows[i]["fecha_fin_real"]);
+            
+                }
 
             //Actualiza la visualizacion del primer elemento
             
@@ -134,7 +132,7 @@ namespace TPI_NewWare.Formularios.VentaProducto
         public void ActualizarGrilla()
         {
             //Cargamos la grilla con el resultado de la consulta enviada por parámetro...
-            CargarGrilla(venta.Consulta());
+            CargarGrilla(proyecto.Listar());
             panelMultiUso.Width = 0;
         }
 
@@ -159,8 +157,7 @@ namespace TPI_NewWare.Formularios.VentaProducto
         private void btn_nuevo_Click(object sender, EventArgs e)
         {
             panelMultiUso.Width = 280;
-            FrmNuevoProyecto nuevaVenta = new FrmNuevoProyecto (this);
-            AbrirFormEnPanel(nuevaVenta);
+            AbrirFormEnPanel(new FrmNuevoProyecto(this));
                         
         }
     }

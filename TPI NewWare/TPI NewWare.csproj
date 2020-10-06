@@ -90,6 +90,7 @@
     <Compile Include="Entidades\Herramienta.cs" />
     <Compile Include="Entidades\MotivoEgreso.cs" />
     <Compile Include="Entidades\Producto.cs" />
+    <Compile Include="Entidades\Proyecto.cs" />
     <Compile Include="Entidades\Rol.cs" />
     <Compile Include="Entidades\TipDoc.cs" />
     <Compile Include="Entidades\Usuario.cs" />
