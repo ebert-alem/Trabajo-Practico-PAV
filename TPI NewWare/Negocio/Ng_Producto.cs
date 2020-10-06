@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TPI_NewWare.Entidades;
+using TPI_NewWare.Clases;
 using System.Data;
 
 namespace TPI_NewWare.Negocio
@@ -37,6 +38,14 @@ namespace TPI_NewWare.Negocio
             Producto producto_nueva = new Producto();
             producto_nueva.Buscar(id);
             return producto_nueva;
+        }
+
+        public string BuscarPorId(string id_producto)
+        {
+            string consulta = "SELECT nombre FROM producto WHERE id = " + id_producto;
+            Be_BaseDatos _BD = new Be_BaseDatos();
+            DataTable tab = _BD.Consulta(consulta);
+            return Convert.ToString(tab.Rows[0]["nombre"]);
         }
 
     }

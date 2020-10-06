@@ -232,6 +232,11 @@
     </Compile>
     <Compile Include="Formularios\Proyectos\FrmNuevoProyecto.Designer.cs">
       <DependentUpon>FrmNuevoProyecto.cs</DependentUpon>
+    <Compile Include="Formularios\VentaProducto\FrmActualizarVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\VentaProducto\FrmActualizarVenta.Designer.cs">
+      <DependentUpon>FrmActualizarVenta.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\VentaProducto\FrmNuevaVenta.cs">
       <SubType>Form</SubType>
@@ -340,6 +345,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Proyectos\FrmNuevoProyecto.resx">
       <DependentUpon>FrmNuevoProyecto.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\VentaProducto\FrmActualizarVenta.resx">
+      <DependentUpon>FrmActualizarVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\VentaProducto\FrmNuevaVenta.resx">
       <DependentUpon>FrmNuevaVenta.cs</DependentUpon>

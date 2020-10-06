@@ -38,6 +38,18 @@ namespace TPI_NewWare.Entidades
             
         }
 
+        public VentaProducto(string CodProducto, string Documento, string TipoDocumento, string FechaVenta, string LegajoLider, string InicioInstalacion, string FinInstalacion)
+        {
+            this.CodProducto = CodProducto;
+            this.Documento = Documento;
+            this.TipoDocumento = TipoDocumento;
+            this.FechaVenta = FechaVenta;
+            this.InicioInstalacion = InicioInstalacion;
+            this.FinInstalacion = FinInstalacion;
+            this.LegajoLider = LegajoLider;
+
+        }
+
         public override void Cargar_datos(DataRow fila)
         {
             CodProducto = fila["id_producto"].ToString();
@@ -51,9 +63,23 @@ namespace TPI_NewWare.Entidades
 
         public override string SentciaSqlActualizar()
         {
-            return "UPDATE ventaProducto (" + CodProducto + ", " + Documento + ", " + TipoDocumento + 
-                   ", CONVERT(date, '" + FechaVenta + "', 103), CONVERT(date, '" + InicioInstalacion + "', 103), " +
-                   "CONVERT(date, '" + FinInstalacion + "', 103), " + LegajoLider + ")";
+
+            if (FinInstalacion == "")
+            {
+                return "UPDATE ventaProducto SET fecha_inicio_instalacion = CONVERT(date, '" + InicioInstalacion + "', 103) " +
+                   "WHERE id_producto = " + CodProducto + "AND nroDocumento = " + Documento + "AND tipoDocumento = " + TipoDocumento;
+            }
+            else
+            {
+                return "UPDATE ventaProducto SET fecha_fin_instalacion = CONVERT(date, '" + FinInstalacion + "', 103) " +
+                   "WHERE id_producto = " + CodProducto + "AND nroDocumento = " + Documento + "AND tipoDocumento = " + TipoDocumento;
+            }
+
+            
+            //Armamos la cadena de condiciones...
+            //string condicion = SqlEqualsUpdate(new string[3] { "id_producto", " nroDocumento", "tipoDocumento" }, new string[3] { Convert.ToString(CodProducto), Convert.ToString(Documento), Convert.ToString(TipoDocumento)});
+
+            //return SqlUpdateCondicionNew(new string[2] {"fecha_inicio_instalacion", "fecha_fin_instalacion" }, new string[2] { InicioInstalacion, FinInstalacion }, condicion);
         }
 
         public override string SentciaSqlCrear()
@@ -61,5 +87,8 @@ namespace TPI_NewWare.Entidades
             return SqlInsert(new string[5] { "id_producto", "nroDocumento", "tipoDocumento", "fecha_venta", "legajo_lider" },
                              new string[5] { CodProducto, Documento, TipoDocumento, FechaVenta, LegajoLider });
         }
+
+
+
     }
 }

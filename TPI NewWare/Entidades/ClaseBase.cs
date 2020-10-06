@@ -136,6 +136,16 @@ namespace TPI_NewWare.Entidades
             return "UPDATE " + NombreTabla + " SET " + SqlEquals(Columnas, Valores) + "WHERE nroDocumento=" + Id;
         }
 
+        public string SqlUpdateCondicion(string[] Columnas, string[] Valores, string condicion)
+        {
+            return "UPDATE " + NombreTabla + " SET " + SqlEquals(Columnas, Valores) + "WHERE nroDocumento=" + condicion;
+        }
+
+        public string SqlUpdateCondicionNew(string[] Columnas, string[] Valores, string condicion)
+        {
+            return "UPDATE " + NombreTabla + " SET " + SqlEquals(Columnas, Valores) + " WHERE " + condicion;
+        }
+
 
         public string SqlEquals(string[] Columnas, string[] Valores)
         {
@@ -150,6 +160,18 @@ namespace TPI_NewWare.Entidades
             return Condiciones;
         }
 
+        public string SqlEqualsUpdate(string[] Columnas, string[] Valores)
+        {
+            string Condiciones = "";
+            for (int i = 0; i < Columnas.Length; i++)
+            {
+                //Produce la cadena "atributo = valor," para cada par de atributos y valores
+                Condiciones += Columnas[i] + " = " + Valores[i];
+                //Agrega un AND salvo en el ultimo caso
+                if (i < Columnas.Length - 1) Condiciones += " AND ";
+            }
+            return Condiciones;
+        }
 
         //Funciones de modificacion de texto
         private string Envolver(string Envoltorio, string Cadena)
