@@ -42,6 +42,7 @@
             // btn_crear
             // 
             this.btn_crear.FlatAppearance.BorderSize = 0;
+           
             // 
             // btn_cancelar
             // 
