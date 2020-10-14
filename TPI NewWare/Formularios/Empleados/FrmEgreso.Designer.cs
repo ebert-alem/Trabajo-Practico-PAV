@@ -69,22 +69,20 @@
             // 
             // cmb_Egreso
             // 
+            this.cmb_Egreso.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Egreso.FormattingEnabled = true;
-            this.cmb_Egreso.Items.AddRange(new object[] {
-            "Elija una opción:"});
             this.cmb_Egreso.Location = new System.Drawing.Point(33, 109);
             this.cmb_Egreso.Name = "cmb_Egreso";
-            this.cmb_Egreso.Pp_Display = null;
+            this.cmb_Egreso.Pp_Display = "nombre";
             this.cmb_Egreso.Pp_mensajeError = null;
             this.cmb_Egreso.Pp_nombre_campo = null;
             this.cmb_Egreso.Pp_nombre_tabla = null;
             this.cmb_Egreso.Pp_seleccionado = false;
-            this.cmb_Egreso.Pp_Tabla = null;
+            this.cmb_Egreso.Pp_Tabla = "MOTIVOEGRESO";
             this.cmb_Egreso.Pp_validable = false;
             this.cmb_Egreso.Pp_Value = null;
-            this.cmb_Egreso.Size = new System.Drawing.Size(333, 21);
+            this.cmb_Egreso.Size = new System.Drawing.Size(333, 25);
             this.cmb_Egreso.TabIndex = 40;
-            this.cmb_Egreso.SelectedIndexChanged += new System.EventHandler(this.cmb_Egreso_SelectedIndexChanged);
             // 
             // lbl_OtroMotivo
             // 
@@ -106,6 +104,7 @@
             this.Controls.Add(this.txt_Egreso);
             this.Controls.Add(this.lbl_Egreso);
             this.Name = "FrmEgreso";
+            this.Load += new System.EventHandler(this.FrmEgresos_Load);
             this.Controls.SetChildIndex(this.btn_cancelar, 0);
             this.Controls.SetChildIndex(this.btn_crear, 0);
             this.Controls.SetChildIndex(this.lbl_Egreso, 0);

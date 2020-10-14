@@ -32,36 +32,25 @@ namespace TPI_NewWare.Formularios.Empleados
         {
             TratamientosEspeciales tratamiento = new TratamientosEspeciales();
 
-            //Valida que el formato de los datos ingresado sea correcto
             if (tratamiento.validar(this.Controls) == TratamientosEspeciales.Validacion.correcta)
             {
-                if (txt_Egreso != null) {
-                    ng_Mot.Alta(txt_Egreso.Text);
-                }
-
-                //encontrar el id y al empleado.
-                for (int i = 0; i < tabla.Rows.Count; i++)
-                {
-                    if (tabla.Rows[i]["nombre"].ToString() == (string)cmb_Egreso.SelectedItem)
-                    {
-                        empleados.Id_Egreso = tabla.Rows[i]["id"].ToString();
-                    }
-                }
-                this.Close();
+                empleados.Id_Egreso = Convert.ToString(cmb_Egreso.SelectedValue);
+                empleados.Guardar();
             }
         }
         public override void btn_cancelar_Click(object sender, EventArgs e)
         {
             form_contenedor.ActualizarCancelacion();
             this.Close();
-
-
         }
-        private void cmb_Egreso_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void FrmEgresos_Load(object sender, EventArgs e) 
         {
-            Ng_MotivoEgreso ng_Egreso = new Ng_MotivoEgreso();
-            tabla.Clear();
-            tabla = ng_Egreso.Consulta();
+            cmb_Egreso.Cargar();
+        }
+            //Ng_MotivoEgreso ng_Egreso = new Ng_MotivoEgreso();
+            //tabla.Clear();
+            //tabla = ng_Egreso.Consulta();
 
             //if (tabla.Rows.Count != 0)
             //{
@@ -79,7 +68,7 @@ namespace TPI_NewWare.Formularios.Empleados
             //    }
             //}
 
-        }
+        
 
     }
 }
