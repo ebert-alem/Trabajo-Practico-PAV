@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelFondo = new System.Windows.Forms.Panel();
             this.panelOpciones = new System.Windows.Forms.Panel();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
@@ -41,9 +41,6 @@
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
-            this.cmb_lider = new TPI_NewWare.Clases.ComboBox01();
-            this.cmb_cliente = new TPI_NewWare.Clases.ComboBox01();
-            this.cmb_producto = new TPI_NewWare.Clases.ComboBox01();
             this.panelGrilla = new System.Windows.Forms.Panel();
             this.panelMultiUso = new System.Windows.Forms.Panel();
             this.grid = new System.Windows.Forms.DataGridView();
@@ -55,6 +52,7 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelBotones = new System.Windows.Forms.Panel();
+            this.btn_finalizar = new FontAwesome.Sharp.IconButton();
             this.btn_eliminar = new FontAwesome.Sharp.IconButton();
             this.btn_editar = new FontAwesome.Sharp.IconButton();
             this.btn_nuevo = new FontAwesome.Sharp.IconButton();
@@ -63,7 +61,9 @@
             this.panelSup = new System.Windows.Forms.Panel();
             this.panelInf = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btn_finalizar = new FontAwesome.Sharp.IconButton();
+            this.cmb_lider = new TPI_NewWare.Clases.ComboBox01();
+            this.cmb_cliente = new TPI_NewWare.Clases.ComboBox01();
+            this.cmb_producto = new TPI_NewWare.Clases.ComboBox01();
             this.panelFondo.SuspendLayout();
             this.panelOpciones.SuspendLayout();
             this.panelGrilla.SuspendLayout();
@@ -207,54 +207,6 @@
             this.dtpDesde.TabIndex = 1;
             this.dtpDesde.Value = new System.DateTime(2020, 10, 4, 13, 16, 34, 0);
             // 
-            // cmb_lider
-            // 
-            this.cmb_lider.FormattingEnabled = true;
-            this.cmb_lider.Location = new System.Drawing.Point(29, 293);
-            this.cmb_lider.Name = "cmb_lider";
-            this.cmb_lider.Pp_Display = null;
-            this.cmb_lider.Pp_mensajeError = null;
-            this.cmb_lider.Pp_nombre_campo = null;
-            this.cmb_lider.Pp_nombre_tabla = null;
-            this.cmb_lider.Pp_seleccionado = false;
-            this.cmb_lider.Pp_Tabla = null;
-            this.cmb_lider.Pp_validable = false;
-            this.cmb_lider.Pp_Value = null;
-            this.cmb_lider.Size = new System.Drawing.Size(121, 21);
-            this.cmb_lider.TabIndex = 0;
-            // 
-            // cmb_cliente
-            // 
-            this.cmb_cliente.FormattingEnabled = true;
-            this.cmb_cliente.Location = new System.Drawing.Point(29, 220);
-            this.cmb_cliente.Name = "cmb_cliente";
-            this.cmb_cliente.Pp_Display = null;
-            this.cmb_cliente.Pp_mensajeError = null;
-            this.cmb_cliente.Pp_nombre_campo = null;
-            this.cmb_cliente.Pp_nombre_tabla = null;
-            this.cmb_cliente.Pp_seleccionado = false;
-            this.cmb_cliente.Pp_Tabla = "CLIENTES";
-            this.cmb_cliente.Pp_validable = false;
-            this.cmb_cliente.Pp_Value = null;
-            this.cmb_cliente.Size = new System.Drawing.Size(121, 21);
-            this.cmb_cliente.TabIndex = 0;
-            // 
-            // cmb_producto
-            // 
-            this.cmb_producto.FormattingEnabled = true;
-            this.cmb_producto.Location = new System.Drawing.Point(29, 149);
-            this.cmb_producto.Name = "cmb_producto";
-            this.cmb_producto.Pp_Display = "nombre";
-            this.cmb_producto.Pp_mensajeError = null;
-            this.cmb_producto.Pp_nombre_campo = null;
-            this.cmb_producto.Pp_nombre_tabla = null;
-            this.cmb_producto.Pp_seleccionado = false;
-            this.cmb_producto.Pp_Tabla = "PRODUCTO";
-            this.cmb_producto.Pp_validable = false;
-            this.cmb_producto.Pp_Value = "id";
-            this.cmb_producto.Size = new System.Drawing.Size(121, 21);
-            this.cmb_producto.TabIndex = 0;
-            // 
             // panelGrilla
             // 
             this.panelGrilla.Controls.Add(this.panelMultiUso);
@@ -280,17 +232,21 @@
             this.grid.AllowUserToAddRows = false;
             this.grid.AllowUserToDeleteRows = false;
             this.grid.AllowUserToResizeRows = false;
+            this.grid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grid.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column4,
@@ -365,6 +321,22 @@
             this.panelBotones.Name = "panelBotones";
             this.panelBotones.Size = new System.Drawing.Size(40, 429);
             this.panelBotones.TabIndex = 20;
+            // 
+            // btn_finalizar
+            // 
+            this.btn_finalizar.FlatAppearance.BorderSize = 0;
+            this.btn_finalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_finalizar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btn_finalizar.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btn_finalizar.IconColor = System.Drawing.Color.DimGray;
+            this.btn_finalizar.IconSize = 32;
+            this.btn_finalizar.Location = new System.Drawing.Point(0, 177);
+            this.btn_finalizar.Name = "btn_finalizar";
+            this.btn_finalizar.Rotation = 0D;
+            this.btn_finalizar.Size = new System.Drawing.Size(40, 40);
+            this.btn_finalizar.TabIndex = 1;
+            this.btn_finalizar.UseVisualStyleBackColor = true;
+            this.btn_finalizar.Click += new System.EventHandler(this.btn_finalizar_Click);
             // 
             // btn_eliminar
             // 
@@ -460,21 +432,53 @@
             this.timer1.Interval = 25;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // btn_finalizar
+            // cmb_lider
             // 
-            this.btn_finalizar.FlatAppearance.BorderSize = 0;
-            this.btn_finalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_finalizar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btn_finalizar.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.btn_finalizar.IconColor = System.Drawing.Color.DimGray;
-            this.btn_finalizar.IconSize = 32;
-            this.btn_finalizar.Location = new System.Drawing.Point(0, 177);
-            this.btn_finalizar.Name = "btn_finalizar";
-            this.btn_finalizar.Rotation = 0D;
-            this.btn_finalizar.Size = new System.Drawing.Size(40, 40);
-            this.btn_finalizar.TabIndex = 1;
-            this.btn_finalizar.UseVisualStyleBackColor = true;
-            this.btn_finalizar.Click += new System.EventHandler(this.btn_finalizar_Click);
+            this.cmb_lider.FormattingEnabled = true;
+            this.cmb_lider.Location = new System.Drawing.Point(29, 293);
+            this.cmb_lider.Name = "cmb_lider";
+            this.cmb_lider.Pp_Display = null;
+            this.cmb_lider.Pp_mensajeError = null;
+            this.cmb_lider.Pp_nombre_campo = null;
+            this.cmb_lider.Pp_nombre_tabla = null;
+            this.cmb_lider.Pp_seleccionado = false;
+            this.cmb_lider.Pp_Tabla = null;
+            this.cmb_lider.Pp_validable = false;
+            this.cmb_lider.Pp_Value = null;
+            this.cmb_lider.Size = new System.Drawing.Size(121, 21);
+            this.cmb_lider.TabIndex = 0;
+            // 
+            // cmb_cliente
+            // 
+            this.cmb_cliente.FormattingEnabled = true;
+            this.cmb_cliente.Location = new System.Drawing.Point(29, 220);
+            this.cmb_cliente.Name = "cmb_cliente";
+            this.cmb_cliente.Pp_Display = null;
+            this.cmb_cliente.Pp_mensajeError = null;
+            this.cmb_cliente.Pp_nombre_campo = null;
+            this.cmb_cliente.Pp_nombre_tabla = null;
+            this.cmb_cliente.Pp_seleccionado = false;
+            this.cmb_cliente.Pp_Tabla = "CLIENTES";
+            this.cmb_cliente.Pp_validable = false;
+            this.cmb_cliente.Pp_Value = null;
+            this.cmb_cliente.Size = new System.Drawing.Size(121, 21);
+            this.cmb_cliente.TabIndex = 0;
+            // 
+            // cmb_producto
+            // 
+            this.cmb_producto.FormattingEnabled = true;
+            this.cmb_producto.Location = new System.Drawing.Point(29, 149);
+            this.cmb_producto.Name = "cmb_producto";
+            this.cmb_producto.Pp_Display = "nombre";
+            this.cmb_producto.Pp_mensajeError = null;
+            this.cmb_producto.Pp_nombre_campo = null;
+            this.cmb_producto.Pp_nombre_tabla = null;
+            this.cmb_producto.Pp_seleccionado = false;
+            this.cmb_producto.Pp_Tabla = "PRODUCTO";
+            this.cmb_producto.Pp_validable = false;
+            this.cmb_producto.Pp_Value = "id";
+            this.cmb_producto.Size = new System.Drawing.Size(121, 21);
+            this.cmb_producto.TabIndex = 0;
             // 
             // FrmVentaProyecto
             // 

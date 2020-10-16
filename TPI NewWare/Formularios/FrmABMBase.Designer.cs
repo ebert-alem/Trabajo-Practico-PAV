@@ -50,12 +50,14 @@
             // 
             // panel_visualizacion
             // 
+            this.panel_visualizacion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_visualizacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel_visualizacion.Controls.Add(this.btn_eliminar);
             this.panel_visualizacion.Controls.Add(this.btn_modificar);
             this.panel_visualizacion.Controls.Add(this.lbl_visualizacion);
             this.panel_visualizacion.Controls.Add(this.btn_nuevo);
-            this.panel_visualizacion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_visualizacion.ForeColor = System.Drawing.Color.White;
             this.panel_visualizacion.Location = new System.Drawing.Point(0, 0);
             this.panel_visualizacion.Name = "panel_visualizacion";

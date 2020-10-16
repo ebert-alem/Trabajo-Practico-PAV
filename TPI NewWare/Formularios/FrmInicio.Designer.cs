@@ -71,7 +71,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelBarrraSup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogin)).BeginInit();
-            this.panelPrincipal.SuspendLayout();
             this.panelUsuario.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelSubEstadisticas.SuspendLayout();
@@ -85,14 +84,14 @@
             // 
             // panelBarrraSup
             // 
+            this.panelBarrraSup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelBarrraSup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panelBarrraSup.Controls.Add(this.lbl_Titulo);
-            this.panelBarrraSup.Controls.Add(this.panel1);
-            this.panelBarrraSup.Controls.Add(this.picLogin);
-            this.panelBarrraSup.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBarrraSup.Location = new System.Drawing.Point(225, 0);
             this.panelBarrraSup.Name = "panelBarrraSup";
-            this.panelBarrraSup.Size = new System.Drawing.Size(806, 100);
+            this.panelBarrraSup.Size = new System.Drawing.Size(656, 100);
             this.panelBarrraSup.TabIndex = 14;
             // 
             // lbl_Titulo
@@ -110,16 +109,18 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(614, 3);
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Location = new System.Drawing.Point(881, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(30, 97);
+            this.panel1.Size = new System.Drawing.Size(27, 97);
             this.panel1.TabIndex = 12;
             this.panel1.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
             // 
             // picLogin
             // 
+            this.picLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picLogin.Image = ((System.Drawing.Image)(resources.GetObject("picLogin.Image")));
-            this.picLogin.Location = new System.Drawing.Point(707, 12);
+            this.picLogin.Location = new System.Drawing.Point(945, 12);
             this.picLogin.Name = "picLogin";
             this.picLogin.Size = new System.Drawing.Size(74, 67);
             this.picLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -129,20 +130,24 @@
             // 
             // panelPrincipal
             // 
-            this.panelPrincipal.Controls.Add(this.panelUsuario);
+            this.panelPrincipal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelPrincipal.Location = new System.Drawing.Point(225, 100);
             this.panelPrincipal.Name = "panelPrincipal";
             this.panelPrincipal.Size = new System.Drawing.Size(806, 500);
             this.panelPrincipal.TabIndex = 15;
-            this.panelPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPrincipal_Paint);
             // 
             // panelUsuario
             // 
+            this.panelUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelUsuario.BackColor = System.Drawing.Color.Gray;
+            this.panelUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panelUsuario.Controls.Add(this.btnCerrarSesion);
             this.panelUsuario.Controls.Add(this.btnSalir);
-            this.panelUsuario.Location = new System.Drawing.Point(641, 0);
+            this.panelUsuario.Location = new System.Drawing.Point(905, 92);
             this.panelUsuario.Name = "panelUsuario";
-            this.panelUsuario.Size = new System.Drawing.Size(165, 87);
+            this.panelUsuario.Size = new System.Drawing.Size(125, 64);
             this.panelUsuario.TabIndex = 2;
             this.panelUsuario.Visible = false;
             this.panelUsuario.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
@@ -150,6 +155,9 @@
             // 
             // btnCerrarSesion
             // 
+            this.btnCerrarSesion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrarSesion.BackColor = System.Drawing.Color.Gray;
             this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
             this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -160,7 +168,7 @@
             this.btnCerrarSesion.IconColor = System.Drawing.Color.White;
             this.btnCerrarSesion.IconSize = 20;
             this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(33, 0);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(3, 0);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Rotation = 0D;
             this.btnCerrarSesion.Size = new System.Drawing.Size(120, 30);
@@ -173,6 +181,9 @@
             // 
             // btnSalir
             // 
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalir.BackColor = System.Drawing.Color.Gray;
             this.btnSalir.FlatAppearance.BorderSize = 0;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -183,7 +194,7 @@
             this.btnSalir.IconColor = System.Drawing.Color.White;
             this.btnSalir.IconSize = 20;
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.Location = new System.Drawing.Point(33, 29);
+            this.btnSalir.Location = new System.Drawing.Point(3, 30);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Rotation = 0D;
             this.btnSalir.Size = new System.Drawing.Size(120, 30);
@@ -831,20 +842,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1031, 603);
-            this.Controls.Add(this.panelBarrraSup);
+            this.Controls.Add(this.panelUsuario);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMenu);
+            this.Controls.Add(this.picLogin);
             this.Controls.Add(this.panelPrincipal);
+            this.Controls.Add(this.panelBarrraSup);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(800, 642);
             this.Name = "FrmInicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmInicio_FormClosed);
-            this.Load += new System.EventHandler(this.Form_Inicio_Load);
             this.panelBarrraSup.ResumeLayout(false);
             this.panelBarrraSup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogin)).EndInit();
-            this.panelPrincipal.ResumeLayout(false);
             this.panelUsuario.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
             this.panelSubEstadisticas.ResumeLayout(false);

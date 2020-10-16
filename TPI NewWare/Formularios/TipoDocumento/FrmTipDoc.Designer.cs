@@ -32,11 +32,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grid = new System.Windows.Forms.DataGridView();
-            this.txt_nombre = new TPI_NewWare.Clases.TextBox01();
-            this.lbl_filtro_nombre = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txt_nombre = new TPI_NewWare.Clases.TextBox01();
+            this.lbl_filtro_nombre = new System.Windows.Forms.Label();
             this.panel_work_space.SuspendLayout();
             this.panel_visualizacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
@@ -60,6 +60,9 @@
             this.grid.AllowUserToDeleteRows = false;
             this.grid.AllowUserToResizeColumns = false;
             this.grid.AllowUserToResizeRows = false;
+            this.grid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grid.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -105,30 +108,6 @@
             this.grid.TabIndex = 14;
             this.grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellClick);
             // 
-            // txt_nombre
-            // 
-            this.txt_nombre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nombre.Location = new System.Drawing.Point(95, 12);
-            this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Pp_mensajeError = null;
-            this.txt_nombre.Pp_nombre_campo = null;
-            this.txt_nombre.Pp_nombre_tabla = null;
-            this.txt_nombre.Pp_validable = false;
-            this.txt_nombre.Size = new System.Drawing.Size(299, 22);
-            this.txt_nombre.TabIndex = 16;
-            this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_KeyPress);
-            // 
-            // lbl_filtro_nombre
-            // 
-            this.lbl_filtro_nombre.AutoSize = true;
-            this.lbl_filtro_nombre.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_filtro_nombre.ForeColor = System.Drawing.Color.White;
-            this.lbl_filtro_nombre.Location = new System.Drawing.Point(15, 14);
-            this.lbl_filtro_nombre.Name = "lbl_filtro_nombre";
-            this.lbl_filtro_nombre.Size = new System.Drawing.Size(62, 20);
-            this.lbl_filtro_nombre.TabIndex = 17;
-            this.lbl_filtro_nombre.Text = "Buscar:";
-            // 
             // Column1
             // 
             this.Column1.FillWeight = 33.42287F;
@@ -150,6 +129,33 @@
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // txt_nombre
+            // 
+            this.txt_nombre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_nombre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nombre.Location = new System.Drawing.Point(95, 12);
+            this.txt_nombre.Name = "txt_nombre";
+            this.txt_nombre.Pp_mensajeError = null;
+            this.txt_nombre.Pp_nombre_campo = null;
+            this.txt_nombre.Pp_nombre_tabla = null;
+            this.txt_nombre.Pp_validable = false;
+            this.txt_nombre.Size = new System.Drawing.Size(299, 22);
+            this.txt_nombre.TabIndex = 16;
+            this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_KeyPress);
+            // 
+            // lbl_filtro_nombre
+            // 
+            this.lbl_filtro_nombre.AutoSize = true;
+            this.lbl_filtro_nombre.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_filtro_nombre.ForeColor = System.Drawing.Color.White;
+            this.lbl_filtro_nombre.Location = new System.Drawing.Point(15, 14);
+            this.lbl_filtro_nombre.Name = "lbl_filtro_nombre";
+            this.lbl_filtro_nombre.Size = new System.Drawing.Size(62, 20);
+            this.lbl_filtro_nombre.TabIndex = 17;
+            this.lbl_filtro_nombre.Text = "Buscar:";
             // 
             // FrmTipDoc
             // 
