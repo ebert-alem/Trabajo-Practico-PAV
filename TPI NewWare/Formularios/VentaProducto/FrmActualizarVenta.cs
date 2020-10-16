@@ -65,13 +65,13 @@ namespace TPI_NewWare.Formularios.VentaProducto
 
         private void btn_crear_Click(object sender, EventArgs e)
         {
-            //Verificamos que la fecha ingresada no sea menor a la actual...
-            if (dtp_inicio_instalacion.Value < DateTime.Today | dtp_fin_instalacion.Value < DateTime.Today)
-            {
-                MessageBox.Show("Fechas incorrectas");
-            }
-            else
-            {    
+            ////Verificamos que la fecha ingresada no sea menor a la actual...
+            //if (dtp_inicio_instalacion.Value < DateTime.Today | dtp_fin_instalacion.Value < DateTime.Today)
+            //{
+            //    MessageBox.Show("Fechas incorrectas");
+            //}
+            //else
+            //{    
                 
                 //Verificamos si se desabilito la opcion de fin_instalacion...
                 if (dtp_fin_instalacion.Enabled == false)
@@ -94,7 +94,7 @@ namespace TPI_NewWare.Formularios.VentaProducto
                 Dispose();
                 formPadre.ActualizarGrilla();
 
-            }
+            //}
         }
     }
 }

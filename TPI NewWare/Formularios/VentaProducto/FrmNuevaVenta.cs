@@ -42,7 +42,7 @@ namespace TPI_NewWare.Formularios.VentaProducto
 
 
             //Creamos la venta nueva...
-            nuevaVenta.Alta(Convert.ToString(cmb_producto.SelectedValue), separar[0], separar[1],DateTime.Today.ToShortDateString(), Convert.ToString(cmb_lider.SelectedValue));
+            nuevaVenta.Alta(Convert.ToString(cmb_producto.SelectedValue), separar[0], separar[1], dtp_fecha_venta.Value.ToShortDateString(), Convert.ToString(cmb_lider.SelectedValue));
 
             Dispose();            
             formPadre.ActualizarGrilla();

@@ -84,8 +84,10 @@ namespace TPI_NewWare.Entidades
 
         public override string SentciaSqlCrear()
         {
-            return SqlInsert(new string[5] { "id_producto", "nroDocumento", "tipoDocumento", "fecha_venta", "legajo_lider" },
-                             new string[5] { CodProducto, Documento, TipoDocumento, FechaVenta, LegajoLider });
+            //return SqlInsert(new string[5] { "id_producto", "nroDocumento", "tipoDocumento", "fecha_venta", "legajo_lider" },
+            //                 new string[5] { CodProducto, Documento, TipoDocumento, FechaVenta, LegajoLider });
+            return "INSERT INTO ventaProducto (id_producto, nroDocumento, tipoDocumento, fecha_venta, legajo_lider) VALUES (" + CodProducto + ", " + Documento + ", " + TipoDocumento + ", " + " CONVERT(date, '" + FechaVenta + "', 103), " + LegajoLider + ")";
+
         }
 
 
