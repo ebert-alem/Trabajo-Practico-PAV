@@ -232,6 +232,7 @@
     </Compile>
     <Compile Include="Formularios\Proyectos\FrmNuevoProyecto.Designer.cs">
       <DependentUpon>FrmNuevoProyecto.cs</DependentUpon>
+	</Compile>
     <Compile Include="Formularios\VentaProducto\FrmActualizarVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -345,6 +346,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Proyectos\FrmNuevoProyecto.resx">
       <DependentUpon>FrmNuevoProyecto.cs</DependentUpon>
+	</EmbeddedResource>
     <EmbeddedResource Include="Formularios\VentaProducto\FrmActualizarVenta.resx">
       <DependentUpon>FrmActualizarVenta.cs</DependentUpon>
     </EmbeddedResource>
