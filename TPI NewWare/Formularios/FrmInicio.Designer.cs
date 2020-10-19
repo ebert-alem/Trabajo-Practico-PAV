@@ -47,7 +47,7 @@
             this.btnEstadisticas = new FontAwesome.Sharp.IconButton();
             this.panelSubGenerar = new System.Windows.Forms.Panel();
             this.btnSubReportes = new FontAwesome.Sharp.IconButton();
-            this.btnSubListados = new FontAwesome.Sharp.IconButton();
+            this.btnSubReporteVentas = new FontAwesome.Sharp.IconButton();
             this.btnGenerar = new FontAwesome.Sharp.IconButton();
             this.panelSubGestionar = new System.Windows.Forms.Panel();
             this.btnSubTareas = new FontAwesome.Sharp.IconButton();
@@ -70,7 +70,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelBarrraSup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogin)).BeginInit();
-            this.panelPrincipal.SuspendLayout();
             this.panelUsuario.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelSubEstadisticas.SuspendLayout();
@@ -84,14 +83,14 @@
             // 
             // panelBarrraSup
             // 
+            this.panelBarrraSup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelBarrraSup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panelBarrraSup.Controls.Add(this.lbl_Titulo);
-            this.panelBarrraSup.Controls.Add(this.panel1);
-            this.panelBarrraSup.Controls.Add(this.picLogin);
-            this.panelBarrraSup.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBarrraSup.Location = new System.Drawing.Point(225, 0);
             this.panelBarrraSup.Name = "panelBarrraSup";
-            this.panelBarrraSup.Size = new System.Drawing.Size(806, 100);
+            this.panelBarrraSup.Size = new System.Drawing.Size(656, 100);
             this.panelBarrraSup.TabIndex = 14;
             // 
             // lbl_Titulo
@@ -109,16 +108,18 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(614, 3);
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Location = new System.Drawing.Point(881, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(30, 97);
+            this.panel1.Size = new System.Drawing.Size(27, 97);
             this.panel1.TabIndex = 12;
             this.panel1.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
             // 
             // picLogin
             // 
+            this.picLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picLogin.Image = ((System.Drawing.Image)(resources.GetObject("picLogin.Image")));
-            this.picLogin.Location = new System.Drawing.Point(707, 12);
+            this.picLogin.Location = new System.Drawing.Point(945, 12);
             this.picLogin.Name = "picLogin";
             this.picLogin.Size = new System.Drawing.Size(74, 67);
             this.picLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -128,20 +129,24 @@
             // 
             // panelPrincipal
             // 
-            this.panelPrincipal.Controls.Add(this.panelUsuario);
+            this.panelPrincipal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelPrincipal.Location = new System.Drawing.Point(225, 100);
             this.panelPrincipal.Name = "panelPrincipal";
             this.panelPrincipal.Size = new System.Drawing.Size(806, 500);
             this.panelPrincipal.TabIndex = 15;
-            this.panelPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPrincipal_Paint);
             // 
             // panelUsuario
             // 
+            this.panelUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelUsuario.BackColor = System.Drawing.Color.Gray;
+            this.panelUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panelUsuario.Controls.Add(this.btnCerrarSesion);
             this.panelUsuario.Controls.Add(this.btnSalir);
-            this.panelUsuario.Location = new System.Drawing.Point(641, 0);
+            this.panelUsuario.Location = new System.Drawing.Point(905, 92);
             this.panelUsuario.Name = "panelUsuario";
-            this.panelUsuario.Size = new System.Drawing.Size(165, 87);
+            this.panelUsuario.Size = new System.Drawing.Size(125, 64);
             this.panelUsuario.TabIndex = 2;
             this.panelUsuario.Visible = false;
             this.panelUsuario.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
@@ -149,6 +154,9 @@
             // 
             // btnCerrarSesion
             // 
+            this.btnCerrarSesion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrarSesion.BackColor = System.Drawing.Color.Gray;
             this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
             this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -159,7 +167,7 @@
             this.btnCerrarSesion.IconColor = System.Drawing.Color.White;
             this.btnCerrarSesion.IconSize = 20;
             this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(33, 0);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(3, 0);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Rotation = 0D;
             this.btnCerrarSesion.Size = new System.Drawing.Size(120, 30);
@@ -172,6 +180,9 @@
             // 
             // btnSalir
             // 
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalir.BackColor = System.Drawing.Color.Gray;
             this.btnSalir.FlatAppearance.BorderSize = 0;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -182,7 +193,7 @@
             this.btnSalir.IconColor = System.Drawing.Color.White;
             this.btnSalir.IconSize = 20;
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.Location = new System.Drawing.Point(33, 29);
+            this.btnSalir.Location = new System.Drawing.Point(3, 30);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Rotation = 0D;
             this.btnSalir.Size = new System.Drawing.Size(120, 30);
@@ -359,7 +370,7 @@
             // 
             this.panelSubGenerar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(165)))), ((int)(((byte)(202)))));
             this.panelSubGenerar.Controls.Add(this.btnSubReportes);
-            this.panelSubGenerar.Controls.Add(this.btnSubListados);
+            this.panelSubGenerar.Controls.Add(this.btnSubReporteVentas);
             this.panelSubGenerar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubGenerar.Location = new System.Drawing.Point(0, 706);
             this.panelSubGenerar.Name = "panelSubGenerar";
@@ -389,26 +400,27 @@
             this.btnSubReportes.UseVisualStyleBackColor = true;
             this.btnSubReportes.Click += new System.EventHandler(this.btnSubReportes_Click);
             // 
-            // btnSubListados
+            // btnSubReporteVentas
             // 
-            this.btnSubListados.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSubListados.FlatAppearance.BorderSize = 0;
-            this.btnSubListados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubListados.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnSubListados.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.btnSubListados.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSubListados.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnSubListados.IconColor = System.Drawing.Color.Black;
-            this.btnSubListados.IconSize = 16;
-            this.btnSubListados.Location = new System.Drawing.Point(0, 0);
-            this.btnSubListados.Name = "btnSubListados";
-            this.btnSubListados.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnSubListados.Rotation = 0D;
-            this.btnSubListados.Size = new System.Drawing.Size(208, 40);
-            this.btnSubListados.TabIndex = 0;
-            this.btnSubListados.Text = "Listados";
-            this.btnSubListados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubListados.UseVisualStyleBackColor = true;
+            this.btnSubReporteVentas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSubReporteVentas.FlatAppearance.BorderSize = 0;
+            this.btnSubReporteVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubReporteVentas.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnSubReporteVentas.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.btnSubReporteVentas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSubReporteVentas.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnSubReporteVentas.IconColor = System.Drawing.Color.Black;
+            this.btnSubReporteVentas.IconSize = 16;
+            this.btnSubReporteVentas.Location = new System.Drawing.Point(0, 0);
+            this.btnSubReporteVentas.Name = "btnSubReporteVentas";
+            this.btnSubReporteVentas.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnSubReporteVentas.Rotation = 0D;
+            this.btnSubReporteVentas.Size = new System.Drawing.Size(208, 40);
+            this.btnSubReporteVentas.TabIndex = 0;
+            this.btnSubReporteVentas.Text = "Reporte de Ventas";
+            this.btnSubReporteVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSubReporteVentas.UseVisualStyleBackColor = true;
+            this.btnSubReporteVentas.Click += new System.EventHandler(this.btnSubReporteVentas_Click);
             // 
             // btnGenerar
             // 
@@ -809,20 +821,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1031, 603);
-            this.Controls.Add(this.panelBarrraSup);
+            this.Controls.Add(this.panelUsuario);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMenu);
+            this.Controls.Add(this.picLogin);
             this.Controls.Add(this.panelPrincipal);
+            this.Controls.Add(this.panelBarrraSup);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(800, 642);
             this.Name = "FrmInicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmInicio_FormClosed);
-            this.Load += new System.EventHandler(this.Form_Inicio_Load);
             this.panelBarrraSup.ResumeLayout(false);
             this.panelBarrraSup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogin)).EndInit();
-            this.panelPrincipal.ResumeLayout(false);
             this.panelUsuario.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
             this.panelSubEstadisticas.ResumeLayout(false);
@@ -865,7 +878,7 @@
         private FontAwesome.Sharp.IconButton btnAdministrar;
         private System.Windows.Forms.Panel panelSubGenerar;
         private FontAwesome.Sharp.IconButton btnSubReportes;
-        private FontAwesome.Sharp.IconButton btnSubListados;
+        private FontAwesome.Sharp.IconButton btnSubReporteVentas;
         private FontAwesome.Sharp.IconButton btnGenerar;
         private System.Windows.Forms.Panel panelSubEstadisticas;
         private FontAwesome.Sharp.IconButton btnSubEstTiemProy;

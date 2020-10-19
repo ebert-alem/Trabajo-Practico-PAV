@@ -95,5 +95,8 @@ namespace TPI_NewWare.Entidades
             //Obtiene todos las filas de la BD
             return _BD.Consulta("SELECT * FROM " + NombreTabla + " WHERE activos='1'");
         }
+
+        
+        
     }
 }

@@ -18,7 +18,7 @@ using TPI_NewWare.Formularios.Productos;
 using TPI_NewWare.Formularios.Clientes;
 using TPI_NewWare.Formularios.VentaProducto;
 using TPI_NewWare.Formularios.VentaProyecto;
-using TPI_NewWare.Formularios.Reportes;
+using TPI_NewWare.Reportes.VentaProducto;
 
 namespace TPI_NewWare
 {
@@ -30,11 +30,7 @@ namespace TPI_NewWare
         }
 
 
-        private void Form_Inicio_Load(object sender, EventArgs e)
-        {
-           
-        }
-
+        
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -65,8 +61,9 @@ namespace TPI_NewWare
         }
 
         private void picLogin_Click(object sender, EventArgs e)
-        {
-            panelUsuario.Visible = true;
+        {            
+            if (panelUsuario.Visible == false) panelUsuario.Visible = true;
+            else panelUsuario.Visible = false;               
         }
 
         private void btnSalir_Leave(object sender, EventArgs e)
@@ -172,10 +169,6 @@ namespace TPI_NewWare
             AbrirFormEnPanel(new FrmABMCHerramientas());
         }
 
-        private void panelPrincipal_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void btnSubRoles_Click(object sender, EventArgs e)
         {
@@ -240,11 +233,11 @@ namespace TPI_NewWare
             AbrirFormEnPanel(new FrmVentaProyecto());
         }
 
-        private void btnSubReportes_Click(object sender, EventArgs e)
+        private void btnSubReporteVentas_Click(object sender, EventArgs e)
         {
-            lbl_Titulo.Text = "Reportes";
+            lbl_Titulo.Text = "Reporte de Ventas";
             lbl_Titulo.Visible = true;
-            AbrirFormEnPanel(new ReporteTiempoProyecto());
+            AbrirFormEnPanel(new FrmReporteVentaProducto());
         }
     }
 

@@ -27,14 +27,11 @@ namespace TPI_NewWare.Formularios.VentaProducto
         }
 
 
-        public FrmNuevaVenta(FrmVentaProducto form, int id_producto, int nroDocumento, int tipoDocumento)
-        {
-            InitializeComponent();
-            formPadre = form;
-
-
-        }
-
+        //public FrmNuevaVenta(FrmVentaProducto form, int id_producto, int nroDocumento, int tipoDocumento)
+        //{
+        //    InitializeComponent();
+        //    formPadre = form;
+        //}
 
 
         private void btn_crear_Click(object sender, EventArgs e)
@@ -45,7 +42,7 @@ namespace TPI_NewWare.Formularios.VentaProducto
 
 
             //Creamos la venta nueva...
-            nuevaVenta.Alta(Convert.ToString(cmb_producto.SelectedValue), separar[0], separar[1],DateTime.Today.ToShortDateString(), Convert.ToString(cmb_lider.SelectedValue));
+            nuevaVenta.Alta(Convert.ToString(cmb_producto.SelectedValue), separar[0], separar[1], dtp_fecha_venta.Value.ToShortDateString(), Convert.ToString(cmb_lider.SelectedValue));
 
             Dispose();            
             formPadre.ActualizarGrilla();
@@ -59,7 +56,6 @@ namespace TPI_NewWare.Formularios.VentaProducto
             cmb_producto.Cargar();
             cmb_cliente.CargarDobleValue("clientes", "nombres", "apellido", "nroDocumento", "id_documento");
             cmb_lider.CargarDobleDisplay("empleados", "nombres", "apellido", "legajo");
-
 
         }
 

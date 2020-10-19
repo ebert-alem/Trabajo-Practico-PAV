@@ -41,9 +41,6 @@
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
-            this.cmb_lider = new TPI_NewWare.Clases.ComboBox01();
-            this.cmb_cliente = new TPI_NewWare.Clases.ComboBox01();
-            this.cmb_producto = new TPI_NewWare.Clases.ComboBox01();
             this.panelGrilla = new System.Windows.Forms.Panel();
             this.panelMultiUso = new System.Windows.Forms.Panel();
             this.grid = new System.Windows.Forms.DataGridView();
@@ -54,6 +51,8 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelBotones = new System.Windows.Forms.Panel();
             this.btn_eliminar = new FontAwesome.Sharp.IconButton();
@@ -64,6 +63,9 @@
             this.panelSup = new System.Windows.Forms.Panel();
             this.panelInf = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.cmb_lider = new TPI_NewWare.Clases.ComboBox01();
+            this.cmb_cliente = new TPI_NewWare.Clases.ComboBox01();
+            this.cmb_producto = new TPI_NewWare.Clases.ComboBox01();
             this.panelFondo.SuspendLayout();
             this.panelOpciones.SuspendLayout();
             this.panelGrilla.SuspendLayout();
@@ -186,7 +188,7 @@
             this.lbl_Titulo.Name = "lbl_Titulo";
             this.lbl_Titulo.Size = new System.Drawing.Size(125, 26);
             this.lbl_Titulo.TabIndex = 14;
-            this.lbl_Titulo.Text = "Fecha de venta D/H";
+            this.lbl_Titulo.Text = "Fecha de venta";
             this.lbl_Titulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dtpHasta
@@ -206,54 +208,6 @@
             this.dtpDesde.Size = new System.Drawing.Size(79, 20);
             this.dtpDesde.TabIndex = 1;
             this.dtpDesde.Value = new System.DateTime(2020, 10, 4, 13, 16, 34, 0);
-            // 
-            // cmb_lider
-            // 
-            this.cmb_lider.FormattingEnabled = true;
-            this.cmb_lider.Location = new System.Drawing.Point(29, 293);
-            this.cmb_lider.Name = "cmb_lider";
-            this.cmb_lider.Pp_Display = null;
-            this.cmb_lider.Pp_mensajeError = null;
-            this.cmb_lider.Pp_nombre_campo = null;
-            this.cmb_lider.Pp_nombre_tabla = null;
-            this.cmb_lider.Pp_seleccionado = false;
-            this.cmb_lider.Pp_Tabla = null;
-            this.cmb_lider.Pp_validable = false;
-            this.cmb_lider.Pp_Value = null;
-            this.cmb_lider.Size = new System.Drawing.Size(121, 21);
-            this.cmb_lider.TabIndex = 0;
-            // 
-            // cmb_cliente
-            // 
-            this.cmb_cliente.FormattingEnabled = true;
-            this.cmb_cliente.Location = new System.Drawing.Point(29, 220);
-            this.cmb_cliente.Name = "cmb_cliente";
-            this.cmb_cliente.Pp_Display = null;
-            this.cmb_cliente.Pp_mensajeError = null;
-            this.cmb_cliente.Pp_nombre_campo = null;
-            this.cmb_cliente.Pp_nombre_tabla = null;
-            this.cmb_cliente.Pp_seleccionado = false;
-            this.cmb_cliente.Pp_Tabla = "CLIENTES";
-            this.cmb_cliente.Pp_validable = false;
-            this.cmb_cliente.Pp_Value = null;
-            this.cmb_cliente.Size = new System.Drawing.Size(121, 21);
-            this.cmb_cliente.TabIndex = 0;
-            // 
-            // cmb_producto
-            // 
-            this.cmb_producto.FormattingEnabled = true;
-            this.cmb_producto.Location = new System.Drawing.Point(29, 149);
-            this.cmb_producto.Name = "cmb_producto";
-            this.cmb_producto.Pp_Display = "nombre";
-            this.cmb_producto.Pp_mensajeError = null;
-            this.cmb_producto.Pp_nombre_campo = null;
-            this.cmb_producto.Pp_nombre_tabla = null;
-            this.cmb_producto.Pp_seleccionado = false;
-            this.cmb_producto.Pp_Tabla = "PRODUCTO";
-            this.cmb_producto.Pp_validable = false;
-            this.cmb_producto.Pp_Value = "id";
-            this.cmb_producto.Size = new System.Drawing.Size(121, 21);
-            this.cmb_producto.TabIndex = 0;
             // 
             // panelGrilla
             // 
@@ -280,6 +234,10 @@
             this.grid.AllowUserToAddRows = false;
             this.grid.AllowUserToDeleteRows = false;
             this.grid.AllowUserToResizeRows = false;
+            this.grid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grid.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -299,7 +257,9 @@
             this.Column1,
             this.Column2,
             this.Column3,
-            this.Column7});
+            this.Column7,
+            this.Column8,
+            this.Column9});
             this.grid.Location = new System.Drawing.Point(0, 0);
             this.grid.Name = "grid";
             this.grid.ReadOnly = true;
@@ -307,6 +267,7 @@
             this.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grid.Size = new System.Drawing.Size(698, 429);
             this.grid.TabIndex = 17;
+            this.grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellClick);
             // 
             // Column4
             // 
@@ -350,6 +311,20 @@
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "nroDocumento";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Visible = false;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "tipoDocumento";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Visible = false;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -386,9 +361,11 @@
             this.btn_eliminar.Size = new System.Drawing.Size(40, 40);
             this.btn_eliminar.TabIndex = 0;
             this.btn_eliminar.UseVisualStyleBackColor = true;
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
             // btn_editar
             // 
+            this.btn_editar.Enabled = false;
             this.btn_editar.FlatAppearance.BorderSize = 0;
             this.btn_editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_editar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
@@ -401,6 +378,7 @@
             this.btn_editar.Size = new System.Drawing.Size(40, 40);
             this.btn_editar.TabIndex = 0;
             this.btn_editar.UseVisualStyleBackColor = true;
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
             // 
             // btn_nuevo
             // 
@@ -464,6 +442,54 @@
             this.timer1.Interval = 25;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // cmb_lider
+            // 
+            this.cmb_lider.FormattingEnabled = true;
+            this.cmb_lider.Location = new System.Drawing.Point(29, 293);
+            this.cmb_lider.Name = "cmb_lider";
+            this.cmb_lider.Pp_Display = null;
+            this.cmb_lider.Pp_mensajeError = null;
+            this.cmb_lider.Pp_nombre_campo = null;
+            this.cmb_lider.Pp_nombre_tabla = null;
+            this.cmb_lider.Pp_seleccionado = false;
+            this.cmb_lider.Pp_Tabla = null;
+            this.cmb_lider.Pp_validable = false;
+            this.cmb_lider.Pp_Value = null;
+            this.cmb_lider.Size = new System.Drawing.Size(121, 21);
+            this.cmb_lider.TabIndex = 0;
+            // 
+            // cmb_cliente
+            // 
+            this.cmb_cliente.FormattingEnabled = true;
+            this.cmb_cliente.Location = new System.Drawing.Point(29, 220);
+            this.cmb_cliente.Name = "cmb_cliente";
+            this.cmb_cliente.Pp_Display = null;
+            this.cmb_cliente.Pp_mensajeError = null;
+            this.cmb_cliente.Pp_nombre_campo = null;
+            this.cmb_cliente.Pp_nombre_tabla = null;
+            this.cmb_cliente.Pp_seleccionado = false;
+            this.cmb_cliente.Pp_Tabla = "CLIENTES";
+            this.cmb_cliente.Pp_validable = false;
+            this.cmb_cliente.Pp_Value = null;
+            this.cmb_cliente.Size = new System.Drawing.Size(121, 21);
+            this.cmb_cliente.TabIndex = 0;
+            // 
+            // cmb_producto
+            // 
+            this.cmb_producto.FormattingEnabled = true;
+            this.cmb_producto.Location = new System.Drawing.Point(29, 149);
+            this.cmb_producto.Name = "cmb_producto";
+            this.cmb_producto.Pp_Display = "nombre";
+            this.cmb_producto.Pp_mensajeError = null;
+            this.cmb_producto.Pp_nombre_campo = null;
+            this.cmb_producto.Pp_nombre_tabla = null;
+            this.cmb_producto.Pp_seleccionado = false;
+            this.cmb_producto.Pp_Tabla = "PRODUCTO";
+            this.cmb_producto.Pp_validable = false;
+            this.cmb_producto.Pp_Value = "id";
+            this.cmb_producto.Size = new System.Drawing.Size(121, 21);
+            this.cmb_producto.TabIndex = 0;
+            // 
             // FrmVentaProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -495,13 +521,6 @@
         private System.Windows.Forms.Panel panelSup;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView grid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.Panel panelInf;
         private System.Windows.Forms.DateTimePicker dtpHasta;
         private System.Windows.Forms.DateTimePicker dtpDesde;
@@ -520,5 +539,14 @@
         private System.Windows.Forms.Panel panelMultiUso;
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton btnBuscar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
     }
 }
