@@ -188,7 +188,7 @@
             this.lbl_Titulo.Name = "lbl_Titulo";
             this.lbl_Titulo.Size = new System.Drawing.Size(125, 26);
             this.lbl_Titulo.TabIndex = 14;
-            this.lbl_Titulo.Text = "Fecha de venta D/H";
+            this.lbl_Titulo.Text = "Fecha de venta";
             this.lbl_Titulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dtpHasta
