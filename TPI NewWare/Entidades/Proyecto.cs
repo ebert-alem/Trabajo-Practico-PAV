@@ -69,12 +69,19 @@ namespace TPI_NewWare.Entidades
             _BD.Comando(sql);
         }
 
-
         public override string SentciaSqlCrear()
         {
             string[] Columnas = new string[5] { "descripcion", "nroDoc_cliente", "tipoDoc_cliente", "fecha_inicio", "fecha_fin_probable" };
             string[] Valores = new string[3] { Descripcion, Documento, TipoDocumento };
             return "INSERT INTO " + NombreTabla + "(" + string.Join(", ", Columnas) + ") Values ('"+ Descripcion + "', '"+ Documento + "', ' " + TipoDocumento +  "', "+ "CONVERT(date,'" + FechaInicio + "',103)" + ", CONVERT(date,'" + FechaFinProbable + "',103)" + ")";
+        }
+
+        public DataTable BuscarProyectosTerminados(String sql)
+        {
+            DataTable tabla = new DataTable();
+            tabla = _BD.Consulta(sql);
+
+            return tabla;
         }
 
 
