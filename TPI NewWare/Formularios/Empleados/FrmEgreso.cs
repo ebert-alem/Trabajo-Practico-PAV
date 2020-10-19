@@ -48,27 +48,5 @@ namespace TPI_NewWare.Formularios.Empleados
         {
             cmb_Egreso.Cargar();
         }
-            //Ng_MotivoEgreso ng_Egreso = new Ng_MotivoEgreso();
-            //tabla.Clear();
-            //tabla = ng_Egreso.Consulta();
-
-            //if (tabla.Rows.Count != 0)
-            //{
-            //    for (int i = 0; i < tabla.Rows.Count; i++)
-            //    {
-            //        cmb_Egreso.Items.Add(tabla.Rows[i]["id"].ToString());
-            //    }
-            //} cambiar esto PONER EL DE AXEL AAAAAAAAAAAA
-
-            //for (int i = 0; i < tabla.Rows.Count; i++)
-            //{
-            //    if (tabla.Rows[i]["nombre"].ToString() == (string)cmb_Egreso.SelectedItem)
-            //    {
-            //        empleados.Id_Egreso = tabla.Rows[i]["id"].ToString();
-            //    }
-            //}
-
-        
-
     }
 }
