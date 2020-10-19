@@ -33,19 +33,19 @@ namespace TPI_NewWare.Formularios.Empleados
             //Seteo el panel contenedor como atributo
             form_contenedor = form;
             btn_crear.Text = "Modificar";
-            txt_legajo.Enabled = false;
+            ltxt_legajo.Enabled = false;
             
 
             //Se obtiene el objeto a modificar
             empleado = negocio.BuscarLegajo(id);
 
             //Se actualizan los campos del formulario con los atributos
-            txt_nombre.Text = empleado.Nombre;
-            txt_apellido.Text = empleado.Apellido;
-            txt_legajo.Text = empleado.Legajo;
+            ltxt_Nombre.Text = empleado.Nombre;
+            ltxt_apellido.Text = empleado.Apellido;
+            ltxt_legajo.Text = empleado.Legajo;
             txt_domicilio.Text = empleado.Domicilio;
-            txt_Nacimiento.Text = empleado.FechaNacimiento;
-            txt_NroDocumento.Text = empleado.Documento;
+            ltxt_nacimiento.Text = empleado.FechaNacimiento;
+            ltxt_nroDoc.Text = empleado.Documento;
         }
 
         public override void btn_cancelar_Click(object sender, EventArgs e)
@@ -63,22 +63,23 @@ namespace TPI_NewWare.Formularios.Empleados
             {
                 if (btn_crear.Text == "Crear")
                 {
-                    
+
                     //Da el alta de la herramienta
-                    negocio.Alta(txt_legajo.Text, Convert.ToString(cmb_Egreso.SelectedValue), Convert.ToString(cmb_TipoDoc.SelectedValue), (string)cmb_usuario.SelectedValue, txt_NroDocumento.Text, txt_nombre.Text, txt_apellido.Text, DateTime.Today.ToString("yyyy-MM-dd HH:mm:ss"), "-", (string) txt_domicilio.Text, txt_Nacimiento.Text, "1");
+                    //negocio.Alta(txt_legajo.Text, Convert.ToString(cmb_Egreso.SelectedValue), Convert.ToString(cmb_TipoDoc.SelectedValue), (string)cmb_usuario.SelectedValue, txt_NroDocumento.Text, txt_nombre.Text, txt_apellido.Text, DateTime.Today.ToString("yyyy-MM-dd HH:mm:ss"), "-", (string) txt_domicilio.Text, txt_Nacimiento.Text, "1");
+                    negocio.Alta(ltxt_legajo.Text, null, Convert.ToString(cmb_tipDoc.SelectedValue), (string)cmb_Usuario.SelectedValue, ltxt_nroDoc.Text, ltxt_Nombre.Text, ltxt_apellido.Text, DateTime.Today.ToString("yyyy-MM-dd HH:mm:ss"), "-", (string)txt_domicilio.Text, ltxt_nacimiento.Text, "1");
                 }
                 else
                 {
                     //Modfica la herramienta
-                    empleado.Nombre = txt_nombre.Text;
-                    empleado.Apellido = txt_apellido.Text;
-                    empleado.Legajo = txt_legajo.Text;
+                    empleado.Nombre = ltxt_Nombre.Text;
+                    empleado.Apellido = ltxt_apellido.Text;
+                    empleado.Legajo = ltxt_legajo.Text;
                     empleado.Domicilio = txt_domicilio.Text;
-                    empleado.FechaNacimiento = txt_Nacimiento.Text;
-                    empleado.Documento = txt_NroDocumento.Text;
-                    empleado.TipoDocumento = Convert.ToString(cmb_TipoDoc.SelectedValue);
-                    empleado.Id_Egreso = Convert.ToString(cmb_Egreso.SelectedValue);
-                    empleado.Usuario = Convert.ToString(cmb_usuario.SelectedValue);
+                    empleado.FechaNacimiento = ltxt_nacimiento.Text;
+                    empleado.Documento = ltxt_nroDoc.Text;
+                    empleado.TipoDocumento = Convert.ToString(cmb_tipDoc.SelectedValue);
+                    //empleado.Id_Egreso = Convert.ToString(cmb_Egreso.SelectedValue);
+                    empleado.Usuario = Convert.ToString(cmb_Usuario.SelectedValue);
 
 
                     empleado.Guardar();
@@ -94,16 +95,16 @@ namespace TPI_NewWare.Formularios.Empleados
         {
             if (btn_crear.Text == "Crear")
             {
-                cmb_TipoDoc.Cargar();
-                cmb_Egreso.Cargar();
-                cmb_usuario.Cargar("usuarios", "nombreUsuario", "nombreUsuario");
+                cmb_tipDoc.Cargar();
+                //cmb_Egreso.Cargar();
+                cmb_Usuario.Cargar("usuarios", "nombreUsuario", "nombreUsuario");
             }
             else
             {
                 //Faltaría obtener los ids de la tabla y seleccionar automáticamente el valor de cos comboboxs
-                cmb_TipoDoc.Cargar();
-                cmb_Egreso.Cargar();
-                cmb_usuario.Cargar("usuarios", "nombreUsuario", "nombreUsuario");
+                cmb_tipDoc.Cargar();
+                //cmb_Egreso.Cargar();
+                cmb_Usuario.Cargar("usuarios", "nombreUsuario", "nombreUsuario");
                 
             }
         }

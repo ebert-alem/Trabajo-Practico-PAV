@@ -101,6 +101,14 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Clases\TratamientosEspeciales.cs" />
+    <Compile Include="ConjuntoDeDatos\datosEstadisticos.cs">
+      <DependentUpon>datosEstadisticos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ConjuntoDeDatos\datosEstadisticos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>datosEstadisticos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Entidades\ClaseBase.cs" />
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\Empleado.cs" />
@@ -136,6 +144,12 @@
     </Compile>
     <Compile Include="Formularios\Empleados\FrmAMEmpleados.Designer.cs">
       <DependentUpon>FrmAMEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Empleados\FrmEgreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Empleados\FrmEgreso.Designer.cs">
+      <DependentUpon>FrmEgreso.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Etapas\FrmABMCEtapas.cs">
       <SubType>Form</SubType>
@@ -190,6 +204,12 @@
     </Compile>
     <Compile Include="Formularios\Productos\FrmAMProducto.Designer.cs">
       <DependentUpon>FrmAMProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Reportes\ReporteTiempoProyecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reportes\ReporteTiempoProyecto.Designer.cs">
+      <DependentUpon>ReporteTiempoProyecto.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Roles\FrmABMCRoles.cs">
       <SubType>Form</SubType>
@@ -251,12 +271,6 @@
     <Compile Include="Formularios\Proyectos\FrmNuevoProyecto.Designer.cs">
       <DependentUpon>FrmNuevoProyecto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\VentaProducto\FrmActualizarVenta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\VentaProducto\FrmActualizarVenta.Designer.cs">
-      <DependentUpon>FrmActualizarVenta.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\VentaProducto\FrmNuevaVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +289,7 @@
     <Compile Include="Formularios\VentaProducto\FrmVentaProducto.Designer.cs">
       <DependentUpon>FrmVentaProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Negocio\Ng_Proyecto.cs" />
     <Compile Include="Negocio\Ng_Cliente.cs" />
     <Compile Include="Negocio\Ng_Empleado.cs" />
     <Compile Include="Negocio\Ng_Etapa.cs" />
@@ -285,19 +300,18 @@
     <Compile Include="Negocio\Ng_TipDoc.cs" />
     <Compile Include="Negocio\Ng_Usuario.cs" />
     <Compile Include="Negocio\Ng_VentaProducto.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reportes\VentaProducto\Ds_VentaProducto.Designer.cs">
+    <Compile Include="pavTpGrupalDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Ds_VentaProducto.xsd</DependentUpon>
+      <DependentUpon>pavTpGrupalDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\VentaProducto\FrmReporteVentaProducto.cs">
-      <SubType>Form</SubType>
+    <Compile Include="pavTpGrupalDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pavTpGrupalDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\VentaProducto\FrmReporteVentaProducto.Designer.cs">
-      <DependentUpon>FrmReporteVentaProducto.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Clases\Exporador01.resx">
       <DependentUpon>Exporador01.cs</DependentUpon>
@@ -319,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Empleados\FrmAMEmpleados.resx">
       <DependentUpon>FrmAMEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Empleados\FrmEgreso.resx">
+      <DependentUpon>FrmEgreso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Etapas\FrmABMCEtapas.resx">
       <DependentUpon>FrmABMCEtapas.cs</DependentUpon>
@@ -347,6 +364,10 @@
     <EmbeddedResource Include="Formularios\Productos\FrmAMProducto.resx">
       <DependentUpon>FrmAMProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reportes\ReporteTiempoProyecto.resx">
+      <DependentUpon>ReporteTiempoProyecto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reportes\rpt_TiempoPorProyecto.rdlc" />
     <EmbeddedResource Include="Formularios\Roles\FrmABMCRoles.resx">
       <DependentUpon>FrmABMCRoles.cs</DependentUpon>
     </EmbeddedResource>
@@ -377,9 +398,6 @@
     <EmbeddedResource Include="Formularios\Proyectos\FrmNuevoProyecto.resx">
       <DependentUpon>FrmNuevoProyecto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\VentaProducto\FrmActualizarVenta.resx">
-      <DependentUpon>FrmActualizarVenta.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\VentaProducto\FrmNuevaVenta.resx">
       <DependentUpon>FrmNuevaVenta.cs</DependentUpon>
     </EmbeddedResource>
@@ -393,11 +411,40 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\VentaProducto\FrmReporteVentaProducto.resx">
-      <DependentUpon>FrmReporteVentaProducto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\VentaProducto\ReporteVentaProducto.rdlc" />
+    <None Include="ConjuntoDeDatos\datosEstadisticos.xsc">
+      <DependentUpon>datosEstadisticos.xsd</DependentUpon>
+    </None>
+    <None Include="ConjuntoDeDatos\datosEstadisticos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>datosEstadisticos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ConjuntoDeDatos\datosEstadisticos.xss">
+      <DependentUpon>datosEstadisticos.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <None Include="pavTpGrupalDataSet.xsc">
+      <DependentUpon>pavTpGrupalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="pavTpGrupalDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pavTpGrupalDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pavTpGrupalDataSet.xss">
+      <DependentUpon>pavTpGrupalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="pavTpGrupalDataSet1.xsc">
+      <DependentUpon>pavTpGrupalDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="pavTpGrupalDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pavTpGrupalDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pavTpGrupalDataSet1.xss">
+      <DependentUpon>pavTpGrupalDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -412,17 +459,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Reportes\VentaProducto\Ds_VentaProducto.xsc">
-      <DependentUpon>Ds_VentaProducto.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\VentaProducto\Ds_VentaProducto.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Ds_VentaProducto.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Reportes\VentaProducto\Ds_VentaProducto.xss">
-      <DependentUpon>Ds_VentaProducto.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
