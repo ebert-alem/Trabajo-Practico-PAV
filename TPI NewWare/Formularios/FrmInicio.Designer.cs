@@ -47,7 +47,7 @@
             this.btnEstadisticas = new FontAwesome.Sharp.IconButton();
             this.panelSubGenerar = new System.Windows.Forms.Panel();
             this.btnSubReportes = new FontAwesome.Sharp.IconButton();
-            this.btnSubListados = new FontAwesome.Sharp.IconButton();
+            this.btnSubReporteVentas = new FontAwesome.Sharp.IconButton();
             this.btnGenerar = new FontAwesome.Sharp.IconButton();
             this.panelSubGestionar = new System.Windows.Forms.Panel();
             this.btnSubTareas = new FontAwesome.Sharp.IconButton();
@@ -371,7 +371,7 @@
             // 
             this.panelSubGenerar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(165)))), ((int)(((byte)(202)))));
             this.panelSubGenerar.Controls.Add(this.btnSubReportes);
-            this.panelSubGenerar.Controls.Add(this.btnSubListados);
+            this.panelSubGenerar.Controls.Add(this.btnSubReporteVentas);
             this.panelSubGenerar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubGenerar.Location = new System.Drawing.Point(0, 747);
             this.panelSubGenerar.Name = "panelSubGenerar";
@@ -400,26 +400,27 @@
             this.btnSubReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSubReportes.UseVisualStyleBackColor = true;
             // 
-            // btnSubListados
+            // btnSubReporteVentas
             // 
-            this.btnSubListados.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSubListados.FlatAppearance.BorderSize = 0;
-            this.btnSubListados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubListados.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnSubListados.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.btnSubListados.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSubListados.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnSubListados.IconColor = System.Drawing.Color.Black;
-            this.btnSubListados.IconSize = 16;
-            this.btnSubListados.Location = new System.Drawing.Point(0, 0);
-            this.btnSubListados.Name = "btnSubListados";
-            this.btnSubListados.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnSubListados.Rotation = 0D;
-            this.btnSubListados.Size = new System.Drawing.Size(208, 40);
-            this.btnSubListados.TabIndex = 0;
-            this.btnSubListados.Text = "Listados";
-            this.btnSubListados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubListados.UseVisualStyleBackColor = true;
+            this.btnSubReporteVentas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSubReporteVentas.FlatAppearance.BorderSize = 0;
+            this.btnSubReporteVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubReporteVentas.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnSubReporteVentas.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.btnSubReporteVentas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSubReporteVentas.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnSubReporteVentas.IconColor = System.Drawing.Color.Black;
+            this.btnSubReporteVentas.IconSize = 16;
+            this.btnSubReporteVentas.Location = new System.Drawing.Point(0, 0);
+            this.btnSubReporteVentas.Name = "btnSubReporteVentas";
+            this.btnSubReporteVentas.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnSubReporteVentas.Rotation = 0D;
+            this.btnSubReporteVentas.Size = new System.Drawing.Size(208, 40);
+            this.btnSubReporteVentas.TabIndex = 0;
+            this.btnSubReporteVentas.Text = "Reporte de Ventas";
+            this.btnSubReporteVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSubReporteVentas.UseVisualStyleBackColor = true;
+            this.btnSubReporteVentas.Click += new System.EventHandler(this.btnSubReporteVentas_Click);
             // 
             // btnGenerar
             // 
@@ -900,7 +901,7 @@
         private FontAwesome.Sharp.IconButton btnAdministrar;
         private System.Windows.Forms.Panel panelSubGenerar;
         private FontAwesome.Sharp.IconButton btnSubReportes;
-        private FontAwesome.Sharp.IconButton btnSubListados;
+        private FontAwesome.Sharp.IconButton btnSubReporteVentas;
         private FontAwesome.Sharp.IconButton btnGenerar;
         private System.Windows.Forms.Panel panelSubEstadisticas;
         private FontAwesome.Sharp.IconButton btnSubEstTiemProy;
