@@ -19,6 +19,7 @@ using TPI_NewWare.Formularios.Clientes;
 using TPI_NewWare.Formularios.VentaProducto;
 using TPI_NewWare.Formularios.VentaProyecto;
 using TPI_NewWare.Reportes.VentaProducto;
+using TPI_NewWare.Reportes.Herramientas;
 
 namespace TPI_NewWare
 {
@@ -238,6 +239,13 @@ namespace TPI_NewWare
             lbl_Titulo.Text = "Reporte de Ventas";
             lbl_Titulo.Visible = true;
             AbrirFormEnPanel(new FrmReporteVentaProducto());
+        }
+
+        private void btnSubReporteHerramientas_Click(object sender, EventArgs e)
+        {
+            lbl_Titulo.Text = "Reporte de Herramientas";
+            lbl_Titulo.Visible = true;
+            AbrirFormEnPanel(new FrmReporteHerramientas());
         }
     }
 

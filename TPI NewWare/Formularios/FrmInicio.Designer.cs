@@ -46,7 +46,7 @@
             this.btnSubEstProdVend = new FontAwesome.Sharp.IconButton();
             this.btnEstadisticas = new FontAwesome.Sharp.IconButton();
             this.panelSubGenerar = new System.Windows.Forms.Panel();
-            this.btnSubReportes = new FontAwesome.Sharp.IconButton();
+            this.btnSubReporteHerramientas = new FontAwesome.Sharp.IconButton();
             this.btnSubReporteVentas = new FontAwesome.Sharp.IconButton();
             this.btnGenerar = new FontAwesome.Sharp.IconButton();
             this.panelSubGestionar = new System.Windows.Forms.Panel();
@@ -370,7 +370,7 @@
             // panelSubGenerar
             // 
             this.panelSubGenerar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(165)))), ((int)(((byte)(202)))));
-            this.panelSubGenerar.Controls.Add(this.btnSubReportes);
+            this.panelSubGenerar.Controls.Add(this.btnSubReporteHerramientas);
             this.panelSubGenerar.Controls.Add(this.btnSubReporteVentas);
             this.panelSubGenerar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubGenerar.Location = new System.Drawing.Point(0, 747);
@@ -379,26 +379,27 @@
             this.panelSubGenerar.TabIndex = 11;
             this.panelSubGenerar.Visible = false;
             // 
-            // btnSubReportes
+            // btnSubReporteHerramientas
             // 
-            this.btnSubReportes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSubReportes.FlatAppearance.BorderSize = 0;
-            this.btnSubReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubReportes.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnSubReportes.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.btnSubReportes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSubReportes.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnSubReportes.IconColor = System.Drawing.Color.Black;
-            this.btnSubReportes.IconSize = 16;
-            this.btnSubReportes.Location = new System.Drawing.Point(0, 40);
-            this.btnSubReportes.Name = "btnSubReportes";
-            this.btnSubReportes.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnSubReportes.Rotation = 0D;
-            this.btnSubReportes.Size = new System.Drawing.Size(208, 40);
-            this.btnSubReportes.TabIndex = 1;
-            this.btnSubReportes.Text = "Reportes";
-            this.btnSubReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubReportes.UseVisualStyleBackColor = true;
+            this.btnSubReporteHerramientas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSubReporteHerramientas.FlatAppearance.BorderSize = 0;
+            this.btnSubReporteHerramientas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubReporteHerramientas.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnSubReporteHerramientas.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.btnSubReporteHerramientas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSubReporteHerramientas.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnSubReporteHerramientas.IconColor = System.Drawing.Color.Black;
+            this.btnSubReporteHerramientas.IconSize = 16;
+            this.btnSubReporteHerramientas.Location = new System.Drawing.Point(0, 40);
+            this.btnSubReporteHerramientas.Name = "btnSubReporteHerramientas";
+            this.btnSubReporteHerramientas.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnSubReporteHerramientas.Rotation = 0D;
+            this.btnSubReporteHerramientas.Size = new System.Drawing.Size(208, 40);
+            this.btnSubReporteHerramientas.TabIndex = 1;
+            this.btnSubReporteHerramientas.Text = "Reporte Herramientas";
+            this.btnSubReporteHerramientas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSubReporteHerramientas.UseVisualStyleBackColor = true;
+            this.btnSubReporteHerramientas.Click += new System.EventHandler(this.btnSubReporteHerramientas_Click);
             // 
             // btnSubReporteVentas
             // 
@@ -900,7 +901,7 @@
         private FontAwesome.Sharp.IconButton btnSubEmpleados;
         private FontAwesome.Sharp.IconButton btnAdministrar;
         private System.Windows.Forms.Panel panelSubGenerar;
-        private FontAwesome.Sharp.IconButton btnSubReportes;
+        private FontAwesome.Sharp.IconButton btnSubReporteHerramientas;
         private FontAwesome.Sharp.IconButton btnSubReporteVentas;
         private FontAwesome.Sharp.IconButton btnGenerar;
         private System.Windows.Forms.Panel panelSubEstadisticas;

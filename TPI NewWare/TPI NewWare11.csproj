@@ -292,6 +292,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Ds_Herramientas.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\VentaProducto\Ds_VentaProducto.cs">
+      <DependentUpon>Ds_VentaProducto.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\VentaProducto\Ds_VentaProducto.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -308,6 +311,12 @@
     </Compile>
     <Compile Include="Reportes\Herramientas\FrmReporteHerramientas.Designer.cs">
       <DependentUpon>FrmReporteHerramientas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\VentaProducto\FrmReporteVentasProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\VentaProducto\FrmReporteVentasProducto.Designer.cs">
+      <DependentUpon>FrmReporteVentasProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Clases\Exporador01.resx">
@@ -411,6 +420,9 @@
       <DependentUpon>FrmReporteHerramientas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Herramientas\ReporteHerramientas.rdlc" />
+    <EmbeddedResource Include="Reportes\VentaProducto\FrmReporteVentasProducto.resx">
+      <DependentUpon>FrmReporteVentasProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\VentaProducto\ReporteVentaProducto.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
