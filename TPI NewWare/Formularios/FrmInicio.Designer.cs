@@ -69,6 +69,7 @@
             this.btnAdministrar = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnEmpleadosProyecto = new FontAwesome.Sharp.IconButton();
             this.panelBarrraSup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogin)).BeginInit();
             this.panelUsuario.SuspendLayout();
@@ -233,7 +234,7 @@
             this.panelSubEstadisticas.Controls.Add(this.btnSubEstUsoHerram);
             this.panelSubEstadisticas.Controls.Add(this.btnSubEstProdVend);
             this.panelSubEstadisticas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubEstadisticas.Location = new System.Drawing.Point(0, 868);
+            this.panelSubEstadisticas.Location = new System.Drawing.Point(0, 908);
             this.panelSubEstadisticas.Name = "panelSubEstadisticas";
             this.panelSubEstadisticas.Size = new System.Drawing.Size(208, 205);
             this.panelSubEstadisticas.TabIndex = 13;
@@ -356,7 +357,7 @@
             this.btnEstadisticas.IconColor = System.Drawing.Color.White;
             this.btnEstadisticas.IconSize = 32;
             this.btnEstadisticas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstadisticas.Location = new System.Drawing.Point(0, 828);
+            this.btnEstadisticas.Location = new System.Drawing.Point(0, 868);
             this.btnEstadisticas.Name = "btnEstadisticas";
             this.btnEstadisticas.Rotation = 0D;
             this.btnEstadisticas.Size = new System.Drawing.Size(208, 40);
@@ -370,12 +371,13 @@
             // panelSubGenerar
             // 
             this.panelSubGenerar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(165)))), ((int)(((byte)(202)))));
+            this.panelSubGenerar.Controls.Add(this.btnEmpleadosProyecto);
             this.panelSubGenerar.Controls.Add(this.btnSubReportes);
             this.panelSubGenerar.Controls.Add(this.btnSubReporteVentas);
             this.panelSubGenerar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubGenerar.Location = new System.Drawing.Point(0, 747);
             this.panelSubGenerar.Name = "panelSubGenerar";
-            this.panelSubGenerar.Size = new System.Drawing.Size(208, 81);
+            this.panelSubGenerar.Size = new System.Drawing.Size(208, 121);
             this.panelSubGenerar.TabIndex = 11;
             this.panelSubGenerar.Visible = false;
             // 
@@ -837,6 +839,28 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // btnEmpleadosProyecto
+            // 
+            this.btnEmpleadosProyecto.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEmpleadosProyecto.FlatAppearance.BorderSize = 0;
+            this.btnEmpleadosProyecto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmpleadosProyecto.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnEmpleadosProyecto.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.btnEmpleadosProyecto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnEmpleadosProyecto.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnEmpleadosProyecto.IconColor = System.Drawing.Color.Black;
+            this.btnEmpleadosProyecto.IconSize = 16;
+            this.btnEmpleadosProyecto.Location = new System.Drawing.Point(0, 80);
+            this.btnEmpleadosProyecto.Name = "btnEmpleadosProyecto";
+            this.btnEmpleadosProyecto.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnEmpleadosProyecto.Rotation = 0D;
+            this.btnEmpleadosProyecto.Size = new System.Drawing.Size(208, 40);
+            this.btnEmpleadosProyecto.TabIndex = 2;
+            this.btnEmpleadosProyecto.Text = "Empleados por Proy.";
+            this.btnEmpleadosProyecto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEmpleadosProyecto.UseVisualStyleBackColor = true;
+            this.btnEmpleadosProyecto.Click += new System.EventHandler(this.btnEmpleadosProyecto_Click);
+            // 
             // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -912,6 +936,7 @@
         private FontAwesome.Sharp.IconButton btnEstadisticas;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbl_Titulo;
+        private FontAwesome.Sharp.IconButton btnEmpleadosProyecto;
     }
 }
 

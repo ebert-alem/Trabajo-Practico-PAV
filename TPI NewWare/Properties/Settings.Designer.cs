@@ -22,5 +22,16 @@ namespace TPI_NewWare.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=pavTpGrupal.mssql.somee.com;Initial Catalog=pavTpGrupal;Persist Secur" +
+            "ity Info=True;User ID=ebertalem_SQLLogin_1;Password=4m8u7yha3i")]
+        public string pavTpGrupalConnectionString {
+            get {
+                return ((string)(this["pavTpGrupalConnectionString"]));
+            }
+        }
     }
 }
