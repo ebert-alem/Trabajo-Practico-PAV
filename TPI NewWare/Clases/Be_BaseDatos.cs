@@ -94,6 +94,7 @@ namespace TPI_NewWare.Clases
                                 + sql + "\n"
                                 + "El mensaje es:" + "\n"
                                 + e.Message);
+                Console.WriteLine(sql);
             }
             Desconectar();
             return tabla;

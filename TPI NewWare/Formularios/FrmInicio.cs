@@ -19,6 +19,8 @@ using TPI_NewWare.Formularios.Clientes;
 using TPI_NewWare.Formularios.VentaProducto;
 using TPI_NewWare.Formularios.VentaProyecto;
 using TPI_NewWare.Reportes.VentaProducto;
+using TPI_NewWare.Reportes.EmpleadoProyecto;
+using TPI_NewWare.Reportes.HorasEmpleado;
 
 namespace TPI_NewWare
 {
@@ -238,6 +240,20 @@ namespace TPI_NewWare
             lbl_Titulo.Text = "Reporte de Ventas";
             lbl_Titulo.Visible = true;
             AbrirFormEnPanel(new FrmReporteVentaProducto());
+        }
+
+        private void btnEmpleadosProyecto_Click(object sender, EventArgs e)
+        {
+            lbl_Titulo.Text = "Empleados por proyecto";
+            lbl_Titulo.Visible = true;
+            AbrirFormEnPanel(new EmpleadoProducto());
+        }
+
+        private void btnHorasEmpleado_Click(object sender, EventArgs e)
+        {
+            lbl_Titulo.Text = "Horas por Empleado";
+            lbl_Titulo.Visible = true;
+            AbrirFormEnPanel(new FrmHorasEmpleado());
         }
     }
 
