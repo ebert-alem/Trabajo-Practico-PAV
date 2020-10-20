@@ -13,8 +13,6 @@ namespace TPI_NewWare.Formularios.Empleados
     public partial class FrmABMCEmpleados : TPI_NewWare.Formularios.FrmABMBase
     {
         Ng_Empleado negocio = new Ng_Empleado();
-        private FrmEgreso FrmE;
-
         protected override ClaseBase Objeto => new Empleado();
 
         public FrmABMCEmpleados()
@@ -39,8 +37,16 @@ namespace TPI_NewWare.Formularios.Empleados
             {
                 grid.Rows.Add();
                 grid.Rows[i].Cells[0].Value = tabla.Rows[i]["legajo"].ToString();
+                //grid.Rows[i].Cells[1].Value = tabla.Rows[i]["id_egreso"].ToString();
+                //grid.Rows[i].Cells[2].Value = tabla.Rows[i]["id_documento"].ToString();
+                //grid.Rows[i].Cells[3].Value = tabla.Rows[i]["nombreUsuario"].ToString();
+                //grid.Rows[i].Cells[4].Value = tabla.Rows[i]["documento"].ToString();
                 grid.Rows[i].Cells[1].Value = tabla.Rows[i]["nombres"].ToString();
                 grid.Rows[i].Cells[2].Value = tabla.Rows[i]["apellido"].ToString();
+                //grid.Rows[i].Cells[7].Value = tabla.Rows[i]["fechas_ingresante"].ToString();
+                //grid.Rows[i].Cells[8].Value = tabla.Rows[i]["fechas_egreso"].ToString();
+                //grid.Rows[i].Cells[9].Value = tabla.Rows[i]["domicilio"].ToString();
+                //grid.Rows[i].Cells[10].Value = tabla.Rows[i]["fechas_nacimiento"].ToString();
             }
             //Actualiza la visualizacion del primer elemento
             ActualizarVisualizacion();
@@ -69,7 +75,6 @@ namespace TPI_NewWare.Formularios.Empleados
             //Asigna el form a la ventana
             AbrirFormEnPanel(FrmAM);
         }
-
 
         //Devuelve el id de la fila actualmente seleccionada
         protected override int IdActual()
@@ -123,13 +128,6 @@ namespace TPI_NewWare.Formularios.Empleados
                 lbl_visualizacion.Text += "\nDomicilio: " + objeto.Domicilio;
                 lbl_visualizacion.Text += "\nfechaNacimiento: " + objeto.FechaNacimiento;
             }
-        }
-
-        private void btn_Baja_Click(object sender, EventArgs e)
-        {
-            FrmE = new FrmEgreso(this, IdActual());
-            //Asigna el form a la ventana
-            AbrirFormEnPanel(FrmE);
         }
     }
 }
