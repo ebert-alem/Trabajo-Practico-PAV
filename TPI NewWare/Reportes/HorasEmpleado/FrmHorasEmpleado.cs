@@ -12,21 +12,21 @@ using Microsoft.Reporting.WinForms;
 using TPI_NewWare.Clases;
 using TPI_NewWare.Negocio;
 
-namespace TPI_NewWare.Reportes.EmpleadoProyecto
+namespace TPI_NewWare.Reportes.HorasEmpleado
 {
-    public partial class EmpleadoProducto : Form
+    public partial class FrmHorasEmpleado : Form
     {
-        protected Be_BaseDatos _BD = new Be_BaseDatos();
-        private Ng_EmpleadoProyecto negocio = new Ng_EmpleadoProyecto();
-        public EmpleadoProducto()
+        private Ng_HorasEmpleado negocio = new Ng_HorasEmpleado();
+
+        public FrmHorasEmpleado()
         {
             InitializeComponent();
         }
-        private void EmpleadoProducto_Load(object sender, EventArgs e)
+
+        private void FrmHorasEmpleado_Load(object sender, EventArgs e)
         {
             this.reportViewer.RefreshReport();
             this.cmb_proyecto.Cargar();
-
         }
 
         private void reportViewer_Load(object sender, EventArgs e)

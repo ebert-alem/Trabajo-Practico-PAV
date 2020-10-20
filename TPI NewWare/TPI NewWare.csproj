@@ -280,6 +280,7 @@
     <Compile Include="Negocio\Ng_EmpleadoProyecto.cs" />
     <Compile Include="Negocio\Ng_Etapa.cs" />
     <Compile Include="Negocio\Ng_Herramienta.cs" />
+    <Compile Include="Negocio\Ng_HorasEmpleado.cs" />
     <Compile Include="Negocio\Ng_MotivoEgreso.cs" />
     <Compile Include="Negocio\Ng_Producto.cs" />
     <Compile Include="Negocio\Ng_Rol.cs" />
@@ -298,6 +299,20 @@
     </Compile>
     <Compile Include="Reportes\EmpleadoProyecto\EmpleadoProducto.Designer.cs">
       <DependentUpon>EmpleadoProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\HorasEmpleado\FrmHorasEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\HorasEmpleado\FrmHorasEmpleado.Designer.cs">
+      <DependentUpon>FrmHorasEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\HorasEmpleado\HorasEmpleado.cs">
+      <DependentUpon>HorasEmpleado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\HorasEmpleado\HorasEmpleado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HorasEmpleado.xsd</DependentUpon>
     </Compile>
     <Compile Include="Reportes\VentaProducto\Ds_VentaProducto.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -409,6 +424,10 @@
       <DependentUpon>EmpleadoProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\EmpleadoProyecto\ListadoEmpleadosProyecto.rdlc" />
+    <EmbeddedResource Include="Reportes\HorasEmpleado\FrmHorasEmpleado.resx">
+      <DependentUpon>FrmHorasEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\HorasEmpleado\ListadoHoras.rdlc" />
     <EmbeddedResource Include="Reportes\VentaProducto\FrmReporteVentaProducto.resx">
       <DependentUpon>FrmReporteVentaProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -425,6 +444,9 @@
     <None Include="pavTpGrupalDataSet.xss">
       <DependentUpon>pavTpGrupalDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Properties\DataSources\TPI_NewWare.Entidades.Empleado.datasource" />
+    <None Include="Properties\DataSources\TPI_NewWare.Entidades.Etapa.datasource" />
+    <None Include="Properties\DataSources\TPI_NewWare.Entidades.Proyecto.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -439,6 +461,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Reportes\HorasEmpleado\HorasEmpleado.xsc">
+      <DependentUpon>HorasEmpleado.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\HorasEmpleado\HorasEmpleado.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HorasEmpleado.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\HorasEmpleado\HorasEmpleado.xss">
+      <DependentUpon>HorasEmpleado.xsd</DependentUpon>
+    </None>
     <None Include="Reportes\VentaProducto\Ds_VentaProducto.xsc">
       <DependentUpon>Ds_VentaProducto.xsd</DependentUpon>
     </None>

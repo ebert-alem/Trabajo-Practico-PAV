@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="HorasEmpleado" targetNamespace="http://tempuri.org/HorasEmpleado.xsd" xmlns:mstns="http://tempuri.org/HorasEmpleado.xsd" xmlns="http://tempuri.org/HorasEmpleado.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="HorasEmpleado" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="HorasEmpleado" msprop:Generator_UserDSName="HorasEmpleado">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="HorasEmpleado" msprop:Generator_TableClassName="HorasEmpleadoDataTable" msprop:Generator_TableVarName="tableHorasEmpleado" msprop:Generator_RowChangedName="HorasEmpleadoRowChanged" msprop:Generator_TablePropName="_HorasEmpleado" msprop:Generator_RowDeletingName="HorasEmpleadoRowDeleting" msprop:Generator_RowChangingName="HorasEmpleadoRowChanging" msprop:Generator_RowEvHandlerName="HorasEmpleadoRowChangeEventHandler" msprop:Generator_RowDeletedName="HorasEmpleadoRowDeleted" msprop:Generator_RowClassName="HorasEmpleadoRow" msprop:Generator_UserTableName="HorasEmpleado" msprop:Generator_RowEvArgName="HorasEmpleadoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="legajo" msprop:Generator_ColumnVarNameInTable="columnlegajo" msprop:Generator_ColumnPropNameInRow="legajo" msprop:Generator_ColumnPropNameInTable="legajoColumn" msprop:Generator_UserColumnName="legajo" type="xs:string" minOccurs="0" />
+              <xs:element name="nombres" msprop:Generator_ColumnVarNameInTable="columnnombres" msprop:Generator_ColumnPropNameInRow="nombres" msprop:Generator_ColumnPropNameInTable="nombresColumn" msprop:Generator_UserColumnName="nombres" type="xs:string" minOccurs="0" />
+              <xs:element name="nombre_etapa" msprop:Generator_ColumnVarNameInTable="columnnombre_etapa" msprop:Generator_ColumnPropNameInRow="nombre_etapa" msprop:Generator_ColumnPropNameInTable="nombre_etapaColumn" msprop:Generator_UserColumnName="nombre_etapa" type="xs:string" minOccurs="0" />
+              <xs:element name="nombre_proyecto" msprop:Generator_ColumnVarNameInTable="columnnombre_proyecto" msprop:Generator_ColumnPropNameInRow="nombre_proyecto" msprop:Generator_ColumnPropNameInTable="nombre_proyectoColumn" msprop:Generator_UserColumnName="nombre_proyecto" type="xs:string" minOccurs="0" />
+              <xs:element name="horas" msprop:Generator_ColumnVarNameInTable="columnhoras" msprop:Generator_ColumnPropNameInRow="horas" msprop:Generator_ColumnPropNameInTable="horasColumn" msprop:Generator_UserColumnName="horas" type="xs:string" minOccurs="0" />
+              <xs:element name="apellido" msprop:Generator_ColumnVarNameInTable="columnapellido" msprop:Generator_ColumnPropNameInRow="apellido" msprop:Generator_ColumnPropNameInTable="apellidoColumn" msprop:Generator_UserColumnName="apellido" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha_ingresante" msprop:Generator_ColumnVarNameInTable="columnfecha_ingresante" msprop:Generator_ColumnPropNameInRow="fecha_ingresante" msprop:Generator_ColumnPropNameInTable="fecha_ingresanteColumn" msprop:Generator_UserColumnName="fecha_ingresante" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
