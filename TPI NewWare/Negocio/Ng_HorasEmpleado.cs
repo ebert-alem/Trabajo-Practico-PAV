@@ -24,15 +24,22 @@ namespace TPI_NewWare.Negocio
             return _BD.Consulta(consulta);
         }
         public DataTable ConsultaFiltrada(string Codigo)
-
         {
             string consulta = "SELECT e.legajo, e.nombres, p.descripcion AS nombre_proyecto, et.descripcion AS nombre_etapa, SUM(h.horas) AS horas FROM horas h INNER JOIN Proyectos p ON(h.codigo_proyecto = p.codigo) INNER JOIN empleados e ON(h.legajo = e.legajo) INNER JOIN etapas et ON(h.id_etapa_proyecto = et.id)";
             consulta += " WHERE (p.codigo='" + Codigo + "')"; 
             //Es necesario agrupar para realizar la suma correctamente
             consulta += " GROUP BY e.legajo, e.nombres, p.descripcion, et.descripcion";
 
-            //string consulta = "SELECT e.legajo, e.nombres, e.apellido, e.documento, e.fecha_ingresante " +
-            //  "FROM empleadosEtapaProyecto v INNER JOIN Proyectos p ON(v.cod_proyecto = p.codigo) INNER JOIN empleados e ON(v.legajo = e.legajo) WHERE (p.codigo='" + Codigo + "')";
+            return _BD.Consulta(consulta);
+        }
+
+        public DataTable ConsultaFiltrada(string Codigo, DateTime inicio, DateTime fin)
+        {
+            string consulta = "SELECT e.legajo, e.nombres, p.descripcion AS nombre_proyecto, et.descripcion AS nombre_etapa, SUM(h.horas) AS horas FROM horas h INNER JOIN Proyectos p ON(h.codigo_proyecto = p.codigo) INNER JOIN empleados e ON(h.legajo = e.legajo) INNER JOIN etapas et ON(h.id_etapa_proyecto = et.id)";
+            consulta += " WHERE (p.codigo='" + Codigo + "' AND h.fecha BETWEEN CONVERT(date,'" + inicio + "',103) AND CONVERT(date,'" + fin + "',103))";
+
+            //Es necesario agrupar para realizar la suma correctamente
+            consulta += " GROUP BY e.legajo, e.nombres, p.descripcion, et.descripcion";
 
             return _BD.Consulta(consulta);
         }

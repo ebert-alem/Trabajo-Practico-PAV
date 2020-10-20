@@ -41,7 +41,7 @@ namespace TPI_NewWare.Reportes.HorasEmpleado
 
         private void btn_generar_Click(object sender, EventArgs e)
         {
-            DataTable table = negocio.ConsultaFiltrada(Convert.ToString(cmb_proyecto.SelectedValue));
+            DataTable table = negocio.ConsultaFiltrada(Convert.ToString(cmb_proyecto.SelectedValue), dtpDesde.Value, dtpHasta.Value);
 
             ReportDataSource ds = new ReportDataSource("HorasEmpleado", table);
 
