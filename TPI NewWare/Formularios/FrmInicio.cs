@@ -21,6 +21,7 @@ using TPI_NewWare.Formularios.VentaProyecto;
 using TPI_NewWare.Reportes.VentaProducto;
 using TPI_NewWare.Reportes.EmpleadoProyecto;
 using TPI_NewWare.Reportes.HorasEmpleado;
+using TPI_NewWare.Reportes.Herramientas;
 
 namespace TPI_NewWare
 {
@@ -254,6 +255,11 @@ namespace TPI_NewWare
             lbl_Titulo.Text = "Horas por Empleado";
             lbl_Titulo.Visible = true;
             AbrirFormEnPanel(new FrmHorasEmpleado());
+        private void btnSubReporteHerramientas_Click(object sender, EventArgs e)
+        {
+            lbl_Titulo.Text = "Reporte de Herramientas";
+            lbl_Titulo.Visible = true;
+            AbrirFormEnPanel(new FrmReporteHerramientas());
         }
     }
 
