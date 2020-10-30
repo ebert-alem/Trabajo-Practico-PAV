@@ -255,6 +255,8 @@ namespace TPI_NewWare
             lbl_Titulo.Text = "Horas por Empleado";
             lbl_Titulo.Visible = true;
             AbrirFormEnPanel(new FrmHorasEmpleado());
+        }
+
         private void btnSubReporteHerramientas_Click(object sender, EventArgs e)
         {
             lbl_Titulo.Text = "Reporte de Herramientas";
