@@ -1,6 +1,6 @@
 ﻿namespace TPI_NewWare.Reportes.EmpleadoProyecto
 {
-    partial class FrmEstadisticaEmpleadoProyecto
+    partial class FrmEstadisticasHorasProyecto
     {
         /// <summary>
         /// Required designer variable.
@@ -44,7 +44,7 @@
             this.panel_Filtros.Location = new System.Drawing.Point(0, 0);
             this.panel_Filtros.Name = "panel_Filtros";
             this.panel_Filtros.Size = new System.Drawing.Size(800, 41);
-            this.panel_Filtros.TabIndex = 2;
+            this.panel_Filtros.TabIndex = 3;
             // 
             // btn_generar
             // 
@@ -83,14 +83,14 @@
             // reportViewer
             // 
             this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer.LocalReport.ReportEmbeddedResource = "TPI_NewWare.Reportes.EmpleadoProyecto.EstadisticaEmpleadoProyecto.rdlc";
+            this.reportViewer.LocalReport.ReportEmbeddedResource = "TPI_NewWare.Reportes.EmpleadoProyecto.EstadisticaHorasProyecto.rdlc";
             this.reportViewer.Location = new System.Drawing.Point(0, 41);
             this.reportViewer.Name = "reportViewer";
             this.reportViewer.ServerReport.BearerToken = null;
             this.reportViewer.Size = new System.Drawing.Size(800, 419);
-            this.reportViewer.TabIndex = 3;
+            this.reportViewer.TabIndex = 4;
             // 
-            // FrmEstadisticaEmpleadoProyecto
+            // FrmEstadisticasHorasProyecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -98,9 +98,9 @@
             this.Controls.Add(this.reportViewer);
             this.Controls.Add(this.panel_Filtros);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmEstadisticaEmpleadoProyecto";
-            this.Text = "FrmEstadisticaEmpleadoProyecto";
-            this.Load += new System.EventHandler(this.FrmEstadisticaEmpleadoProyecto_Load);
+            this.Name = "FrmEstadisticasHorasProyecto";
+            this.Text = "FrmEstadisticasHorasProyecto";
+            this.Load += new System.EventHandler(this.FrmEstadisticasHorasProyecto_Load);
             this.panel_Filtros.ResumeLayout(false);
             this.ResumeLayout(false);
 

@@ -43,5 +43,14 @@ namespace TPI_NewWare.Negocio
 
             return _BD.Consulta(consulta);
         }
+
+        public DataTable CantidadHorasProyecto()
+        {
+            string consulta = "SELECT p.descripcion AS nombre_proyecto, h.horas AS horas FROM horas h INNER JOIN Proyectos p ON(h.codigo_proyecto = p.codigo) INNER JOIN empleados e ON(h.legajo = e.legajo) INNER JOIN etapas et ON(h.id_etapa_proyecto = et.id)";
+            //Es necesario agrupar para realizar la suma correctamente
+            consulta += " GROUP BY p.descripcion, h.horas";
+
+            return _BD.Consulta(consulta);
+        }
     }
 }

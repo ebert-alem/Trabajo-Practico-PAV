@@ -270,6 +270,13 @@ namespace TPI_NewWare
             lbl_Titulo.Visible = true;
             AbrirFormEnPanel(new FrmEstadisticaEmpleadoProyecto());
         }
+
+        private void btnSubEstTiemProy_Click(object sender, EventArgs e)
+        {
+            lbl_Titulo.Text = "Tiempo de proyectos";
+            lbl_Titulo.Visible = true;
+            AbrirFormEnPanel(new FrmEstadisticasHorasProyecto());
+        }
     }
 
 }

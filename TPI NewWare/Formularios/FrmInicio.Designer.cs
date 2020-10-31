@@ -39,6 +39,7 @@
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panelSubEstadisticas = new System.Windows.Forms.Panel();
+            this.btnDistribucionEmpleados = new FontAwesome.Sharp.IconButton();
             this.btnSubEstTiemProy = new FontAwesome.Sharp.IconButton();
             this.btnSubEstGantt = new FontAwesome.Sharp.IconButton();
             this.tndSubEstRendEmp = new FontAwesome.Sharp.IconButton();
@@ -71,7 +72,6 @@
             this.btnAdministrar = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnDistribucionEmpleados = new FontAwesome.Sharp.IconButton();
             this.panelBarrraSup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogin)).BeginInit();
             this.panelUsuario.SuspendLayout();
@@ -243,6 +243,28 @@
             this.panelSubEstadisticas.TabIndex = 13;
             this.panelSubEstadisticas.Visible = false;
             // 
+            // btnDistribucionEmpleados
+            // 
+            this.btnDistribucionEmpleados.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDistribucionEmpleados.FlatAppearance.BorderSize = 0;
+            this.btnDistribucionEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDistribucionEmpleados.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnDistribucionEmpleados.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.btnDistribucionEmpleados.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDistribucionEmpleados.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnDistribucionEmpleados.IconColor = System.Drawing.Color.Black;
+            this.btnDistribucionEmpleados.IconSize = 16;
+            this.btnDistribucionEmpleados.Location = new System.Drawing.Point(0, 200);
+            this.btnDistribucionEmpleados.Name = "btnDistribucionEmpleados";
+            this.btnDistribucionEmpleados.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnDistribucionEmpleados.Rotation = 0D;
+            this.btnDistribucionEmpleados.Size = new System.Drawing.Size(208, 40);
+            this.btnDistribucionEmpleados.TabIndex = 5;
+            this.btnDistribucionEmpleados.Text = "Distrib. de empleados";
+            this.btnDistribucionEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDistribucionEmpleados.UseVisualStyleBackColor = true;
+            this.btnDistribucionEmpleados.Click += new System.EventHandler(this.btnDistribucionEmpleados_Click);
+            // 
             // btnSubEstTiemProy
             // 
             this.btnSubEstTiemProy.Dock = System.Windows.Forms.DockStyle.Top;
@@ -263,6 +285,7 @@
             this.btnSubEstTiemProy.Text = "Tiempo de proyecto";
             this.btnSubEstTiemProy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSubEstTiemProy.UseVisualStyleBackColor = true;
+            this.btnSubEstTiemProy.Click += new System.EventHandler(this.btnSubEstTiemProy_Click);
             // 
             // btnSubEstGantt
             // 
@@ -887,28 +910,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnDistribucionEmpleados
-            // 
-            this.btnDistribucionEmpleados.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDistribucionEmpleados.FlatAppearance.BorderSize = 0;
-            this.btnDistribucionEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDistribucionEmpleados.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnDistribucionEmpleados.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.btnDistribucionEmpleados.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDistribucionEmpleados.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnDistribucionEmpleados.IconColor = System.Drawing.Color.Black;
-            this.btnDistribucionEmpleados.IconSize = 16;
-            this.btnDistribucionEmpleados.Location = new System.Drawing.Point(0, 200);
-            this.btnDistribucionEmpleados.Name = "btnDistribucionEmpleados";
-            this.btnDistribucionEmpleados.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnDistribucionEmpleados.Rotation = 0D;
-            this.btnDistribucionEmpleados.Size = new System.Drawing.Size(208, 40);
-            this.btnDistribucionEmpleados.TabIndex = 5;
-            this.btnDistribucionEmpleados.Text = "Distrib. de empleados";
-            this.btnDistribucionEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDistribucionEmpleados.UseVisualStyleBackColor = true;
-            this.btnDistribucionEmpleados.Click += new System.EventHandler(this.btnDistribucionEmpleados_Click);
             // 
             // FrmInicio
             // 
