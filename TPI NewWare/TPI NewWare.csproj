@@ -300,6 +300,12 @@
     <Compile Include="Reportes\EmpleadoProyecto\EmpleadoProducto.Designer.cs">
       <DependentUpon>EmpleadoProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\EmpleadoProyecto\FrmEstadisticaEmpleadoProyecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\EmpleadoProyecto\FrmEstadisticaEmpleadoProyecto.Designer.cs">
+      <DependentUpon>FrmEstadisticaEmpleadoProyecto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\HorasEmpleado\FrmHorasEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -433,6 +439,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\EmpleadoProyecto\EmpleadoProducto.resx">
       <DependentUpon>EmpleadoProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\EmpleadoProyecto\EstadisticaEmpleadoProyecto.rdlc" />
+    <EmbeddedResource Include="Reportes\EmpleadoProyecto\FrmEstadisticaEmpleadoProyecto.resx">
+      <DependentUpon>FrmEstadisticaEmpleadoProyecto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\EmpleadoProyecto\ListadoEmpleadosProyecto.rdlc" />
     <EmbeddedResource Include="Reportes\HorasEmpleado\FrmHorasEmpleado.resx">
