@@ -83,6 +83,7 @@
             this.btn_generar.Text = "GENERAR";
             this.btn_generar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_generar.UseVisualStyleBackColor = true;
+            this.btn_generar.Click += new System.EventHandler(this.btn_generar_Click);
             // 
             // lbl_Titulo
             // 

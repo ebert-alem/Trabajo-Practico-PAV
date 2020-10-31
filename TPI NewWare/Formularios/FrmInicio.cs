@@ -263,6 +263,13 @@ namespace TPI_NewWare
             lbl_Titulo.Visible = true;
             AbrirFormEnPanel(new FrmReporteHerramientas());
         }
+
+        private void btnDistribucionEmpleados_Click(object sender, EventArgs e)
+        {
+            lbl_Titulo.Text = "Distribucion de empleados";
+            lbl_Titulo.Visible = true;
+            AbrirFormEnPanel(new FrmEstadisticaEmpleadoProyecto());
+        }
     }
 
 }

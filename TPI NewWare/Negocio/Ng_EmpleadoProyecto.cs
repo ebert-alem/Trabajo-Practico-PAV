@@ -34,5 +34,12 @@ namespace TPI_NewWare.Negocio
 
             return _BD.Consulta(consulta);
         }
+
+        public DataTable CantidadEmpleadosProyecto() 
+        {
+            //SELECT  COUNT(e.legajo) AS empleados, p.descripcion AS nombre_proyecto FROM empleadosEtapaProyecto v INNER JOIN Proyectos p ON (v.cod_proyecto = p.codigo)INNER JOIN empleados e ON(v.legajo = e.legajo) GROUP BY p.descripcion
+            string consulta = "SELECT e.legajo AS legajo, p.descripcion AS nombre_proyecto FROM empleadosEtapaProyecto v INNER JOIN Proyectos p ON (v.cod_proyecto = p.codigo) INNER JOIN empleados e ON (v.legajo = e.legajo) GROUP BY p.descripcion, e.legajo";
+            return _BD.Consulta(consulta);
+        }
     }
 }

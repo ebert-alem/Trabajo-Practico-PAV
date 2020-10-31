@@ -187,7 +187,8 @@
             </Style>
           </Line>
           <Line Name="Line1">
-            <Top>9.73627cm</Top>
+            <Top>9.07481cm</Top>
+            <Left>0.09101cm</Left>
             <Height>0cm</Height>
             <Width>16.32797cm</Width>
             <ZIndex>3</ZIndex>
@@ -201,27 +202,61 @@
             <ChartCategoryHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Group Name="ChartGroup" />
-                  <Label />
+                  <Group Name="Chart1_CategoryGroup">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!nombre_proyecto.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!nombre_proyecto.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <Label>=Fields!nombre_proyecto.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
             <ChartSeriesHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Label />
+                  <Label>legajo</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartSeriesHierarchy>
             <ChartData>
               <ChartSeriesCollection>
-                <ChartSeries Name="EmptySeriesName">
+                <ChartSeries Name="legajo">
                   <ChartDataPoints>
                     <ChartDataPoint>
-                      <ChartDataPointValues />
+                      <ChartDataPointValues>
+                        <Y>=Count(Fields!legajo.Value)</Y>
+                      </ChartDataPointValues>
+                      <ChartDataLabel>
+                        <Style />
+                      </ChartDataLabel>
+                      <Style />
+                      <ChartMarker>
+                        <Style />
+                      </ChartMarker>
+                      <DataElementOutput>Output</DataElementOutput>
                     </ChartDataPoint>
                   </ChartDataPoints>
                   <Style />
+                  <ChartEmptyPoints>
+                    <Style />
+                    <ChartMarker>
+                      <Style />
+                    </ChartMarker>
+                    <ChartDataLabel>
+                      <Style />
+                    </ChartDataLabel>
+                  </ChartEmptyPoints>
+                  <ValueAxisName>Primary</ValueAxisName>
+                  <CategoryAxisName>Primary</CategoryAxisName>
+                  <ChartSmartLabel>
+                    <CalloutLineColor>Black</CalloutLineColor>
+                    <MinMovingDistance>0pt</MinMovingDistance>
+                  </ChartSmartLabel>
                 </ChartSeries>
               </ChartSeriesCollection>
             </ChartData>
@@ -279,6 +314,8 @@
                     <CrossAt>NaN</CrossAt>
                     <Minimum>NaN</Minimum>
                     <Maximum>NaN</Maximum>
+                    <AllowLabelRotation>Rotate30</AllowLabelRotation>
+                    <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
                     <ChartAxisScaleBreak>
                       <Style />
                     </ChartAxisScaleBreak>
@@ -458,7 +495,7 @@
               </ChartArea>
             </ChartAreas>
             <ChartLegends>
-              <ChartLegend Name="Default">
+              <ChartLegend Name="Empleados">
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>8pt</FontSize>
@@ -478,7 +515,7 @@
             </ChartLegends>
             <ChartTitles>
               <ChartTitle Name="Default">
-                <Caption>Distribucion de personal</Caption>
+                <Caption>Distribucion de personal en proyectos</Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>9pt</FontSize>
@@ -509,9 +546,9 @@
             </ChartNoDataMessage>
             <DataSetName>EmpleadosProyecto</DataSetName>
             <Top>3.67453cm</Top>
-            <Left>2.37808cm</Left>
-            <Height>5cm</Height>
-            <Width>7.5cm</Width>
+            <Left>0.09102cm</Left>
+            <Height>5.07957cm</Height>
+            <Width>15.95755cm</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
@@ -523,7 +560,7 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>4.40475in</Height>
+        <Height>3.65475in</Height>
         <Style />
       </Body>
       <Width>6.5in</Width>
