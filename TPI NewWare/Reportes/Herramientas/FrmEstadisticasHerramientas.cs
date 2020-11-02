@@ -11,37 +11,33 @@ using TPI_NewWare.Negocio;
 using Microsoft.Reporting.WinForms;
 
 
-
 namespace TPI_NewWare.Reportes.Herramientas
 {
-    public partial class FrmReporteHerramientas : Form
+    public partial class FrmEstadisticasHerramientas : Form
     {
         DataTable tabla = new DataTable();
         Ng_Herramienta herramienta = new Ng_Herramienta();
         string restriccion = "";
 
-        public FrmReporteHerramientas()
+        public FrmEstadisticasHerramientas()
         {
             InitializeComponent();
         }
 
-        private void Frm_ReporteVentaProducto_Load(object sender, EventArgs e)
-        {
-            
+        private void reportViewer_Load(object sender, EventArgs e)
+        {           
             //Seteamos los combobox y dateTimePicker...
-            cmb_Herramienta.Cargar();
+            //cmb_Herramienta.Cargar();
             cmb_proyecto.Cargar();
             cmb_etapa.Cargar();
 
-            cmb_Herramienta.SelectedIndex = -1;
+            //cmb_Herramienta.SelectedIndex = -1;
             cmb_etapa.SelectedIndex = -1;
             cmb_proyecto.SelectedIndex = -1;
-           
+
 
             dtpDesde.Value = DateTime.Now.AddYears(-20);
             dtpHasta.Value = DateTime.Today;
-
-                                  
         }
 
         public void armarRestriccion()
@@ -51,8 +47,8 @@ namespace TPI_NewWare.Reportes.Herramientas
             restriccion += " y " + dtpHasta.Value.ToShortDateString();
 
             // Armamos la restriccion segun lo seleccionado en los combobox...
-            if (Convert.ToString(cmb_Herramienta.SelectedValue) != "") 
-                restriccion += ", herramienta: " + Convert.ToString(cmb_Herramienta.Text);                        
+            //if (Convert.ToString(cmb_Herramienta.SelectedValue) != "")
+            //    restriccion += ", herramienta: " + Convert.ToString(cmb_Herramienta.Text);
             if (Convert.ToString(cmb_proyecto.SelectedValue) != "")
                 restriccion += ", proyecto: " + Convert.ToString(cmb_proyecto.Text);
             if (Convert.ToString(cmb_etapa.SelectedValue) != "")
@@ -68,27 +64,30 @@ namespace TPI_NewWare.Reportes.Herramientas
                 panel_Filtros.Height = 40;
                 cmb_Herramienta.SelectedIndex = -1;
                 cmb_etapa.SelectedIndex = -1;
-                cmb_proyecto.SelectedIndex = -1;               
+                cmb_proyecto.SelectedIndex = -1;
             }
         }
 
         private void btn_generar_Click(object sender, EventArgs e)
         {
-            tabla = herramienta.ConsultaFiltrada(dtpDesde.Value.ToShortDateString(), dtpHasta.Value.ToShortDateString(), Convert.ToString(cmb_Herramienta.SelectedValue), Convert.ToString(cmb_proyecto.SelectedValue), Convert.ToString(cmb_etapa.SelectedValue));
+            tabla = herramienta.obtenerCantidad(dtpDesde.Value.ToShortDateString(), dtpHasta.Value.ToShortDateString(), Convert.ToString(cmb_Herramienta.SelectedValue), Convert.ToString(cmb_proyecto.SelectedValue), Convert.ToString(cmb_etapa.SelectedValue));
             armarRestriccion();
 
             // Asignamos la tabla resultado al reporte...
-            ReportDataSource Datos = new ReportDataSource("DataSet1", tabla);
-            reportViewer.LocalReport.ReportEmbeddedResource = "TPI_NewWare.Reportes.Herramientas.ReporteHerramientas.rdlc";
+            ReportDataSource ds = new ReportDataSource("DataSetEstadisticas", tabla);
             reportViewer.LocalReport.DataSources.Clear();
-            reportViewer.LocalReport.DataSources.Add(Datos);
-            
-            
-            this.reportViewer.LocalReport.SetParameters(new ReportParameter("RParametro" ,restriccion));
+            reportViewer.LocalReport.DataSources.Add(ds);
+
+            //Setemos parámeto...
+            this.reportViewer.LocalReport.SetParameters(new ReportParameter("EParametro", restriccion));
             this.reportViewer.RefreshReport();
+
             restriccion = "";
         }
-                     
 
+        private void FrmEstadisticasHerramientas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

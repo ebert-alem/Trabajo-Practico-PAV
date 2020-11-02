@@ -277,6 +277,20 @@ namespace TPI_NewWare
             lbl_Titulo.Visible = true;
             AbrirFormEnPanel(new FrmEstadisticasHorasProyecto());
         }
+
+        private void btnSubEstProdVend_Click(object sender, EventArgs e)
+        {
+            lbl_Titulo.Text = "Productos Vendidos";
+            lbl_Titulo.Visible = true;
+            AbrirFormEnPanel(new FrmEstadisticasVentasProducto());
+        }
+
+        private void btnSubEstUsoHerram_Click(object sender, EventArgs e)
+        {
+            lbl_Titulo.Text = "Uso de herramientas";
+            lbl_Titulo.Visible = true;
+            AbrirFormEnPanel(new FrmEstadisticasHerramientas());
+        }
     }
 
 }

@@ -59,6 +59,26 @@ namespace TPI_NewWare.Negocio
             return _BD.Consulta(consultaSQL);
         }
 
+        public DataTable obtenerCantidad (string desde, string hasta, string producto, string cliente, string lider)
+        {
+            string consultaSQL = "SELECT p.nombre, COUNT(p.id) AS 'Cantidad'" +
+                                 "FROM ventaProducto v INNER JOIN producto p ON(v.id_producto = p.id) INNER JOIN clientes c ON(v.nroDocumento = c.nroDocumento) INNER JOIN empleados e ON(v.legajo_lider = e.legajo)";
+
+
+            consultaSQL += "WHERE v.fecha_venta BETWEEN CONVERT(date,'" + desde + "',103) AND CONVERT(date,'" + hasta + "',103)";
+
+            if (!string.IsNullOrEmpty(producto))
+                consultaSQL += " AND v.id_producto = " + producto;
+            if (cliente != "")
+                consultaSQL += " AND v.nroDocumento = " + cliente;
+            if (lider != "")
+                consultaSQL += " AND v.legajo_lider = " + lider;
+
+
+            consultaSQL += "GROUP BY p.nombre";
+
+            return _BD.Consulta(consultaSQL);
+        }
 
 
             public DataTable ConsultaNombre(string Nombre)

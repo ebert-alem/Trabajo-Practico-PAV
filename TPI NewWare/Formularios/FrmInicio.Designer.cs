@@ -349,6 +349,7 @@
             this.btnSubEstUsoHerram.Text = "Uso de herramientas";
             this.btnSubEstUsoHerram.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSubEstUsoHerram.UseVisualStyleBackColor = true;
+            this.btnSubEstUsoHerram.Click += new System.EventHandler(this.btnSubEstUsoHerram_Click);
             // 
             // btnSubEstProdVend
             // 
@@ -370,6 +371,7 @@
             this.btnSubEstProdVend.Text = "Productos vendidos";
             this.btnSubEstProdVend.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSubEstProdVend.UseVisualStyleBackColor = true;
+            this.btnSubEstProdVend.Click += new System.EventHandler(this.btnSubEstProdVend_Click);
             // 
             // btnEstadisticas
             // 

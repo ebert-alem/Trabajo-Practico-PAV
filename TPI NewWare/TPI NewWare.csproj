@@ -294,6 +294,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\Ds_Estadisticas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ds_Estadisticas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\EmpleadoProyecto\EmpleadoProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -311,6 +316,12 @@
     </Compile>
     <Compile Include="Reportes\EmpleadoProyecto\FrmEstadisticasHorasProyecto.Designer.cs">
       <DependentUpon>FrmEstadisticasHorasProyecto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Herramientas\FrmEstadisticasHerramientas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Herramientas\FrmEstadisticasHerramientas.Designer.cs">
+      <DependentUpon>FrmEstadisticasHerramientas.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\HorasEmpleado\FrmHorasEmpleado.cs">
       <SubType>Form</SubType>
@@ -335,6 +346,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Ds_VentaProducto.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\VentaProducto\FrmEstadisticasVentasProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\VentaProducto\FrmEstadisticasVentasProducto.Designer.cs">
+      <DependentUpon>FrmEstadisticasVentasProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\VentaProducto\FrmReporteVentaProducto.cs">
       <SubType>Form</SubType>
@@ -455,10 +472,17 @@
       <DependentUpon>FrmEstadisticasHorasProyecto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\EmpleadoProyecto\ListadoEmpleadosProyecto.rdlc" />
+    <EmbeddedResource Include="Reportes\Herramientas\EstadisticasHerramientas.rdlc" />
+    <EmbeddedResource Include="Reportes\Herramientas\FrmEstadisticasHerramientas.resx">
+      <DependentUpon>FrmEstadisticasHerramientas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\HorasEmpleado\FrmHorasEmpleado.resx">
       <DependentUpon>FrmHorasEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\HorasEmpleado\ListadoHoras.rdlc" />
+    <EmbeddedResource Include="Reportes\VentaProducto\FrmEstadisticasVentasProducto.resx">
+      <DependentUpon>FrmEstadisticasVentasProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\VentaProducto\FrmReporteVentaProducto.resx">
       <DependentUpon>FrmReporteVentaProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -466,6 +490,7 @@
       <DependentUpon>FrmReporteHerramientas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Herramientas\ReporteHerramientas.rdlc" />
+    <EmbeddedResource Include="Reportes\VentaProducto\EstadisticasVentaProducto.rdlc" />
     <EmbeddedResource Include="Reportes\VentaProducto\ReporteVentaProducto.rdlc" />
     <None Include="packages.config" />
     <None Include="pavTpGrupalDataSet.xsc">
@@ -496,6 +521,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Reportes\Ds_Estadisticas.xsc">
+      <DependentUpon>Ds_Estadisticas.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Ds_Estadisticas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Ds_Estadisticas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Ds_Estadisticas.xss">
+      <DependentUpon>Ds_Estadisticas.xsd</DependentUpon>
+    </None>
     <None Include="Reportes\HorasEmpleado\HorasEmpleado.xsc">
       <DependentUpon>HorasEmpleado.xsd</DependentUpon>
     </None>

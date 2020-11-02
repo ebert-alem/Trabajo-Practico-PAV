@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Ds_Estadisticas" targetNamespace="http://tempuri.org/Ds_Estadisticas.xsd" xmlns:mstns="http://tempuri.org/Ds_Estadisticas.xsd" xmlns="http://tempuri.org/Ds_Estadisticas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Ds_Estadisticas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Ds_Estadisticas" msprop:Generator_UserDSName="Ds_Estadisticas">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Estadisticas" msprop:Generator_TableClassName="EstadisticasDataTable" msprop:Generator_TableVarName="tableEstadisticas" msprop:Generator_RowChangedName="EstadisticasRowChanged" msprop:Generator_TablePropName="Estadisticas" msprop:Generator_RowDeletingName="EstadisticasRowDeleting" msprop:Generator_RowChangingName="EstadisticasRowChanging" msprop:Generator_RowEvHandlerName="EstadisticasRowChangeEventHandler" msprop:Generator_RowDeletedName="EstadisticasRowDeleted" msprop:Generator_RowClassName="EstadisticasRow" msprop:Generator_UserTableName="Estadisticas" msprop:Generator_RowEvArgName="EstadisticasRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="cantidad" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
