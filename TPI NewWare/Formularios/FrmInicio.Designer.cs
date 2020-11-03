@@ -47,6 +47,7 @@
             this.btnSubEstProdVend = new FontAwesome.Sharp.IconButton();
             this.btnEstadisticas = new FontAwesome.Sharp.IconButton();
             this.panelSubGenerar = new System.Windows.Forms.Panel();
+            this.btn_proyectosTerminados = new FontAwesome.Sharp.IconButton();
             this.btnHorasEmpleado = new FontAwesome.Sharp.IconButton();
             this.btnEmpleadosProyecto = new FontAwesome.Sharp.IconButton();
             this.btnSubReporteHerramientas = new FontAwesome.Sharp.IconButton();
@@ -72,6 +73,7 @@
             this.btnAdministrar = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_subTareasEmpleado = new FontAwesome.Sharp.IconButton();
             this.panelBarrraSup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogin)).BeginInit();
             this.panelUsuario.SuspendLayout();
@@ -169,6 +171,7 @@
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.White;
             this.btnCerrarSesion.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
             this.btnCerrarSesion.IconColor = System.Drawing.Color.White;
+            this.btnCerrarSesion.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrarSesion.IconSize = 20;
             this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCerrarSesion.Location = new System.Drawing.Point(3, 0);
@@ -195,6 +198,7 @@
             this.btnSalir.ForeColor = System.Drawing.Color.White;
             this.btnSalir.IconChar = FontAwesome.Sharp.IconChar.SignInAlt;
             this.btnSalir.IconColor = System.Drawing.Color.White;
+            this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSalir.IconSize = 20;
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSalir.Location = new System.Drawing.Point(3, 30);
@@ -237,7 +241,7 @@
             this.panelSubEstadisticas.Controls.Add(this.btnSubEstUsoHerram);
             this.panelSubEstadisticas.Controls.Add(this.btnSubEstProdVend);
             this.panelSubEstadisticas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubEstadisticas.Location = new System.Drawing.Point(0, 948);
+            this.panelSubEstadisticas.Location = new System.Drawing.Point(0, 1031);
             this.panelSubEstadisticas.Name = "panelSubEstadisticas";
             this.panelSubEstadisticas.Size = new System.Drawing.Size(208, 245);
             this.panelSubEstadisticas.TabIndex = 13;
@@ -253,6 +257,7 @@
             this.btnDistribucionEmpleados.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnDistribucionEmpleados.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnDistribucionEmpleados.IconColor = System.Drawing.Color.Black;
+            this.btnDistribucionEmpleados.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDistribucionEmpleados.IconSize = 16;
             this.btnDistribucionEmpleados.Location = new System.Drawing.Point(0, 200);
             this.btnDistribucionEmpleados.Name = "btnDistribucionEmpleados";
@@ -275,6 +280,7 @@
             this.btnSubEstTiemProy.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSubEstTiemProy.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnSubEstTiemProy.IconColor = System.Drawing.Color.Black;
+            this.btnSubEstTiemProy.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSubEstTiemProy.IconSize = 16;
             this.btnSubEstTiemProy.Location = new System.Drawing.Point(0, 160);
             this.btnSubEstTiemProy.Name = "btnSubEstTiemProy";
@@ -297,6 +303,7 @@
             this.btnSubEstGantt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSubEstGantt.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnSubEstGantt.IconColor = System.Drawing.Color.Black;
+            this.btnSubEstGantt.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSubEstGantt.IconSize = 16;
             this.btnSubEstGantt.Location = new System.Drawing.Point(0, 120);
             this.btnSubEstGantt.Name = "btnSubEstGantt";
@@ -304,9 +311,10 @@
             this.btnSubEstGantt.Rotation = 0D;
             this.btnSubEstGantt.Size = new System.Drawing.Size(208, 40);
             this.btnSubEstGantt.TabIndex = 3;
-            this.btnSubEstGantt.Text = "Tareas por etapa";
+            this.btnSubEstGantt.Text = "Etapas por Proyecto";
             this.btnSubEstGantt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSubEstGantt.UseVisualStyleBackColor = true;
+            this.btnSubEstGantt.Click += new System.EventHandler(this.btnSubEstGantt_Click);
             // 
             // tndSubEstRendEmp
             // 
@@ -318,6 +326,7 @@
             this.tndSubEstRendEmp.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tndSubEstRendEmp.IconChar = FontAwesome.Sharp.IconChar.None;
             this.tndSubEstRendEmp.IconColor = System.Drawing.Color.Black;
+            this.tndSubEstRendEmp.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.tndSubEstRendEmp.IconSize = 16;
             this.tndSubEstRendEmp.Location = new System.Drawing.Point(0, 80);
             this.tndSubEstRendEmp.Name = "tndSubEstRendEmp";
@@ -328,6 +337,7 @@
             this.tndSubEstRendEmp.Text = "Rendimiento empleados";
             this.tndSubEstRendEmp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tndSubEstRendEmp.UseVisualStyleBackColor = true;
+            this.tndSubEstRendEmp.Click += new System.EventHandler(this.tndSubEstRendEmp_Click);
             // 
             // btnSubEstUsoHerram
             // 
@@ -339,6 +349,7 @@
             this.btnSubEstUsoHerram.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSubEstUsoHerram.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnSubEstUsoHerram.IconColor = System.Drawing.Color.Black;
+            this.btnSubEstUsoHerram.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSubEstUsoHerram.IconSize = 16;
             this.btnSubEstUsoHerram.Location = new System.Drawing.Point(0, 40);
             this.btnSubEstUsoHerram.Name = "btnSubEstUsoHerram";
@@ -361,6 +372,7 @@
             this.btnSubEstProdVend.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSubEstProdVend.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnSubEstProdVend.IconColor = System.Drawing.Color.Black;
+            this.btnSubEstProdVend.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSubEstProdVend.IconSize = 16;
             this.btnSubEstProdVend.Location = new System.Drawing.Point(0, 0);
             this.btnSubEstProdVend.Name = "btnSubEstProdVend";
@@ -383,9 +395,10 @@
             this.btnEstadisticas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnEstadisticas.IconChar = FontAwesome.Sharp.IconChar.ChartPie;
             this.btnEstadisticas.IconColor = System.Drawing.Color.White;
+            this.btnEstadisticas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEstadisticas.IconSize = 32;
             this.btnEstadisticas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstadisticas.Location = new System.Drawing.Point(0, 908);
+            this.btnEstadisticas.Location = new System.Drawing.Point(0, 991);
             this.btnEstadisticas.Name = "btnEstadisticas";
             this.btnEstadisticas.Rotation = 0D;
             this.btnEstadisticas.Size = new System.Drawing.Size(208, 40);
@@ -399,6 +412,8 @@
             // panelSubGenerar
             // 
             this.panelSubGenerar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(165)))), ((int)(((byte)(202)))));
+            this.panelSubGenerar.Controls.Add(this.btn_subTareasEmpleado);
+            this.panelSubGenerar.Controls.Add(this.btn_proyectosTerminados);
             this.panelSubGenerar.Controls.Add(this.btnHorasEmpleado);
             this.panelSubGenerar.Controls.Add(this.btnEmpleadosProyecto);
             this.panelSubGenerar.Controls.Add(this.btnSubReporteHerramientas);
@@ -406,9 +421,32 @@
             this.panelSubGenerar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubGenerar.Location = new System.Drawing.Point(0, 747);
             this.panelSubGenerar.Name = "panelSubGenerar";
-            this.panelSubGenerar.Size = new System.Drawing.Size(208, 161);
+            this.panelSubGenerar.Size = new System.Drawing.Size(208, 244);
             this.panelSubGenerar.TabIndex = 11;
             this.panelSubGenerar.Visible = false;
+            // 
+            // btn_proyectosTerminados
+            // 
+            this.btn_proyectosTerminados.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_proyectosTerminados.FlatAppearance.BorderSize = 0;
+            this.btn_proyectosTerminados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_proyectosTerminados.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btn_proyectosTerminados.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.btn_proyectosTerminados.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_proyectosTerminados.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btn_proyectosTerminados.IconColor = System.Drawing.Color.Black;
+            this.btn_proyectosTerminados.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_proyectosTerminados.IconSize = 16;
+            this.btn_proyectosTerminados.Location = new System.Drawing.Point(0, 161);
+            this.btn_proyectosTerminados.Name = "btn_proyectosTerminados";
+            this.btn_proyectosTerminados.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btn_proyectosTerminados.Rotation = 0D;
+            this.btn_proyectosTerminados.Size = new System.Drawing.Size(208, 41);
+            this.btn_proyectosTerminados.TabIndex = 4;
+            this.btn_proyectosTerminados.Text = "Proyectos Terminados";
+            this.btn_proyectosTerminados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_proyectosTerminados.UseVisualStyleBackColor = true;
+            this.btn_proyectosTerminados.Click += new System.EventHandler(this.btn_proyectosTerminados_Click);
             // 
             // btnHorasEmpleado
             // 
@@ -420,12 +458,13 @@
             this.btnHorasEmpleado.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnHorasEmpleado.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnHorasEmpleado.IconColor = System.Drawing.Color.Black;
+            this.btnHorasEmpleado.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHorasEmpleado.IconSize = 16;
             this.btnHorasEmpleado.Location = new System.Drawing.Point(0, 120);
             this.btnHorasEmpleado.Name = "btnHorasEmpleado";
             this.btnHorasEmpleado.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnHorasEmpleado.Rotation = 0D;
-            this.btnHorasEmpleado.Size = new System.Drawing.Size(208, 40);
+            this.btnHorasEmpleado.Size = new System.Drawing.Size(208, 41);
             this.btnHorasEmpleado.TabIndex = 3;
             this.btnHorasEmpleado.Text = "Horas por Empleado";
             this.btnHorasEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -442,6 +481,7 @@
             this.btnEmpleadosProyecto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnEmpleadosProyecto.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnEmpleadosProyecto.IconColor = System.Drawing.Color.Black;
+            this.btnEmpleadosProyecto.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEmpleadosProyecto.IconSize = 16;
             this.btnEmpleadosProyecto.Location = new System.Drawing.Point(0, 80);
             this.btnEmpleadosProyecto.Name = "btnEmpleadosProyecto";
@@ -464,6 +504,7 @@
             this.btnSubReporteHerramientas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSubReporteHerramientas.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnSubReporteHerramientas.IconColor = System.Drawing.Color.Black;
+            this.btnSubReporteHerramientas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSubReporteHerramientas.IconSize = 16;
             this.btnSubReporteHerramientas.Location = new System.Drawing.Point(0, 40);
             this.btnSubReporteHerramientas.Name = "btnSubReporteHerramientas";
@@ -486,6 +527,7 @@
             this.btnSubReporteVentas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSubReporteVentas.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnSubReporteVentas.IconColor = System.Drawing.Color.Black;
+            this.btnSubReporteVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSubReporteVentas.IconSize = 16;
             this.btnSubReporteVentas.Location = new System.Drawing.Point(0, 0);
             this.btnSubReporteVentas.Name = "btnSubReporteVentas";
@@ -508,6 +550,7 @@
             this.btnGenerar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnGenerar.IconChar = FontAwesome.Sharp.IconChar.ChartLine;
             this.btnGenerar.IconColor = System.Drawing.Color.White;
+            this.btnGenerar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGenerar.IconSize = 32;
             this.btnGenerar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGenerar.Location = new System.Drawing.Point(0, 707);
@@ -545,6 +588,7 @@
             this.btnSubTareas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSubTareas.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnSubTareas.IconColor = System.Drawing.Color.Black;
+            this.btnSubTareas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSubTareas.IconSize = 16;
             this.btnSubTareas.Location = new System.Drawing.Point(0, 120);
             this.btnSubTareas.Name = "btnSubTareas";
@@ -566,6 +610,7 @@
             this.btnSubEgresoEmp.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSubEgresoEmp.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnSubEgresoEmp.IconColor = System.Drawing.Color.Black;
+            this.btnSubEgresoEmp.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSubEgresoEmp.IconSize = 16;
             this.btnSubEgresoEmp.Location = new System.Drawing.Point(0, 80);
             this.btnSubEgresoEmp.Name = "btnSubEgresoEmp";
@@ -587,6 +632,7 @@
             this.btnSubVentasProd.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSubVentasProd.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnSubVentasProd.IconColor = System.Drawing.Color.Black;
+            this.btnSubVentasProd.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSubVentasProd.IconSize = 16;
             this.btnSubVentasProd.Location = new System.Drawing.Point(0, 40);
             this.btnSubVentasProd.Name = "btnSubVentasProd";
@@ -609,6 +655,7 @@
             this.btnSubProyectos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSubProyectos.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnSubProyectos.IconColor = System.Drawing.Color.Black;
+            this.btnSubProyectos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSubProyectos.IconSize = 16;
             this.btnSubProyectos.Location = new System.Drawing.Point(0, 0);
             this.btnSubProyectos.Name = "btnSubProyectos";
@@ -631,6 +678,7 @@
             this.btnGestionar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnGestionar.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
             this.btnGestionar.IconColor = System.Drawing.Color.White;
+            this.btnGestionar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGestionar.IconSize = 32;
             this.btnGestionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGestionar.Location = new System.Drawing.Point(0, 505);
@@ -669,6 +717,7 @@
             this.btnSubMotivoEgreso.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSubMotivoEgreso.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnSubMotivoEgreso.IconColor = System.Drawing.Color.Black;
+            this.btnSubMotivoEgreso.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSubMotivoEgreso.IconSize = 16;
             this.btnSubMotivoEgreso.Location = new System.Drawing.Point(0, 160);
             this.btnSubMotivoEgreso.Name = "btnSubMotivoEgreso";
@@ -691,6 +740,7 @@
             this.btnSubTipoDoc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSubTipoDoc.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnSubTipoDoc.IconColor = System.Drawing.Color.Black;
+            this.btnSubTipoDoc.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSubTipoDoc.IconSize = 16;
             this.btnSubTipoDoc.Location = new System.Drawing.Point(0, 120);
             this.btnSubTipoDoc.Name = "btnSubTipoDoc";
@@ -713,6 +763,7 @@
             this.btnSubEtapas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSubEtapas.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnSubEtapas.IconColor = System.Drawing.Color.Black;
+            this.btnSubEtapas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSubEtapas.IconSize = 16;
             this.btnSubEtapas.Location = new System.Drawing.Point(0, 80);
             this.btnSubEtapas.Name = "btnSubEtapas";
@@ -735,6 +786,7 @@
             this.btnSubHerramientas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSubHerramientas.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnSubHerramientas.IconColor = System.Drawing.Color.Black;
+            this.btnSubHerramientas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSubHerramientas.IconSize = 16;
             this.btnSubHerramientas.Location = new System.Drawing.Point(0, 40);
             this.btnSubHerramientas.Name = "btnSubHerramientas";
@@ -757,6 +809,7 @@
             this.btnSubRoles.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSubRoles.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnSubRoles.IconColor = System.Drawing.Color.Black;
+            this.btnSubRoles.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSubRoles.IconSize = 16;
             this.btnSubRoles.Location = new System.Drawing.Point(0, 0);
             this.btnSubRoles.Name = "btnSubRoles";
@@ -779,6 +832,7 @@
             this.btnSoporte.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSoporte.IconChar = FontAwesome.Sharp.IconChar.Tools;
             this.btnSoporte.IconColor = System.Drawing.Color.White;
+            this.btnSoporte.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSoporte.IconSize = 32;
             this.btnSoporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSoporte.Location = new System.Drawing.Point(0, 263);
@@ -815,6 +869,7 @@
             this.btnSubProductos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSubProductos.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnSubProductos.IconColor = System.Drawing.Color.Black;
+            this.btnSubProductos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSubProductos.IconSize = 16;
             this.btnSubProductos.Location = new System.Drawing.Point(0, 80);
             this.btnSubProductos.Name = "btnSubProductos";
@@ -837,6 +892,7 @@
             this.btnSubClientes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSubClientes.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnSubClientes.IconColor = System.Drawing.Color.Black;
+            this.btnSubClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSubClientes.IconSize = 16;
             this.btnSubClientes.Location = new System.Drawing.Point(0, 40);
             this.btnSubClientes.Name = "btnSubClientes";
@@ -859,6 +915,7 @@
             this.btnSubEmpleados.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSubEmpleados.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnSubEmpleados.IconColor = System.Drawing.Color.Black;
+            this.btnSubEmpleados.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSubEmpleados.IconSize = 16;
             this.btnSubEmpleados.Location = new System.Drawing.Point(0, 0);
             this.btnSubEmpleados.Name = "btnSubEmpleados";
@@ -881,6 +938,7 @@
             this.btnAdministrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAdministrar.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.btnAdministrar.IconColor = System.Drawing.Color.White;
+            this.btnAdministrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAdministrar.IconSize = 32;
             this.btnAdministrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdministrar.Location = new System.Drawing.Point(0, 100);
@@ -912,6 +970,29 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // btn_subTareasEmpleado
+            // 
+            this.btn_subTareasEmpleado.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_subTareasEmpleado.FlatAppearance.BorderSize = 0;
+            this.btn_subTareasEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_subTareasEmpleado.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btn_subTareasEmpleado.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.btn_subTareasEmpleado.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_subTareasEmpleado.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btn_subTareasEmpleado.IconColor = System.Drawing.Color.Black;
+            this.btn_subTareasEmpleado.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_subTareasEmpleado.IconSize = 16;
+            this.btn_subTareasEmpleado.Location = new System.Drawing.Point(0, 202);
+            this.btn_subTareasEmpleado.Name = "btn_subTareasEmpleado";
+            this.btn_subTareasEmpleado.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btn_subTareasEmpleado.Rotation = 0D;
+            this.btn_subTareasEmpleado.Size = new System.Drawing.Size(208, 41);
+            this.btn_subTareasEmpleado.TabIndex = 5;
+            this.btn_subTareasEmpleado.Text = "Tareas por Empleado";
+            this.btn_subTareasEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_subTareasEmpleado.UseVisualStyleBackColor = true;
+            this.btn_subTareasEmpleado.Click += new System.EventHandler(this.btn_subTareasEmpleado_Click);
             // 
             // FrmInicio
             // 
@@ -991,6 +1072,8 @@
         private FontAwesome.Sharp.IconButton btnEmpleadosProyecto;
         private FontAwesome.Sharp.IconButton btnHorasEmpleado;
         private FontAwesome.Sharp.IconButton btnDistribucionEmpleados;
+        private FontAwesome.Sharp.IconButton btn_proyectosTerminados;
+        private FontAwesome.Sharp.IconButton btn_subTareasEmpleado;
     }
 }
 

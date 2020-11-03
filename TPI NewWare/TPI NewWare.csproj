@@ -37,8 +37,8 @@
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FontAwesome.Sharp, Version=5.13.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\FontAwesome.Sharp.5.13.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\FontAwesome.Sharp.5.15.1\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
@@ -56,7 +56,7 @@
       <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -283,7 +283,9 @@
     <Compile Include="Negocio\Ng_HorasEmpleado.cs" />
     <Compile Include="Negocio\Ng_MotivoEgreso.cs" />
     <Compile Include="Negocio\Ng_Producto.cs" />
+    <Compile Include="Negocio\Ng_ProyectoDuracion.cs" />
     <Compile Include="Negocio\Ng_Rol.cs" />
+    <Compile Include="Negocio\Ng_Tareas.cs" />
     <Compile Include="Negocio\Ng_TipDoc.cs" />
     <Compile Include="Negocio\Ng_Usuario.cs" />
     <Compile Include="Negocio\Ng_VentaProducto.cs" />
@@ -311,11 +313,50 @@
     <Compile Include="Reportes\EmpleadoProyecto\FrmEstadisticaEmpleadoProyecto.Designer.cs">
       <DependentUpon>FrmEstadisticaEmpleadoProyecto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Tareas\ds_cantidadTareas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ds_cantidadTareas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Tareas\FrmEstadisticaRendimientoEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Tareas\FrmEstadisticaRendimientoEmpleados.Designer.cs">
+      <DependentUpon>FrmEstadisticaRendimientoEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\EmpleadoProyecto\FrmEstadisticasHorasProyecto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\EmpleadoProyecto\FrmEstadisticasHorasProyecto.Designer.cs">
       <DependentUpon>FrmEstadisticasHorasProyecto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ProyectoDuracion\ds_duraciónEtapas.cs">
+      <DependentUpon>ds_duraciónEtapas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ProyectoDuracion\ds_duraciónEtapas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ds_duraciónEtapas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ProyectoDuracion\ds_proyectosTerminados.cs">
+      <DependentUpon>ds_proyectosTerminados.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ProyectoDuracion\ds_proyectosTerminados.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ds_proyectosTerminados.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ProyectoDuracion\FrmEstadisticaProyectoDuracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ProyectoDuracion\FrmEstadisticaProyectoDuracion.Designer.cs">
+      <DependentUpon>FrmEstadisticaProyectoDuracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ProyectoDuracion\FrmProyectoDuracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ProyectoDuracion\FrmProyectoDuracion.Designer.cs">
+      <DependentUpon>FrmProyectoDuracion.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\Herramientas\FrmEstadisticasHerramientas.cs">
       <SubType>Form</SubType>
@@ -341,6 +382,17 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Ds_Herramientas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Tareas\ds_TareasEmpleado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ds_TareasEmpleado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Tareas\FrmTareasPorEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Tareas\FrmTareasPorEmpleado.Designer.cs">
+      <DependentUpon>FrmTareasPorEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\VentaProducto\Ds_VentaProducto.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -463,13 +515,24 @@
     <EmbeddedResource Include="Reportes\EmpleadoProyecto\EmpleadoProducto.resx">
       <DependentUpon>EmpleadoProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Tareas\EstadisticaEmpleadoTareas.rdlc" />
     <EmbeddedResource Include="Reportes\EmpleadoProyecto\EstadisticaEmpleadoProyecto.rdlc" />
     <EmbeddedResource Include="Reportes\EmpleadoProyecto\EstadisticaHorasProyecto.rdlc" />
     <EmbeddedResource Include="Reportes\EmpleadoProyecto\FrmEstadisticaEmpleadoProyecto.resx">
       <DependentUpon>FrmEstadisticaEmpleadoProyecto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Tareas\FrmEstadisticaRendimientoEmpleados.resx">
+      <DependentUpon>FrmEstadisticaRendimientoEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\EmpleadoProyecto\FrmEstadisticasHorasProyecto.resx">
       <DependentUpon>FrmEstadisticasHorasProyecto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ProyectoDuracion\EstadisticaDuración.rdlc" />
+    <EmbeddedResource Include="Reportes\ProyectoDuracion\FrmEstadisticaProyectoDuracion.resx">
+      <DependentUpon>FrmEstadisticaProyectoDuracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ProyectoDuracion\FrmProyectoDuracion.resx">
+      <DependentUpon>FrmProyectoDuracion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\EmpleadoProyecto\ListadoEmpleadosProyecto.rdlc" />
     <EmbeddedResource Include="Reportes\Herramientas\EstadisticasHerramientas.rdlc" />
@@ -480,6 +543,11 @@
       <DependentUpon>FrmHorasEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\HorasEmpleado\ListadoHoras.rdlc" />
+    <EmbeddedResource Include="Reportes\ProyectoDuracion\ListadoProyectoDuracion.rdlc" />
+    <EmbeddedResource Include="Reportes\Tareas\FrmTareasPorEmpleado.resx">
+      <DependentUpon>FrmTareasPorEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Tareas\ListadoTareasProyecto.rdlc" />
     <EmbeddedResource Include="Reportes\VentaProducto\FrmEstadisticasVentasProducto.resx">
       <DependentUpon>FrmEstadisticasVentasProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -553,6 +621,50 @@
     </None>
     <None Include="Reportes\Herramientas\Ds_Herramientas.xss">
       <DependentUpon>Ds_Herramientas.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\ProyectoDuracion\ds_duraciónEtapas.xsc">
+      <DependentUpon>ds_duraciónEtapas.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\ProyectoDuracion\ds_duraciónEtapas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ds_duraciónEtapas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\ProyectoDuracion\ds_duraciónEtapas.xss">
+      <DependentUpon>ds_duraciónEtapas.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\ProyectoDuracion\ds_proyectosTerminados.xsc">
+      <DependentUpon>ds_proyectosTerminados.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\ProyectoDuracion\ds_proyectosTerminados.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ds_proyectosTerminados.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\ProyectoDuracion\ds_proyectosTerminados.xss">
+      <DependentUpon>ds_proyectosTerminados.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Tareas\ds_cantidadTareas.xsc">
+      <DependentUpon>ds_cantidadTareas.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Tareas\ds_cantidadTareas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ds_cantidadTareas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Tareas\ds_cantidadTareas.xss">
+      <DependentUpon>ds_cantidadTareas.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Tareas\ds_TareasEmpleado.xsc">
+      <DependentUpon>ds_TareasEmpleado.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Tareas\ds_TareasEmpleado.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ds_TareasEmpleado.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Tareas\ds_TareasEmpleado.xss">
+      <DependentUpon>ds_TareasEmpleado.xsd</DependentUpon>
     </None>
     <None Include="Reportes\VentaProducto\Ds_VentaProducto.xsc">
       <DependentUpon>Ds_VentaProducto.xsd</DependentUpon>

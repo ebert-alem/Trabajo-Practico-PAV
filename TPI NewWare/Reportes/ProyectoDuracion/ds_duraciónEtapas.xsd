@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_duraciónEtapas" targetNamespace="http://tempuri.org/ds_duraciónEtapas.xsd" xmlns:mstns="http://tempuri.org/ds_duraciónEtapas.xsd" xmlns="http://tempuri.org/ds_duraciónEtapas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_duraciónEtapas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ds_duraciónEtapas" msprop:Generator_UserDSName="ds_duraciónEtapas">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="etapaDuracion" msprop:Generator_TableClassName="etapaDuracionDataTable" msprop:Generator_TableVarName="tableetapaDuracion" msprop:Generator_RowChangedName="etapaDuracionRowChanged" msprop:Generator_TablePropName="etapaDuracion" msprop:Generator_RowDeletingName="etapaDuracionRowDeleting" msprop:Generator_RowChangingName="etapaDuracionRowChanging" msprop:Generator_RowEvHandlerName="etapaDuracionRowChangeEventHandler" msprop:Generator_RowDeletedName="etapaDuracionRowDeleted" msprop:Generator_RowClassName="etapaDuracionRow" msprop:Generator_UserTableName="etapaDuracion" msprop:Generator_RowEvArgName="etapaDuracionRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Etapa" msprop:Generator_ColumnVarNameInTable="columnEtapa" msprop:Generator_ColumnPropNameInRow="Etapa" msprop:Generator_ColumnPropNameInTable="EtapaColumn" msprop:Generator_UserColumnName="Etapa" type="xs:string" minOccurs="0" />
+              <xs:element name="Duración" msprop:Generator_ColumnVarNameInTable="columnDuración" msprop:Generator_ColumnPropNameInRow="Duración" msprop:Generator_ColumnPropNameInTable="DuraciónColumn" msprop:Generator_UserColumnName="Duración" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
