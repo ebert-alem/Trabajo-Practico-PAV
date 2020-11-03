@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel_Filtros = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_desde = new System.Windows.Forms.Label();
@@ -36,17 +35,9 @@
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
             this.btn_generar = new FontAwesome.Sharp.IconButton();
             this.btn_filtro = new FontAwesome.Sharp.IconButton();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel_Filtros.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // reportViewer1
-            // 
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "TPI_NewWare.Reportes.ProyectoDuracion.ListadoProyectoDuracion.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 40);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(800, 419);
-            this.reportViewer1.TabIndex = 0;
             // 
             // panel_Filtros
             // 
@@ -143,13 +134,23 @@
             this.btn_filtro.UseVisualStyleBackColor = true;
             this.btn_filtro.Click += new System.EventHandler(this.btn_filtro_Click);
             // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "TPI_NewWare.Reportes.ProyectoDuracion.ListadoProyectoDuracion.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 41);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(800, 419);
+            this.reportViewer1.TabIndex = 0;
+            // 
             // FrmProyectoDuracion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 460);
-            this.Controls.Add(this.panel_Filtros);
             this.Controls.Add(this.reportViewer1);
+            this.Controls.Add(this.panel_Filtros);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmProyectoDuracion";
             this.Text = "FrmProyectoDuracion";
@@ -160,8 +161,6 @@
         }
 
         #endregion
-
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.Panel panel_Filtros;
         private FontAwesome.Sharp.IconButton btn_generar;
         private FontAwesome.Sharp.IconButton btn_filtro;
@@ -169,5 +168,6 @@
         private System.Windows.Forms.Label lbl_desde;
         private System.Windows.Forms.DateTimePicker dtpHasta;
         private System.Windows.Forms.DateTimePicker dtpDesde;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

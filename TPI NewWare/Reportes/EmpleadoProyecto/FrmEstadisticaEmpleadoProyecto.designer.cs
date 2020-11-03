@@ -54,6 +54,7 @@
             this.btn_generar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_generar.IconChar = FontAwesome.Sharp.IconChar.Play;
             this.btn_generar.IconColor = System.Drawing.Color.DimGray;
+            this.btn_generar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_generar.IconSize = 32;
             this.btn_generar.Location = new System.Drawing.Point(46, 0);
             this.btn_generar.Name = "btn_generar";
@@ -72,6 +73,7 @@
             this.btn_filtro.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btn_filtro.IconChar = FontAwesome.Sharp.IconChar.Filter;
             this.btn_filtro.IconColor = System.Drawing.Color.DimGray;
+            this.btn_filtro.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_filtro.IconSize = 32;
             this.btn_filtro.Location = new System.Drawing.Point(0, 0);
             this.btn_filtro.Name = "btn_filtro";

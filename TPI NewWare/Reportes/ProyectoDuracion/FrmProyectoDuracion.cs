@@ -41,13 +41,13 @@ namespace TPI_NewWare.Reportes.EmpleadoProyecto
 
         private void btn_filtro_Click(object sender, EventArgs e)
         {
-        //    DataTable table = negocio.ConsultaFiltrada(Convert.ToString(cmb_proyecto.SelectedValue));
+            DataTable table = negocio.ConsultaFiltrada(dtpDesde.Value, dtpHasta.Value);
 
-        //    ReportDataSource ds = new ReportDataSource("HorasEmpleado", table);
+            ReportDataSource ds = new ReportDataSource("proyectosTerminados", table);
 
-        //    reportViewer1.LocalReport.DataSources.Clear();
-        //    reportViewer1.LocalReport.DataSources.Add(ds);
-        //    reportViewer.RefreshReport();
+            reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.LocalReport.DataSources.Add(ds);
+            reportViewer1.RefreshReport();
         }
     }
 }
