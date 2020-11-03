@@ -22,6 +22,8 @@ using TPI_NewWare.Reportes.VentaProducto;
 using TPI_NewWare.Reportes.EmpleadoProyecto;
 using TPI_NewWare.Reportes.HorasEmpleado;
 using TPI_NewWare.Reportes.Herramientas;
+using TPI_NewWare.Reportes.ProyectoDuracion;
+using TPI_NewWare.Reportes.Tareas;
 
 namespace TPI_NewWare
 {
@@ -290,6 +292,34 @@ namespace TPI_NewWare
             lbl_Titulo.Text = "Uso de herramientas";
             lbl_Titulo.Visible = true;
             AbrirFormEnPanel(new FrmEstadisticasHerramientas());
+        }
+
+        private void btn_proyectosTerminados_Click(object sender, EventArgs e)
+        {
+            lbl_Titulo.Text = "Proyectos Terminados";
+            lbl_Titulo.Visible = true;
+            AbrirFormEnPanel(new FrmProyectoDuracion());
+        }
+
+        private void btn_subTareasEmpleado_Click(object sender, EventArgs e)
+        {
+            lbl_Titulo.Text = "Tareas";
+            lbl_Titulo.Visible = true;
+            AbrirFormEnPanel(new FrmTareasPorEmpleado());
+        }
+
+        private void btnSubEstGantt_Click(object sender, EventArgs e)
+        {
+            lbl_Titulo.Text = "Duración de Etapas";
+            lbl_Titulo.Visible = true;
+            AbrirFormEnPanel(new FrmEstadisticaProyectoDuracion());
+        }
+
+        private void tndSubEstRendEmp_Click(object sender, EventArgs e)
+        {
+            lbl_Titulo.Text = "Rendimiento de Empleados";
+            lbl_Titulo.Visible = true;
+            AbrirFormEnPanel(new FrmEstadisticaRendimientoEmpleados());
         }
     }
 

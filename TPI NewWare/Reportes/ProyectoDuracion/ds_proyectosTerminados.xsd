@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_proyectosTerminados" targetNamespace="http://tempuri.org/ds_proyectosTerminados.xsd" xmlns:mstns="http://tempuri.org/ds_proyectosTerminados.xsd" xmlns="http://tempuri.org/ds_proyectosTerminados.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_proyectosTerminados" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ds_proyectosTerminados" msprop:Generator_UserDSName="ds_proyectosTerminados">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="proyectosTerminados" msprop:Generator_TableClassName="proyectosTerminadosDataTable" msprop:Generator_TableVarName="tableproyectosTerminados" msprop:Generator_RowChangedName="proyectosTerminadosRowChanged" msprop:Generator_TablePropName="proyectosTerminados" msprop:Generator_RowDeletingName="proyectosTerminadosRowDeleting" msprop:Generator_RowChangingName="proyectosTerminadosRowChanging" msprop:Generator_RowEvHandlerName="proyectosTerminadosRowChangeEventHandler" msprop:Generator_RowDeletedName="proyectosTerminadosRowDeleted" msprop:Generator_RowClassName="proyectosTerminadosRow" msprop:Generator_UserTableName="proyectosTerminados" msprop:Generator_RowEvArgName="proyectosTerminadosRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Proyecto" msprop:Generator_ColumnVarNameInTable="columnProyecto" msprop:Generator_ColumnPropNameInRow="Proyecto" msprop:Generator_ColumnPropNameInTable="ProyectoColumn" msprop:Generator_UserColumnName="Proyecto" type="xs:string" minOccurs="0" />
+              <xs:element name="Inicio" msprop:Generator_ColumnVarNameInTable="columnInicio" msprop:Generator_ColumnPropNameInRow="Inicio" msprop:Generator_ColumnPropNameInTable="InicioColumn" msprop:Generator_UserColumnName="Inicio" type="xs:string" minOccurs="0" />
+              <xs:element name="Finalizacion" msprop:Generator_ColumnVarNameInTable="columnFinalizacion" msprop:Generator_ColumnPropNameInRow="Finalizacion" msprop:Generator_ColumnPropNameInTable="FinalizacionColumn" msprop:Generator_UserColumnName="Finalizacion" type="xs:string" minOccurs="0" />
+              <xs:element name="Duración" msprop:Generator_ColumnVarNameInTable="columnDuración" msprop:Generator_ColumnPropNameInRow="Duración" msprop:Generator_ColumnPropNameInTable="DuraciónColumn" msprop:Generator_UserColumnName="Duración" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
