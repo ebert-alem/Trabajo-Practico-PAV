@@ -14,16 +14,16 @@ namespace TPI_NewWare.Negocio
         public DataTable Consulta()
         {
             
-            string consulta = "SELECT descripcion AS Proyecto, fecha_inicio AS Inicio, fecha_fin_real AS Finalizacion, DATEDIFF(day, fecha_inicio, fecha_fin_real) AS Duración FROM dbo.proyectos WHERE fecha_fin_real IS NOT NULL";
+            string consulta = "SELECT descripcion AS Proyecto, fecha_inicio AS Inicio, fecha_fin_real AS Finalizacion, " +
+                "DATEDIFF(day, fecha_inicio, fecha_fin_real) AS Duración FROM dbo.proyectos WHERE fecha_fin_real IS NOT NULL";
 
             return _BD.Consulta(consulta);
         }
-        public DataTable ConsultaFiltrada(string Codigo)
+        public DataTable ConsultaFiltrada(DateTime desde, DateTime hasta)
         {
-            string consulta = "SELECT e.legajo, e.nombres, e.apellido, p.descripcion AS nombre_proyecto, et.descripcion AS nombre_etapa FROM empleadosEtapaProyecto v INNER JOIN Proyectos p ON(v.cod_proyecto = p.codigo)INNER JOIN empleados e ON(v.legajo = e.legajo) INNER JOIN etapas et ON(v.id_etapa= et.id)";
-            consulta += "WHERE (p.codigo='" + Codigo + "')";
-            //            string consulta = "SELECT e.legajo, e.nombres, e.apellido, e.documento, e.fecha_ingresante " +
-            //              "FROM empleadosEtapaProyecto v INNER JOIN Proyectos p ON(v.cod_proyecto = p.codigo) INNER JOIN empleados e ON(v.legajo = e.legajo) WHERE (p.codigo='" + Codigo + "')";
+            string consulta = "SELECT descripcion AS Proyecto, fecha_inicio AS Inicio, fecha_fin_real AS Finalizacion, " +
+                "DATEDIFF(day, fecha_inicio, fecha_fin_real) AS Duración FROM dbo.proyectos WHERE fecha_fin_real IS NOT NULL" +
+                " AND fecha_inicio>=CONVERT(date,'" + desde + "',103) AND fecha_fin_real<=CONVERT(date,'" + hasta + "',103)";
 
             return _BD.Consulta(consulta);
         }

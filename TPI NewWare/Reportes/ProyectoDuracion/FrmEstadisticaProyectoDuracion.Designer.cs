@@ -28,23 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel_Filtros = new System.Windows.Forms.Panel();
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.btn_generar = new FontAwesome.Sharp.IconButton();
             this.btn_filtro = new FontAwesome.Sharp.IconButton();
             this.cmb_proyecto = new TPI_NewWare.Clases.ComboBox01();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel_Filtros.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // reportViewer1
-            // 
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "TPI_NewWare.Reportes.ProyectoDuracion.EstadisticaDuración.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 41);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(800, 419);
-            this.reportViewer1.TabIndex = 0;
             // 
             // panel_Filtros
             // 
@@ -123,13 +114,24 @@
             this.cmb_proyecto.Size = new System.Drawing.Size(126, 21);
             this.cmb_proyecto.TabIndex = 27;
             // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.DocumentMapWidth = 1;
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "TPI_NewWare.Reportes.ProyectoDuracion.EstadisticaDuración.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 41);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(800, 413);
+            this.reportViewer1.TabIndex = 0;
+            // 
             // FrmEstadisticaProyectoDuracion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 460);
-            this.Controls.Add(this.panel_Filtros);
+            this.ClientSize = new System.Drawing.Size(800, 454);
             this.Controls.Add(this.reportViewer1);
+            this.Controls.Add(this.panel_Filtros);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmEstadisticaProyectoDuracion";
             this.Text = "FrmEstadisticaProyectoDuracion";
@@ -140,12 +142,11 @@
         }
 
         #endregion
-
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.Panel panel_Filtros;
         private FontAwesome.Sharp.IconButton btn_generar;
         private FontAwesome.Sharp.IconButton btn_filtro;
         private Clases.ComboBox01 cmb_proyecto;
         private System.Windows.Forms.Label lbl_Titulo;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }
