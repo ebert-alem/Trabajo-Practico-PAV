@@ -52,6 +52,10 @@
             this.btn_modificar.FlatAppearance.BorderSize = 0;
             this.btn_modificar.Location = new System.Drawing.Point(136, 457);
             // 
+            // lbl_visualizacion
+            // 
+            this.lbl_visualizacion.MaximumSize = new System.Drawing.Size(340, 800);
+            // 
             // btn_nuevo
             // 
             this.btn_nuevo.FlatAppearance.BorderSize = 0;
