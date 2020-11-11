@@ -5,6 +5,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace TPI_NewWare.Entidades
 {
@@ -62,7 +63,13 @@ namespace TPI_NewWare.Entidades
             string sql = "UPDATE " + NombreTabla + " SET " + "fecha_fin_real=CONVERT(date,'" + DateTime.Now + "',103)" + "WHERE codigo=" + Codigo;
             _BD.Comando(sql);
         }
-        
+
+        public void NoFinalizar(int Codigo)
+        {
+            string sql = "UPDATE " + NombreTabla + " SET " + "fecha_fin_real=Null " + "WHERE codigo=" + Codigo;
+            _BD.Comando(sql);
+        }
+
         public override void Eliminar(int Id)
         {
             string sql = "UPDATE " + NombreTabla + " SET " + "activos=0" + "WHERE codigo=" + Id;
@@ -77,6 +84,19 @@ namespace TPI_NewWare.Entidades
             return "INSERT INTO " + NombreTabla + "(" + string.Join(", ", Columnas) + ") Values ('"+ Descripcion + "', '"+ Documento + "', ' " + TipoDocumento +  "', "+ "CONVERT(date,'" + FechaInicio + "',103)" + ", CONVERT(date,'" + FechaFinProbable + "',103)" + ")";
         }
 
+        public void Recuperar(int Id)
+        {
+            string sql = "UPDATE " + NombreTabla + " SET " + "activos=1" + "WHERE codigo=" + Id;
+            _BD.Comando(sql);
+        }
+
+        public void Recuperar()
+        {
+            //Actualizar todos los elementos como no borrados
+            //UPDATE PROYECTOS SET activos=1
+            string sql = "UPDATE " + NombreTabla + " SET " + "activos=1";
+            _BD.Comando(sql);
+        }
 
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelFondo = new System.Windows.Forms.Panel();
             this.panelOpciones = new System.Windows.Forms.Panel();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
@@ -40,6 +40,8 @@
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
+            this.cmb_cliente = new TPI_NewWare.Clases.ComboBox01();
+            this.cmb_proyecto = new TPI_NewWare.Clases.ComboBox01();
             this.panelGrilla = new System.Windows.Forms.Panel();
             this.panelMultiUso = new System.Windows.Forms.Panel();
             this.grid = new System.Windows.Forms.DataGridView();
@@ -60,13 +62,13 @@
             this.panelSup = new System.Windows.Forms.Panel();
             this.panelInf = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.cmb_cliente = new TPI_NewWare.Clases.ComboBox01();
-            this.cmb_proyecto = new TPI_NewWare.Clases.ComboBox01();
+            this.cbx_eliminados = new System.Windows.Forms.CheckBox();
             this.panelFondo.SuspendLayout();
             this.panelOpciones.SuspendLayout();
             this.panelGrilla.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.panelBotones.SuspendLayout();
+            this.panelInf.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelFondo
@@ -193,6 +195,38 @@
             this.dtpDesde.TabIndex = 1;
             this.dtpDesde.Value = new System.DateTime(2020, 10, 4, 13, 16, 34, 0);
             // 
+            // cmb_cliente
+            // 
+            this.cmb_cliente.FormattingEnabled = true;
+            this.cmb_cliente.Location = new System.Drawing.Point(29, 220);
+            this.cmb_cliente.Name = "cmb_cliente";
+            this.cmb_cliente.Pp_Display = null;
+            this.cmb_cliente.Pp_mensajeError = null;
+            this.cmb_cliente.Pp_nombre_campo = null;
+            this.cmb_cliente.Pp_nombre_tabla = null;
+            this.cmb_cliente.Pp_seleccionado = false;
+            this.cmb_cliente.Pp_Tabla = "CLIENTES";
+            this.cmb_cliente.Pp_validable = false;
+            this.cmb_cliente.Pp_Value = null;
+            this.cmb_cliente.Size = new System.Drawing.Size(121, 21);
+            this.cmb_cliente.TabIndex = 0;
+            // 
+            // cmb_proyecto
+            // 
+            this.cmb_proyecto.FormattingEnabled = true;
+            this.cmb_proyecto.Location = new System.Drawing.Point(29, 149);
+            this.cmb_proyecto.Name = "cmb_proyecto";
+            this.cmb_proyecto.Pp_Display = "descripcion";
+            this.cmb_proyecto.Pp_mensajeError = null;
+            this.cmb_proyecto.Pp_nombre_campo = null;
+            this.cmb_proyecto.Pp_nombre_tabla = null;
+            this.cmb_proyecto.Pp_seleccionado = false;
+            this.cmb_proyecto.Pp_Tabla = "PROYECTOS";
+            this.cmb_proyecto.Pp_validable = false;
+            this.cmb_proyecto.Pp_Value = "codigo";
+            this.cmb_proyecto.Size = new System.Drawing.Size(121, 21);
+            this.cmb_proyecto.TabIndex = 0;
+            // 
             // panelGrilla
             // 
             this.panelGrilla.Controls.Add(this.panelMultiUso);
@@ -225,14 +259,14 @@
             this.grid.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column4,
@@ -412,6 +446,7 @@
             // 
             // panelInf
             // 
+            this.panelInf.Controls.Add(this.cbx_eliminados);
             this.panelInf.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelInf.Location = new System.Drawing.Point(0, 464);
             this.panelInf.Name = "panelInf";
@@ -423,37 +458,18 @@
             this.timer1.Interval = 25;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // cmb_cliente
+            // cbx_eliminados
             // 
-            this.cmb_cliente.FormattingEnabled = true;
-            this.cmb_cliente.Location = new System.Drawing.Point(29, 220);
-            this.cmb_cliente.Name = "cmb_cliente";
-            this.cmb_cliente.Pp_Display = null;
-            this.cmb_cliente.Pp_mensajeError = null;
-            this.cmb_cliente.Pp_nombre_campo = null;
-            this.cmb_cliente.Pp_nombre_tabla = null;
-            this.cmb_cliente.Pp_seleccionado = false;
-            this.cmb_cliente.Pp_Tabla = "CLIENTES";
-            this.cmb_cliente.Pp_validable = false;
-            this.cmb_cliente.Pp_Value = null;
-            this.cmb_cliente.Size = new System.Drawing.Size(121, 21);
-            this.cmb_cliente.TabIndex = 0;
-            // 
-            // cmb_proyecto
-            // 
-            this.cmb_proyecto.FormattingEnabled = true;
-            this.cmb_proyecto.Location = new System.Drawing.Point(29, 149);
-            this.cmb_proyecto.Name = "cmb_proyecto";
-            this.cmb_proyecto.Pp_Display = "descripcion";
-            this.cmb_proyecto.Pp_mensajeError = null;
-            this.cmb_proyecto.Pp_nombre_campo = null;
-            this.cmb_proyecto.Pp_nombre_tabla = null;
-            this.cmb_proyecto.Pp_seleccionado = false;
-            this.cmb_proyecto.Pp_Tabla = "PROYECTOS";
-            this.cmb_proyecto.Pp_validable = false;
-            this.cmb_proyecto.Pp_Value = "codigo";
-            this.cmb_proyecto.Size = new System.Drawing.Size(121, 21);
-            this.cmb_proyecto.TabIndex = 0;
+            this.cbx_eliminados.AutoSize = true;
+            this.cbx_eliminados.Dock = System.Windows.Forms.DockStyle.Right;
+            this.cbx_eliminados.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cbx_eliminados.Location = new System.Drawing.Point(693, 0);
+            this.cbx_eliminados.Name = "cbx_eliminados";
+            this.cbx_eliminados.Size = new System.Drawing.Size(113, 36);
+            this.cbx_eliminados.TabIndex = 16;
+            this.cbx_eliminados.Text = "Mostrar eliminados";
+            this.cbx_eliminados.UseVisualStyleBackColor = true;
+            this.cbx_eliminados.CheckedChanged += new System.EventHandler(this.cbx_eliminados_CheckedChanged);
             // 
             // FrmVentaProyecto
             // 
@@ -471,6 +487,8 @@
             this.panelGrilla.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
             this.panelBotones.ResumeLayout(false);
+            this.panelInf.ResumeLayout(false);
+            this.panelInf.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -509,5 +527,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private FontAwesome.Sharp.IconButton btn_finalizar;
+        private System.Windows.Forms.CheckBox cbx_eliminados;
     }
 }
