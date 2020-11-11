@@ -8,9 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TPI_NewWare.Clases;
-using System.Data;
 using Microsoft.Reporting.WinForms;
-using TPI_NewWare.Clases;
 using TPI_NewWare.Negocio;
 
 namespace TPI_NewWare.Reportes.Tareas

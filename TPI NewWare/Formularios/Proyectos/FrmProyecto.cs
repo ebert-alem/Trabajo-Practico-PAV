@@ -19,6 +19,8 @@ namespace TPI_NewWare.Formularios.VentaProyecto
 
         DataTable tabla = new DataTable();
         Ng_VentaProducto venta = new Ng_VentaProducto();
+        Ng_Proyecto ng_Proyecto = new Ng_Proyecto();
+
         Proyecto proyecto = new Proyecto();
 
         public FrmVentaProyecto()
@@ -70,15 +72,13 @@ namespace TPI_NewWare.Formularios.VentaProyecto
             
 
             //Cargamos la grilla con el resultado de la consulta enviada por parámetro...
-            CargarGrilla(proyecto.Listar());
+            CargarGrilla(ng_Proyecto.Consulta(cbx_eliminados.Checked));
 
             //Cargamos y seteamos los comboboxs...
-            cmb_producto.Cargar();
+            cmb_proyecto.Cargar();
             cmb_cliente.CargarDobleDisplay("clientes", "nombres", "apellido", "nroDocumento");
-            cmb_lider.CargarDobleDisplay("empleados", "nombres", "apellido", "legajo");
-            cmb_producto.SelectedIndex = -1;
+            cmb_proyecto.SelectedIndex = -1;
             cmb_cliente.SelectedIndex = -1;
-            cmb_lider.SelectedIndex = -1;
 
             dtpDesde.Value = DateTime.Now.AddYears(-20);
             dtpHasta.Value = DateTime.Today;
@@ -98,7 +98,7 @@ namespace TPI_NewWare.Formularios.VentaProyecto
                 //{
                     grid.Rows.Add(tabla.Rows[i]["codigo"],
                                     tabla.Rows[i]["descripcion"],
-                                    tabla.Rows[i]["nroDoc_cliente"],
+                                    tabla.Rows[i]["nombre_cliente"],
                                     tabla.Rows[i]["fecha_inicio"],
                                     tabla.Rows[i]["fecha_fin_probable"],
                                     tabla.Rows[i]["fecha_fin_real"]);
@@ -112,8 +112,10 @@ namespace TPI_NewWare.Formularios.VentaProyecto
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             //Hacemos la consulta filtrando de acuerdo a los valores seleccionados en los comboboxs y los datetimepikers...
-            this.tabla = venta.ConsultaFiltrada(dtpDesde.Value.ToShortDateString(), dtpHasta.Value.ToShortDateString(), Convert.ToString(cmb_producto.SelectedValue), Convert.ToString(cmb_cliente.SelectedValue), Convert.ToString(cmb_lider.SelectedValue));
-            
+            this.tabla = ng_Proyecto.ConsultaFiltrada(dtpDesde.Value.ToShortDateString(), 
+                dtpHasta.Value.ToShortDateString(), Convert.ToString(cmb_proyecto.SelectedValue), 
+                Convert.ToString(cmb_cliente.SelectedValue), cbx_eliminados.Checked);
+
             CargarGrilla(tabla);
             
             timer1.Start();
@@ -122,9 +124,8 @@ namespace TPI_NewWare.Formularios.VentaProyecto
 
             
             //Setea los combos y los datetimes..
-            cmb_producto.SelectedIndex = -1;
+            cmb_proyecto.SelectedIndex = -1;
             cmb_cliente.SelectedIndex = -1;
-            cmb_lider.SelectedIndex = -1;
             dtpDesde.Value = DateTime.Now.AddYears(-20);
             dtpHasta.Value = DateTime.Today;
             btnBuscar.Enabled = false;
@@ -134,7 +135,7 @@ namespace TPI_NewWare.Formularios.VentaProyecto
         public void ActualizarGrilla()
         {
             //Cargamos la grilla con el resultado de la consulta enviada por parámetro...
-            CargarGrilla(proyecto.Listar());
+            CargarGrilla(ng_Proyecto.Consulta(cbx_eliminados.Checked));
             panelMultiUso.Width = 0;
         }
 
@@ -160,16 +161,19 @@ namespace TPI_NewWare.Formularios.VentaProyecto
         {
             panelMultiUso.Width = 280;
             AbrirFormEnPanel(new FrmNuevoProyecto(this));
-            CargarGrilla(proyecto.Listar());
+            CargarGrilla(ng_Proyecto.Consulta(cbx_eliminados.Checked));
 
 
         }
 
         private void btn_finalizar_Click(object sender, EventArgs e)
         {
+            Proyecto proyecto_seleccionado = new Proyecto();
+            proyecto_seleccionado.Buscar(IdActual(), "codigo");
             //Marca como finalizado el proyecto con el id actual
-            proyecto.Finalizar(IdActual());
-            CargarGrilla(proyecto.Listar());
+            if (proyecto_seleccionado.FechaFinReal != "") proyecto.NoFinalizar(IdActual());
+            else proyecto.Finalizar(IdActual());
+            CargarGrilla(ng_Proyecto.Consulta(cbx_eliminados.Checked));
         }
 
         public int IdActual()
@@ -179,16 +183,37 @@ namespace TPI_NewWare.Formularios.VentaProyecto
 
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
+            
             //Marca como finalizado el proyecto con el id actual
-            proyecto.Eliminar(IdActual());
-            CargarGrilla(proyecto.Listar());
+            if (cbx_eliminados.Checked) proyecto.Recuperar(IdActual());
+            else proyecto.Eliminar(IdActual());
+
+            CargarGrilla(ng_Proyecto.Consulta(cbx_eliminados.Checked));
         }
 
         private void btn_editar_Click(object sender, EventArgs e)
         {
             panelMultiUso.Width = 280;
             AbrirFormEnPanel(new FrmNuevoProyecto(this, IdActual()));
-            CargarGrilla(proyecto.Listar());
+            CargarGrilla(ng_Proyecto.Consulta(cbx_eliminados.Checked));
+        }
+
+        private void cbx_eliminados_CheckedChanged(object sender, EventArgs e)
+        {
+            if(cbx_eliminados.Checked)
+            {
+                btn_nuevo.Enabled = false;
+                btn_editar.Enabled = false;
+                btn_finalizar.Enabled = false;
+            }
+            else
+            {
+                btn_nuevo.Enabled = true;
+                btn_editar.Enabled = true;
+                btn_finalizar.Enabled = true;
+            }
+            CargarGrilla(ng_Proyecto.Consulta(cbx_eliminados.Checked));
+            
         }
     }
 }
