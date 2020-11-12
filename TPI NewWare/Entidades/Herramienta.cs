@@ -44,5 +44,17 @@ namespace TPI_NewWare.Entidades
             return SqlUpdate(new string[2] { "nombre", "descripcion" }, new string[2] { Nombre, Descripcion }, int.Parse(Id));
         }
 
+        public override void Eliminar(int Id)
+        {            
+            string sql = "UPDATE " + NombreTabla + " SET " + "activo=0" + "WHERE id=" + Id;
+            _BD.Comando(sql);
+        }
+
+        public override DataTable Listar()
+        {
+            //Obtiene todos las filas de la BD
+            return _BD.Consulta("SELECT * FROM " + NombreTabla + " WHERE activo='1'");
+        }
+
     }
 }

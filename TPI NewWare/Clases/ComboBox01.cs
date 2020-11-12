@@ -50,6 +50,14 @@ namespace TPI_NewWare.Clases
             this.DataSource = ec.Tabla;
         }
 
+        public void CargarNoEliminados()
+        {
+            string sql = "SELECT * FROM " + Pp_Tabla + " WHERE activo = 1";
+            this.DisplayMember = Pp_Display;
+            this.ValueMember = Pp_Value;
+            this.DataSource = _BD.Consulta(sql);
+        }
+
         public void CargarDobleDisplay(string nombre_tabla, string display1, string display2, string value)
         {
             string sql = "SELECT *, (" + display1 + "+ ' ' +" + display2 + ") AS concatenacion FROM " + nombre_tabla;
@@ -60,14 +68,21 @@ namespace TPI_NewWare.Clases
         }
         public void CargarDobleValue(string nombre_tabla, string display1, string display2, string value1, string value2)
         {
-            string sql = "SELECT *, (" + display1 + "+ ' ' +" + display2 + ") AS dobleDisplay, (Convert(varchar(20), " + value1 + ") + ', ' + Convert(varchar(20), " + value2 + ")) AS dobleValue FROM " + nombre_tabla;
+            string sql = "SELECT *, (" + display1 + "+ ' ' +" + display2 + ") AS dobleDisplay, (Convert(varchar(20), " + value1 + ") + ', ' + Convert(varchar(20), " + value2 + ")) AS dobleValue FROM " + nombre_tabla + " WHERE activo = 1";
 
             this.DisplayMember = "dobleDisplay";
             this.ValueMember = "dobleValue";
             this.DataSource = _BD.Consulta(sql); 
         }
 
+        public void CargarDobleDisplayNoEliminados(string nombre_tabla, string display1, string display2, string value)
+        {
+            string sql = "SELECT *, (" + display1 + "+ ' ' +" + display2 + ") AS concatenacion FROM " + nombre_tabla + " WHERE activo = 1";
 
+            this.DisplayMember = "concatenacion";
+            this.ValueMember = value;
+            this.DataSource = _BD.Consulta(sql);
+        }
 
     }
    

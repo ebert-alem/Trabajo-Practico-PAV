@@ -42,12 +42,27 @@ namespace TPI_NewWare.Entidades
 
         public override string SentciaSqlActualizar()
         {
-            return SqlUpdate(new string[4] { "nombre", "descripcion", "denominacion", "fecha_fin_desarrollo"}, new string[4] { Nombre, Descripcion, Denominacion, FechaFinDesarrollo}, int.Parse(Id));
+            return "UPDATE producto SET nombre = '" + Nombre + "', descripcion = '" + Descripcion + "', denominacion = '" + Denominacion + "', fecha_fin_desarrollo = " + " CONVERT(date, '" + FechaFinDesarrollo + "', 103) WHERE id = " + Id;
+            //return SqlUpdate(new string[4] { "nombre", "descripcion", "denominacion", "fecha_fin_desarrollo"}, new string[4] { Nombre, Descripcion, Denominacion, FechaFinDesarrollo}, int.Parse(Id));
         }
 
         public override string SentciaSqlCrear()
         {
-            return SqlInsert(new string[4] { "nombre", "descripcion", "denominacion", "fecha_fin_desarrollo" }, new string[4] { Nombre, Descripcion, Denominacion, FechaFinDesarrollo });
+            return "INSERT INTO producto (nombre, denominacion, descripcion, fecha_fin_desarrollo) VALUES ('" + Nombre + "', '" + Denominacion + "', '" + Descripcion + "', " + " CONVERT(date, '" + FechaFinDesarrollo + "', 103) " + ")";
+            //return SqlInsert(new string[4] { "nombre", "descripcion", "denominacion", "fecha_fin_desarrollo" }, new string[4] { Nombre, Descripcion, Denominacion, FechaFinDesarrollo });
         }
+
+        public override void Eliminar(int Id)
+        {
+            string sql = "UPDATE " + NombreTabla + " SET " + "activo=0" + "WHERE id=" + Id;
+            _BD.Comando(sql);
+        }
+
+        public override DataTable Listar()
+        {
+            //Obtiene todos las filas de la BD
+            return _BD.Consulta("SELECT * FROM " + NombreTabla + " WHERE activo='1'");
+        }
+
     }
 }

@@ -81,6 +81,7 @@
             // 
             // txt_legajo
             // 
+            this.txt_legajo.Enabled = false;
             this.txt_legajo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_legajo.Location = new System.Drawing.Point(110, 50);
             this.txt_legajo.Name = "txt_legajo";
@@ -90,6 +91,7 @@
             this.txt_legajo.Pp_validable = true;
             this.txt_legajo.Size = new System.Drawing.Size(256, 22);
             this.txt_legajo.TabIndex = 24;
+            this.txt_legajo.Text = "Es un campo Autogenerado";
             // 
             // lbl_legajo
             // 

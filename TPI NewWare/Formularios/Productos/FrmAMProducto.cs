@@ -36,7 +36,8 @@ namespace TPI_NewWare.Formularios.Productos
             txt_nombre.Text = producto.Nombre;
             txt_descripcion.Text = producto.Descripcion;
             txt_denominacion.Text = producto.Denominacion;
-            txt_fechaFin.Text = producto.FechaFinDesarrollo;
+            //txt_fechaFin.Text = producto.FechaFinDesarrollo;
+            dtp_FechaFin.Value = Convert.ToDateTime(producto.FechaFinDesarrollo);
         }
 
         public override void btn_cancelar_Click(object sender, EventArgs e)
@@ -55,7 +56,7 @@ namespace TPI_NewWare.Formularios.Productos
                 if (btn_crear.Text == "Crear")
                 {
                     //Da el alta de la herramienta
-                    negocio.Alta(txt_nombre.Text, txt_descripcion.Text, txt_denominacion.Text, txt_fechaFin.Text);
+                    negocio.Alta(txt_nombre.Text,  txt_denominacion.Text, txt_descripcion.Text,dtp_FechaFin.Value.ToShortDateString());
                 }
                 else
                 {
@@ -63,7 +64,8 @@ namespace TPI_NewWare.Formularios.Productos
                     producto.Nombre = txt_nombre.Text;
                     producto.Descripcion = txt_descripcion.Text;
                     producto.Denominacion = txt_denominacion.Text;
-                    producto.FechaFinDesarrollo = txt_fechaFin.Text;
+                    //producto.FechaFinDesarrollo = txt_fechaFin.Text;
+                    producto.FechaFinDesarrollo = dtp_FechaFin.Value.ToShortDateString();
                     producto.Guardar();
                 }
                 form_contenedor.ActualizarAlta();

@@ -53,9 +53,9 @@ namespace TPI_NewWare.Formularios.VentaProducto
         {
 
             //Seteamos los cmb...
-            cmb_producto.Cargar();
+            cmb_producto.CargarNoEliminados();
             cmb_cliente.CargarDobleValue("clientes", "nombres", "apellido", "nroDocumento", "id_documento");
-            cmb_lider.CargarDobleDisplay("empleados", "nombres", "apellido", "legajo");
+            cmb_lider.CargarDobleDisplayNoEliminados("empleados", "nombres", "apellido", "legajo");
 
         }
 

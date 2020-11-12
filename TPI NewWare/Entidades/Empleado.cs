@@ -67,12 +67,12 @@ namespace TPI_NewWare.Entidades
 
         public override string SentciaSqlCrear()
         {
-            return SqlInsert(new string[12] { "legajo", "id_egreso", "id_documento", "nombreUsuario", "documento", "nombres", "apellido", "fecha_ingresante", "fecha_egreso", "domicilio", "fecha_nacimiento", "activo"}, new string[12] { Legajo, Id_Egreso, TipoDocumento,  Usuario, Documento, Nombre, Apellido, FechaIngreso, FechaEgreso, (string) Domicilio, FechaNacimiento, Activo});
+            return SqlInsert(new string[11] { "id_egreso", "id_documento", "nombreUsuario", "documento", "nombres", "apellido", "fecha_ingresante", "fecha_egreso", "domicilio", "fecha_nacimiento", "activo"}, new string[11] { Id_Egreso, TipoDocumento,  Usuario, Documento, Nombre, Apellido, FechaIngreso, FechaEgreso, (string) Domicilio, FechaNacimiento, Activo});
         }
 
         public override string SentciaSqlActualizar()
         {
-            return SqlUpdateLegajo(new string[12] { "legajo", "id_egreso", "id_documento", "nombreUsuario", "documento", "nombres", "apellido", "fecha_ingresante", "fecha_egreso", "domicilio", "fecha_nacimiento", "activo" }, new string[12] { Legajo, Id_Egreso, TipoDocumento, Usuario, Documento, Nombre, Apellido, FechaIngreso, FechaEgreso, (string) Domicilio, FechaNacimiento, Activo }, int.Parse(Legajo));
+            return SqlUpdateLegajo(new string[11] { "id_egreso", "id_documento", "nombreUsuario", "documento", "nombres", "apellido", "fecha_ingresante", "fecha_egreso", "domicilio", "fecha_nacimiento", "activo" }, new string[11] { Id_Egreso, TipoDocumento, Usuario, Documento, Nombre, Apellido, FechaIngreso, FechaEgreso, (string) Domicilio, FechaNacimiento, Activo }, int.Parse(Legajo));
         }
     }
 }

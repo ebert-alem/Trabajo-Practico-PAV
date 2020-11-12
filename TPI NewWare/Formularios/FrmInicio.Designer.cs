@@ -47,6 +47,7 @@
             this.btnSubEstProdVend = new FontAwesome.Sharp.IconButton();
             this.btnEstadisticas = new FontAwesome.Sharp.IconButton();
             this.panelSubGenerar = new System.Windows.Forms.Panel();
+            this.btn_subTareasEmpleado = new FontAwesome.Sharp.IconButton();
             this.btn_proyectosTerminados = new FontAwesome.Sharp.IconButton();
             this.btnHorasEmpleado = new FontAwesome.Sharp.IconButton();
             this.btnEmpleadosProyecto = new FontAwesome.Sharp.IconButton();
@@ -73,7 +74,6 @@
             this.btnAdministrar = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_subTareasEmpleado = new FontAwesome.Sharp.IconButton();
             this.panelBarrraSup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogin)).BeginInit();
             this.panelUsuario.SuspendLayout();
@@ -424,6 +424,29 @@
             this.panelSubGenerar.Size = new System.Drawing.Size(208, 244);
             this.panelSubGenerar.TabIndex = 11;
             this.panelSubGenerar.Visible = false;
+            // 
+            // btn_subTareasEmpleado
+            // 
+            this.btn_subTareasEmpleado.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_subTareasEmpleado.FlatAppearance.BorderSize = 0;
+            this.btn_subTareasEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_subTareasEmpleado.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btn_subTareasEmpleado.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.btn_subTareasEmpleado.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_subTareasEmpleado.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btn_subTareasEmpleado.IconColor = System.Drawing.Color.Black;
+            this.btn_subTareasEmpleado.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_subTareasEmpleado.IconSize = 16;
+            this.btn_subTareasEmpleado.Location = new System.Drawing.Point(0, 202);
+            this.btn_subTareasEmpleado.Name = "btn_subTareasEmpleado";
+            this.btn_subTareasEmpleado.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btn_subTareasEmpleado.Rotation = 0D;
+            this.btn_subTareasEmpleado.Size = new System.Drawing.Size(208, 41);
+            this.btn_subTareasEmpleado.TabIndex = 5;
+            this.btn_subTareasEmpleado.Text = "Tareas por Empleado";
+            this.btn_subTareasEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_subTareasEmpleado.UseVisualStyleBackColor = true;
+            this.btn_subTareasEmpleado.Click += new System.EventHandler(this.btn_subTareasEmpleado_Click);
             // 
             // btn_proyectosTerminados
             // 
@@ -970,29 +993,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // btn_subTareasEmpleado
-            // 
-            this.btn_subTareasEmpleado.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_subTareasEmpleado.FlatAppearance.BorderSize = 0;
-            this.btn_subTareasEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_subTareasEmpleado.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btn_subTareasEmpleado.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.btn_subTareasEmpleado.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_subTareasEmpleado.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btn_subTareasEmpleado.IconColor = System.Drawing.Color.Black;
-            this.btn_subTareasEmpleado.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_subTareasEmpleado.IconSize = 16;
-            this.btn_subTareasEmpleado.Location = new System.Drawing.Point(0, 202);
-            this.btn_subTareasEmpleado.Name = "btn_subTareasEmpleado";
-            this.btn_subTareasEmpleado.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btn_subTareasEmpleado.Rotation = 0D;
-            this.btn_subTareasEmpleado.Size = new System.Drawing.Size(208, 41);
-            this.btn_subTareasEmpleado.TabIndex = 5;
-            this.btn_subTareasEmpleado.Text = "Tareas por Empleado";
-            this.btn_subTareasEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_subTareasEmpleado.UseVisualStyleBackColor = true;
-            this.btn_subTareasEmpleado.Click += new System.EventHandler(this.btn_subTareasEmpleado_Click);
             // 
             // FrmInicio
             // 

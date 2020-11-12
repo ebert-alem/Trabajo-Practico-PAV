@@ -51,7 +51,7 @@ namespace TPI_NewWare.Entidades
             Calle = fila["calle"].ToString();
             NumeroCalle = fila["numeroCalle"].ToString();
             Email = fila["email"].ToString();
-            Activo = fila["activos"].ToString();
+            Activo = fila["activo"].ToString();
         }
 
         //public override void Eliminar(int Id)
@@ -61,7 +61,7 @@ namespace TPI_NewWare.Entidades
 
         public override string SentciaSqlCrear()
         {
-            return SqlInsert(new string[9] { "nroDocumento", "id_documento", "nombres", "apellido", "telefono", "calle", "numeroCalle", "email", "activos" }, new string[9] { Documento, TipoDocumento, Nombre, Apellido, Telefono, Calle, NumeroCalle, Email, Activo });
+            return SqlInsert(new string[8] { "nroDocumento", "id_documento", "nombres", "apellido", "telefono", "calle", "numeroCalle", "email" }, new string[8] { Documento, TipoDocumento, Nombre, Apellido, Telefono, Calle, NumeroCalle, Email});
         }
 
         public override string SentciaSqlActualizar()
@@ -72,7 +72,7 @@ namespace TPI_NewWare.Entidades
         public override void Eliminar(int Id)
         {
             //string cadena = SqlUpdateDocumento(new string[1] { "activos" }, new string[1] { Activo }, int.Parse(Documento));
-            string sql = "UPDATE " + NombreTabla + " SET " + "activos=0" + "WHERE nroDocumento=" + Id;
+            string sql = "UPDATE " + NombreTabla + " SET " + "activo=0" + "WHERE nroDocumento=" + Id;
             _BD.Comando(sql);
         }
 
@@ -86,17 +86,16 @@ namespace TPI_NewWare.Entidades
                 //Agrega una coma salvo en el ultimo caso
                 if (i < Columnas.Length - 1) Condiciones += " , ";
             }
-            Condiciones += ", activos='1' ) ";
+            Condiciones += ", activo ='1' ) ";
             return _BD.Consulta("SELECT * FROM " + NombreTabla + Condiciones);
         }
 
         public override DataTable Listar()
         {
             //Obtiene todos las filas de la BD
-            return _BD.Consulta("SELECT * FROM " + NombreTabla + " WHERE activos='1'");
+            return _BD.Consulta("SELECT * FROM " + NombreTabla + " WHERE activo='1'");
         }
 
-        
-        
+                
     }
 }

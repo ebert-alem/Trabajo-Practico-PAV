@@ -34,8 +34,8 @@
             this.lbl_descripcion = new System.Windows.Forms.Label();
             this.lbl_denominacion = new System.Windows.Forms.Label();
             this.txt_denominacion = new TPI_NewWare.Clases.TextBox01();
-            this.txt_fechaFin = new TPI_NewWare.Clases.TextBox01();
             this.lbl_fechaFin = new System.Windows.Forms.Label();
+            this.dtp_FechaFin = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // btn_crear
@@ -116,18 +116,6 @@
             this.txt_denominacion.Size = new System.Drawing.Size(250, 22);
             this.txt_denominacion.TabIndex = 25;
             // 
-            // txt_fechaFin
-            // 
-            this.txt_fechaFin.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_fechaFin.Location = new System.Drawing.Point(188, 310);
-            this.txt_fechaFin.Name = "txt_fechaFin";
-            this.txt_fechaFin.Pp_mensajeError = "\"Nombre vacio\"";
-            this.txt_fechaFin.Pp_nombre_campo = "\"nombre\"";
-            this.txt_fechaFin.Pp_nombre_tabla = "\"HERRAMIENTAS\"";
-            this.txt_fechaFin.Pp_validable = true;
-            this.txt_fechaFin.Size = new System.Drawing.Size(200, 22);
-            this.txt_fechaFin.TabIndex = 26;
-            // 
             // lbl_fechaFin
             // 
             this.lbl_fechaFin.AutoSize = true;
@@ -139,12 +127,20 @@
             this.lbl_fechaFin.TabIndex = 27;
             this.lbl_fechaFin.Text = "Fecha de Finalización:";
             // 
+            // dtp_FechaFin
+            // 
+            this.dtp_FechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_FechaFin.Location = new System.Drawing.Point(188, 312);
+            this.dtp_FechaFin.Name = "dtp_FechaFin";
+            this.dtp_FechaFin.Size = new System.Drawing.Size(200, 20);
+            this.dtp_FechaFin.TabIndex = 28;
+            // 
             // FrmAMProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(400, 450);
+            this.Controls.Add(this.dtp_FechaFin);
             this.Controls.Add(this.lbl_fechaFin);
-            this.Controls.Add(this.txt_fechaFin);
             this.Controls.Add(this.txt_denominacion);
             this.Controls.Add(this.lbl_denominacion);
             this.Controls.Add(this.txt_descripcion);
@@ -160,8 +156,8 @@
             this.Controls.SetChildIndex(this.txt_descripcion, 0);
             this.Controls.SetChildIndex(this.lbl_denominacion, 0);
             this.Controls.SetChildIndex(this.txt_denominacion, 0);
-            this.Controls.SetChildIndex(this.txt_fechaFin, 0);
             this.Controls.SetChildIndex(this.lbl_fechaFin, 0);
+            this.Controls.SetChildIndex(this.dtp_FechaFin, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,7 +171,7 @@
         private System.Windows.Forms.Label lbl_descripcion;
         private System.Windows.Forms.Label lbl_denominacion;
         private Clases.TextBox01 txt_denominacion;
-        private Clases.TextBox01 txt_fechaFin;
         private System.Windows.Forms.Label lbl_fechaFin;
+        private System.Windows.Forms.DateTimePicker dtp_FechaFin;
     }
 }
