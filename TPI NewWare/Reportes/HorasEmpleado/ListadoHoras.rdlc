@@ -37,7 +37,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>legajo</Value>
+                              <Value>Legajo</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -67,7 +67,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>nombres</Value>
+                              <Value>Nombres</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -97,7 +97,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>apellido</Value>
+                              <Value>Apellido</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -127,7 +127,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>nombre proyecto</Value>
+                              <Value>Proyecto</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -157,7 +157,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>nombre etapa</Value>
+                              <Value>Etapa</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -187,7 +187,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>horas</Value>
+                              <Value>Horas</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -420,8 +420,8 @@
         <DataSetName>HorasEmpleado</DataSetName>
         <Top>3.71115cm</Top>
         <Left>0.25401cm</Left>
-        <Height>1.12063cm</Height>
-        <Width>16.32797cm</Width>
+        <Height>1.12062cm</Height>
+        <Width>16.32796cm</Width>
         <Style>
           <Border>
             <Style>None</Style>

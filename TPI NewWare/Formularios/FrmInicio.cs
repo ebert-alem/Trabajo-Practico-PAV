@@ -249,7 +249,7 @@ namespace TPI_NewWare
         {
             lbl_Titulo.Text = "Empleados por proyecto";
             lbl_Titulo.Visible = true;
-            AbrirFormEnPanel(new EmpleadoProducto());
+            AbrirFormEnPanel(new FrmEmpleadoProducto());
         }
 
         private void btnHorasEmpleado_Click(object sender, EventArgs e)
@@ -322,7 +322,7 @@ namespace TPI_NewWare
             AbrirFormEnPanel(new FrmEstadisticaRendimientoEmpleados());
         }
 
-        private void btnSubTareas_Click(object sender, EventArgs e)
+        private void btnSubEgresoEmp_Click(object sender, EventArgs e)
         {
 
         }

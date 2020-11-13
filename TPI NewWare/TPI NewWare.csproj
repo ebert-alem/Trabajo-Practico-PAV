@@ -302,11 +302,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Ds_Estadisticas.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\EmpleadoProyecto\EmpleadoProducto.cs">
+    <Compile Include="Reportes\EmpleadoProyecto\FrmEmpleadoProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\EmpleadoProyecto\EmpleadoProducto.Designer.cs">
-      <DependentUpon>EmpleadoProducto.cs</DependentUpon>
+    <Compile Include="Reportes\EmpleadoProyecto\FrmEmpleadoProducto.Designer.cs">
+      <DependentUpon>FrmEmpleadoProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\EmpleadoProyecto\FrmEstadisticaEmpleadoProyecto.cs">
       <SubType>Form</SubType>
@@ -513,8 +513,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\EmpleadoProyecto\EmpleadoProducto.resx">
-      <DependentUpon>EmpleadoProducto.cs</DependentUpon>
+    <EmbeddedResource Include="Reportes\EmpleadoProyecto\FrmEmpleadoProducto.resx">
+      <DependentUpon>FrmEmpleadoProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Tareas\EstadisticaEmpleadoTareas.rdlc" />
     <EmbeddedResource Include="Reportes\EmpleadoProyecto\EstadisticaEmpleadoProyecto.rdlc" />

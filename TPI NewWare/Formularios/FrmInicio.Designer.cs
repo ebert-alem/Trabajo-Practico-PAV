@@ -620,6 +620,7 @@
             this.btnSubEgresoEmp.Text = "Egreso de empleado";
             this.btnSubEgresoEmp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSubEgresoEmp.UseVisualStyleBackColor = true;
+            this.btnSubEgresoEmp.Click += new System.EventHandler(this.btnSubEgresoEmp_Click);
             // 
             // btnSubVentasProd
             // 

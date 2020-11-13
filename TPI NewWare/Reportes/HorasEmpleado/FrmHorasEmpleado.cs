@@ -25,18 +25,11 @@ namespace TPI_NewWare.Reportes.HorasEmpleado
 
         private void FrmHorasEmpleado_Load(object sender, EventArgs e)
         {
-            this.reportViewer.RefreshReport();
             this.cmb_proyecto.Cargar();
         }
 
         private void reportViewer_Load(object sender, EventArgs e)
         {
-            DataTable table = negocio.Consulta();
-            ReportDataSource ds = new ReportDataSource("HorasEmpleado", table);
-
-            reportViewer.LocalReport.DataSources.Clear();
-            reportViewer.LocalReport.DataSources.Add(ds);
-            reportViewer.RefreshReport();
         }
 
         private void btn_generar_Click(object sender, EventArgs e)

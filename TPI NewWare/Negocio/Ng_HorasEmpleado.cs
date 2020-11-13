@@ -35,11 +35,11 @@ namespace TPI_NewWare.Negocio
 
         public DataTable ConsultaFiltrada(string Codigo, DateTime inicio, DateTime fin)
         {
-            string consulta = "SELECT e.legajo, e.nombres, p.descripcion AS nombre_proyecto, et.descripcion AS nombre_etapa, SUM(h.horas) AS horas FROM horas h INNER JOIN Proyectos p ON(h.codigo_proyecto = p.codigo) INNER JOIN empleados e ON(h.legajo = e.legajo) INNER JOIN etapas et ON(h.id_etapa_proyecto = et.id)";
+            string consulta = "SELECT e.legajo, e.nombres, e.apellido, p.descripcion AS nombre_proyecto, et.descripcion AS nombre_etapa, SUM(h.horas) AS horas FROM horas h INNER JOIN Proyectos p ON(h.codigo_proyecto = p.codigo) INNER JOIN empleados e ON(h.legajo = e.legajo) INNER JOIN etapas et ON(h.id_etapa_proyecto = et.id)";
             consulta += " WHERE (p.codigo='" + Codigo + "' AND h.fecha BETWEEN CONVERT(date,'" + inicio + "',103) AND CONVERT(date,'" + fin + "',103))";
 
             //Es necesario agrupar para realizar la suma correctamente
-            consulta += " GROUP BY e.legajo, e.nombres, p.descripcion, et.descripcion";
+            consulta += " GROUP BY e.legajo, e.nombres, e.apellido, p.descripcion, et.descripcion";
 
             return _BD.Consulta(consulta);
         }

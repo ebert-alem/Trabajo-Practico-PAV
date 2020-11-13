@@ -173,7 +173,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>legajo</Value>
+                              <Value>Legajo</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -203,7 +203,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>nombres</Value>
+                              <Value>Nombres</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -233,7 +233,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>apellido</Value>
+                              <Value>Apellido</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -263,7 +263,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>nombre proyecto</Value>
+                              <Value>Proyecto</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -293,7 +293,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>nombre etapa</Value>
+                              <Value>Etapa</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -496,7 +496,7 @@
         <Top>3.70099cm</Top>
         <Left>0.09103cm</Left>
         <Height>1.2cm</Height>
-        <Width>16.32796cm</Width>
+        <Width>16.32795cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>

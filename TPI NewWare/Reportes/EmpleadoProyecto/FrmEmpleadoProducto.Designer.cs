@@ -1,6 +1,6 @@
 ﻿namespace TPI_NewWare.Reportes.EmpleadoProyecto
 {
-    partial class EmpleadoProducto
+    partial class FrmEmpleadoProducto
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.panel_Filtros = new System.Windows.Forms.Panel();
             this.cmb_proyecto = new TPI_NewWare.Clases.ComboBox01();
             this.btn_generar = new FontAwesome.Sharp.IconButton();
             this.lbl_Titulo = new System.Windows.Forms.Label();
-            this.btn_filtro = new FontAwesome.Sharp.IconButton();
             this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel_Filtros.SuspendLayout();
             this.SuspendLayout();
@@ -44,7 +43,6 @@
             this.panel_Filtros.Controls.Add(this.cmb_proyecto);
             this.panel_Filtros.Controls.Add(this.btn_generar);
             this.panel_Filtros.Controls.Add(this.lbl_Titulo);
-            this.panel_Filtros.Controls.Add(this.btn_filtro);
             this.panel_Filtros.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Filtros.Location = new System.Drawing.Point(0, 0);
             this.panel_Filtros.Name = "panel_Filtros";
@@ -75,8 +73,9 @@
             this.btn_generar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_generar.IconChar = FontAwesome.Sharp.IconChar.Play;
             this.btn_generar.IconColor = System.Drawing.Color.DimGray;
+            this.btn_generar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_generar.IconSize = 32;
-            this.btn_generar.Location = new System.Drawing.Point(46, 0);
+            this.btn_generar.Location = new System.Drawing.Point(0, 1);
             this.btn_generar.Name = "btn_generar";
             this.btn_generar.Rotation = 0D;
             this.btn_generar.Size = new System.Drawing.Size(104, 40);
@@ -98,27 +97,12 @@
             this.lbl_Titulo.Text = "Proyecto:";
             this.lbl_Titulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btn_filtro
-            // 
-            this.btn_filtro.FlatAppearance.BorderSize = 0;
-            this.btn_filtro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_filtro.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btn_filtro.IconChar = FontAwesome.Sharp.IconChar.Filter;
-            this.btn_filtro.IconColor = System.Drawing.Color.DimGray;
-            this.btn_filtro.IconSize = 32;
-            this.btn_filtro.Location = new System.Drawing.Point(0, 0);
-            this.btn_filtro.Name = "btn_filtro";
-            this.btn_filtro.Rotation = 0D;
-            this.btn_filtro.Size = new System.Drawing.Size(40, 40);
-            this.btn_filtro.TabIndex = 1;
-            this.btn_filtro.UseVisualStyleBackColor = true;
-            // 
             // reportViewer
             // 
             this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = null;
-            this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "DataSet1";
+            reportDataSource2.Value = null;
+            this.reportViewer.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer.LocalReport.ReportEmbeddedResource = "TPI_NewWare.Reportes.EmpleadoProyecto.ListadoEmpleadosProyecto.rdlc";
             this.reportViewer.Location = new System.Drawing.Point(0, 41);
             this.reportViewer.Name = "reportViewer";
@@ -127,7 +111,7 @@
             this.reportViewer.TabIndex = 2;
             this.reportViewer.Load += new System.EventHandler(this.reportViewer_Load);
             // 
-            // EmpleadoProducto
+            // FrmEmpleadoProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -135,7 +119,7 @@
             this.Controls.Add(this.reportViewer);
             this.Controls.Add(this.panel_Filtros);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "EmpleadoProducto";
+            this.Name = "FrmEmpleadoProducto";
             this.Text = "EmpleadoProducto";
             this.Load += new System.EventHandler(this.EmpleadoProducto_Load);
             this.panel_Filtros.ResumeLayout(false);
@@ -148,7 +132,6 @@
         private System.Windows.Forms.Panel panel_Filtros;
         private FontAwesome.Sharp.IconButton btn_generar;
         private System.Windows.Forms.Label lbl_Titulo;
-        private FontAwesome.Sharp.IconButton btn_filtro;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer;
         private Clases.ComboBox01 cmb_proyecto;
     }

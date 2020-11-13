@@ -14,11 +14,11 @@ using TPI_NewWare.Negocio;
 
 namespace TPI_NewWare.Reportes.EmpleadoProyecto
 {
-    public partial class EmpleadoProducto : Form
+    public partial class FrmEmpleadoProducto : Form
     {
         protected Be_BaseDatos _BD = new Be_BaseDatos();
         private Ng_EmpleadoProyecto negocio = new Ng_EmpleadoProyecto();
-        public EmpleadoProducto()
+        public FrmEmpleadoProducto()
         {
             InitializeComponent();
         }
@@ -31,12 +31,6 @@ namespace TPI_NewWare.Reportes.EmpleadoProyecto
 
         private void reportViewer_Load(object sender, EventArgs e)
         {
-            DataTable table = negocio.Consulta();
-            ReportDataSource ds = new ReportDataSource("HorasEmpleado", table);
-
-            reportViewer.LocalReport.DataSources.Clear();
-            reportViewer.LocalReport.DataSources.Add(ds);
-            reportViewer.RefreshReport();
         }
 
         private void btn_generar_Click(object sender, EventArgs e)
