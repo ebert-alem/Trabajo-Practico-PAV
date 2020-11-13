@@ -34,13 +34,15 @@
             this.ds_TareasEmpleado = new TPI_NewWare.Reportes.Tareas.ds_TareasEmpleado();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel_Filtros = new System.Windows.Forms.Panel();
-            this.cmb_empleado = new TPI_NewWare.Clases.ComboBox01();
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.btn_generar = new FontAwesome.Sharp.IconButton();
             this.btn_filtro = new FontAwesome.Sharp.IconButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.cmb_empleado = new TPI_NewWare.Clases.ComboBox01();
             ((System.ComponentModel.ISupportInitialize)(this.tareasEmpleadoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_TareasEmpleado)).BeginInit();
             this.panel_Filtros.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tareasEmpleadoBindingSource
@@ -55,12 +57,12 @@
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "tareasEmpleados";
             reportDataSource1.Value = this.tareasEmpleadoBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "TPI_NewWare.Reportes.Tareas.ListadoTareasProyecto.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 41);
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(800, 419);
@@ -79,22 +81,6 @@
             this.panel_Filtros.Size = new System.Drawing.Size(800, 41);
             this.panel_Filtros.TabIndex = 4;
             // 
-            // cmb_empleado
-            // 
-            this.cmb_empleado.FormattingEnabled = true;
-            this.cmb_empleado.Location = new System.Drawing.Point(662, 11);
-            this.cmb_empleado.Name = "cmb_empleado";
-            this.cmb_empleado.Pp_Display = "apellido";
-            this.cmb_empleado.Pp_mensajeError = null;
-            this.cmb_empleado.Pp_nombre_campo = null;
-            this.cmb_empleado.Pp_nombre_tabla = null;
-            this.cmb_empleado.Pp_seleccionado = false;
-            this.cmb_empleado.Pp_Tabla = "EMPLEADOS";
-            this.cmb_empleado.Pp_validable = false;
-            this.cmb_empleado.Pp_Value = "legajo";
-            this.cmb_empleado.Size = new System.Drawing.Size(126, 21);
-            this.cmb_empleado.TabIndex = 29;
-            // 
             // lbl_Titulo
             // 
             this.lbl_Titulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -111,7 +97,6 @@
             // 
             this.btn_generar.FlatAppearance.BorderSize = 0;
             this.btn_generar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_generar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btn_generar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_generar.IconChar = FontAwesome.Sharp.IconChar.Play;
             this.btn_generar.IconColor = System.Drawing.Color.DimGray;
@@ -119,7 +104,6 @@
             this.btn_generar.IconSize = 32;
             this.btn_generar.Location = new System.Drawing.Point(46, 0);
             this.btn_generar.Name = "btn_generar";
-            this.btn_generar.Rotation = 0D;
             this.btn_generar.Size = new System.Drawing.Size(104, 40);
             this.btn_generar.TabIndex = 24;
             this.btn_generar.Text = "GENERAR";
@@ -131,26 +115,49 @@
             // 
             this.btn_filtro.FlatAppearance.BorderSize = 0;
             this.btn_filtro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_filtro.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btn_filtro.IconChar = FontAwesome.Sharp.IconChar.Filter;
             this.btn_filtro.IconColor = System.Drawing.Color.DimGray;
             this.btn_filtro.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_filtro.IconSize = 32;
             this.btn_filtro.Location = new System.Drawing.Point(0, 0);
             this.btn_filtro.Name = "btn_filtro";
-            this.btn_filtro.Rotation = 0D;
             this.btn_filtro.Size = new System.Drawing.Size(40, 40);
             this.btn_filtro.TabIndex = 1;
             this.btn_filtro.UseVisualStyleBackColor = true;
             this.btn_filtro.Click += new System.EventHandler(this.btn_filtro_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.reportViewer1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 41);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(800, 419);
+            this.panel1.TabIndex = 5;
+            // 
+            // cmb_empleado
+            // 
+            this.cmb_empleado.FormattingEnabled = true;
+            this.cmb_empleado.Location = new System.Drawing.Point(662, 11);
+            this.cmb_empleado.Name = "cmb_empleado";
+            this.cmb_empleado.Pp_Display = "apellido";
+            this.cmb_empleado.Pp_mensajeError = null;
+            this.cmb_empleado.Pp_nombre_campo = null;
+            this.cmb_empleado.Pp_nombre_tabla = null;
+            this.cmb_empleado.Pp_seleccionado = false;
+            this.cmb_empleado.Pp_Tabla = "EMPLEADOS";
+            this.cmb_empleado.Pp_validable = false;
+            this.cmb_empleado.Pp_Value = "legajo";
+            this.cmb_empleado.Size = new System.Drawing.Size(126, 21);
+            this.cmb_empleado.TabIndex = 29;
             // 
             // FrmTareasPorEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 460);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_Filtros);
-            this.Controls.Add(this.reportViewer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmTareasPorEmpleado";
             this.Text = "FrmTareasPorEmpleado";
@@ -158,6 +165,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tareasEmpleadoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_TareasEmpleado)).EndInit();
             this.panel_Filtros.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -172,5 +180,6 @@
         private System.Windows.Forms.Label lbl_Titulo;
         private System.Windows.Forms.BindingSource tareasEmpleadoBindingSource;
         private ds_TareasEmpleado ds_TareasEmpleado;
+        private System.Windows.Forms.Panel panel1;
     }
 }

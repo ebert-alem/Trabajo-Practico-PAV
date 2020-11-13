@@ -24,30 +24,39 @@ namespace TPI_NewWare.Reportes.Tareas
 
         private void FrmTareasPorEmpleado_Load(object sender, EventArgs e)
         {
-
-            this.cmb_empleado.Cargar();
+            cmb_empleado.Visible = false;
+            lbl_Titulo.Visible = false;
+            
         }
 
         private void btn_generar_Click(object sender, EventArgs e)
         {
-            DataTable table = negocio.Consulta();
+            if (cmb_empleado.SelectedValue != null)
+            {
+                DataTable table = negocio.ConsultaFiltrada(Convert.ToString(cmb_empleado.SelectedValue));
 
-            ReportDataSource ds = new ReportDataSource("tareasEmpleados", table);
+                ReportDataSource ds = new ReportDataSource("tareasEmpleados", table);
 
-            reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.DataSources.Add(ds);
-            reportViewer1.RefreshReport();
+                reportViewer1.LocalReport.DataSources.Clear();
+                reportViewer1.LocalReport.DataSources.Add(ds);
+                reportViewer1.RefreshReport();
+            }
+            else {
+                DataTable table = negocio.Consulta();
+
+                ReportDataSource ds = new ReportDataSource("tareasEmpleados", table);
+
+                reportViewer1.LocalReport.DataSources.Clear();
+                reportViewer1.LocalReport.DataSources.Add(ds);
+                reportViewer1.RefreshReport();
+            }
         }
 
         private void btn_filtro_Click(object sender, EventArgs e)
         {
-            DataTable table = negocio.ConsultaFiltrada(Convert.ToString(cmb_empleado.SelectedValue));
-
-            ReportDataSource ds = new ReportDataSource("tareasEmpleados", table);
-
-            reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.DataSources.Add(ds);
-            reportViewer1.RefreshReport();
+            this.cmb_empleado.Cargar();
+            cmb_empleado.Visible = true;
+            lbl_Titulo.Visible = true;  
         }
     }
 }
