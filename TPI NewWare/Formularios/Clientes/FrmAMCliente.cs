@@ -56,7 +56,7 @@ namespace TPI_NewWare.Formularios.Clientes
         private void FrmAMCliente_Load(object sender, EventArgs e)
         {
             //Carga el combobox del tipo de documento utilizando las propiedades del combobox
-            cmb_tipDoc.Cargar();
+            cmb_tipDoc.CargarNoEliminados();
             
         }
 

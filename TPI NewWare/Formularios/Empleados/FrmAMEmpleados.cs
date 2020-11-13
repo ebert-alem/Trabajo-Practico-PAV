@@ -94,8 +94,8 @@ namespace TPI_NewWare.Formularios.Empleados
         {
             if (btn_crear.Text == "Crear")
             {
-                cmb_TipoDoc.Cargar();
-                cmb_Egreso.Cargar();
+                cmb_TipoDoc.CargarNoEliminados();
+                cmb_Egreso.CargarNoEliminados();
                 cmb_usuario.Cargar("usuarios", "nombreUsuario", "nombreUsuario");
             }
             else
