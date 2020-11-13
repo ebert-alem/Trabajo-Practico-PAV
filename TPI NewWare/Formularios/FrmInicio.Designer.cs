@@ -55,7 +55,6 @@
             this.btnSubReporteVentas = new FontAwesome.Sharp.IconButton();
             this.btnGenerar = new FontAwesome.Sharp.IconButton();
             this.panelSubGestionar = new System.Windows.Forms.Panel();
-            this.btnSubTareas = new FontAwesome.Sharp.IconButton();
             this.btnSubEgresoEmp = new FontAwesome.Sharp.IconButton();
             this.btnSubVentasProd = new FontAwesome.Sharp.IconButton();
             this.btnSubProyectos = new FontAwesome.Sharp.IconButton();
@@ -241,7 +240,7 @@
             this.panelSubEstadisticas.Controls.Add(this.btnSubEstUsoHerram);
             this.panelSubEstadisticas.Controls.Add(this.btnSubEstProdVend);
             this.panelSubEstadisticas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubEstadisticas.Location = new System.Drawing.Point(0, 1031);
+            this.panelSubEstadisticas.Location = new System.Drawing.Point(0, 989);
             this.panelSubEstadisticas.Name = "panelSubEstadisticas";
             this.panelSubEstadisticas.Size = new System.Drawing.Size(208, 245);
             this.panelSubEstadisticas.TabIndex = 13;
@@ -398,7 +397,7 @@
             this.btnEstadisticas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEstadisticas.IconSize = 32;
             this.btnEstadisticas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstadisticas.Location = new System.Drawing.Point(0, 991);
+            this.btnEstadisticas.Location = new System.Drawing.Point(0, 949);
             this.btnEstadisticas.Name = "btnEstadisticas";
             this.btnEstadisticas.Rotation = 0D;
             this.btnEstadisticas.Size = new System.Drawing.Size(208, 40);
@@ -419,7 +418,7 @@
             this.panelSubGenerar.Controls.Add(this.btnSubReporteHerramientas);
             this.panelSubGenerar.Controls.Add(this.btnSubReporteVentas);
             this.panelSubGenerar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubGenerar.Location = new System.Drawing.Point(0, 747);
+            this.panelSubGenerar.Location = new System.Drawing.Point(0, 705);
             this.panelSubGenerar.Name = "panelSubGenerar";
             this.panelSubGenerar.Size = new System.Drawing.Size(208, 244);
             this.panelSubGenerar.TabIndex = 11;
@@ -576,7 +575,7 @@
             this.btnGenerar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGenerar.IconSize = 32;
             this.btnGenerar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGenerar.Location = new System.Drawing.Point(0, 707);
+            this.btnGenerar.Location = new System.Drawing.Point(0, 665);
             this.btnGenerar.Name = "btnGenerar";
             this.btnGenerar.Rotation = 0D;
             this.btnGenerar.Size = new System.Drawing.Size(208, 40);
@@ -590,38 +589,15 @@
             // panelSubGestionar
             // 
             this.panelSubGestionar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(165)))), ((int)(((byte)(202)))));
-            this.panelSubGestionar.Controls.Add(this.btnSubTareas);
             this.panelSubGestionar.Controls.Add(this.btnSubEgresoEmp);
             this.panelSubGestionar.Controls.Add(this.btnSubVentasProd);
             this.panelSubGestionar.Controls.Add(this.btnSubProyectos);
             this.panelSubGestionar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubGestionar.Location = new System.Drawing.Point(0, 545);
             this.panelSubGestionar.Name = "panelSubGestionar";
-            this.panelSubGestionar.Size = new System.Drawing.Size(208, 162);
+            this.panelSubGestionar.Size = new System.Drawing.Size(208, 120);
             this.panelSubGestionar.TabIndex = 9;
             this.panelSubGestionar.Visible = false;
-            // 
-            // btnSubTareas
-            // 
-            this.btnSubTareas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSubTareas.FlatAppearance.BorderSize = 0;
-            this.btnSubTareas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubTareas.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnSubTareas.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.btnSubTareas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSubTareas.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnSubTareas.IconColor = System.Drawing.Color.Black;
-            this.btnSubTareas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSubTareas.IconSize = 16;
-            this.btnSubTareas.Location = new System.Drawing.Point(0, 120);
-            this.btnSubTareas.Name = "btnSubTareas";
-            this.btnSubTareas.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnSubTareas.Rotation = 0D;
-            this.btnSubTareas.Size = new System.Drawing.Size(208, 40);
-            this.btnSubTareas.TabIndex = 3;
-            this.btnSubTareas.Text = "Tareas";
-            this.btnSubTareas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubTareas.UseVisualStyleBackColor = true;
             // 
             // btnSubEgresoEmp
             // 
@@ -1039,7 +1015,6 @@
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Panel panelSubGestionar;
-        private FontAwesome.Sharp.IconButton btnSubTareas;
         private FontAwesome.Sharp.IconButton btnSubEgresoEmp;
         private FontAwesome.Sharp.IconButton btnSubVentasProd;
         private FontAwesome.Sharp.IconButton btnSubProyectos;

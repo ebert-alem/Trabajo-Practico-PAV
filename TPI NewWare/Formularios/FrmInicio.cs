@@ -321,6 +321,11 @@ namespace TPI_NewWare
             lbl_Titulo.Visible = true;
             AbrirFormEnPanel(new FrmEstadisticaRendimientoEmpleados());
         }
+
+        private void btnSubTareas_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
