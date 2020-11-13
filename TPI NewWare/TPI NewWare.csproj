@@ -325,10 +325,10 @@
     <Compile Include="Reportes\Tareas\FrmEstadisticaRendimientoEmpleados.Designer.cs">
       <DependentUpon>FrmEstadisticaRendimientoEmpleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\EmpleadoProyecto\FrmEstadisticasHorasProyecto.cs">
+    <Compile Include="Reportes\HorasEmpleado\FrmEstadisticasHorasProyecto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\EmpleadoProyecto\FrmEstadisticasHorasProyecto.Designer.cs">
+    <Compile Include="Reportes\HorasEmpleado\FrmEstadisticasHorasProyecto.Designer.cs">
       <DependentUpon>FrmEstadisticasHorasProyecto.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\ProyectoDuracion\ds_duraciónEtapas.cs">
@@ -518,14 +518,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Tareas\EstadisticaEmpleadoTareas.rdlc" />
     <EmbeddedResource Include="Reportes\EmpleadoProyecto\EstadisticaEmpleadoProyecto.rdlc" />
-    <EmbeddedResource Include="Reportes\EmpleadoProyecto\EstadisticaHorasProyecto.rdlc" />
+    <EmbeddedResource Include="Reportes\HorasEmpleado\EstadisticaHorasProyecto.rdlc" />
     <EmbeddedResource Include="Reportes\EmpleadoProyecto\FrmEstadisticaEmpleadoProyecto.resx">
       <DependentUpon>FrmEstadisticaEmpleadoProyecto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Tareas\FrmEstadisticaRendimientoEmpleados.resx">
       <DependentUpon>FrmEstadisticaRendimientoEmpleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\EmpleadoProyecto\FrmEstadisticasHorasProyecto.resx">
+    <EmbeddedResource Include="Reportes\HorasEmpleado\FrmEstadisticasHorasProyecto.resx">
       <DependentUpon>FrmEstadisticasHorasProyecto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ProyectoDuracion\EstadisticaDuración.rdlc" />

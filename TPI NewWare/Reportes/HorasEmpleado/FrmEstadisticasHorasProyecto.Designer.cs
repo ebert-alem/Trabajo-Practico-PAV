@@ -67,7 +67,7 @@
             // reportViewer
             // 
             this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer.LocalReport.ReportEmbeddedResource = "TPI_NewWare.Reportes.EmpleadoProyecto.EstadisticaHorasProyecto.rdlc";
+            this.reportViewer.LocalReport.ReportEmbeddedResource = "TPI_NewWare.Reportes.HorasEmpleado.EstadisticaHorasProyecto.rdlc";
             this.reportViewer.Location = new System.Drawing.Point(0, 41);
             this.reportViewer.Name = "reportViewer";
             this.reportViewer.ServerReport.BearerToken = null;
