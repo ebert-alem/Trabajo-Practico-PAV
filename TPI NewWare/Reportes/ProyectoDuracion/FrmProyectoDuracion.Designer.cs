@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel_Filtros = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbl_Hasta = new System.Windows.Forms.Label();
             this.lbl_desde = new System.Windows.Forms.Label();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
@@ -42,7 +42,7 @@
             // panel_Filtros
             // 
             this.panel_Filtros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel_Filtros.Controls.Add(this.label5);
+            this.panel_Filtros.Controls.Add(this.lbl_Hasta);
             this.panel_Filtros.Controls.Add(this.lbl_desde);
             this.panel_Filtros.Controls.Add(this.dtpHasta);
             this.panel_Filtros.Controls.Add(this.dtpDesde);
@@ -54,17 +54,17 @@
             this.panel_Filtros.Size = new System.Drawing.Size(800, 41);
             this.panel_Filtros.TabIndex = 3;
             // 
-            // label5
+            // lbl_Hasta
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(644, 5);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 26);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "Hasta";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_Hasta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_Hasta.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Hasta.ForeColor = System.Drawing.Color.Black;
+            this.lbl_Hasta.Location = new System.Drawing.Point(644, 5);
+            this.lbl_Hasta.Name = "lbl_Hasta";
+            this.lbl_Hasta.Size = new System.Drawing.Size(49, 26);
+            this.lbl_Hasta.TabIndex = 28;
+            this.lbl_Hasta.Text = "Hasta";
+            this.lbl_Hasta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbl_desde
             // 
@@ -101,7 +101,6 @@
             // 
             this.btn_generar.FlatAppearance.BorderSize = 0;
             this.btn_generar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_generar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btn_generar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_generar.IconChar = FontAwesome.Sharp.IconChar.Play;
             this.btn_generar.IconColor = System.Drawing.Color.DimGray;
@@ -109,7 +108,6 @@
             this.btn_generar.IconSize = 32;
             this.btn_generar.Location = new System.Drawing.Point(46, 0);
             this.btn_generar.Name = "btn_generar";
-            this.btn_generar.Rotation = 0D;
             this.btn_generar.Size = new System.Drawing.Size(104, 40);
             this.btn_generar.TabIndex = 24;
             this.btn_generar.Text = "GENERAR";
@@ -121,14 +119,12 @@
             // 
             this.btn_filtro.FlatAppearance.BorderSize = 0;
             this.btn_filtro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_filtro.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btn_filtro.IconChar = FontAwesome.Sharp.IconChar.Filter;
             this.btn_filtro.IconColor = System.Drawing.Color.DimGray;
             this.btn_filtro.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_filtro.IconSize = 32;
             this.btn_filtro.Location = new System.Drawing.Point(0, 0);
             this.btn_filtro.Name = "btn_filtro";
-            this.btn_filtro.Rotation = 0D;
             this.btn_filtro.Size = new System.Drawing.Size(40, 40);
             this.btn_filtro.TabIndex = 1;
             this.btn_filtro.UseVisualStyleBackColor = true;
@@ -164,7 +160,7 @@
         private System.Windows.Forms.Panel panel_Filtros;
         private FontAwesome.Sharp.IconButton btn_generar;
         private FontAwesome.Sharp.IconButton btn_filtro;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbl_Hasta;
         private System.Windows.Forms.Label lbl_desde;
         private System.Windows.Forms.DateTimePicker dtpHasta;
         private System.Windows.Forms.DateTimePicker dtpDesde;
