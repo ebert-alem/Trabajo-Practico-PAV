@@ -26,13 +26,6 @@ namespace TPI_NewWare.Reportes.EmpleadoProyecto
 
         private void FrmEstadisticaEmpleadoProyecto_Load(object sender, EventArgs e)
         {
-            DataTable table = negocio.CantidadEmpleadosProyecto();
-
-            ReportDataSource ds = new ReportDataSource("EmpleadosProyecto", table);
-
-            reportViewer.LocalReport.DataSources.Clear();
-            reportViewer.LocalReport.DataSources.Add(ds);
-            reportViewer.RefreshReport();
         }
 
         private void btn_generar_Click(object sender, EventArgs e)

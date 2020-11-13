@@ -30,7 +30,6 @@
         {
             this.panel_Filtros = new System.Windows.Forms.Panel();
             this.btn_generar = new FontAwesome.Sharp.IconButton();
-            this.btn_filtro = new FontAwesome.Sharp.IconButton();
             this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel_Filtros.SuspendLayout();
             this.SuspendLayout();
@@ -39,7 +38,6 @@
             // 
             this.panel_Filtros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel_Filtros.Controls.Add(this.btn_generar);
-            this.panel_Filtros.Controls.Add(this.btn_filtro);
             this.panel_Filtros.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Filtros.Location = new System.Drawing.Point(0, 0);
             this.panel_Filtros.Name = "panel_Filtros";
@@ -56,7 +54,7 @@
             this.btn_generar.IconColor = System.Drawing.Color.DimGray;
             this.btn_generar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_generar.IconSize = 32;
-            this.btn_generar.Location = new System.Drawing.Point(46, 0);
+            this.btn_generar.Location = new System.Drawing.Point(0, 0);
             this.btn_generar.Name = "btn_generar";
             this.btn_generar.Rotation = 0D;
             this.btn_generar.Size = new System.Drawing.Size(104, 40);
@@ -65,22 +63,6 @@
             this.btn_generar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_generar.UseVisualStyleBackColor = true;
             this.btn_generar.Click += new System.EventHandler(this.btn_generar_Click);
-            // 
-            // btn_filtro
-            // 
-            this.btn_filtro.FlatAppearance.BorderSize = 0;
-            this.btn_filtro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_filtro.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btn_filtro.IconChar = FontAwesome.Sharp.IconChar.Filter;
-            this.btn_filtro.IconColor = System.Drawing.Color.DimGray;
-            this.btn_filtro.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_filtro.IconSize = 32;
-            this.btn_filtro.Location = new System.Drawing.Point(0, 0);
-            this.btn_filtro.Name = "btn_filtro";
-            this.btn_filtro.Rotation = 0D;
-            this.btn_filtro.Size = new System.Drawing.Size(40, 40);
-            this.btn_filtro.TabIndex = 1;
-            this.btn_filtro.UseVisualStyleBackColor = true;
             // 
             // reportViewer
             // 
@@ -112,7 +94,6 @@
 
         private System.Windows.Forms.Panel panel_Filtros;
         private FontAwesome.Sharp.IconButton btn_generar;
-        private FontAwesome.Sharp.IconButton btn_filtro;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer;
     }
 }
